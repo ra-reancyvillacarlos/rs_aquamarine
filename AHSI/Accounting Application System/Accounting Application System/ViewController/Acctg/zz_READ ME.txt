@@ -1,0 +1,5 @@
+
+
+a_journalentry.cs	-> please ko replace sa '11' -> '12'
+
+Line:423                    prmpt.set_cbo_costcenter(dgv_itemlist[12, r].Value.ToString());  //cc_code
