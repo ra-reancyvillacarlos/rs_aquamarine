@@ -28,14 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tbcntrl_res = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dgv_reslist = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.res_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.res_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.arr_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.arr_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.p_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,28 +63,14 @@
             this.reserv_by = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.remarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.arrived = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.tbcntrl_res.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_reslist)).BeginInit();
             this.panel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbcntrl_res
@@ -110,13 +110,13 @@
             // 
             // dgv_reslist
             // 
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dgv_reslist.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.dgv_reslist.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_reslist.BackgroundColor = System.Drawing.SystemColors.HighlightText;
             this.dgv_reslist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_reslist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.res_code,
-            this.res_date,
+            this.arr_date,
             this.arr_time,
             this.name,
             this.p_name,
@@ -135,18 +135,169 @@
             this.dgv_reslist.MultiSelect = false;
             this.dgv_reslist.Name = "dgv_reslist";
             this.dgv_reslist.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_reslist.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_reslist.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_reslist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_reslist.Size = new System.Drawing.Size(1334, 607);
             this.dgv_reslist.TabIndex = 1;
             this.dgv_reslist.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_reslist_CellFormatting);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.groupBox2);
+            this.panel1.Controls.Add(this.groupBox3);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(3, 625);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1334, 67);
+            this.panel1.TabIndex = 2;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox2.Location = new System.Drawing.Point(594, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(194, 67);
+            this.groupBox2.TabIndex = 15;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Activities total";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.LemonChiffon;
+            this.label9.Location = new System.Drawing.Point(121, 32);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(15, 16);
+            this.label9.TabIndex = 11;
+            this.label9.Text = "0";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.LemonChiffon;
+            this.label10.Location = new System.Drawing.Point(47, 32);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(68, 16);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Total Pax:";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox3.Location = new System.Drawing.Point(200, 0);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(394, 67);
+            this.groupBox3.TabIndex = 14;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Package Pax total";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.LemonChiffon;
+            this.label7.Location = new System.Drawing.Point(322, 32);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(15, 16);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.LemonChiffon;
+            this.label8.Location = new System.Drawing.Point(274, 32);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(42, 16);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Infant:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.LemonChiffon;
+            this.label5.Location = new System.Drawing.Point(201, 32);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(15, 16);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "0";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.LemonChiffon;
+            this.label6.Location = new System.Drawing.Point(165, 32);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(30, 16);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Kid:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.LemonChiffon;
+            this.label3.Location = new System.Drawing.Point(92, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(15, 16);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "0";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.LemonChiffon;
+            this.label4.Location = new System.Drawing.Point(45, 32);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 16);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Adult:";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(200, 67);
+            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Reservation total";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.LemonChiffon;
+            this.label2.Location = new System.Drawing.Point(175, 32);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(15, 16);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.LemonChiffon;
+            this.label1.Location = new System.Drawing.Point(6, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(163, 16);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Total Reservations made:";
             // 
             // res_code
             // 
@@ -155,12 +306,12 @@
             this.res_code.Name = "res_code";
             this.res_code.ReadOnly = true;
             // 
-            // res_date
+            // arr_date
             // 
-            this.res_date.DataPropertyName = "res_date";
-            this.res_date.HeaderText = "Date";
-            this.res_date.Name = "res_date";
-            this.res_date.ReadOnly = true;
+            this.arr_date.DataPropertyName = "arr_date";
+            this.arr_date.HeaderText = "Date";
+            this.arr_date.Name = "arr_date";
+            this.arr_date.ReadOnly = true;
             // 
             // arr_time
             // 
@@ -272,157 +423,6 @@
             this.arrived.ReadOnly = true;
             this.arrived.Visible = false;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Controls.Add(this.groupBox3);
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(3, 625);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1334, 67);
-            this.panel1.TabIndex = 2;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 67);
-            this.groupBox1.TabIndex = 11;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Reservation total";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.LemonChiffon;
-            this.label2.Location = new System.Drawing.Point(175, 32);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(15, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "0";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.LemonChiffon;
-            this.label1.Location = new System.Drawing.Point(6, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 16);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Total Reservations made:";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox3.Location = new System.Drawing.Point(200, 0);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(394, 67);
-            this.groupBox3.TabIndex = 14;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Package Pax total";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.LemonChiffon;
-            this.label7.Location = new System.Drawing.Point(322, 32);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(15, 16);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "0";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.LemonChiffon;
-            this.label8.Location = new System.Drawing.Point(274, 32);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(42, 16);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "Infant:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.LemonChiffon;
-            this.label5.Location = new System.Drawing.Point(201, 32);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(15, 16);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "0";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.LemonChiffon;
-            this.label6.Location = new System.Drawing.Point(165, 32);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(30, 16);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Kid:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.LemonChiffon;
-            this.label3.Location = new System.Drawing.Point(92, 32);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(15, 16);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "0";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.LemonChiffon;
-            this.label4.Location = new System.Drawing.Point(45, 32);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 16);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Adult:";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox2.Location = new System.Drawing.Point(594, 0);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(194, 67);
-            this.groupBox2.TabIndex = 15;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Activities total";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.LemonChiffon;
-            this.label9.Location = new System.Drawing.Point(121, 32);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(15, 16);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "0";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.LemonChiffon;
-            this.label10.Location = new System.Drawing.Point(47, 32);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(68, 16);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "Total Pax:";
-            // 
             // z_Notification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -442,12 +442,12 @@
             this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_reslist)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -458,21 +458,6 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.DataGridView dgv_reslist;
-        private System.Windows.Forms.DataGridViewTextBoxColumn res_code;
-        private System.Windows.Forms.DataGridViewTextBoxColumn res_date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn arr_time;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn p_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hotel_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ttlpax;
-        private System.Windows.Forms.DataGridViewTextBoxColumn package;
-        private System.Windows.Forms.DataGridViewTextBoxColumn activities;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn cd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lunch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reserv_date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn reserv_by;
-        private System.Windows.Forms.DataGridViewTextBoxColumn remarks;
-        private System.Windows.Forms.DataGridViewTextBoxColumn arrived;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label9;
@@ -487,6 +472,21 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn res_code;
+        private System.Windows.Forms.DataGridViewTextBoxColumn arr_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn arr_time;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn p_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hotel_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ttlpax;
+        private System.Windows.Forms.DataGridViewTextBoxColumn package;
+        private System.Windows.Forms.DataGridViewTextBoxColumn activities;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn cd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lunch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reserv_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reserv_by;
+        private System.Windows.Forms.DataGridViewTextBoxColumn remarks;
+        private System.Windows.Forms.DataGridViewTextBoxColumn arrived;
 
     }
 }

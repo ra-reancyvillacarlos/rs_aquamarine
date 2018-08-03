@@ -187,7 +187,7 @@ namespace Hotel_System
             String rom_rate = "", rom_rate_typ = "Monthly";
             String occ_code = "";
             int cnt = 1;
-
+            
             try
             {
                 if (dgv_reslist.SelectedRows.Count > 0)
@@ -196,13 +196,6 @@ namespace Hotel_System
 
                     isnew = false;
                     //pnl_leftfirst.Hide();
-                    clr_field();
-                    btn_cancel.Enabled = true;
-                    btn_save.Enabled = true;
-                    btn_selectcust.Enabled = true;
-                    grp_roominfo.Enabled = true;
-                    grp_guest.Enabled = true;
-                    grpbx_billing.Enabled = true;
 
                     //get reservation info and pass res_code;
                     dt = db.get_res_info(dgv_reslist["res_code", row].Value.ToString());
@@ -221,7 +214,7 @@ namespace Hotel_System
                         dtp_arrtime.Value = Convert.ToDateTime(r["arr_time"].ToString());
                         //dtp_deptime.Value = Convert.ToDateTime(r["dep_time"].ToString());
                         lbl_resno.Text = res_code;
-                        lbl_arrdt.Text = Convert.ToDateTime(r["arr_date"].ToString()).ToString("MM/dd/yyyy");
+                        lbl_arrdt.Value = Convert.ToDateTime(r["arr_date"].ToString());
                         //lbl_depdt.Text = Convert.ToDateTime(r["dep_date"].ToString()).ToString("MM/dd/yyyy");
                         lbl_rm.Text = r["rom_code"].ToString();
                         comboBox3.SelectedValue = r["code"].ToString();
@@ -248,7 +241,6 @@ namespace Hotel_System
 
                         comboBox5.SelectedValue = r["seller"].ToString();
                     }
-
                     //dt_guest = db.get_guest_info(guestno);
 
                     //dgv_guestlist.Rows.Add(dt_guest.Rows[0]["acct_no"].ToString(), dt_guest.Rows[0]["full_name"].ToString(), dt_guest.Rows[0]["gender"].ToString(), dt_guest.Rows[0]["address1"].ToString(), dt_guest.Rows[0]["tel_num"].ToString(), dt_guest.Rows[0]["email"].ToString(), dt_guest.Rows[0]["cntry_code"].ToString(), dt_guest.Rows[0]["g_typ"].ToString());
@@ -1485,6 +1477,17 @@ namespace Hotel_System
             GlobalMethod gm = new GlobalMethod();
 
             gm.load_seller(comboBox5, "trv_code = '" + (cbo_agency.SelectedValue ?? "").ToString() + "'");
+        }
+
+        private void dgv_reslist_MouseClick(object sender, MouseEventArgs e)
+        {
+            clr_field();
+            btn_cancel.Enabled = true;
+            btn_save.Enabled = true;
+            btn_selectcust.Enabled = true;
+            grp_roominfo.Enabled = true;
+            grp_guest.Enabled = true;
+            grpbx_billing.Enabled = true;
         }
     }
 }
