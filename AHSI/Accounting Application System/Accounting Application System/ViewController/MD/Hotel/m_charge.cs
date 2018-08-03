@@ -13,6 +13,7 @@ namespace Accounting_Application_System
     {
         Boolean isnew = false, isupdaterun = false;
         thisDatabase db = new thisDatabase();
+        String old_code = "";
         public m_charge()
         {
 
@@ -63,6 +64,8 @@ namespace Accounting_Application_System
             cbo_costcenter.SelectedIndex = -1;
             cbo_subcostcenter.SelectedIndex = -1;
             cbo_chgclass.SelectedIndex = -1;
+
+            textBox1.Text = "0.00";
         }
 
         private void goto_tbcntrl_info()
@@ -106,6 +109,7 @@ namespace Accounting_Application_System
                 frm_clear();
                 disp_info(dgv_list["chg_code", dgv_list.CurrentRow.Index].Value.ToString());
                 goto_tbcntrl_info();
+                old_code = dgv_list["chg_code", dgv_list.CurrentRow.Index].Value.ToString();
             }
             else
             {
@@ -154,13 +158,17 @@ namespace Accounting_Application_System
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-
-
             Boolean success = false;
-            String code, desc, chg_num, at_code, sl_code, cc_code, chg_type, scc_code, fcharge, price, sc_rep, vat_incl, ishskp, ismisc, isdeposit, paytype, chg_class;
+            String code, desc, chg_num, at_code, sl_code, cc_code, chg_type, scc_code, fcharge, price, sc_rep, vat_incl, ishskp, ismisc, isdeposit, paytype, chg_class, com;
 
             String col = "", val = "", add_col = "", add_val = "";
             String water_min = "0.00", water_min_charge = "0.00", water_excess_charge = "0.00", electricity_min = "0.00", electricity_min_charge = "0.00", electricity_excess_charge = "0.00", e_january = "0.00", e_february = "0.00", e_march = "0.00", e_april = "0.00", e_may = "0.00", e_june = "0.00", e_july = "0.00", e_august = "0.00", e_september = "0.00", e_october = "0.00", e_november = "0.00", e_december = "0.00", franchise_tax = "0.00", utility = "0.00";
+            Double com1 = 0.00;
+            try
+            {
+                com1 = Convert.ToDouble(textBox1.Text.ToString());
+            }
+            catch { }
             if (String.IsNullOrEmpty(txt_desc.Text) || String.IsNullOrEmpty(txt_code.Text))
             {
                 MessageBox.Show("Pls enter the required fields.");
@@ -229,8 +237,8 @@ namespace Accounting_Application_System
 
                 if (isnew)
                 {
-                    col = "chg_code, chg_desc, chg_num, at_code, sl_code, cc_code, chg_type, scc_code, fcharge, price, sc_rep, vat_incl, ishskp, ismisc, isdeposit, water_min, water_min_charge, water_excess_charge, electricity_min, electricity_min_charge, electricity_excess_charge, e_january, e_february, e_march, e_april, e_may, e_june, e_july, e_august, e_september, e_october, e_november, e_december, franchise_tax, utility, chg_class";
-                    val = "'" + code + "', '" + desc + "', '" + chg_num + "', '" + at_code + "', '" + sl_code + "', '" + cc_code + "', '" + chg_type + "', '" + scc_code + "', '" + fcharge + "', '" + price + "', '" + sc_rep + "', '" + vat_incl + "', '" + ishskp + "', '" + ismisc + "', '" + isdeposit + "', '" + water_min + "', '" + water_min_charge + "', '" + water_excess_charge + "', '" + electricity_min + "', '" + electricity_min_charge + "', '" + electricity_excess_charge + "', '" + e_january + "', '" + e_february + "', '" + e_march + "', '" + e_april + "', '" + e_may + "', '" + e_june + "', '" + e_july + "', '" + e_august + "', '" + e_september + "', '" + e_october + "', '" + e_november + "', '" + e_december + "', '" + franchise_tax + "', '" + utility + "', '" + chg_class + "'";
+                    col = "chg_code, chg_desc, chg_num, at_code, sl_code, cc_code, chg_type, scc_code, fcharge, price, sc_rep, vat_incl, ishskp, ismisc, isdeposit, water_min, water_min_charge, water_excess_charge, electricity_min, electricity_min_charge, electricity_excess_charge, e_january, e_february, e_march, e_april, e_may, e_june, e_july, e_august, e_september, e_october, e_november, e_december, franchise_tax, utility, chg_class, com, ifree";
+                    val = "'" + code + "', '" + desc + "', '" + chg_num + "', '" + at_code + "', '" + sl_code + "', '" + cc_code + "', '" + chg_type + "', '" + scc_code + "', '" + fcharge + "', '" + price + "', '" + sc_rep + "', '" + vat_incl + "', '" + ishskp + "', '" + ismisc + "', '" + isdeposit + "', '" + water_min + "', '" + water_min_charge + "', '" + water_excess_charge + "', '" + electricity_min + "', '" + electricity_min_charge + "', '" + electricity_excess_charge + "', '" + e_january + "', '" + e_february + "', '" + e_march + "', '" + e_april + "', '" + e_may + "', '" + e_june + "', '" + e_july + "', '" + e_august + "', '" + e_september + "', '" + e_october + "', '" + e_november + "', '" + e_december + "', '" + franchise_tax + "', '" + utility + "', '" + chg_class + "', '" + com1 + "', '" + checkBox1.Checked + "'";
 
                     if (db.InsertOnTable("charge", col, val))
                     {
@@ -254,9 +262,9 @@ namespace Accounting_Application_System
                 }
                 else
                 {
-                    col = "chg_code='" + code + "', chg_desc='" + desc + "', chg_num='" + chg_num + "', at_code='" + at_code + "', sl_code='" + sl_code + "', cc_code='" + cc_code + "', chg_type='" + chg_type + "', scc_code='" + scc_code + "', fcharge='" + fcharge + "', price='" + price + "', sc_rep='" + sc_rep + "', vat_incl='" + vat_incl + "', ishskp='" + ishskp + "', ismisc='" + ismisc + "', isdeposit='" + isdeposit + "', water_min='" + water_min + "', water_min_charge='" + water_min_charge + "', water_excess_charge='" + water_excess_charge + "', electricity_min='" + electricity_min + "', electricity_min_charge='" + electricity_min_charge + "', electricity_excess_charge='" + electricity_excess_charge + "', e_january='" + e_january + "', e_february='" + e_february + "', e_march='" + e_march + "', e_april='" + e_april + "', e_may='" + e_may + "', e_june='" + e_june + "', e_july='" + e_july + "', e_august='" + e_august + "', e_september='" + e_september + "', e_october='" + e_october + "', e_november='" + e_november + "', e_december='" + e_december + "', franchise_tax='" + franchise_tax + "', utility='" + utility + "', chg_class='" + chg_class + "'";
-
-                    if (db.UpdateOnTable("charge", col, "chg_code='" + code + "'"))
+                    col = "chg_code='" + code + "', chg_desc='" + desc + "', chg_num='" + chg_num + "', at_code='" + at_code + "', sl_code='" + sl_code + "', cc_code='" + cc_code + "', chg_type='" + chg_type + "', scc_code='" + scc_code + "', fcharge='" + fcharge + "', price='" + price + "', sc_rep='" + sc_rep + "', vat_incl='" + vat_incl + "', ishskp='" + ishskp + "', ismisc='" + ismisc + "', isdeposit='" + isdeposit + "', water_min='" + water_min + "', water_min_charge='" + water_min_charge + "', water_excess_charge='" + water_excess_charge + "', electricity_min='" + electricity_min + "', electricity_min_charge='" + electricity_min_charge + "', electricity_excess_charge='" + electricity_excess_charge + "', e_january='" + e_january + "', e_february='" + e_february + "', e_march='" + e_march + "', e_april='" + e_april + "', e_may='" + e_may + "', e_june='" + e_june + "', e_july='" + e_july + "', e_august='" + e_august + "', e_september='" + e_september + "', e_october='" + e_october + "', e_november='" + e_november + "', e_december='" + e_december + "', franchise_tax='" + franchise_tax + "', utility='" + utility + "', chg_class='" + chg_class + "', com='" + com1 + "', ifree='" + checkBox1.Checked + "'";
+                     
+                    if (db.UpdateOnTable("charge", col, "chg_code='" + old_code + "'"))
                     {
                         success = true;
                     }
@@ -269,10 +277,6 @@ namespace Accounting_Application_System
                    
                     try
                     {
-                        
-
-                         
-
                         success = true;
                         //MessageBox.Show("Saved!");
                     }
@@ -283,6 +287,7 @@ namespace Accounting_Application_System
                         MessageBox.Show("Failed on saving.");
                     }
                 }
+                old_code = "";
 
                 if (success)
                 {
@@ -320,7 +325,7 @@ namespace Accounting_Application_System
         private void disp_dgvlist()
         {
 
-            DataTable dt = db.QueryBySQLCode("SELECT * from rssys.charge ORDER BY chg_desc") ;
+            DataTable dt = db.QueryBySQLCode("SELECT chg_code, chg_desc, chg_num, at_code, chg_type, price, scc_code, fcharge, vat_incl, transferred from rssys.charge ORDER BY chg_code ASC");
             
 
             clear_dgv();
@@ -345,9 +350,6 @@ namespace Accounting_Application_System
 
         private void disp_info(String chg_code)
         {
-           
-
-
             try
             {
                 DataTable dt = db.QueryBySQLCode("SELECT * FROM rssys.charge WHERE chg_code='"+chg_code+"'");
@@ -426,7 +428,8 @@ namespace Accounting_Application_System
 
                         cbo_chgclass.SelectedValue = dt.Rows[0]["chg_class"].ToString();
 
-
+                        textBox1.Text = dt.Rows[0]["com"].ToString();
+                        checkBox1.Checked = Convert.ToBoolean(dt.Rows[0]["ifree"].ToString());
                     }
                 }
             }
@@ -546,6 +549,16 @@ namespace Accounting_Application_System
                 dgv_list.FirstDisplayedScrollingRowIndex = rowIndex;
             }
             catch (Exception) { }
+        }
+
+        private void txt_code_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void txt_code_MouseHover(object sender, EventArgs e)
+        {
+            old_code = ((old_code != "") ? txt_code.Text.ToString() : old_code);
         }
     }
 }

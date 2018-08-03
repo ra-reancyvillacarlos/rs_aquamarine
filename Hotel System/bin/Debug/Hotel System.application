@@ -4,14 +4,14 @@
   <description asmv2:publisher="RIGHTECH SOLUTIONS AND SERVICES" asmv2:product="HOTEL MANAGEMENT SYSTEM" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" />
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Hotel System.exe.manifest" size="23401">
+    <dependentAssembly dependencyType="install" codebase="Hotel System.exe.manifest" size="23314">
       <assemblyIdentity name="Hotel System.exe" version="1.0.0.122" publicKeyToken="0000000000000000" language="en" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>lVSk4dGj5Ye/HNztUTY5dxK7/4c=</dsig:DigestValue>
+        <dsig:DigestValue>bchHmH/4+1O77HtQafbaevrmsFo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

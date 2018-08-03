@@ -4118,3 +4118,325 @@ C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Applica
 C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.csproj.ResolveComReference.cache
 C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.exe
 C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.pdb
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\bin\Debug\Accounting Application System.exe.config
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.csproj.ResolveComReference.cache
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.exe
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.pdb
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.csprojResolveAssemblyReference.cache
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\bin\Debug\Accounting Application System.exe.manifest
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\bin\Debug\Accounting Application System.application
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\bin\Debug\Accounting Application System.exe
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\bin\Debug\Accounting Application System.pdb
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\bin\Debug\CrystalDecisions.CrystalReports.Design.dll
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\bin\Debug\CrystalDecisions.Data.AdoDotNetInterop.dll
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\bin\Debug\CrystalDecisions.VSDesigner.dll
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\bin\Debug\CrystalDecisions.Web.dll
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\bin\Debug\EntityFramework.dll
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\bin\Debug\FlashControlV71.dll
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\bin\Debug\Hotel System.exe
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\bin\Debug\Mono.Security.dll
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\bin\Debug\SAPBusinessObjects.WPF.Viewer.dll
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\bin\Debug\SAPBusinessObjects.WPF.ViewerShared.dll
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\bin\Debug\Hotel System.pdb
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\bin\Debug\EntityFramework.xml
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.activation_form.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.Form1.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.incomeClosing.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_PO_Password.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.market_segment.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_itemclassification.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.periodClosing.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.Ratetypes.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.a_disbursement.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.a_releasecheck.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.a_statementofaccount2.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.journalize.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_budget.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_charge.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_chargeClassification.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.auto_loaner.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.auto_loan_items.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.auto_status.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.call_history.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.call_history_entry.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.Remarks.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.SalesServiceLoan.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_auto_Checklist.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_Auto_Sales_Loan_Status.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_GP_Computation.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_Job_Quotation.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_Release_Deliver_Unit.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_Work_Shopload.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.RPT_RES_entry.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_ServiceHistory.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.task_item.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.to_do.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_unpaid_invoices.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.EmailBlastSchedule.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.tbCategory.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.TextBlastTemplate.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_auto_customer.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_cond_approval.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_decision.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_requirements.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_ro_status.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_technician.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_workperform.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_add_folio.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.auto_loanapplication.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.crm_task.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_Calendar.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_generic.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_Sales_Auto.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_AutoLoanStatus.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_sub_items.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_ROStatus.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_assembleditem.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_company.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_RepairOrder.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_ServicesDispatch.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_salesagent.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_color.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_type.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_membership.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_vehiclec_info.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.crm_TextBlast_Scheduling.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.Main.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_ItemSearch.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_costcenters.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.MD.PrintBarcode.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.rpt_PrintBarcode.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.a_CollectionEntry.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.a_journalentry.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.a_postingtoledger.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.a_statementofaccount.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_add_soa.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_journalentry.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_soaline_update.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_so_list.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.AboutBox1.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.Login.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.Properties.Resources.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_DirectPurchase.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_PO.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_purchaseRequest.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_Purch_Orders.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_ReceivingPurchase.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_stkcrd_frm.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_StockAdjustment.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_StockIssuance.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_StockTransfer.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_add_item_from_PO.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_add_item_from_PR.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_enter_item.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_enter_item_simple.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_enter_ret_pur_item.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_accountgroup.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_accountingperiods.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_accounttitles.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_collector.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_journal.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_mainaccounts.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_modeofpayment.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_subaccounts.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_subcostcenters.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_vat.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_brand.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_item.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_itemgroup.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_itemunit.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_stocklocation.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_suppliers.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_clerk.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_customers.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_discount.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_outlet.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.Report.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.rpt_customerledger.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.rpt_Global.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.rpt_supplierledger.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.rpt_z_jrnl.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_Sales.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_SalesReturn.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_enter_ret_sale_item.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_enter_sales_item.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_payment.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.ViewController.Sys.PostLedgerUndo.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_accounting_system_settings.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_clerkpassword.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_Notification.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_user_rights.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_user_settings.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_add_recip.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_add_disburse_item.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_Calendar2.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_enter_items_text_item.resources
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.csproj.GenerateResource.Cache
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.exe.manifest
+C:\Users\Reancy\Desktop\RIGHTAPPS\PROJECTS\New folder\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.application
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\Accounting Application System.exe.config
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\Accounting Application System.exe.manifest
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\Accounting Application System.application
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\Accounting Application System.exe
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\Accounting Application System.pdb
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\CrystalDecisions.CrystalReports.Design.dll
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\CrystalDecisions.Data.AdoDotNetInterop.dll
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\CrystalDecisions.ReportSource.dll
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\CrystalDecisions.Shared.dll
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\CrystalDecisions.VSDesigner.dll
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\CrystalDecisions.Web.dll
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\CrystalDecisions.Windows.Forms.dll
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\EntityFramework.dll
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\FlashControlV71.dll
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\Hotel System.exe
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\Mono.Security.dll
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\SAPBusinessObjects.WPF.Viewer.dll
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\SAPBusinessObjects.WPF.ViewerShared.dll
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\Hotel System.pdb
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\EntityFramework.xml
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.csprojResolveAssemblyReference.cache
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.csproj.ResolveComReference.cache
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.activation_form.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.Form1.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.incomeClosing.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_PO_Password.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.market_segment.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_itemclassification.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.periodClosing.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.Ratetypes.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.a_disbursement.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.a_releasecheck.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.a_statementofaccount2.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.journalize.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_budget.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_charge.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_chargeClassification.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.auto_loaner.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.auto_loan_items.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.auto_status.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.call_history.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.call_history_entry.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.Remarks.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.SalesServiceLoan.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_auto_Checklist.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_Auto_Sales_Loan_Status.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_GP_Computation.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_Job_Quotation.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_Release_Deliver_Unit.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_Work_Shopload.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.RPT_RES_entry.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_ServiceHistory.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.task_item.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.to_do.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_unpaid_invoices.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.EmailBlastSchedule.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.tbCategory.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.TextBlastTemplate.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_auto_customer.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_cond_approval.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_decision.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_requirements.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_ro_status.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_technician.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_workperform.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_add_folio.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.auto_loanapplication.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.crm_task.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_Calendar.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_generic.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_Sales_Auto.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_AutoLoanStatus.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_sub_items.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_ROStatus.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_assembleditem.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_company.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_RepairOrder.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_ServicesDispatch.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_salesagent.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_color.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_type.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_membership.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_vehiclec_info.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.crm_TextBlast_Scheduling.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.Main.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_ItemSearch.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_costcenters.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.MD.PrintBarcode.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.rpt_PrintBarcode.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.a_CollectionEntry.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.a_journalentry.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.a_postingtoledger.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.a_statementofaccount.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_add_soa.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_journalentry.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_soaline_update.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_so_list.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.AboutBox1.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.Login.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.Properties.Resources.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_DirectPurchase.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_PO.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_purchaseRequest.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_Purch_Orders.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_ReceivingPurchase.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_stkcrd_frm.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_StockAdjustment.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_StockIssuance.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_StockTransfer.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_add_item_from_PO.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_add_item_from_PR.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_enter_item.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_enter_item_simple.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_enter_ret_pur_item.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_accountgroup.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_accountingperiods.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_accounttitles.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_collector.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_journal.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_mainaccounts.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_modeofpayment.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_subaccounts.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_subcostcenters.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_vat.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_brand.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_item.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_itemgroup.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_itemunit.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_stocklocation.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_suppliers.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_clerk.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_customers.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_discount.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_outlet.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.Report.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.rpt_customerledger.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.rpt_Global.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.rpt_supplierledger.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.rpt_z_jrnl.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_Sales.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_SalesReturn.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_enter_ret_sale_item.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_enter_sales_item.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_payment.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.ViewController.Sys.PostLedgerUndo.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_accounting_system_settings.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_clerkpassword.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_Notification.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_user_rights.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_user_settings.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_add_recip.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_add_disburse_item.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_Calendar2.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_enter_items_text_item.resources
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.csproj.GenerateResource.Cache
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.exe.manifest
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.application
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.exe
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.pdb

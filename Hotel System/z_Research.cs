@@ -214,7 +214,8 @@ namespace Hotel_System
             //frm.lbl_departure_date.Text = "";
             frm.lbl_noofnight.Text = "0";
             //frm.lbl_rm.Text = "";
-            frm.lbl_rmtyp.Text = "";
+            //frm.lbl_rmtyp.Text = "";
+            frm.comboBox3.Text = "";
             frm.lbl_noofnight_billing.Text = "0";
             frm.lbl_noofguest.Text = "0";
             //frm.lbl_depdt3.Text = "";

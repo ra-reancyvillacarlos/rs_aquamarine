@@ -383,7 +383,9 @@ namespace Accounting_Application_System
             lbl_modname.Text = "RESERVATION";
             closechild();
             Hotel_System.newReservation r = new Hotel_System.newReservation();
+            r.cur_load = true;
             r.MdiParent = this;
+            r.disp_cur();
             r.Show();
             btn_color_reset();
 
@@ -394,9 +396,15 @@ namespace Accounting_Application_System
         {
             closechild();
             lbl_modname.Text = "CONTRACT ENTRY / CHECK IN";
-            Hotel_System.newArrivalWalkin fm = new Hotel_System.newArrivalWalkin();
-            fm.MdiParent = this;
-            fm.Show();
+            //Hotel_System.newArrivalWalkin fm = new Hotel_System.newArrivalWalkin();
+            //fm.MdiParent = this;
+            //fm.Show();
+            Hotel_System.newReservation r = new Hotel_System.newReservation();
+            r.cur_load = false;
+            r.MdiParent = this;
+            r.disp_cur();
+            r.Show();
+
             btn_color_reset();
 
             btn_4.BackColor = panel2.BackColor;
@@ -417,7 +425,7 @@ namespace Accounting_Application_System
         private void btn_6_Click(object sender, EventArgs e)
         {
             closechild();
-            lbl_modname.Text = "TENNANT BILLING";
+            lbl_modname.Text = "Activity and Payment Records";
             Hotel_System.newGuestBilling gbill = new Hotel_System.newGuestBilling();
 
             gbill.MdiParent = this;

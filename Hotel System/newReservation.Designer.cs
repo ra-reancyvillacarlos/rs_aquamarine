@@ -28,11 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tbcntrl_option = new System.Windows.Forms.TabControl();
             this.tpg_opt_1 = new System.Windows.Forms.TabPage();
@@ -42,10 +48,13 @@
             this.txt_search = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.btn_upditem = new System.Windows.Forms.Button();
             this.btn_print = new System.Windows.Forms.Button();
             this.btn_additem = new System.Windows.Forms.Button();
             this.btn_delitem = new System.Windows.Forms.Button();
-            this.btn_upditem = new System.Windows.Forms.Button();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.tpg_opt_2 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -59,6 +68,19 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dgv_reslist = new System.Windows.Forms.DataGridView();
+            this.res_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.p_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hotel_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.arr_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.package = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adult = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activities = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ttlpax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reserv_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reserv_by = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.chk_active = new System.Windows.Forms.CheckBox();
@@ -72,7 +94,35 @@
             this.tpg_reg = new System.Windows.Forms.TabPage();
             this.panel89 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.panel90 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel91 = new System.Windows.Forms.Panel();
+            this.lbl_noofnight_billing = new System.Windows.Forms.Label();
+            this.txt_grossrt = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label238 = new System.Windows.Forms.Label();
+            this.txt_govtrt = new System.Windows.Forms.TextBox();
+            this.txt_total_amt = new System.Windows.Forms.TextBox();
+            this.txt_netrt = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label242 = new System.Windows.Forms.Label();
+            this.lbl_noofnight_title = new System.Windows.Forms.Label();
+            this.label243 = new System.Windows.Forms.Label();
+            this.label241 = new System.Windows.Forms.Label();
+            this.txt_rmrate = new System.Windows.Forms.TextBox();
             this.grpbx_billing = new System.Windows.Forms.GroupBox();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lbl_rm = new System.Windows.Forms.TextBox();
+            this.label257 = new System.Windows.Forms.Label();
             this.cbo_agency = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label234 = new System.Windows.Forms.Label();
@@ -105,62 +155,47 @@
             this.contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Country = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.g_typ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.lbl_noofguest = new System.Windows.Forms.TextBox();
             this.btn_selectcust = new System.Windows.Forms.Button();
             this.btn_removefrmguestlist = new System.Windows.Forms.Button();
             this.label254 = new System.Windows.Forms.Label();
-            this.lbl_noofguest = new System.Windows.Forms.Label();
             this.grp_roominfo = new System.Windows.Forms.GroupBox();
-            this.lbl_resno = new System.Windows.Forms.TextBox();
-            this.label257 = new System.Windows.Forms.Label();
-            this.lbl_noofnight = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lbl_depdt = new System.Windows.Forms.DateTimePicker();
             this.label255 = new System.Windows.Forms.Label();
-            this.cbo_occtyp = new System.Windows.Forms.ComboBox();
-            this.label256 = new System.Windows.Forms.Label();
+            this.lbl_arrdt = new System.Windows.Forms.DateTimePicker();
+            this.lbl_resno = new System.Windows.Forms.TextBox();
+            this.lbl_noofnight = new System.Windows.Forms.Label();
             this.lbl_noofnight_title_top = new System.Windows.Forms.Label();
             this.dtp_deptime = new System.Windows.Forms.DateTimePicker();
             this.dtp_arrtime = new System.Windows.Forms.DateTimePicker();
             this.label259 = new System.Windows.Forms.Label();
             this.label260 = new System.Windows.Forms.Label();
+            this.cbo_occtyp = new System.Windows.Forms.ComboBox();
             this.label261 = new System.Windows.Forms.Label();
             this.dtp_resdt = new System.Windows.Forms.DateTimePicker();
             this.label262 = new System.Windows.Forms.Label();
-            this.lbl_rm = new System.Windows.Forms.TextBox();
-            this.lbl_arrdt = new System.Windows.Forms.DateTimePicker();
-            this.lbl_depdt = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.lbl_rmtyp = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel90 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txt_govtrt = new System.Windows.Forms.TextBox();
-            this.panel91 = new System.Windows.Forms.Panel();
-            this.txt_netrt = new System.Windows.Forms.TextBox();
-            this.lbl_noofnight_billing = new System.Windows.Forms.Label();
-            this.lbl_noofnight_title = new System.Windows.Forms.Label();
-            this.label241 = new System.Windows.Forms.Label();
-            this.txt_grossrt = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_rmrate = new System.Windows.Forms.TextBox();
-            this.label243 = new System.Windows.Forms.Label();
-            this.label242 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label238 = new System.Windows.Forms.Label();
-            this.txt_total_amt = new System.Windows.Forms.TextBox();
             this.dgvl_chk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dgvl_scode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvl_sdesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ifree = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tbcntrl_option.SuspendLayout();
             this.tpg_opt_1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.tpg_opt_2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -174,14 +209,14 @@
             this.tpg_reg.SuspendLayout();
             this.panel89.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel90.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.grpbx_billing.SuspendLayout();
             this.grp_guest.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_guestlist)).BeginInit();
             this.panel9.SuspendLayout();
             this.grp_roominfo.SuspendLayout();
-            this.panel90.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -234,7 +269,7 @@
             this.groupBox2.Controls.Add(this.btn_search);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.ForeColor = System.Drawing.SystemColors.Info;
-            this.groupBox2.Location = new System.Drawing.Point(0, 273);
+            this.groupBox2.Location = new System.Drawing.Point(0, 333);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(184, 165);
             this.groupBox2.TabIndex = 47;
@@ -273,24 +308,47 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.btn_print);
-            this.groupBox7.Controls.Add(this.btn_additem);
-            this.groupBox7.Controls.Add(this.btn_delitem);
-            this.groupBox7.Controls.Add(this.btn_upditem);
+            this.groupBox7.Controls.Add(this.panel10);
+            this.groupBox7.Controls.Add(this.panel8);
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox7.ForeColor = System.Drawing.SystemColors.Info;
             this.groupBox7.Location = new System.Drawing.Point(0, 0);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(184, 273);
+            this.groupBox7.Size = new System.Drawing.Size(184, 333);
             this.groupBox7.TabIndex = 46;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Main Option";
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.btn_upditem);
+            this.panel10.Controls.Add(this.btn_print);
+            this.panel10.Controls.Add(this.btn_additem);
+            this.panel10.Controls.Add(this.btn_delitem);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel10.Location = new System.Drawing.Point(3, 17);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(178, 313);
+            this.panel10.TabIndex = 22;
+            // 
+            // btn_upditem
+            // 
+            this.btn_upditem.BackColor = System.Drawing.Color.Peru;
+            this.btn_upditem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_upditem.Location = new System.Drawing.Point(9, 67);
+            this.btn_upditem.Name = "btn_upditem";
+            this.btn_upditem.Size = new System.Drawing.Size(160, 55);
+            this.btn_upditem.TabIndex = 1;
+            this.btn_upditem.Text = "Update";
+            this.btn_upditem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_upditem.UseVisualStyleBackColor = false;
+            this.btn_upditem.Click += new System.EventHandler(this.btn_upditem_Click);
             // 
             // btn_print
             // 
             this.btn_print.BackColor = System.Drawing.Color.Peru;
             this.btn_print.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_print.Location = new System.Drawing.Point(12, 204);
+            this.btn_print.Location = new System.Drawing.Point(9, 189);
             this.btn_print.Name = "btn_print";
             this.btn_print.Size = new System.Drawing.Size(160, 55);
             this.btn_print.TabIndex = 9;
@@ -302,7 +360,7 @@
             // 
             this.btn_additem.BackColor = System.Drawing.Color.Peru;
             this.btn_additem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_additem.Location = new System.Drawing.Point(12, 21);
+            this.btn_additem.Location = new System.Drawing.Point(9, 6);
             this.btn_additem.Name = "btn_additem";
             this.btn_additem.Size = new System.Drawing.Size(160, 55);
             this.btn_additem.TabIndex = 8;
@@ -316,7 +374,7 @@
             this.btn_delitem.BackColor = System.Drawing.Color.Maroon;
             this.btn_delitem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_delitem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_delitem.Location = new System.Drawing.Point(12, 143);
+            this.btn_delitem.Location = new System.Drawing.Point(9, 128);
             this.btn_delitem.Name = "btn_delitem";
             this.btn_delitem.Size = new System.Drawing.Size(160, 55);
             this.btn_delitem.TabIndex = 7;
@@ -325,18 +383,30 @@
             this.btn_delitem.UseVisualStyleBackColor = false;
             this.btn_delitem.Click += new System.EventHandler(this.btn_delitem_Click_1);
             // 
-            // btn_upditem
+            // panel8
             // 
-            this.btn_upditem.BackColor = System.Drawing.Color.Peru;
-            this.btn_upditem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_upditem.Location = new System.Drawing.Point(12, 82);
-            this.btn_upditem.Name = "btn_upditem";
-            this.btn_upditem.Size = new System.Drawing.Size(160, 55);
-            this.btn_upditem.TabIndex = 1;
-            this.btn_upditem.Text = "Update";
-            this.btn_upditem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_upditem.UseVisualStyleBackColor = false;
-            this.btn_upditem.Click += new System.EventHandler(this.btn_upditem_Click);
+            this.panel8.Controls.Add(this.button2);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel8.Location = new System.Drawing.Point(3, 17);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(178, 0);
+            this.panel8.TabIndex = 21;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.button2.Enabled = false;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.button2.Image = global::Hotel_System.Properties.Resources._1343892486_door_in;
+            this.button2.Location = new System.Drawing.Point(9, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(160, 55);
+            this.button2.TabIndex = 20;
+            this.button2.Text = "Guest Arrival";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // tpg_opt_2
             // 
@@ -411,7 +481,7 @@
             // 
             this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.button1.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.button1.Image = global::Hotel_System.Properties.Resources._1343908142_database_save;
             this.button1.Location = new System.Drawing.Point(11, 24);
             this.button1.Name = "button1";
@@ -494,27 +564,164 @@
             // 
             // dgv_reslist
             // 
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.White;
-            this.dgv_reslist.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            this.dgv_reslist.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgv_reslist.BackgroundColor = System.Drawing.SystemColors.HighlightText;
             this.dgv_reslist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgv_reslist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.res_code,
+            this.name,
+            this.p_name,
+            this.hotel_name,
+            this.arr_time,
+            this.package,
+            this.adult,
+            this.kid,
+            this.inf,
+            this.activities,
+            this.ttlpax,
+            this.reserv_date,
+            this.reserv_by});
             this.dgv_reslist.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_reslist.Location = new System.Drawing.Point(3, 18);
             this.dgv_reslist.MultiSelect = false;
             this.dgv_reslist.Name = "dgv_reslist";
             this.dgv_reslist.ReadOnly = true;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_reslist.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_reslist.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgv_reslist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_reslist.Size = new System.Drawing.Size(851, 435);
             this.dgv_reslist.TabIndex = 0;
             this.dgv_reslist.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_reslist_CellDoubleClick);
+            // 
+            // res_code
+            // 
+            this.res_code.DataPropertyName = "res_code";
+            this.res_code.HeaderText = "Reservation Code";
+            this.res_code.Name = "res_code";
+            this.res_code.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.name.DataPropertyName = "full_name";
+            this.name.HeaderText = "Name";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.Width = 70;
+            // 
+            // p_name
+            // 
+            this.p_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.p_name.DataPropertyName = "p_name";
+            this.p_name.HeaderText = "Payment";
+            this.p_name.Name = "p_name";
+            this.p_name.ReadOnly = true;
+            this.p_name.Width = 86;
+            // 
+            // hotel_name
+            // 
+            this.hotel_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.hotel_name.DataPropertyName = "name";
+            this.hotel_name.HeaderText = "Hotel";
+            this.hotel_name.Name = "hotel_name";
+            this.hotel_name.ReadOnly = true;
+            this.hotel_name.Width = 65;
+            // 
+            // arr_time
+            // 
+            this.arr_time.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.arr_time.DataPropertyName = "arr_time";
+            this.arr_time.HeaderText = "Expected Time Arrival";
+            this.arr_time.Name = "arr_time";
+            this.arr_time.ReadOnly = true;
+            this.arr_time.Width = 165;
+            // 
+            // package
+            // 
+            this.package.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.package.DataPropertyName = "package";
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.Lime;
+            this.package.DefaultCellStyle = dataGridViewCellStyle13;
+            this.package.HeaderText = "Package";
+            this.package.Name = "package";
+            this.package.ReadOnly = true;
+            this.package.Width = 88;
+            // 
+            // adult
+            // 
+            this.adult.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.adult.DataPropertyName = "adult";
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.Lime;
+            this.adult.DefaultCellStyle = dataGridViewCellStyle14;
+            this.adult.HeaderText = "Adult";
+            this.adult.Name = "adult";
+            this.adult.ReadOnly = true;
+            this.adult.Width = 63;
+            // 
+            // kid
+            // 
+            this.kid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.kid.DataPropertyName = "kid";
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.Lime;
+            this.kid.DefaultCellStyle = dataGridViewCellStyle15;
+            this.kid.HeaderText = "Kid";
+            this.kid.Name = "kid";
+            this.kid.ReadOnly = true;
+            this.kid.Width = 52;
+            // 
+            // inf
+            // 
+            this.inf.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.inf.DataPropertyName = "inf";
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.Lime;
+            this.inf.DefaultCellStyle = dataGridViewCellStyle16;
+            this.inf.HeaderText = "Infant";
+            this.inf.Name = "inf";
+            this.inf.ReadOnly = true;
+            this.inf.Width = 64;
+            // 
+            // activities
+            // 
+            this.activities.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.activities.DataPropertyName = "activities";
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.Yellow;
+            this.activities.DefaultCellStyle = dataGridViewCellStyle17;
+            this.activities.HeaderText = "Activities";
+            this.activities.Name = "activities";
+            this.activities.ReadOnly = true;
+            this.activities.Width = 86;
+            // 
+            // ttlpax
+            // 
+            this.ttlpax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ttlpax.DataPropertyName = "ttlpax";
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.Yellow;
+            this.ttlpax.DefaultCellStyle = dataGridViewCellStyle18;
+            this.ttlpax.HeaderText = "Total Pax";
+            this.ttlpax.Name = "ttlpax";
+            this.ttlpax.ReadOnly = true;
+            this.ttlpax.Width = 90;
+            // 
+            // reserv_date
+            // 
+            this.reserv_date.DataPropertyName = "res_date";
+            this.reserv_date.HeaderText = "Date of Boooking";
+            this.reserv_date.Name = "reserv_date";
+            this.reserv_date.ReadOnly = true;
+            // 
+            // reserv_by
+            // 
+            this.reserv_by.DataPropertyName = "reserv_by";
+            this.reserv_by.HeaderText = "Booked by";
+            this.reserv_by.Name = "reserv_by";
+            this.reserv_by.ReadOnly = true;
             // 
             // panel5
             // 
@@ -543,18 +750,20 @@
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Search Reservation";
+            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // chk_active
             // 
             this.chk_active.AutoSize = true;
             this.chk_active.Checked = true;
             this.chk_active.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk_active.Location = new System.Drawing.Point(347, 45);
+            this.chk_active.Location = new System.Drawing.Point(420, 48);
             this.chk_active.Name = "chk_active";
             this.chk_active.Size = new System.Drawing.Size(125, 19);
             this.chk_active.TabIndex = 49;
             this.chk_active.Text = "Active Reservation";
             this.chk_active.UseVisualStyleBackColor = true;
+            this.chk_active.CheckedChanged += new System.EventHandler(this.chk_active_CheckedChanged);
             // 
             // label231
             // 
@@ -580,6 +789,7 @@
             this.label232.Size = new System.Drawing.Size(59, 15);
             this.label232.TabIndex = 41;
             this.label232.Text = "Company";
+            this.label232.Visible = false;
             // 
             // cbo_srchcomp
             // 
@@ -590,6 +800,7 @@
             this.cbo_srchcomp.Name = "cbo_srchcomp";
             this.cbo_srchcomp.Size = new System.Drawing.Size(198, 23);
             this.cbo_srchcomp.TabIndex = 40;
+            this.cbo_srchcomp.Visible = false;
             // 
             // label233
             // 
@@ -613,9 +824,9 @@
             this.btn_srchreservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_srchreservation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_srchreservation.Image = global::Hotel_System.Properties.Resources.search_32x32;
-            this.btn_srchreservation.Location = new System.Drawing.Point(631, 13);
+            this.btn_srchreservation.Location = new System.Drawing.Point(603, 13);
             this.btn_srchreservation.Name = "btn_srchreservation";
-            this.btn_srchreservation.Size = new System.Drawing.Size(120, 42);
+            this.btn_srchreservation.Size = new System.Drawing.Size(111, 54);
             this.btn_srchreservation.TabIndex = 1;
             this.btn_srchreservation.Text = "Search";
             this.btn_srchreservation.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -655,12 +866,259 @@
             this.panel7.Size = new System.Drawing.Size(857, 328);
             this.panel7.TabIndex = 57;
             // 
+            // panel90
+            // 
+            this.panel90.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel90.Controls.Add(this.dataGridView1);
+            this.panel90.Controls.Add(this.panel91);
+            this.panel90.Controls.Add(this.lbl_noofnight_billing);
+            this.panel90.Controls.Add(this.txt_grossrt);
+            this.panel90.Controls.Add(this.label1);
+            this.panel90.Controls.Add(this.panel2);
+            this.panel90.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel90.Location = new System.Drawing.Point(551, 0);
+            this.panel90.Name = "panel90";
+            this.panel90.Size = new System.Drawing.Size(306, 328);
+            this.panel90.TabIndex = 57;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvl_chk,
+            this.dgvl_code,
+            this.dgvl_sdesc,
+            this.dgvl_price,
+            this.ifree});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 84);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(302, 240);
+            this.dataGridView1.TabIndex = 90;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
+            this.dataGridView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseMove);
+            this.dataGridView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseUp);
+            // 
+            // panel91
+            // 
+            this.panel91.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel91.Location = new System.Drawing.Point(129, 151);
+            this.panel91.Name = "panel91";
+            this.panel91.Size = new System.Drawing.Size(136, 1);
+            this.panel91.TabIndex = 76;
+            this.panel91.Visible = false;
+            // 
+            // lbl_noofnight_billing
+            // 
+            this.lbl_noofnight_billing.AutoSize = true;
+            this.lbl_noofnight_billing.Location = new System.Drawing.Point(243, 131);
+            this.lbl_noofnight_billing.Name = "lbl_noofnight_billing";
+            this.lbl_noofnight_billing.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lbl_noofnight_billing.Size = new System.Drawing.Size(15, 16);
+            this.lbl_noofnight_billing.TabIndex = 74;
+            this.lbl_noofnight_billing.Text = "0";
+            this.lbl_noofnight_billing.Visible = false;
+            // 
+            // txt_grossrt
+            // 
+            this.txt_grossrt.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_grossrt.Location = new System.Drawing.Point(122, 234);
+            this.txt_grossrt.Name = "txt_grossrt";
+            this.txt_grossrt.ReadOnly = true;
+            this.txt_grossrt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txt_grossrt.Size = new System.Drawing.Size(139, 22);
+            this.txt_grossrt.TabIndex = 82;
+            this.txt_grossrt.Text = "0.00";
+            this.txt_grossrt.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(23, 234);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 15);
+            this.label1.TabIndex = 81;
+            this.label1.Text = "Gross Unit Rate";
+            this.label1.Visible = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.checkBox1);
+            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.label238);
+            this.panel2.Controls.Add(this.txt_govtrt);
+            this.panel2.Controls.Add(this.txt_total_amt);
+            this.panel2.Controls.Add(this.txt_netrt);
+            this.panel2.Controls.Add(this.label15);
+            this.panel2.Controls.Add(this.label242);
+            this.panel2.Controls.Add(this.lbl_noofnight_title);
+            this.panel2.Controls.Add(this.label243);
+            this.panel2.Controls.Add(this.label241);
+            this.panel2.Controls.Add(this.txt_rmrate);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(302, 84);
+            this.panel2.TabIndex = 91;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(204, 59);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(41, 15);
+            this.label11.TabIndex = 93;
+            this.label11.Text = "Lunch";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(18, 58);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(75, 20);
+            this.checkBox1.TabIndex = 84;
+            this.checkBox1.Text = "Camera";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(251, 56);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(42, 22);
+            this.textBox1.TabIndex = 92;
+            this.textBox1.Text = "0";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label238
+            // 
+            this.label238.AutoSize = true;
+            this.label238.BackColor = System.Drawing.Color.Transparent;
+            this.label238.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label238.ForeColor = System.Drawing.Color.Blue;
+            this.label238.Location = new System.Drawing.Point(15, 19);
+            this.label238.Name = "label238";
+            this.label238.Size = new System.Drawing.Size(94, 15);
+            this.label238.TabIndex = 77;
+            this.label238.Text = "Total Amt (PHP)";
+            // 
+            // txt_govtrt
+            // 
+            this.txt_govtrt.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_govtrt.Location = new System.Drawing.Point(123, 170);
+            this.txt_govtrt.Name = "txt_govtrt";
+            this.txt_govtrt.ReadOnly = true;
+            this.txt_govtrt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txt_govtrt.Size = new System.Drawing.Size(139, 22);
+            this.txt_govtrt.TabIndex = 79;
+            this.txt_govtrt.Text = "0.00";
+            this.txt_govtrt.Visible = false;
+            // 
+            // txt_total_amt
+            // 
+            this.txt_total_amt.BackColor = System.Drawing.Color.MediumBlue;
+            this.txt_total_amt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_total_amt.ForeColor = System.Drawing.Color.AliceBlue;
+            this.txt_total_amt.Location = new System.Drawing.Point(132, 14);
+            this.txt_total_amt.Name = "txt_total_amt";
+            this.txt_total_amt.ReadOnly = true;
+            this.txt_total_amt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txt_total_amt.Size = new System.Drawing.Size(139, 24);
+            this.txt_total_amt.TabIndex = 81;
+            this.txt_total_amt.Text = "0.00";
+            // 
+            // txt_netrt
+            // 
+            this.txt_netrt.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_netrt.Location = new System.Drawing.Point(123, 144);
+            this.txt_netrt.Name = "txt_netrt";
+            this.txt_netrt.ReadOnly = true;
+            this.txt_netrt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txt_netrt.Size = new System.Drawing.Size(138, 22);
+            this.txt_netrt.TabIndex = 80;
+            this.txt_netrt.Text = "0.00";
+            this.txt_netrt.Visible = false;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(124, 181);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(141, 16);
+            this.label15.TabIndex = 83;
+            this.label15.Text = "___________________";
+            this.label15.Visible = false;
+            // 
+            // label242
+            // 
+            this.label242.AutoSize = true;
+            this.label242.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label242.Location = new System.Drawing.Point(2, 145);
+            this.label242.Name = "label242";
+            this.label242.Size = new System.Drawing.Size(55, 15);
+            this.label242.TabIndex = 67;
+            this.label242.Text = "Net Rate";
+            this.label242.Visible = false;
+            // 
+            // lbl_noofnight_title
+            // 
+            this.lbl_noofnight_title.AutoSize = true;
+            this.lbl_noofnight_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_noofnight_title.Location = new System.Drawing.Point(8, 226);
+            this.lbl_noofnight_title.Name = "lbl_noofnight_title";
+            this.lbl_noofnight_title.Size = new System.Drawing.Size(139, 15);
+            this.lbl_noofnight_title.TabIndex = 73;
+            this.lbl_noofnight_title.Text = "No. of Nights                  X";
+            this.lbl_noofnight_title.Visible = false;
+            // 
+            // label243
+            // 
+            this.label243.AutoSize = true;
+            this.label243.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label243.Location = new System.Drawing.Point(2, 202);
+            this.label243.Name = "label243";
+            this.label243.Size = new System.Drawing.Size(58, 15);
+            this.label243.TabIndex = 65;
+            this.label243.Text = "Unit Rate";
+            this.label243.Visible = false;
+            // 
+            // label241
+            // 
+            this.label241.AutoSize = true;
+            this.label241.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label241.Location = new System.Drawing.Point(6, 177);
+            this.label241.Name = "label241";
+            this.label241.Size = new System.Drawing.Size(28, 15);
+            this.label241.TabIndex = 68;
+            this.label241.Text = "VAT";
+            this.label241.Visible = false;
+            // 
+            // txt_rmrate
+            // 
+            this.txt_rmrate.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txt_rmrate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_rmrate.Location = new System.Drawing.Point(123, 199);
+            this.txt_rmrate.Name = "txt_rmrate";
+            this.txt_rmrate.ReadOnly = true;
+            this.txt_rmrate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txt_rmrate.Size = new System.Drawing.Size(141, 22);
+            this.txt_rmrate.TabIndex = 66;
+            this.txt_rmrate.Text = "0.00";
+            this.txt_rmrate.Visible = false;
+            // 
             // grpbx_billing
             // 
+            this.grpbx_billing.Controls.Add(this.comboBox5);
+            this.grpbx_billing.Controls.Add(this.label12);
+            this.grpbx_billing.Controls.Add(this.comboBox4);
+            this.grpbx_billing.Controls.Add(this.label10);
             this.grpbx_billing.Controls.Add(this.comboBox3);
             this.grpbx_billing.Controls.Add(this.label5);
             this.grpbx_billing.Controls.Add(this.lbl_rm);
-            this.grpbx_billing.Controls.Add(this.lbl_rmtyp);
             this.grpbx_billing.Controls.Add(this.label257);
             this.grpbx_billing.Controls.Add(this.cbo_agency);
             this.grpbx_billing.Controls.Add(this.label2);
@@ -668,7 +1126,6 @@
             this.grpbx_billing.Controls.Add(this.label9);
             this.grpbx_billing.Controls.Add(this.cbo_rmrttyp);
             this.grpbx_billing.Controls.Add(this.cbo_mktsegment);
-            this.grpbx_billing.Controls.Add(this.label256);
             this.grpbx_billing.Controls.Add(this.cbo_disc);
             this.grpbx_billing.Controls.Add(this.label237);
             this.grpbx_billing.Controls.Add(this.lbl_blockedby);
@@ -688,26 +1145,106 @@
             this.grpbx_billing.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpbx_billing.Location = new System.Drawing.Point(0, 0);
             this.grpbx_billing.Name = "grpbx_billing";
-            this.grpbx_billing.Size = new System.Drawing.Size(533, 328);
+            this.grpbx_billing.Size = new System.Drawing.Size(551, 328);
             this.grpbx_billing.TabIndex = 22;
             this.grpbx_billing.TabStop = false;
             this.grpbx_billing.Text = "Billing Information";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox5.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(356, 52);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(163, 23);
+            this.comboBox5.TabIndex = 92;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(305, 55);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(39, 15);
+            this.label12.TabIndex = 93;
+            this.label12.Text = "Seller";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(130, 126);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(389, 23);
+            this.comboBox4.TabIndex = 90;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(20, 130);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(84, 15);
+            this.label10.TabIndex = 91;
+            this.label10.Text = "Payment Type";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(130, 20);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(163, 23);
+            this.comboBox3.TabIndex = 88;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(23, 25);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(36, 15);
+            this.label5.TabIndex = 89;
+            this.label5.Text = "Hotel";
+            // 
+            // lbl_rm
+            // 
+            this.lbl_rm.Location = new System.Drawing.Point(356, 20);
+            this.lbl_rm.Name = "lbl_rm";
+            this.lbl_rm.Size = new System.Drawing.Size(163, 21);
+            this.lbl_rm.TabIndex = 50;
+            // 
+            // label257
+            // 
+            this.label257.AutoSize = true;
+            this.label257.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.label257.Location = new System.Drawing.Point(305, 23);
+            this.label257.Name = "label257";
+            this.label257.Size = new System.Drawing.Size(41, 15);
+            this.label257.TabIndex = 46;
+            this.label257.Text = "Room";
             // 
             // cbo_agency
             // 
             this.cbo_agency.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbo_agency.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbo_agency.FormattingEnabled = true;
-            this.cbo_agency.Location = new System.Drawing.Point(130, 46);
+            this.cbo_agency.Location = new System.Drawing.Point(130, 52);
             this.cbo_agency.Name = "cbo_agency";
             this.cbo_agency.Size = new System.Drawing.Size(163, 23);
             this.cbo_agency.TabIndex = 85;
+            this.cbo_agency.SelectedIndexChanged += new System.EventHandler(this.cbo_agency_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(20, 49);
+            this.label2.Location = new System.Drawing.Point(20, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 15);
             this.label2.TabIndex = 86;
@@ -722,12 +1259,13 @@
             this.label234.Size = new System.Drawing.Size(109, 15);
             this.label234.TabIndex = 24;
             this.label234.Text = "Reservation Clerk :";
+            this.label234.Visible = false;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(23, 130);
+            this.label9.Location = new System.Drawing.Point(20, 156);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 15);
             this.label9.TabIndex = 84;
@@ -751,9 +1289,9 @@
             this.cbo_mktsegment.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbo_mktsegment.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbo_mktsegment.FormattingEnabled = true;
-            this.cbo_mktsegment.Location = new System.Drawing.Point(356, 46);
+            this.cbo_mktsegment.Location = new System.Drawing.Point(130, 97);
             this.cbo_mktsegment.Name = "cbo_mktsegment";
-            this.cbo_mktsegment.Size = new System.Drawing.Size(163, 23);
+            this.cbo_mktsegment.Size = new System.Drawing.Size(389, 23);
             this.cbo_mktsegment.TabIndex = 57;
             // 
             // cbo_disc
@@ -762,7 +1300,7 @@
             this.cbo_disc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_disc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbo_disc.FormattingEnabled = true;
-            this.cbo_disc.Location = new System.Drawing.Point(130, 127);
+            this.cbo_disc.Location = new System.Drawing.Point(130, 155);
             this.cbo_disc.Name = "cbo_disc";
             this.cbo_disc.Size = new System.Drawing.Size(145, 23);
             this.cbo_disc.TabIndex = 49;
@@ -772,7 +1310,7 @@
             // 
             this.label237.AutoSize = true;
             this.label237.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label237.Location = new System.Drawing.Point(305, 49);
+            this.label237.Location = new System.Drawing.Point(20, 100);
             this.label237.Name = "label237";
             this.label237.Size = new System.Drawing.Size(45, 15);
             this.label237.TabIndex = 58;
@@ -791,7 +1329,7 @@
             // 
             // txt_discamt
             // 
-            this.txt_discamt.Location = new System.Drawing.Point(368, 129);
+            this.txt_discamt.Location = new System.Drawing.Point(365, 155);
             this.txt_discamt.Name = "txt_discamt";
             this.txt_discamt.Size = new System.Drawing.Size(154, 21);
             this.txt_discamt.TabIndex = 63;
@@ -801,7 +1339,7 @@
             // 
             this.label235.AutoSize = true;
             this.label235.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label235.Location = new System.Drawing.Point(286, 253);
+            this.label235.Location = new System.Drawing.Point(283, 279);
             this.label235.Name = "label235";
             this.label235.Size = new System.Drawing.Size(48, 15);
             this.label235.TabIndex = 62;
@@ -813,27 +1351,29 @@
             this.cbo_rtcode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_rtcode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbo_rtcode.FormattingEnabled = true;
-            this.cbo_rtcode.Location = new System.Drawing.Point(130, 75);
+            this.cbo_rtcode.Location = new System.Drawing.Point(138, 294);
             this.cbo_rtcode.Name = "cbo_rtcode";
             this.cbo_rtcode.Size = new System.Drawing.Size(389, 23);
             this.cbo_rtcode.TabIndex = 36;
+            this.cbo_rtcode.Visible = false;
             this.cbo_rtcode.SelectedIndexChanged += new System.EventHandler(this.cbo_rtcode_SelectedIndexChanged);
             // 
             // label247
             // 
             this.label247.AutoSize = true;
             this.label247.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label247.Location = new System.Drawing.Point(20, 79);
+            this.label247.Location = new System.Drawing.Point(28, 298);
             this.label247.Name = "label247";
             this.label247.Size = new System.Drawing.Size(65, 15);
             this.label247.TabIndex = 37;
             this.label247.Text = "Rate Code";
+            this.label247.Visible = false;
             // 
             // label236
             // 
             this.label236.AutoSize = true;
             this.label236.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label236.Location = new System.Drawing.Point(20, 253);
+            this.label236.Location = new System.Drawing.Point(17, 279);
             this.label236.Name = "label236";
             this.label236.Size = new System.Drawing.Size(75, 15);
             this.label236.TabIndex = 61;
@@ -841,14 +1381,14 @@
             // 
             // txt_contact
             // 
-            this.txt_contact.Location = new System.Drawing.Point(345, 253);
+            this.txt_contact.Location = new System.Drawing.Point(342, 279);
             this.txt_contact.Name = "txt_contact";
             this.txt_contact.Size = new System.Drawing.Size(177, 21);
             this.txt_contact.TabIndex = 60;
             // 
             // txt_resby
             // 
-            this.txt_resby.Location = new System.Drawing.Point(133, 253);
+            this.txt_resby.Location = new System.Drawing.Point(130, 279);
             this.txt_resby.Name = "txt_resby";
             this.txt_resby.Size = new System.Drawing.Size(140, 21);
             this.txt_resby.TabIndex = 59;
@@ -864,12 +1404,13 @@
             this.chk_blockres.Text = "Block Reservation";
             this.chk_blockres.UseVisualStyleBackColor = true;
             this.chk_blockres.Visible = false;
+            this.chk_blockres.CheckedChanged += new System.EventHandler(this.chk_blockres_CheckedChanged);
             // 
             // label244
             // 
             this.label244.AutoSize = true;
             this.label244.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label244.Location = new System.Drawing.Point(23, 156);
+            this.label244.Location = new System.Drawing.Point(20, 182);
             this.label244.Name = "label244";
             this.label244.Size = new System.Drawing.Size(57, 15);
             this.label244.TabIndex = 52;
@@ -877,11 +1418,12 @@
             // 
             // rtb_remarks
             // 
-            this.rtb_remarks.Location = new System.Drawing.Point(133, 156);
+            this.rtb_remarks.Location = new System.Drawing.Point(130, 182);
             this.rtb_remarks.Name = "rtb_remarks";
             this.rtb_remarks.Size = new System.Drawing.Size(389, 91);
             this.rtb_remarks.TabIndex = 51;
             this.rtb_remarks.Text = "";
+            this.rtb_remarks.TextChanged += new System.EventHandler(this.rtb_remarks_TextChanged);
             // 
             // label245
             // 
@@ -898,7 +1440,7 @@
             // 
             this.label246.AutoSize = true;
             this.label246.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label246.Location = new System.Drawing.Point(286, 130);
+            this.label246.Location = new System.Drawing.Point(290, 158);
             this.label246.Name = "label246";
             this.label246.Size = new System.Drawing.Size(69, 15);
             this.label246.TabIndex = 44;
@@ -937,14 +1479,14 @@
             // dgv_guestlist
             // 
             this.dgv_guestlist.BackgroundColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_guestlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_guestlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.dgv_guestlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_guestlist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.acct_no,
@@ -953,27 +1495,27 @@
             this.address,
             this.contact,
             this.email,
-            this.Country});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_guestlist.DefaultCellStyle = dataGridViewCellStyle14;
+            this.Country,
+            this.g_typ});
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_guestlist.DefaultCellStyle = dataGridViewCellStyle21;
             this.dgv_guestlist.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_guestlist.Location = new System.Drawing.Point(3, 16);
             this.dgv_guestlist.Name = "dgv_guestlist";
-            this.dgv_guestlist.ReadOnly = true;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_guestlist.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_guestlist.RowHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.dgv_guestlist.RowHeadersWidth = 25;
             this.dgv_guestlist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_guestlist.Size = new System.Drawing.Size(708, 121);
@@ -1024,17 +1566,32 @@
             this.Country.Name = "Country";
             this.Country.ReadOnly = true;
             // 
+            // g_typ
+            // 
+            this.g_typ.HeaderText = "Guest Type";
+            this.g_typ.Name = "g_typ";
+            this.g_typ.ReadOnly = true;
+            // 
             // panel9
             // 
+            this.panel9.Controls.Add(this.lbl_noofguest);
             this.panel9.Controls.Add(this.btn_selectcust);
             this.panel9.Controls.Add(this.btn_removefrmguestlist);
             this.panel9.Controls.Add(this.label254);
-            this.panel9.Controls.Add(this.lbl_noofguest);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel9.Location = new System.Drawing.Point(711, 16);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(143, 121);
             this.panel9.TabIndex = 22;
+            // 
+            // lbl_noofguest
+            // 
+            this.lbl_noofguest.Location = new System.Drawing.Point(68, 98);
+            this.lbl_noofguest.Name = "lbl_noofguest";
+            this.lbl_noofguest.Size = new System.Drawing.Size(67, 20);
+            this.lbl_noofguest.TabIndex = 59;
+            this.lbl_noofguest.Text = "0";
+            this.lbl_noofguest.TextChanged += new System.EventHandler(this.lbl_noofguest_TextChanged);
             // 
             // btn_selectcust
             // 
@@ -1068,24 +1625,17 @@
             // 
             this.label254.AutoSize = true;
             this.label254.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label254.Location = new System.Drawing.Point(10, 98);
+            this.label254.Location = new System.Drawing.Point(3, 99);
             this.label254.Name = "label254";
             this.label254.Size = new System.Drawing.Size(61, 15);
             this.label254.TabIndex = 8;
             this.label254.Text = "Total Pax:";
             // 
-            // lbl_noofguest
-            // 
-            this.lbl_noofguest.AutoSize = true;
-            this.lbl_noofguest.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_noofguest.Location = new System.Drawing.Point(90, 99);
-            this.lbl_noofguest.Name = "lbl_noofguest";
-            this.lbl_noofguest.Size = new System.Drawing.Size(14, 15);
-            this.lbl_noofguest.TabIndex = 9;
-            this.lbl_noofguest.Text = "0";
-            // 
             // grp_roominfo
             // 
+            this.grp_roominfo.Controls.Add(this.label8);
+            this.grp_roominfo.Controls.Add(this.label7);
+            this.grp_roominfo.Controls.Add(this.label6);
             this.grp_roominfo.Controls.Add(this.label4);
             this.grp_roominfo.Controls.Add(this.comboBox2);
             this.grp_roominfo.Controls.Add(this.label3);
@@ -1114,33 +1664,93 @@
             this.grp_roominfo.Text = "Unit Information";
             this.grp_roominfo.Enter += new System.EventHandler(this.grp_roominfo_Enter);
             // 
-            // lbl_resno
+            // label8
             // 
-            this.lbl_resno.Location = new System.Drawing.Point(114, 15);
-            this.lbl_resno.Name = "lbl_resno";
-            this.lbl_resno.ReadOnly = true;
-            this.lbl_resno.Size = new System.Drawing.Size(100, 21);
-            this.lbl_resno.TabIndex = 47;
+            this.label8.Location = new System.Drawing.Point(747, 39);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(41, 21);
+            this.label8.TabIndex = 62;
+            this.label8.Text = "0";
+            this.label8.TextChanged += new System.EventHandler(this.label8_TextChanged);
             // 
-            // label257
+            // label7
             // 
-            this.label257.AutoSize = true;
-            this.label257.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label257.Location = new System.Drawing.Point(314, 23);
-            this.label257.Name = "label257";
-            this.label257.Size = new System.Drawing.Size(41, 15);
-            this.label257.TabIndex = 46;
-            this.label257.Text = "Room";
+            this.label7.Location = new System.Drawing.Point(747, 17);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(41, 21);
+            this.label7.TabIndex = 61;
+            this.label7.Text = "0";
+            this.label7.TextChanged += new System.EventHandler(this.label7_TextChanged);
             // 
-            // lbl_noofnight
+            // label6
             // 
-            this.lbl_noofnight.AutoSize = true;
-            this.lbl_noofnight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_noofnight.Location = new System.Drawing.Point(596, 20);
-            this.lbl_noofnight.Name = "lbl_noofnight";
-            this.lbl_noofnight.Size = new System.Drawing.Size(14, 15);
-            this.lbl_noofnight.TabIndex = 41;
-            this.lbl_noofnight.Text = "0";
+            this.label6.Location = new System.Drawing.Point(599, 36);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 21);
+            this.label6.TabIndex = 60;
+            this.label6.Text = "0";
+            this.label6.TextChanged += new System.EventHandler(this.label6_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(664, 42);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(75, 15);
+            this.label4.TabIndex = 55;
+            this.label4.Text = "Pax (Infants)";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.BackColor = System.Drawing.SystemColors.Menu;
+            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Single",
+            "Double",
+            "Triple",
+            "Quad"});
+            this.comboBox2.Location = new System.Drawing.Point(800, 51);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(60, 23);
+            this.comboBox2.TabIndex = 54;
+            this.comboBox2.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(664, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 15);
+            this.label3.TabIndex = 53;
+            this.label3.Text = "Pax (Kids)";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.SystemColors.Menu;
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Single",
+            "Double",
+            "Triple",
+            "Quad"});
+            this.comboBox1.Location = new System.Drawing.Point(800, 22);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(60, 23);
+            this.comboBox1.TabIndex = 52;
+            this.comboBox1.Visible = false;
+            // 
+            // lbl_depdt
+            // 
+            this.lbl_depdt.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.lbl_depdt.Location = new System.Drawing.Point(305, 40);
+            this.lbl_depdt.Name = "lbl_depdt";
+            this.lbl_depdt.Size = new System.Drawing.Size(100, 21);
+            this.lbl_depdt.TabIndex = 51;
+            this.lbl_depdt.Visible = false;
             // 
             // label255
             // 
@@ -1152,30 +1762,32 @@
             this.label255.TabIndex = 35;
             this.label255.Text = "Pax (Adults)";
             // 
-            // cbo_occtyp
+            // lbl_arrdt
             // 
-            this.cbo_occtyp.BackColor = System.Drawing.SystemColors.Menu;
-            this.cbo_occtyp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbo_occtyp.FormattingEnabled = true;
-            this.cbo_occtyp.Items.AddRange(new object[] {
-            "Single",
-            "Double",
-            "Triple",
-            "Quad"});
-            this.cbo_occtyp.Location = new System.Drawing.Point(599, 37);
-            this.cbo_occtyp.Name = "cbo_occtyp";
-            this.cbo_occtyp.Size = new System.Drawing.Size(60, 23);
-            this.cbo_occtyp.TabIndex = 34;
+            this.lbl_arrdt.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.lbl_arrdt.Location = new System.Drawing.Point(305, 15);
+            this.lbl_arrdt.Name = "lbl_arrdt";
+            this.lbl_arrdt.Size = new System.Drawing.Size(100, 21);
+            this.lbl_arrdt.TabIndex = 50;
             // 
-            // label256
+            // lbl_resno
             // 
-            this.label256.AutoSize = true;
-            this.label256.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label256.Location = new System.Drawing.Point(20, 104);
-            this.label256.Name = "label256";
-            this.label256.Size = new System.Drawing.Size(61, 15);
-            this.label256.TabIndex = 33;
-            this.label256.Text = "Packages";
+            this.lbl_resno.Location = new System.Drawing.Point(114, 15);
+            this.lbl_resno.Name = "lbl_resno";
+            this.lbl_resno.ReadOnly = true;
+            this.lbl_resno.Size = new System.Drawing.Size(100, 21);
+            this.lbl_resno.TabIndex = 47;
+            // 
+            // lbl_noofnight
+            // 
+            this.lbl_noofnight.AutoSize = true;
+            this.lbl_noofnight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_noofnight.Location = new System.Drawing.Point(596, 20);
+            this.lbl_noofnight.Name = "lbl_noofnight";
+            this.lbl_noofnight.Size = new System.Drawing.Size(14, 15);
+            this.lbl_noofnight.TabIndex = 41;
+            this.lbl_noofnight.Text = "0";
+            this.lbl_noofnight.Visible = false;
             // 
             // lbl_noofnight_title_top
             // 
@@ -1186,6 +1798,7 @@
             this.lbl_noofnight_title_top.Size = new System.Drawing.Size(69, 15);
             this.lbl_noofnight_title_top.TabIndex = 29;
             this.lbl_noofnight_title_top.Text = "No. of Days";
+            this.lbl_noofnight_title_top.Visible = false;
             // 
             // dtp_deptime
             // 
@@ -1196,11 +1809,12 @@
             this.dtp_deptime.Size = new System.Drawing.Size(95, 21);
             this.dtp_deptime.TabIndex = 27;
             this.dtp_deptime.Value = new System.DateTime(2013, 1, 24, 12, 0, 0, 0);
+            this.dtp_deptime.Visible = false;
             // 
             // dtp_arrtime
             // 
             this.dtp_arrtime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtp_arrtime.Location = new System.Drawing.Point(411, 17);
+            this.dtp_arrtime.Location = new System.Drawing.Point(412, 14);
             this.dtp_arrtime.Name = "dtp_arrtime";
             this.dtp_arrtime.ShowUpDown = true;
             this.dtp_arrtime.Size = new System.Drawing.Size(95, 21);
@@ -1216,22 +1830,39 @@
             this.label259.Size = new System.Drawing.Size(58, 15);
             this.label259.TabIndex = 25;
             this.label259.Text = "End Date";
+            this.label259.Visible = false;
             // 
             // label260
             // 
             this.label260.AutoSize = true;
             this.label260.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label260.Location = new System.Drawing.Point(235, 20);
+            this.label260.Location = new System.Drawing.Point(235, 18);
             this.label260.Name = "label260";
-            this.label260.Size = new System.Drawing.Size(61, 15);
+            this.label260.Size = new System.Drawing.Size(64, 15);
             this.label260.TabIndex = 23;
-            this.label260.Text = "Start Date";
+            this.label260.Text = "Date/Time";
+            // 
+            // cbo_occtyp
+            // 
+            this.cbo_occtyp.BackColor = System.Drawing.SystemColors.Menu;
+            this.cbo_occtyp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbo_occtyp.FormattingEnabled = true;
+            this.cbo_occtyp.Items.AddRange(new object[] {
+            "Single",
+            "Double",
+            "Triple",
+            "Quad"});
+            this.cbo_occtyp.Location = new System.Drawing.Point(800, -3);
+            this.cbo_occtyp.Name = "cbo_occtyp";
+            this.cbo_occtyp.Size = new System.Drawing.Size(60, 23);
+            this.cbo_occtyp.TabIndex = 34;
+            this.cbo_occtyp.Visible = false;
             // 
             // label261
             // 
             this.label261.AutoSize = true;
             this.label261.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label261.Location = new System.Drawing.Point(10, 40);
+            this.label261.Location = new System.Drawing.Point(7, 40);
             this.label261.Name = "label261";
             this.label261.Size = new System.Drawing.Size(101, 15);
             this.label261.TabIndex = 21;
@@ -1255,337 +1886,48 @@
             this.label262.TabIndex = 18;
             this.label262.Text = "Reservation No";
             // 
-            // lbl_rm
-            // 
-            this.lbl_rm.Location = new System.Drawing.Point(361, 22);
-            this.lbl_rm.Name = "lbl_rm";
-            this.lbl_rm.Size = new System.Drawing.Size(58, 21);
-            this.lbl_rm.TabIndex = 50;
-            // 
-            // lbl_arrdt
-            // 
-            this.lbl_arrdt.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.lbl_arrdt.Location = new System.Drawing.Point(305, 15);
-            this.lbl_arrdt.Name = "lbl_arrdt";
-            this.lbl_arrdt.Size = new System.Drawing.Size(100, 21);
-            this.lbl_arrdt.TabIndex = 50;
-            // 
-            // lbl_depdt
-            // 
-            this.lbl_depdt.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.lbl_depdt.Location = new System.Drawing.Point(305, 40);
-            this.lbl_depdt.Name = "lbl_depdt";
-            this.lbl_depdt.Size = new System.Drawing.Size(100, 21);
-            this.lbl_depdt.TabIndex = 51;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(664, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 15);
-            this.label3.TabIndex = 53;
-            this.label3.Text = "Pax (Kids)";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.Menu;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Single",
-            "Double",
-            "Triple",
-            "Quad"});
-            this.comboBox1.Location = new System.Drawing.Point(740, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(60, 23);
-            this.comboBox1.TabIndex = 52;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(664, 40);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 15);
-            this.label4.TabIndex = 55;
-            this.label4.Text = "Pax (Infants)";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.BackColor = System.Drawing.SystemColors.Menu;
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Single",
-            "Double",
-            "Triple",
-            "Quad"});
-            this.comboBox2.Location = new System.Drawing.Point(740, 37);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(60, 23);
-            this.comboBox2.TabIndex = 54;
-            // 
-            // lbl_rmtyp
-            // 
-            this.lbl_rmtyp.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.lbl_rmtyp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.lbl_rmtyp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbl_rmtyp.FormattingEnabled = true;
-            this.lbl_rmtyp.Location = new System.Drawing.Point(130, 101);
-            this.lbl_rmtyp.Name = "lbl_rmtyp";
-            this.lbl_rmtyp.Size = new System.Drawing.Size(289, 23);
-            this.lbl_rmtyp.TabIndex = 87;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(130, 20);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(163, 23);
-            this.comboBox3.TabIndex = 88;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(23, 25);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 15);
-            this.label5.TabIndex = 89;
-            this.label5.Text = "Hotel";
-            // 
-            // panel90
-            // 
-            this.panel90.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel90.Controls.Add(this.dataGridView1);
-            this.panel90.Controls.Add(this.txt_govtrt);
-            this.panel90.Controls.Add(this.panel91);
-            this.panel90.Controls.Add(this.txt_netrt);
-            this.panel90.Controls.Add(this.lbl_noofnight_billing);
-            this.panel90.Controls.Add(this.lbl_noofnight_title);
-            this.panel90.Controls.Add(this.label241);
-            this.panel90.Controls.Add(this.txt_grossrt);
-            this.panel90.Controls.Add(this.label1);
-            this.panel90.Controls.Add(this.txt_rmrate);
-            this.panel90.Controls.Add(this.label243);
-            this.panel90.Controls.Add(this.label242);
-            this.panel90.Controls.Add(this.label15);
-            this.panel90.Controls.Add(this.panel2);
-            this.panel90.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel90.Location = new System.Drawing.Point(533, 0);
-            this.panel90.Name = "panel90";
-            this.panel90.Size = new System.Drawing.Size(324, 328);
-            this.panel90.TabIndex = 57;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgvl_chk,
-            this.dgvl_scode,
-            this.dgvl_sdesc});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 43);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(320, 281);
-            this.dataGridView1.TabIndex = 90;
-            // 
-            // txt_govtrt
-            // 
-            this.txt_govtrt.BackColor = System.Drawing.SystemColors.Control;
-            this.txt_govtrt.Location = new System.Drawing.Point(130, 75);
-            this.txt_govtrt.Name = "txt_govtrt";
-            this.txt_govtrt.ReadOnly = true;
-            this.txt_govtrt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txt_govtrt.Size = new System.Drawing.Size(139, 22);
-            this.txt_govtrt.TabIndex = 79;
-            this.txt_govtrt.Text = "0.00";
-            this.txt_govtrt.Visible = false;
-            // 
-            // panel91
-            // 
-            this.panel91.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel91.Location = new System.Drawing.Point(129, 151);
-            this.panel91.Name = "panel91";
-            this.panel91.Size = new System.Drawing.Size(136, 1);
-            this.panel91.TabIndex = 76;
-            this.panel91.Visible = false;
-            // 
-            // txt_netrt
-            // 
-            this.txt_netrt.BackColor = System.Drawing.SystemColors.Control;
-            this.txt_netrt.Location = new System.Drawing.Point(130, 49);
-            this.txt_netrt.Name = "txt_netrt";
-            this.txt_netrt.ReadOnly = true;
-            this.txt_netrt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txt_netrt.Size = new System.Drawing.Size(138, 22);
-            this.txt_netrt.TabIndex = 80;
-            this.txt_netrt.Text = "0.00";
-            this.txt_netrt.Visible = false;
-            // 
-            // lbl_noofnight_billing
-            // 
-            this.lbl_noofnight_billing.AutoSize = true;
-            this.lbl_noofnight_billing.Location = new System.Drawing.Point(243, 131);
-            this.lbl_noofnight_billing.Name = "lbl_noofnight_billing";
-            this.lbl_noofnight_billing.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lbl_noofnight_billing.Size = new System.Drawing.Size(15, 16);
-            this.lbl_noofnight_billing.TabIndex = 74;
-            this.lbl_noofnight_billing.Text = "0";
-            this.lbl_noofnight_billing.Visible = false;
-            // 
-            // lbl_noofnight_title
-            // 
-            this.lbl_noofnight_title.AutoSize = true;
-            this.lbl_noofnight_title.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_noofnight_title.Location = new System.Drawing.Point(15, 131);
-            this.lbl_noofnight_title.Name = "lbl_noofnight_title";
-            this.lbl_noofnight_title.Size = new System.Drawing.Size(139, 15);
-            this.lbl_noofnight_title.TabIndex = 73;
-            this.lbl_noofnight_title.Text = "No. of Nights                  X";
-            this.lbl_noofnight_title.Visible = false;
-            // 
-            // label241
-            // 
-            this.label241.AutoSize = true;
-            this.label241.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label241.Location = new System.Drawing.Point(13, 82);
-            this.label241.Name = "label241";
-            this.label241.Size = new System.Drawing.Size(28, 15);
-            this.label241.TabIndex = 68;
-            this.label241.Text = "VAT";
-            this.label241.Visible = false;
-            // 
-            // txt_grossrt
-            // 
-            this.txt_grossrt.BackColor = System.Drawing.SystemColors.Control;
-            this.txt_grossrt.Location = new System.Drawing.Point(122, 234);
-            this.txt_grossrt.Name = "txt_grossrt";
-            this.txt_grossrt.ReadOnly = true;
-            this.txt_grossrt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txt_grossrt.Size = new System.Drawing.Size(139, 22);
-            this.txt_grossrt.TabIndex = 82;
-            this.txt_grossrt.Text = "0.00";
-            this.txt_grossrt.Visible = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 234);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 15);
-            this.label1.TabIndex = 81;
-            this.label1.Text = "Gross Unit Rate";
-            this.label1.Visible = false;
-            // 
-            // txt_rmrate
-            // 
-            this.txt_rmrate.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txt_rmrate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_rmrate.Location = new System.Drawing.Point(130, 104);
-            this.txt_rmrate.Name = "txt_rmrate";
-            this.txt_rmrate.ReadOnly = true;
-            this.txt_rmrate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txt_rmrate.Size = new System.Drawing.Size(141, 22);
-            this.txt_rmrate.TabIndex = 66;
-            this.txt_rmrate.Text = "0.00";
-            this.txt_rmrate.Visible = false;
-            // 
-            // label243
-            // 
-            this.label243.AutoSize = true;
-            this.label243.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label243.Location = new System.Drawing.Point(9, 107);
-            this.label243.Name = "label243";
-            this.label243.Size = new System.Drawing.Size(58, 15);
-            this.label243.TabIndex = 65;
-            this.label243.Text = "Unit Rate";
-            this.label243.Visible = false;
-            // 
-            // label242
-            // 
-            this.label242.AutoSize = true;
-            this.label242.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label242.Location = new System.Drawing.Point(9, 50);
-            this.label242.Name = "label242";
-            this.label242.Size = new System.Drawing.Size(55, 15);
-            this.label242.TabIndex = 67;
-            this.label242.Text = "Net Rate";
-            this.label242.Visible = false;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(131, 86);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(141, 16);
-            this.label15.TabIndex = 83;
-            this.label15.Text = "___________________";
-            this.label15.Visible = false;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label238);
-            this.panel2.Controls.Add(this.txt_total_amt);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(320, 43);
-            this.panel2.TabIndex = 91;
-            // 
-            // label238
-            // 
-            this.label238.AutoSize = true;
-            this.label238.BackColor = System.Drawing.Color.Transparent;
-            this.label238.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label238.ForeColor = System.Drawing.Color.Blue;
-            this.label238.Location = new System.Drawing.Point(15, 19);
-            this.label238.Name = "label238";
-            this.label238.Size = new System.Drawing.Size(94, 15);
-            this.label238.TabIndex = 77;
-            this.label238.Text = "Total Amt (PHP)";
-            // 
-            // txt_total_amt
-            // 
-            this.txt_total_amt.BackColor = System.Drawing.Color.MediumBlue;
-            this.txt_total_amt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_total_amt.ForeColor = System.Drawing.Color.AliceBlue;
-            this.txt_total_amt.Location = new System.Drawing.Point(132, 14);
-            this.txt_total_amt.Name = "txt_total_amt";
-            this.txt_total_amt.ReadOnly = true;
-            this.txt_total_amt.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txt_total_amt.Size = new System.Drawing.Size(139, 24);
-            this.txt_total_amt.TabIndex = 81;
-            this.txt_total_amt.Text = "0.00";
-            // 
             // dgvl_chk
             // 
+            this.dgvl_chk.DataPropertyName = "bool_check";
             this.dgvl_chk.HeaderText = "";
             this.dgvl_chk.Name = "dgvl_chk";
             this.dgvl_chk.Width = 50;
             // 
-            // dgvl_scode
+            // dgvl_code
             // 
-            this.dgvl_scode.HeaderText = "Code";
-            this.dgvl_scode.Name = "dgvl_scode";
-            this.dgvl_scode.ReadOnly = true;
-            this.dgvl_scode.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvl_scode.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dgvl_code.DataPropertyName = "chg_code";
+            this.dgvl_code.HeaderText = "Code";
+            this.dgvl_code.Name = "dgvl_code";
+            this.dgvl_code.ReadOnly = true;
+            this.dgvl_code.Visible = false;
             // 
             // dgvl_sdesc
             // 
-            this.dgvl_sdesc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvl_sdesc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvl_sdesc.DataPropertyName = "chg_desc";
             this.dgvl_sdesc.HeaderText = "Services";
             this.dgvl_sdesc.Name = "dgvl_sdesc";
             this.dgvl_sdesc.ReadOnly = true;
             this.dgvl_sdesc.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvl_sdesc.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dgvl_sdesc.Width = 67;
+            // 
+            // dgvl_price
+            // 
+            this.dgvl_price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dgvl_price.DataPropertyName = "price";
+            this.dgvl_price.HeaderText = "Price";
+            this.dgvl_price.Name = "dgvl_price";
+            this.dgvl_price.ReadOnly = true;
+            this.dgvl_price.Width = 64;
+            // 
+            // ifree
+            // 
+            this.ifree.DataPropertyName = "ifree";
+            this.ifree.HeaderText = "INFREE";
+            this.ifree.Name = "ifree";
+            this.ifree.ReadOnly = true;
+            this.ifree.Visible = false;
             // 
             // newReservation
             // 
@@ -1601,6 +1943,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reservation";
             this.Load += new System.EventHandler(this.newReservation_Load);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.newReservation_MouseClick);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.newReservation_MouseMove);
             this.panel1.ResumeLayout(false);
             this.tbcntrl_option.ResumeLayout(false);
             this.tpg_opt_1.ResumeLayout(false);
@@ -1608,6 +1952,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox7.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             this.tpg_opt_2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -1623,6 +1969,11 @@
             this.panel89.ResumeLayout(false);
             this.panel89.PerformLayout();
             this.panel7.ResumeLayout(false);
+            this.panel90.ResumeLayout(false);
+            this.panel90.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.grpbx_billing.ResumeLayout(false);
             this.grpbx_billing.PerformLayout();
             this.grp_guest.ResumeLayout(false);
@@ -1632,11 +1983,6 @@
             this.panel9.PerformLayout();
             this.grp_roominfo.ResumeLayout(false);
             this.grp_roominfo.PerformLayout();
-            this.panel90.ResumeLayout(false);
-            this.panel90.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1673,7 +2019,6 @@
         private System.Windows.Forms.ComboBox cbo_srchcomp;
         private System.Windows.Forms.Label label233;
         private System.Windows.Forms.TextBox txt_srchlname;
-        private System.Windows.Forms.Button btn_srchreservation;
         public System.Windows.Forms.TabPage tpg_reg;
         private System.Windows.Forms.Panel panel89;
         private System.Windows.Forms.Label label234;
@@ -1682,7 +2027,6 @@
         private System.Windows.Forms.Panel panel7;
         public System.Windows.Forms.GroupBox grpbx_billing;
         private System.Windows.Forms.Label label9;
-        public System.Windows.Forms.ComboBox cbo_rmrttyp;
         public System.Windows.Forms.ComboBox cbo_mktsegment;
         public System.Windows.Forms.ComboBox cbo_disc;
         private System.Windows.Forms.Label label237;
@@ -1697,7 +2041,6 @@
         public System.Windows.Forms.CheckBox chk_blockres;
         private System.Windows.Forms.Label label244;
         public System.Windows.Forms.RichTextBox rtb_remarks;
-        private System.Windows.Forms.Label label245;
         private System.Windows.Forms.Label label246;
         private System.Windows.Forms.Label lbl_clerk;
         public System.Windows.Forms.GroupBox grp_guest;
@@ -1707,13 +2050,10 @@
         public System.Windows.Forms.Button btn_selectcust;
         public System.Windows.Forms.Button btn_removefrmguestlist;
         private System.Windows.Forms.Label label254;
-        public System.Windows.Forms.Label lbl_noofguest;
         public System.Windows.Forms.GroupBox grp_roominfo;
         private System.Windows.Forms.Label label257;
         public System.Windows.Forms.Label lbl_noofnight;
-        private System.Windows.Forms.Label label255;
         public System.Windows.Forms.ComboBox cbo_occtyp;
-        private System.Windows.Forms.Label label256;
         private System.Windows.Forms.Label lbl_noofnight_title_top;
         public System.Windows.Forms.DateTimePicker dtp_deptime;
         public System.Windows.Forms.DateTimePicker dtp_arrtime;
@@ -1724,13 +2064,6 @@
         private System.Windows.Forms.Label label262;
         private System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.Button btn_back;
-        private System.Windows.Forms.DataGridViewTextBoxColumn acct_no;
-        private System.Windows.Forms.DataGridViewTextBoxColumn full_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gender;
-        private System.Windows.Forms.DataGridViewTextBoxColumn address;
-        private System.Windows.Forms.DataGridViewTextBoxColumn contact;
-        private System.Windows.Forms.DataGridViewTextBoxColumn email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Country;
         private System.Windows.Forms.TextBox lbl_resno;
         public System.Windows.Forms.Button btn_save;
         public System.Windows.Forms.ComboBox cbo_agency;
@@ -1738,11 +2071,8 @@
         private System.Windows.Forms.TextBox lbl_rm;
         private System.Windows.Forms.DateTimePicker lbl_depdt;
         private System.Windows.Forms.DateTimePicker lbl_arrdt;
-        private System.Windows.Forms.Label label3;
         public System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label4;
         public System.Windows.Forms.ComboBox comboBox2;
-        public System.Windows.Forms.ComboBox lbl_rmtyp;
         public System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.Panel panel90;
@@ -1762,8 +2092,51 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label238;
         public System.Windows.Forms.TextBox txt_total_amt;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label255;
+        public System.Windows.Forms.ComboBox cbo_rmrttyp;
+        private System.Windows.Forms.Label label245;
+        private System.Windows.Forms.DataGridViewTextBoxColumn acct_no;
+        private System.Windows.Forms.DataGridViewTextBoxColumn full_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contact;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Country;
+        private System.Windows.Forms.DataGridViewTextBoxColumn g_typ;
+        public System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn res_code;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn p_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hotel_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn arr_time;
+        private System.Windows.Forms.DataGridViewTextBoxColumn package;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adult;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn inf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn activities;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ttlpax;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reserv_date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn reserv_by;
+        public System.Windows.Forms.TextBox lbl_noofguest;
+        public System.Windows.Forms.TextBox label8;
+        public System.Windows.Forms.TextBox label7;
+        public System.Windows.Forms.TextBox label6;
+        public System.Windows.Forms.Button btn_srchreservation;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel8;
+        public System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.CheckBox checkBox1;
+        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dgvl_chk;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvl_scode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvl_code;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvl_sdesc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvl_price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ifree;
     }
 }

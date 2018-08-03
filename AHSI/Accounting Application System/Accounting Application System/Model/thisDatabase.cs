@@ -13,7 +13,7 @@ namespace Accounting_Application_System
     public class thisDatabase
     {
         public static String driveloc = "\\\\RIGHTAPPS\\RightApps\\";
-        public static String comp_folder = "Eastland";//
+        public static String comp_folder = "Aquamarine";//
         public static String lcl_db = "aquamarine"; //"pms_eastland_010418"; pms_eastland_050318 pms_eastland
         public static String svr_pass = "Rightech777";//Rightech777
 
@@ -142,6 +142,38 @@ namespace Accounting_Application_System
             catch (Exception)
             {
 
+            }
+
+            return flag;
+        }
+        public Boolean InsertSelect(String table, String col1, String table2, String col2, String cond)
+        {
+            Boolean flag = false;
+
+            if (GlobalClass.branch != "001" && GlobalClass.DontSendToMain == false)
+            {
+                //thisDatabase2 db2 = new thisDatabase2();
+                //db2.InsertOnTable(table, column, value);
+            }
+
+            try
+            {
+                this.OpenConn();
+                String whr = ((cond == "") ? "" : " WHERE " + cond + "");
+                string SQL = "INSERT INTO " + this.schema + "." + table + " SELECT * FROM " + this.schema + "." + table2 + "" + whr + "";
+                //MessageBox.Show(SQL);
+                NpgsqlCommand command = new NpgsqlCommand(SQL, conn);
+
+                Int32 rowsaffected = command.ExecuteNonQuery();
+
+                this.CloseConn();
+
+                flag = true;
+            }
+            catch (Exception er)
+            {
+                flag = false;
+                MessageBox.Show(er.Message);
             }
 
             return flag;

@@ -11,11 +11,17 @@ namespace Hotel_System
 {
     public partial class OtherMasterList : Form
     {
-        Boolean msisnew = false, taisnew = false, cisnew = false;
+        Boolean msisnew = false, taisnew = false, cisnew = false, hisnew = false, sisnew= false;
+        String old_code = "";
+        String trv_old = "";
+        String sel_old = "";
 
         public OtherMasterList()
         {
             InitializeComponent();
+
+            GlobalMethod gm = new GlobalMethod();
+            gm.load_agency(comboBox1);
         }
 
         private void OtherMasterList_Load(object sender, EventArgs e)
@@ -30,6 +36,8 @@ namespace Hotel_System
 
             txt_tacode.Hide();
             txt_ccode.Hide();
+            load_hotel();
+            load_seller();
         }
 
         //////////// market segment /////////////
@@ -179,12 +187,14 @@ namespace Hotel_System
             btn_taedit.Enabled = false;
             btn_tasave.Enabled = false;
             btn_tacancel.Enabled = false;
+            textBox4.Enabled = false;
         }
 
         private void form_tanew()
         {
             txt_taname.Enabled = true;
             txt_tacontact.Enabled = true;
+            textBox4.Enabled = true;
 
             btn_tanew.Enabled = false;
             btn_taedit.Enabled = false;
@@ -212,6 +222,7 @@ namespace Hotel_System
             txt_taname.Text = "";
             txt_tacontact.Text = "";
             txt_tacode.Text = "";
+            textBox4.Text = "";
         }
 
         private void form_tasetreadonly(Boolean flag)
@@ -226,7 +237,7 @@ namespace Hotel_System
             {
                 thisDatabase db = new thisDatabase();
 
-                return db.QueryOnTableWithParams("travagnt", "trv_code, trv_name, tel_num", "", "ORDER BY trv_name ASC");
+                return db.QueryOnTableWithParams("travagnt", "trv_code, trv_name, tel_num, com", "", "ORDER BY trv_name ASC");
             }
             catch (Exception)
             {
@@ -252,37 +263,45 @@ namespace Hotel_System
         private void btn_tasave_Click(object sender, EventArgs e)
         {
             thisDatabase db = new thisDatabase();
-
-            if (taisnew == true)
+            try
             {
-                String pk = db.get_nextincrement(db.get_colval("travagnt", "trv_code", ""));
-                
-                if (db.InsertOnTable("travagnt", "trv_code, trv_name, tel_num", "'" + pk + "','" + txt_taname.Text + "', '" + txt_tacontact.Text + "'"))
+                Double com = 0.00;
+                try { com = Convert.ToDouble(textBox4.Text.ToString()); }
+                catch { MessageBox.Show("Enter a valid price."); }
+                if (taisnew == true)
                 {
-                    MessageBox.Show("New record added successfully.");
-                    form_taclear();
-                    form_tareset();
+                    String pk = db.get_nextincrement(db.get_colval("travagnt", "trv_code", ""));
+
+                    if (db.InsertOnTable("travagnt", "trv_code, trv_name, tel_num, com", "'" + pk + "','" + txt_taname.Text + "', '" + txt_tacontact.Text + "', '" + com + "'"))
+                    {
+                        MessageBox.Show("New record added successfully.");
+                        form_taclear();
+                        form_tareset();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Duplicate entry.");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Duplicate entry.");
+                    if (db.UpdateOnTable("travagnt", "trv_name='" + txt_taname.Text + "', tel_num='" + txt_tacontact.Text + "', com='" + com + "'", "trv_code='" + txt_tacode.Text + "'"))
+                    {
+                        MessageBox.Show("Record updated successfully.");
+                        form_taclear();
+                        form_tareset();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Record cannot update.");
+                    }
                 }
+                GlobalMethod gm = new GlobalMethod();
+                gm.load_agency(comboBox1);
+                dgv_talist.DataSource = get_talist();
             }
-            else
-            {
-                if (db.UpdateOnTable("travagnt", "trv_name='" + txt_taname.Text + "', tel_num='" + txt_tacontact.Text + "'", "trv_code='" + txt_tacode.Text + "'"))
-                {
-                    MessageBox.Show("Record updated successfully.");
-                    form_taclear();
-                    form_tareset();
-                }
-                else
-                {
-                    MessageBox.Show("Record cannot update.");
-                }
-            }
-
-            dgv_talist.DataSource = get_talist();
+            catch (Exception er) { MessageBox.Show(er.Message); }
+            
         }
 
         private void btn_tacancel_Click(object sender, EventArgs e)
@@ -305,6 +324,7 @@ namespace Hotel_System
             txt_tacode.Text = tacode;
             txt_taname.Text = taname;
             txt_tacontact.Text = tacontact;
+            textBox4.Text = dgv_talist.Rows[row].Cells[3].Value.ToString().Trim();
         }
 
         //////////////// company  ///////////////////////
@@ -529,6 +549,160 @@ namespace Hotel_System
                     e.Handled = true;
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            button3.Enabled = false;
+            button2.Enabled = false;
+            button1.Enabled = false;
+
+            textBox3.Enabled = false;
+            textBox2.Enabled = false;
+            textBox3.Text = "";
+            textBox2.Text = "";
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            hisnew = true;
+            button3.Enabled = true;
+            button2.Enabled = true;
+            button1.Enabled = true;
+
+            textBox3.Enabled = true;
+            textBox2.Enabled = true;
+            textBox3.Text = "";
+            textBox2.Text = "";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                hisnew = false;
+                textBox3.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
+                textBox2.Text = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[1].Value.ToString();
+
+
+                old_code = dataGridView1.Rows[dataGridView1.CurrentRow.Index].Cells[0].Value.ToString();
+            }
+            catch
+            {
+                old_code = "";
+                MessageBox.Show("Select 1 record.");
+            }
+        }
+
+        private void load_hotel()
+        {
+            try
+            {
+                thisDatabase dbs = new thisDatabase();
+                dataGridView1.DataSource = dbs.QueryBySQLCode("SELECT code, name FROM rssys.hotel ORDER BY code ASC");
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void load_seller()
+        {
+            try
+            {
+                thisDatabase dbs = new thisDatabase();
+                dataGridView2.DataSource = dbs.QueryBySQLCode("SELECT trv_code, seller FROM rssys.seller ORDER BY seller ASC");
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            thisDatabase dbs = new thisDatabase();
+            String col = ((hisnew) ? "code, name" : "code = '" + textBox3.Text.ToString() + "', name = '" + textBox2.Text.ToString() + "'");
+            String val = ((hisnew) ? "'" + textBox3.Text.ToString() + "', '" + textBox2.Text.ToString() + "'" : "code = '" + old_code + "'");
+
+            Boolean stat = ((hisnew) ? dbs.InsertOnTable("hotel", col, val) : dbs.UpdateOnTable("hotel", col, val));
+
+            if (stat)
+            {
+                MessageBox.Show("Successfully "+((hisnew) ? "added new" : "updated")+" entry to hotel");
+            }
+            else
+            {
+                MessageBox.Show("Error on " + ((hisnew) ? "adding new" : "updating") + " entry to hotel");
+            }
+            load_hotel();
+        }
+
+        private void textBox3_MouseHover(object sender, EventArgs e)
+        {
+            old_code = textBox3.Text.ToString();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                sisnew = false;
+                comboBox1.SelectedValue = dataGridView2.Rows[dataGridView2.CurrentRow.Index].Cells[0].Value.ToString();
+                textBox6.Text = dataGridView2.Rows[dataGridView2.CurrentRow.Index].Cells[1].Value.ToString();
+
+                trv_old = dataGridView2.Rows[dataGridView2.CurrentRow.Index].Cells[0].Value.ToString();
+                sel_old = dataGridView2.Rows[dataGridView2.CurrentRow.Index].Cells[1].Value.ToString();
+            }
+            catch
+            {
+                trv_old = "";
+                sel_old = "";
+                MessageBox.Show("Select 1 record.");
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            sisnew = true;
+            button6.Enabled = true;
+            button5.Enabled = true;
+
+            comboBox1.Enabled = true;
+            textBox6.Enabled = true;
+            comboBox1.SelectedIndex = -1;
+            textBox6.Text = "";
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            thisDatabase dbs = new thisDatabase();
+            String col = ((sisnew) ? "trv_code, seller" : "trv_code = '" + (comboBox1.SelectedValue ?? "").ToString() + "', seller = '" + textBox6.Text.ToString() + "'");
+            String val = ((sisnew) ? "'" + (comboBox1.SelectedValue ?? "").ToString() + "', '" + textBox6.Text.ToString() + "'" : "trv_code = '" + trv_old + "', seller = '" + sel_old + "'");
+
+            Boolean stat = ((sisnew) ? dbs.InsertOnTable("seller", col, val) : dbs.UpdateOnTable("seller", col, val));
+
+            if (stat)
+            {
+                MessageBox.Show("Successfully " + ((sisnew) ? "added new" : "updated") + " entry to seller");
+            }
+            else
+            {
+                MessageBox.Show("Error on " + ((sisnew) ? "adding new" : "updating") + " entry to seller");
+            }
+            load_seller();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            button6.Enabled = false;
+            button5.Enabled = false;
+
+            comboBox1.Enabled = false;
+            textBox6.Enabled = false;
+            comboBox1.SelectedIndex = -1;
+            textBox6.Text = "";
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Hotel_System
         Boolean isnew = false;
         Boolean addonly = false;
         //String displist = "last_name AS \"Last Name\", first_name AS \"First Name\", mid_name AS \"Mid Name\", gender AS \"Gender\", birth_date AS \"Birthdate\", address1 AS \"Address\", tel_num ||' / '|| mobile ||' / '||fax_num AS \"Contact\", email AS \"Email\", comp_code AS \"Comp Code\", passport_no AS \"Passport No\", passport_issued AS \"Passport Issued\", passport_expiry  AS \"Passport Expiry\", cntry_code AS \"Country Code\", escaper AS \"Escaper\", notes AS \"Remarks\", acct_no AS \"Guest No\", title AS \"Title\"";
-        String displist = "CASE WHEN COALESCE(last_name,'')='' AND COALESCE(first_name,'')=''  THEN full_name ELSE last_name END AS last_name, CASE WHEN COALESCE(last_name,'')='' AND COALESCE(first_name,'')=''  THEN '' ELSE first_name END AS first_name, CASE WHEN COALESCE(last_name,'')='' AND COALESCE(first_name,'')=''  THEN '' ELSE mid_name END AS mid_name , gender, birth_date, address1, tel_num, email, comp_code, passport_no, passport_issued, passport_expiry, cntry_code, escaper, notes, acct_no, title, passport_place,nat_code as nationality";
+        String displist = "CASE WHEN COALESCE(last_name,'')='' AND COALESCE(first_name,'')=''  THEN full_name ELSE last_name END AS last_name, CASE WHEN COALESCE(last_name,'')='' AND COALESCE(first_name,'')=''  THEN '' ELSE first_name END AS first_name, CASE WHEN COALESCE(last_name,'')='' AND COALESCE(first_name,'')=''  THEN '' ELSE mid_name END AS mid_name , gender, birth_date, address1, tel_num, email, comp_code, passport_no, passport_issued, passport_expiry, cntry_code, escaper, notes, acct_no, title, passport_place,nat_code as nationality, g_typ";
        
         Reservation resform;
         newReservation newresform;
@@ -209,7 +209,7 @@ namespace Hotel_System
                     String title = (dgv_search.Rows[row].Cells[16].Value ?? "").ToString().Trim();
 
                     String passport_place = (dgv_search.Rows[row].Cells[17].Value ?? "").ToString().Trim();
-
+                    
                     String nat_code = (dgv_search.Rows[row].Cells[18].Value ?? "").ToString().Trim();
                     txt_acctno.Text = acct_no;
                     cbo_title.Text = title;
@@ -229,6 +229,7 @@ namespace Hotel_System
                     cbo_country.SelectedValue = cntry_code;
                     txt_issueplace.Text = passport_place;
                     rtxt_remarks.Text = notes;
+                    comboBox1.Text = ((dgv_search.Rows[row].Cells[19].Value.ToString() == "A") ? "ADULT" : ((dgv_search.Rows[row].Cells[19].Value.ToString() == "K") ? "KID" : "INFANT"));
 
                     if (escaper == "Y")
                         chk_escaper.Checked = true;
@@ -332,7 +333,7 @@ namespace Hotel_System
             }
         }
 
-        private void add_guestlist(String acct_no, String full_name, String gender, String addr, String contact, String email, String country)
+        private void add_guestlist(String acct_no, String full_name, String gender, String addr, String contact, String email, String country, String g_typ)
         {
             DataGridViewRow row = (DataGridViewRow)dgv_guests.Rows[0].Clone();
             row.Cells[0].Value = acct_no;
@@ -342,6 +343,7 @@ namespace Hotel_System
             row.Cells[4].Value = contact;
             row.Cells[5].Value = email;
             row.Cells[6].Value = country;
+            row.Cells[7].Value = g_typ;
 
             dgv_guests.Rows.Add(row);
 
@@ -474,6 +476,11 @@ namespace Hotel_System
             {
                 MessageBox.Show("Name Title should be selected.");
             }
+            else if (comboBox1.Text == "")
+            {
+                MessageBox.Show("Please select type of guest");
+                comboBox1.DroppedDown = true;
+            }
             else
             {
                 try
@@ -482,6 +489,8 @@ namespace Hotel_System
                     {
                         gender = "F";
                     }
+
+                    String g_typ = ((comboBox1.Text == "ADULT") ? "A" : ((comboBox1.Text == "KID") ? "K" : "I"));
 
                     fname = txt_fname.Text.Trim();
                     lname = txt_lname.Text.Trim();
@@ -497,7 +506,7 @@ namespace Hotel_System
 
                     if (addonly == true)
                     {
-                        add_guestlist(txt_acctno.Text, fullname, gender, txt_addr.Text, txt_contact.Text, txt_email.Text, (cbo_country.SelectedValue ?? "").ToString());
+                        add_guestlist(txt_acctno.Text, fullname, gender, txt_addr.Text, txt_contact.Text, txt_email.Text, (cbo_country.SelectedValue ?? "").ToString(), g_typ);
                         //END OF ADD TO LIST
 
                         form_clear();
@@ -516,11 +525,11 @@ namespace Hotel_System
                             nat = cbo_nationality.SelectedValue.ToString();
                         }
 
-                        String value = "'" + pk + "','" + cbo_title.Text + "','" + lname + "','" + fname + "','" + mname + "','" + fullname + "','" + gender + "','" + dtp_dob.Value.ToString("yyyy-MM-dd") + "','" + txt_addr.Text + "','" + txt_contact.Text + "','" + txt_email.Text + "','" + (cbo_company.SelectedValue ?? "").ToString() + "','" + txt_passport.Text + "','" + dtp_issuedon.Value.ToString("yyyy-MM-dd") + "','" + dtp_expired.Value.ToString("yyyy-MM-dd") + "','" + (cbo_country.SelectedValue ?? "").ToString() + "', '" + isescaper + "', '" + rtxt_remarks.Text + "', '" + nat + "', '" + db.get_systemdate("") + "','" + DateTime.Now.ToString("HH:mm") + "','" + GlobalClass.username + "','" + txt_issueplace.Text + "'";
+                        String value = "'" + pk + "','" + cbo_title.Text + "','" + lname + "','" + fname + "','" + mname + "','" + fullname + "','" + gender + "','" + dtp_dob.Value.ToString("yyyy-MM-dd") + "','" + txt_addr.Text + "','" + txt_contact.Text + "','" + txt_email.Text + "','" + (cbo_company.SelectedValue ?? "").ToString() + "','" + txt_passport.Text + "','" + dtp_issuedon.Value.ToString("yyyy-MM-dd") + "','" + dtp_expired.Value.ToString("yyyy-MM-dd") + "','" + (cbo_country.SelectedValue ?? "").ToString() + "', '" + isescaper + "', '" + rtxt_remarks.Text + "', '" + nat + "', '" + db.get_systemdate("") + "','" + DateTime.Now.ToString("HH:mm") + "','" + GlobalClass.username + "','" + txt_issueplace.Text + "','" + g_typ + "'";
                         //MessageBox.Show(pk);
                         if (isnew == true)
                         {
-                            if (db.InsertOnTable("guest", "acct_no, title, last_name, first_name, mid_name, full_name, gender, birth_date, address1, tel_num, email, comp_code, passport_no, passport_issued, passport_expiry, cntry_code, escaper, notes, nat_code, t_date, t_time, user_id, passport_place", value))
+                            if (db.InsertOnTable("guest", "acct_no, title, last_name, first_name, mid_name, full_name, gender, birth_date, address1, tel_num, email, comp_code, passport_no, passport_issued, passport_expiry, cntry_code, escaper, notes, nat_code, t_date, t_time, user_id, passport_place, g_typ", value))
                             {
                                 String msg = "New record added successfully.";
 
@@ -534,14 +543,14 @@ namespace Hotel_System
                                 }
 
 
-                                db.InsertOnTable("guest2", "acct_no, title, last_name, first_name, mid_name, full_name, gender, birth_date, address1, tel_num, email, comp_code, passport_no, passport_issued, passport_expiry, cntry_code, escaper,notes, nat_code, t_date, t_time, user_id,passport_place", value);
+                                db.InsertOnTable("guest2", "acct_no, title, last_name, first_name, mid_name, full_name, gender, birth_date, address1, tel_num, email, comp_code, passport_no, passport_issued, passport_expiry, cntry_code, escaper,notes, nat_code, t_date, t_time, user_id,passport_place, g_typ", value);
 
                                 //String code = "";
                                 db.InsertOnTable("m06", "d_code, d_name, d_addr2, d_tel, d_fax, d_email, type, d_cntc, lastname,firstname, mname,at_code, bdate, sex, country, nationality", "'" + pk + "', '" + fullname + "', '" + txt_addr.Text + "', '" + txt_contact.Text + "', '" + ""/*d_fax*/ + "', '" + txt_email.Text + "', 'Customer'," + "'"/*db.str_E(d_cntc)*/ + "', '" + lname + "','" + fname + "', '" + mname + "','" + ""/*at_code*/ + "','" + dtp_dob.Value.ToString("yyyy-MM-dd") + "','" + gender + "','" + (cbo_country.SelectedValue ?? "").ToString() + "','" + nat + "'");
                                 //ADD TO LIST
                                 txt_acctno.Text = pk;
 
-                                add_guestlist(txt_acctno.Text, txt_lname.Text + ", " + txt_fname.Text + " " + txt_mname.Text, gender, txt_addr.Text, txt_contact.Text, txt_email.Text, (cbo_country.SelectedValue??"").ToString());
+                                add_guestlist(txt_acctno.Text, txt_lname.Text + ", " + txt_fname.Text + " " + txt_mname.Text, gender, txt_addr.Text, txt_contact.Text, txt_email.Text, (cbo_country.SelectedValue ?? "").ToString(), g_typ);
                                 //END OF ADD TO LIST
                                 
                                 form_clear();
@@ -554,7 +563,7 @@ namespace Hotel_System
                         }
                         else
                         {
-                            String colupd = "title='" + cbo_title.Text + "', last_name='" + lname + "', first_name='" + fname + "', mid_name='" + mname + "', full_name=$$" + fullname + "$$, gender='" + gender + "', birth_date='" + dtp_dob.Value.ToString("yyyy-MM-dd") + "', address1='" + txt_addr.Text + "', tel_num='" + txt_contact.Text + "', email='" + txt_email.Text + "', comp_code='" + (cbo_company.SelectedValue ?? "").ToString() + "', passport_no='" + txt_passport.Text + "', passport_issued='" + dtp_issuedon.Value.ToString("yyyy-MM-dd") + "', passport_expiry='" + dtp_expired.Value.ToString("yyyy-MM-dd") + "', cntry_code='" + (cbo_country.SelectedValue??"").ToString() + "', mp_code='101', escaper='" + isescaper + "', nat_code='" + nat + "', t_date='" + db.get_systemdate("") + "', t_time='" + DateTime.Now.ToString("HH:mm") + "',user_id='" + GlobalClass.username + "',passport_place='" + txt_issueplace.Text + "'";
+                            String colupd = "title='" + cbo_title.Text + "', last_name='" + lname + "', first_name='" + fname + "', mid_name='" + mname + "', full_name=$$" + fullname + "$$, gender='" + gender + "', birth_date='" + dtp_dob.Value.ToString("yyyy-MM-dd") + "', address1='" + txt_addr.Text + "', tel_num='" + txt_contact.Text + "', email='" + txt_email.Text + "', comp_code='" + (cbo_company.SelectedValue ?? "").ToString() + "', passport_no='" + txt_passport.Text + "', passport_issued='" + dtp_issuedon.Value.ToString("yyyy-MM-dd") + "', passport_expiry='" + dtp_expired.Value.ToString("yyyy-MM-dd") + "', cntry_code='" + (cbo_country.SelectedValue ?? "").ToString() + "', mp_code='101', escaper='" + isescaper + "', nat_code='" + nat + "', t_date='" + db.get_systemdate("") + "', t_time='" + DateTime.Now.ToString("HH:mm") + "',user_id='" + GlobalClass.username + "',passport_place='" + txt_issueplace.Text + "',g_typ='" + g_typ + "'";
 
                             if (db.UpdateOnTable("guest", colupd, "acct_no='" + txt_acctno.Text + "'"))
                             {
@@ -575,7 +584,7 @@ namespace Hotel_System
 
                                 ////ADD TO LIST
                                 //txt_acctno.Text = pk;
-                                add_guestlist(txt_acctno.Text, fullname, gender, txt_addr.Text, txt_contact.Text, txt_email.Text, (cbo_country.SelectedValue??"").ToString());
+                                add_guestlist(txt_acctno.Text, fullname, gender, txt_addr.Text, txt_contact.Text, txt_email.Text, (cbo_country.SelectedValue ?? "").ToString(), g_typ);
                                 
                                 form_clear();
                                 form_reset();
@@ -695,6 +704,8 @@ namespace Hotel_System
         {
             cbo_title.SelectedIndex = 0;
             cbo_gender.SelectedIndex = 0;
+            cbo_gender.Text = "";
+            comboBox1.Text = "";
 
             txt_acctno.Text = "";
             txt_lname.Text = "";
@@ -737,6 +748,7 @@ namespace Hotel_System
                 dtp_dob.Enabled = false;
                 dtp_expired.Enabled = false;
                 dtp_issuedon.Enabled = false;
+                comboBox1.Enabled = false;
             }
             else
             {
@@ -749,6 +761,7 @@ namespace Hotel_System
                 dtp_dob.Enabled = true;
                 dtp_expired.Enabled = true;
                 dtp_issuedon.Enabled = true;
+                comboBox1.Enabled = true;
             }
         }
 
@@ -944,6 +957,11 @@ namespace Hotel_System
         }
 
         private void dgv_search_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
         {
 
         }

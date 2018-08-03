@@ -40,26 +40,25 @@ namespace Accounting_Application_System
             schema = dbh.get_schema();
             v_glist = new DataView();
 
-            cbo_disfolio.SelectedIndex = 0;
-            cbo_balances.SelectedIndex = 0;
+            //cbo_disfolio.SelectedIndex = 0;
+            //cbo_balances.SelectedIndex = 0;
 
-            dis_dgvguest("");
+            //dis_dgvguest("");
 
-            //Start By: Roldan
-            dtp_sdate.Value = Convert.ToDateTime(startdate);
-            dtp_edate.Value = Convert.ToDateTime(db.get_systemdate(""));
-            dtp_travagnt_sdate.Value = Convert.ToDateTime(startdate);
-            dtp_travagnt_edate.Value = Convert.ToDateTime(db.get_systemdate(""));
+            ////Start By: Roldan
+            //dtp_sdate.Value = Convert.ToDateTime(startdate);
+            //dtp_edate.Value = Convert.ToDateTime(db.get_systemdate(""));
+            //dtp_travagnt_sdate.Value = Convert.ToDateTime(startdate);
+            //dtp_travagnt_edate.Value = Convert.ToDateTime(db.get_systemdate(""));
 
-            gm.load_year(cbo_collectionfilteryear);
-            gm.load_year(cbo_occupancyfilteryear);
+            //gm.load_year(cbo_collectionfilteryear);
+            //gm.load_year(cbo_occupancyfilteryear);
 
-            
 
-            
+            tbcntrl_res.SelectedTab = tabPage3;
+            tabPage3.Show();
             // End of by Roldan
-            
-
+            set_reslist(" WHERE res_date = '"+DateTime.Now.ToString("yyyy-MM-dd")+"'");
             this.Load += z_Notification_Load;
         }
         /*
@@ -658,63 +657,63 @@ namespace Accounting_Application_System
         }
         private void dis_dgvguest(String cond)
         {
-            Hotel_System.thisDatabase db = new Hotel_System.thisDatabase();
-            DataTable dt = new DataTable();
+            //Hotel_System.thisDatabase db = new Hotel_System.thisDatabase();
+            //DataTable dt = new DataTable();
 
-            try
-            {
-                DateTime curdate = Convert.ToDateTime(db.get_systemdate(""));
+            //try
+            //{
+            //    DateTime curdate = Convert.ToDateTime(db.get_systemdate(""));
 
-                dt = db.get_guest_currentlycheckin(cond);
+            //    dt = db.get_guest_currentlycheckin(cond);
 
-                dgv_guestlist.Rows.Clear();
+            //    dgv_guestlist.Rows.Clear();
 
-                for (int i = 0; i < dt.Rows.Count; i++)
-                {
-                    DataGridViewRow row = (DataGridViewRow)dgv_guestlist.Rows[0].Clone();
+            //    for (int i = 0; i < dt.Rows.Count; i++)
+            //    {
+            //        DataGridViewRow row = (DataGridViewRow)dgv_guestlist.Rows[0].Clone();
 
-                    row.Cells[0].Value = dt.Rows[i][0].ToString();
-                    row.Cells[1].Value = dt.Rows[i][1].ToString();
-                    row.Cells[2].Value = dt.Rows[i][2].ToString();
-                    row.Cells[3].Value = Convert.ToDateTime(dt.Rows[i][3].ToString()).ToString("MM/dd/yyyy");
-                    row.Cells[4].Value = Convert.ToDateTime(dt.Rows[i][4].ToString()).ToString("MM/dd/yyyy");
-                    row.Cells[5].Value = dt.Rows[i][5].ToString();
-                    row.Cells[6].Value = dt.Rows[i][6].ToString();
-                    row.Cells[7].Value = Convert.ToDateTime(dt.Rows[i][7].ToString()).ToString("MM/dd/yyyy");
-                    row.Cells[8].Value = Convert.ToDateTime(dt.Rows[i][8].ToString()).ToString("HH:mm");
+            //        row.Cells[0].Value = dt.Rows[i][0].ToString();
+            //        row.Cells[1].Value = dt.Rows[i][1].ToString();
+            //        row.Cells[2].Value = dt.Rows[i][2].ToString();
+            //        row.Cells[3].Value = Convert.ToDateTime(dt.Rows[i][3].ToString()).ToString("MM/dd/yyyy");
+            //        row.Cells[4].Value = Convert.ToDateTime(dt.Rows[i][4].ToString()).ToString("MM/dd/yyyy");
+            //        row.Cells[5].Value = dt.Rows[i][5].ToString();
+            //        row.Cells[6].Value = dt.Rows[i][6].ToString();
+            //        row.Cells[7].Value = Convert.ToDateTime(dt.Rows[i][7].ToString()).ToString("MM/dd/yyyy");
+            //        row.Cells[8].Value = Convert.ToDateTime(dt.Rows[i][8].ToString()).ToString("HH:mm");
 
-                    if (curdate >= Convert.ToDateTime(dt.Rows[i][4].ToString()))
-                    {
-                        //no color if empty block by column
-                        row.Cells[0].Style.ForeColor = Color.Red;
-                        row.Cells[1].Style.ForeColor = Color.Red;
-                        row.Cells[2].Style.ForeColor = Color.Red;
-                        row.Cells[3].Style.ForeColor = Color.Red;
-                        row.Cells[4].Style.ForeColor = Color.Red;
-                        row.Cells[5].Style.ForeColor = Color.Red;
-                        row.Cells[6].Style.ForeColor = Color.Red;
-                        row.Cells[7].Style.ForeColor = Color.Red;
-                        row.Cells[8].Style.ForeColor = Color.Red;
-                        dgv_guestlist.Rows.Add(row);
-                    }
-                    else
-                    {
-                        row.Cells[0].Style.ForeColor = Color.Black;
-                        row.Cells[1].Style.ForeColor = Color.Black;
-                        row.Cells[2].Style.ForeColor = Color.Black;
-                        row.Cells[3].Style.ForeColor = Color.Black;
-                        row.Cells[4].Style.ForeColor = Color.Black;
-                        row.Cells[5].Style.ForeColor = Color.Black;
-                        row.Cells[6].Style.ForeColor = Color.Black;
-                        row.Cells[7].Style.ForeColor = Color.Black;
-                        row.Cells[8].Style.ForeColor = Color.Black;
-                        dgv_guestlist.Rows.Add(row);
-                        //color if block by column is not empty
-                        //dgv_reslist.Rows[i] = (DataRowCollection)dt.Rows[i];                      
-                    }
-                }
-            }
-            catch (Exception) { }
+            //        if (curdate >= Convert.ToDateTime(dt.Rows[i][4].ToString()))
+            //        {
+            //            //no color if empty block by column
+            //            row.Cells[0].Style.ForeColor = Color.Red;
+            //            row.Cells[1].Style.ForeColor = Color.Red;
+            //            row.Cells[2].Style.ForeColor = Color.Red;
+            //            row.Cells[3].Style.ForeColor = Color.Red;
+            //            row.Cells[4].Style.ForeColor = Color.Red;
+            //            row.Cells[5].Style.ForeColor = Color.Red;
+            //            row.Cells[6].Style.ForeColor = Color.Red;
+            //            row.Cells[7].Style.ForeColor = Color.Red;
+            //            row.Cells[8].Style.ForeColor = Color.Red;
+            //            dgv_guestlist.Rows.Add(row);
+            //        }
+            //        else
+            //        {
+            //            row.Cells[0].Style.ForeColor = Color.Black;
+            //            row.Cells[1].Style.ForeColor = Color.Black;
+            //            row.Cells[2].Style.ForeColor = Color.Black;
+            //            row.Cells[3].Style.ForeColor = Color.Black;
+            //            row.Cells[4].Style.ForeColor = Color.Black;
+            //            row.Cells[5].Style.ForeColor = Color.Black;
+            //            row.Cells[6].Style.ForeColor = Color.Black;
+            //            row.Cells[7].Style.ForeColor = Color.Black;
+            //            row.Cells[8].Style.ForeColor = Color.Black;
+            //            dgv_guestlist.Rows.Add(row);
+            //            //color if block by column is not empty
+            //            //dgv_reslist.Rows[i] = (DataRowCollection)dt.Rows[i];                      
+            //        }
+            //    }
+            //}
+            //catch (Exception) { }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -722,60 +721,60 @@ namespace Accounting_Application_System
             String cond = "";
 
              
-            if (cbo_disfolio.Text == "In-house")
-            {
+            //if (cbo_disfolio.Text == "In-house")
+            //{
 
-            }
-            if (cbo_disfolio.Text == "Expected Departures")
-            {
-                cond = cond + " AND gf.dep_date='" + db.get_systemdate("") + "'";
-            }
-            if (cbo_disfolio.Text == "Arrivals Today")
-            {
-                cond = cond + " AND gf.arr_date='" + db.get_systemdate("") + "'";
-            }
+            //}
+            //if (cbo_disfolio.Text == "Expected Departures")
+            //{
+            //    cond = cond + " AND gf.dep_date='" + db.get_systemdate("") + "'";
+            //}
+            //if (cbo_disfolio.Text == "Arrivals Today")
+            //{
+            //    cond = cond + " AND gf.arr_date='" + db.get_systemdate("") + "'";
+            //}
 
-            if (cbo_balances.Text == "Zero Balances")
-            {
-                cond = cond + " AND (SELECT SUM(cf1.amount) FROM " + db.get_schema() + ".chgfil cf1 WHERE cf1.reg_num=gf.reg_num)=0";
-            }
-            if (cbo_balances.Text == "Open Balances")
-            {
-                cond = cond + " AND (SELECT SUM(cf1.amount) FROM " + db.get_schema() + ".chgfil cf1 WHERE cf1.reg_num=gf.reg_num)!=0";
-            }
+            //if (cbo_balances.Text == "Zero Balances")
+            //{
+            //    cond = cond + " AND (SELECT SUM(cf1.amount) FROM " + db.get_schema() + ".chgfil cf1 WHERE cf1.reg_num=gf.reg_num)=0";
+            //}
+            //if (cbo_balances.Text == "Open Balances")
+            //{
+            //    cond = cond + " AND (SELECT SUM(cf1.amount) FROM " + db.get_schema() + ".chgfil cf1 WHERE cf1.reg_num=gf.reg_num)!=0";
+            //}
 
-            if (cbo_contract.Text == "Within A Month")
-            {
-                cond = cond + " AND (gf.dep_date - gf.t_date) >=" + 1 + " AND (gf.dep_date - gf.t_date) != 0 AND (gf.dep_date - gf.t_date) <= 60 AND gf.rmrttyp='M'";
-            }
-            if (cbo_contract.Text == "2 Months")
-            {
-                cond = cond + " AND (gf.dep_date - gf.t_date) >=" + 60 + " AND (gf.dep_date - gf.t_date) != 30 AND (gf.dep_date - gf.t_date) <= 90 AND gf.rmrttyp='M'";
-            }
-            if (cbo_contract.Text == "3 Months")
-            {
-                cond = cond + " AND (gf.dep_date - gf.t_date) >=" + 90 + " AND (gf.dep_date - gf.t_date) != 60 AND (gf.dep_date - gf.t_date) <= 120 AND gf.rmrttyp='M'";
-            }
-            if (cbo_contract.Text == "4 Months")
-            {
-                cond = cond + " AND (gf.dep_date - gf.t_date) >=" + 120 + " AND (gf.dep_date - gf.t_date) != 90 AND (gf.dep_date - gf.t_date) <= 150 AND gf.rmrttyp='M'";
-            }
-            if (cbo_contract.Text == "5 Months")
-            {
-                cond = cond + " AND (gf.dep_date - gf.t_date) >=" + 150 + " AND (gf.dep_date - gf.t_date) != 120 AND (gf.dep_date - gf.t_date) <= 180 AND gf.rmrttyp='M'";
-            }
-            if (cbo_contract.Text == "6 Months")
-            {
-                cond = cond + " AND (gf.dep_date - gf.t_date) >=" + 180 + " AND (gf.dep_date - gf.t_date) != 150 AND (gf.dep_date - gf.t_date) <=210 AND gf.rmrttyp='M'";
-            }
-            dis_dgvguest(cond);
+            //if (cbo_contract.Text == "Within A Month")
+            //{
+            //    cond = cond + " AND (gf.dep_date - gf.t_date) >=" + 1 + " AND (gf.dep_date - gf.t_date) != 0 AND (gf.dep_date - gf.t_date) <= 60 AND gf.rmrttyp='M'";
+            //}
+            //if (cbo_contract.Text == "2 Months")
+            //{
+            //    cond = cond + " AND (gf.dep_date - gf.t_date) >=" + 60 + " AND (gf.dep_date - gf.t_date) != 30 AND (gf.dep_date - gf.t_date) <= 90 AND gf.rmrttyp='M'";
+            //}
+            //if (cbo_contract.Text == "3 Months")
+            //{
+            //    cond = cond + " AND (gf.dep_date - gf.t_date) >=" + 90 + " AND (gf.dep_date - gf.t_date) != 60 AND (gf.dep_date - gf.t_date) <= 120 AND gf.rmrttyp='M'";
+            //}
+            //if (cbo_contract.Text == "4 Months")
+            //{
+            //    cond = cond + " AND (gf.dep_date - gf.t_date) >=" + 120 + " AND (gf.dep_date - gf.t_date) != 90 AND (gf.dep_date - gf.t_date) <= 150 AND gf.rmrttyp='M'";
+            //}
+            //if (cbo_contract.Text == "5 Months")
+            //{
+            //    cond = cond + " AND (gf.dep_date - gf.t_date) >=" + 150 + " AND (gf.dep_date - gf.t_date) != 120 AND (gf.dep_date - gf.t_date) <= 180 AND gf.rmrttyp='M'";
+            //}
+            //if (cbo_contract.Text == "6 Months")
+            //{
+            //    cond = cond + " AND (gf.dep_date - gf.t_date) >=" + 180 + " AND (gf.dep_date - gf.t_date) != 150 AND (gf.dep_date - gf.t_date) <=210 AND gf.rmrttyp='M'";
+            //}
+            //dis_dgvguest(cond);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            comboBox1.SelectedIndex = -1;
-            cbo_contract.SelectedIndex = -1;
-            dis_dgvguest("");
+            //comboBox1.SelectedIndex = -1;
+            //cbo_contract.SelectedIndex = -1;
+            //dis_dgvguest("");
         }
 
         // UpdateRoomList
@@ -1001,81 +1000,81 @@ namespace Accounting_Application_System
 
             Hotel_System.thisDatabase db = new Hotel_System.thisDatabase();
 
-            try
-            {
-                String collection_year = cbo_collectionfilteryear.SelectedValue.ToString();
+            //try
+            //{
+            //    String collection_year = cbo_collectionfilteryear.SelectedValue.ToString();
 
 
-                if (collection_year == "2017")
-                {
-                    DataTable dt = new DataTable();
-                    dt = db.QueryBySQLCode("SELECT cs.fy as \"year\", cs.mo as \"month\", to_char(to_date(cs.date, 'YYYY-MM-DD'), 'Mon') as monthname, cs.rental as \"rental\", cs.utilities as \"utilities\", cs.collection as collection, cs.date as \"date\" FROM " + schema + ".collection_stat cs WHERE date BETWEEN '2016-11-01' AND '2017-10-31' ORDER BY year, month");
+            //    if (collection_year == "2017")
+            //    {
+            //        DataTable dt = new DataTable();
+            //        dt = db.QueryBySQLCode("SELECT cs.fy as \"year\", cs.mo as \"month\", to_char(to_date(cs.date, 'YYYY-MM-DD'), 'Mon') as monthname, cs.rental as \"rental\", cs.utilities as \"utilities\", cs.collection as collection, cs.date as \"date\" FROM " + schema + ".collection_stat cs WHERE date BETWEEN '2016-11-01' AND '2017-10-31' ORDER BY year, month");
 
-                    dgv_collection.Rows.Clear();
+            //        dgv_collection.Rows.Clear();
 
-                    for (int r = 0; r < dt.Rows.Count; r++)
-                    {
-                        int i = dgv_collection.Rows.Add();
-                        DataGridViewRow row = dgv_collection.Rows[i];
+            //        for (int r = 0; r < dt.Rows.Count; r++)
+            //        {
+            //            int i = dgv_collection.Rows.Add();
+            //            DataGridViewRow row = dgv_collection.Rows[i];
 
-                        Double billedtotal = gm.toNormalDoubleFormat(dt.Rows[r]["rental"].ToString()) + gm.toNormalDoubleFormat(dt.Rows[r]["utilities"].ToString());
-                        Double collectionpct = (gm.toNormalDoubleFormat(dt.Rows[r]["collection"].ToString()) / billedtotal) * 100;
-                        Double notcollected = gm.toNormalDoubleFormat(dt.Rows[r]["collection"].ToString()) - billedtotal;
-                        Double notcollectedpct = (notcollected / billedtotal) * 100;
+            //            Double billedtotal = gm.toNormalDoubleFormat(dt.Rows[r]["rental"].ToString()) + gm.toNormalDoubleFormat(dt.Rows[r]["utilities"].ToString());
+            //            Double collectionpct = (gm.toNormalDoubleFormat(dt.Rows[r]["collection"].ToString()) / billedtotal) * 100;
+            //            Double notcollected = gm.toNormalDoubleFormat(dt.Rows[r]["collection"].ToString()) - billedtotal;
+            //            Double notcollectedpct = (notcollected / billedtotal) * 100;
 
-                        row.Cells["dgvl_year"].Value = dt.Rows[r]["year"].ToString();
-                        row.Cells["dgvl_month"].Value = dt.Rows[r]["monthname"].ToString();
-                        row.Cells["dgvl_m"].Value = dt.Rows[r]["month"].ToString();
-                        row.Cells["dgvl_rental"].Value = gm.toAccountingFormat(dt.Rows[r]["rental"].ToString());
-                        row.Cells["dgvl_utilities"].Value = gm.toAccountingFormat(dt.Rows[r]["utilities"].ToString());
-                        row.Cells["dgvl_billedtotal"].Value = gm.toAccountingFormat(billedtotal);
-                        row.Cells["dgvl_collected"].Value = gm.toAccountingFormat(dt.Rows[r]["collection"].ToString());
-                        row.Cells["dgvl_pct"].Value = String.Format("{0}%", collectionpct);
-                        row.Cells["dgvl_notcollected"].Value = gm.toAccountingFormat(notcollected);
-                        row.Cells["dgvl_notcollected_pct"].Value = String.Format("{0}%", notcollectedpct);
+            //            row.Cells["dgvl_year"].Value = dt.Rows[r]["year"].ToString();
+            //            row.Cells["dgvl_month"].Value = dt.Rows[r]["monthname"].ToString();
+            //            row.Cells["dgvl_m"].Value = dt.Rows[r]["month"].ToString();
+            //            row.Cells["dgvl_rental"].Value = gm.toAccountingFormat(dt.Rows[r]["rental"].ToString());
+            //            row.Cells["dgvl_utilities"].Value = gm.toAccountingFormat(dt.Rows[r]["utilities"].ToString());
+            //            row.Cells["dgvl_billedtotal"].Value = gm.toAccountingFormat(billedtotal);
+            //            row.Cells["dgvl_collected"].Value = gm.toAccountingFormat(dt.Rows[r]["collection"].ToString());
+            //            row.Cells["dgvl_pct"].Value = String.Format("{0}%", collectionpct);
+            //            row.Cells["dgvl_notcollected"].Value = gm.toAccountingFormat(notcollected);
+            //            row.Cells["dgvl_notcollected_pct"].Value = String.Format("{0}%", notcollectedpct);
 
-                        row.Cells["dgvl_notcollected"].Style.ForeColor = Color.Red;
-                        row.Cells["dgvl_notcollected_pct"].Style.ForeColor = Color.Red;
-                    }
+            //            row.Cells["dgvl_notcollected"].Style.ForeColor = Color.Red;
+            //            row.Cells["dgvl_notcollected_pct"].Style.ForeColor = Color.Red;
+            //        }
 
-                }
-                else if (collection_year == "2018")
-                {
-                    DataTable dt = new DataTable();
-                    dt = db.QueryBySQLCode("SELECT cs.fy as \"year\", cs.mo as \"month\", to_char(to_date(cs.date, 'YYYY-MM-DD'), 'Mon') as monthname, cs.rental as \"rental\", cs.utilities as \"utilities\", cs.collection as collection, cs.date as \"date\" FROM " + schema + ".collection_stat cs WHERE date BETWEEN '2017-11-01' AND '2018-10-31' ORDER BY year, month");
+            //    }
+            //    else if (collection_year == "2018")
+            //    {
+            //        DataTable dt = new DataTable();
+            //        dt = db.QueryBySQLCode("SELECT cs.fy as \"year\", cs.mo as \"month\", to_char(to_date(cs.date, 'YYYY-MM-DD'), 'Mon') as monthname, cs.rental as \"rental\", cs.utilities as \"utilities\", cs.collection as collection, cs.date as \"date\" FROM " + schema + ".collection_stat cs WHERE date BETWEEN '2017-11-01' AND '2018-10-31' ORDER BY year, month");
 
-                    dgv_collection.Rows.Clear();
+            //        dgv_collection.Rows.Clear();
 
-                    for (int r = 0; r < dt.Rows.Count; r++)
-                    {
-                        int i = dgv_collection.Rows.Add();
-                        DataGridViewRow row = dgv_collection.Rows[i];
+            //        for (int r = 0; r < dt.Rows.Count; r++)
+            //        {
+            //            int i = dgv_collection.Rows.Add();
+            //            DataGridViewRow row = dgv_collection.Rows[i];
 
-                        Double billedtotal = gm.toNormalDoubleFormat(dt.Rows[r]["rental"].ToString()) + gm.toNormalDoubleFormat(dt.Rows[r]["utilities"].ToString());
-                        Double collectionpct = (gm.toNormalDoubleFormat(dt.Rows[r]["collection"].ToString()) / billedtotal) * 100;
-                        Double notcollected = gm.toNormalDoubleFormat(dt.Rows[r]["collection"].ToString()) - billedtotal;
-                        Double notcollectedpct = (notcollected / billedtotal) * 100;
+            //            Double billedtotal = gm.toNormalDoubleFormat(dt.Rows[r]["rental"].ToString()) + gm.toNormalDoubleFormat(dt.Rows[r]["utilities"].ToString());
+            //            Double collectionpct = (gm.toNormalDoubleFormat(dt.Rows[r]["collection"].ToString()) / billedtotal) * 100;
+            //            Double notcollected = gm.toNormalDoubleFormat(dt.Rows[r]["collection"].ToString()) - billedtotal;
+            //            Double notcollectedpct = (notcollected / billedtotal) * 100;
 
-                        row.Cells["dgvl_year"].Value = dt.Rows[r]["year"].ToString();
-                        row.Cells["dgvl_month"].Value = dt.Rows[r]["monthname"].ToString();
-                        row.Cells["dgvl_m"].Value = dt.Rows[r]["month"].ToString();
-                        row.Cells["dgvl_rental"].Value = gm.toAccountingFormat(dt.Rows[r]["rental"].ToString());
-                        row.Cells["dgvl_utilities"].Value = gm.toAccountingFormat(dt.Rows[r]["utilities"].ToString());
-                        row.Cells["dgvl_billedtotal"].Value = gm.toAccountingFormat(billedtotal);
-                        row.Cells["dgvl_collected"].Value = gm.toAccountingFormat(dt.Rows[r]["collection"].ToString());
-                        row.Cells["dgvl_pct"].Value = String.Format("{0}%", collectionpct);
-                        row.Cells["dgvl_notcollected"].Value = gm.toAccountingFormat(notcollected);
-                        row.Cells["dgvl_notcollected_pct"].Value = String.Format("{0}%", notcollectedpct);
+            //            row.Cells["dgvl_year"].Value = dt.Rows[r]["year"].ToString();
+            //            row.Cells["dgvl_month"].Value = dt.Rows[r]["monthname"].ToString();
+            //            row.Cells["dgvl_m"].Value = dt.Rows[r]["month"].ToString();
+            //            row.Cells["dgvl_rental"].Value = gm.toAccountingFormat(dt.Rows[r]["rental"].ToString());
+            //            row.Cells["dgvl_utilities"].Value = gm.toAccountingFormat(dt.Rows[r]["utilities"].ToString());
+            //            row.Cells["dgvl_billedtotal"].Value = gm.toAccountingFormat(billedtotal);
+            //            row.Cells["dgvl_collected"].Value = gm.toAccountingFormat(dt.Rows[r]["collection"].ToString());
+            //            row.Cells["dgvl_pct"].Value = String.Format("{0}%", collectionpct);
+            //            row.Cells["dgvl_notcollected"].Value = gm.toAccountingFormat(notcollected);
+            //            row.Cells["dgvl_notcollected_pct"].Value = String.Format("{0}%", notcollectedpct);
 
-                        row.Cells["dgvl_notcollected"].Style.ForeColor = Color.Red;
-                        row.Cells["dgvl_notcollected_pct"].Style.ForeColor = Color.Red;
-                    }
+            //            row.Cells["dgvl_notcollected"].Style.ForeColor = Color.Red;
+            //            row.Cells["dgvl_notcollected_pct"].Style.ForeColor = Color.Red;
+            //        }
 
-                }
+            //    }
                 
-            }
-            catch(Exception)
-            { }
+            //}
+            //catch(Exception)
+            //{ }
         }
 
         private void disp_chart_collection()
@@ -1145,43 +1144,43 @@ namespace Accounting_Application_System
 
             try
             {
-                foreach (var seriess in chart_collection.Series)
-                {
-                    seriess.Points.Clear();
-                }
+                //foreach (var seriess in chart_collection.Series)
+                //{
+                //    seriess.Points.Clear();
+                //}
 
-                String collection_year = cbo_collectionfilteryear.SelectedValue.ToString();
+                //String collection_year = cbo_collectionfilteryear.SelectedValue.ToString();
 
-                if (collection_year == "2017")
-                {
-                    DataTable dt = new DataTable();
-
-
-                    dt = db.QueryBySQLCode("SELECT cs.fy as \"year\", cs.mo as \"month\", to_char(to_date(cs.date, 'YYYY-MM-DD'), 'Mon') as monthname, cs.rental+cs.utilities as \"total\", cs.collection as \"collection\" FROM " + schema + ".collection_stat cs WHERE date BETWEEN '2016-11-01' AND '2017-10-31' ORDER BY year, month");
-
-                    chart_collection.DataSource = dt;
-                    chart_collection.Series["Total Billing"].XValueMember = "monthname";
-                    chart_collection.Series["Actual Collection"].XValueMember = "monthname";
-                    chart_collection.Series["Total Billing"].YValueMembers = "total";
-                    chart_collection.Series["Actual Collection"].YValueMembers = "collection";
-                    chart_collection.Series["Total Billing"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-                    chart_collection.Series["Actual Collection"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-                }
-                else if (collection_year == "2018")
-                {
-                    DataTable dt = new DataTable();
+                //if (collection_year == "2017")
+                //{
+                //    DataTable dt = new DataTable();
 
 
-                    dt = db.QueryBySQLCode("SELECT cs.fy as \"year\", cs.mo as \"month\", to_char(to_date(cs.date, 'YYYY-MM-DD'), 'Mon') as monthname, cs.rental+cs.utilities as \"total\", cs.collection as \"collection\" FROM " + schema + ".collection_stat cs WHERE date BETWEEN '2017-11-01' AND '2018-10-31' ORDER BY year, month");
+                //    dt = db.QueryBySQLCode("SELECT cs.fy as \"year\", cs.mo as \"month\", to_char(to_date(cs.date, 'YYYY-MM-DD'), 'Mon') as monthname, cs.rental+cs.utilities as \"total\", cs.collection as \"collection\" FROM " + schema + ".collection_stat cs WHERE date BETWEEN '2016-11-01' AND '2017-10-31' ORDER BY year, month");
 
-                    chart_collection.DataSource = dt;
-                    chart_collection.Series["Total Billing"].XValueMember = "monthname";
-                    chart_collection.Series["Actual Collection"].XValueMember = "monthname";
-                    chart_collection.Series["Total Billing"].YValueMembers = "total";
-                    chart_collection.Series["Actual Collection"].YValueMembers = "collection";
-                    chart_collection.Series["Total Billing"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-                    chart_collection.Series["Actual Collection"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-                }
+                //    chart_collection.DataSource = dt;
+                //    chart_collection.Series["Total Billing"].XValueMember = "monthname";
+                //    chart_collection.Series["Actual Collection"].XValueMember = "monthname";
+                //    chart_collection.Series["Total Billing"].YValueMembers = "total";
+                //    chart_collection.Series["Actual Collection"].YValueMembers = "collection";
+                //    chart_collection.Series["Total Billing"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+                //    chart_collection.Series["Actual Collection"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+                //}
+                //else if (collection_year == "2018")
+                //{
+                //    DataTable dt = new DataTable();
+
+
+                //    dt = db.QueryBySQLCode("SELECT cs.fy as \"year\", cs.mo as \"month\", to_char(to_date(cs.date, 'YYYY-MM-DD'), 'Mon') as monthname, cs.rental+cs.utilities as \"total\", cs.collection as \"collection\" FROM " + schema + ".collection_stat cs WHERE date BETWEEN '2017-11-01' AND '2018-10-31' ORDER BY year, month");
+
+                //    chart_collection.DataSource = dt;
+                //    chart_collection.Series["Total Billing"].XValueMember = "monthname";
+                //    chart_collection.Series["Actual Collection"].XValueMember = "monthname";
+                //    chart_collection.Series["Total Billing"].YValueMembers = "total";
+                //    chart_collection.Series["Actual Collection"].YValueMembers = "collection";
+                //    chart_collection.Series["Total Billing"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+                //    chart_collection.Series["Actual Collection"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+                //}
             }
             catch(Exception)
             { }
@@ -1305,66 +1304,66 @@ namespace Accounting_Application_System
 
             try
             {
-                String occupancy_year = cbo_occupancyfilteryear.SelectedValue.ToString();
+                //String occupancy_year = cbo_occupancyfilteryear.SelectedValue.ToString();
 
-                if (occupancy_year == "2017")
-                {
-                    DataTable dt = new DataTable();
-                    dt = db.QueryBySQLCode("SELECT o.fy as \"year\", o.mo as \"month\", to_char(to_date(o.date, 'YYYY-MM-DD'), 'Mon') as monthname, o.series1 as \"series1\", o.series2 as \"series2\", o.date as \"date\" FROM " + schema + ".occupanc_series_stat o WHERE date BETWEEN '2016-11-01' AND '2017-10-31' ORDER BY year, month");
+                //if (occupancy_year == "2017")
+                //{
+                //    DataTable dt = new DataTable();
+                //    dt = db.QueryBySQLCode("SELECT o.fy as \"year\", o.mo as \"month\", to_char(to_date(o.date, 'YYYY-MM-DD'), 'Mon') as monthname, o.series1 as \"series1\", o.series2 as \"series2\", o.date as \"date\" FROM " + schema + ".occupanc_series_stat o WHERE date BETWEEN '2016-11-01' AND '2017-10-31' ORDER BY year, month");
 
-                    dgv_occupancy.Rows.Clear();
+                //    dgv_occupancy.Rows.Clear();
 
-                    for (int r = 0; r < dt.Rows.Count; r++)
-                    {
-                        int i = dgv_occupancy.Rows.Add();
-                        DataGridViewRow row = dgv_occupancy.Rows[i];
+                //    for (int r = 0; r < dt.Rows.Count; r++)
+                //    {
+                //        int i = dgv_occupancy.Rows.Add();
+                //        DataGridViewRow row = dgv_occupancy.Rows[i];
 
-                        Double variance = gm.toNormalDoubleFormat(dt.Rows[r]["series1"].ToString()) - gm.toNormalDoubleFormat(dt.Rows[r]["series2"].ToString());
-
-
-                        Double variancepct = (variance / gm.toNormalDoubleFormat(dt.Rows[r]["series1"].ToString())) * 100;
-
-                        row.Cells["dgvl_occ_year"].Value = dt.Rows[r]["year"].ToString();
-                        row.Cells["dgvl_occ_month"].Value = dt.Rows[r]["monthname"].ToString();
-                        row.Cells["dgvl_occ_series1"].Value = gm.toAccountingFormat(dt.Rows[r]["series1"].ToString());
-                        row.Cells["dgvl_occ_series2"].Value = gm.toAccountingFormat(dt.Rows[r]["series2"].ToString());
-                        row.Cells["dgvl_occ_var_amt"].Value = gm.toAccountingFormat(variance);
-                        row.Cells["dgvl_occ_var_pct"].Value = String.Format("{0}%", variancepct.ToString()); //gm.toNormalDoubleFormat(variancepct.ToString()); 
-                        row.Cells["dgvl_occ_m"].Value = dt.Rows[r]["month"].ToString();
-
-                        row.Cells["dgvl_occ_var_amt"].Style.ForeColor = Color.Red;
-                        row.Cells["dgvl_occ_var_pct"].Style.ForeColor = Color.Red;
-                    }
-                }
-                else if (occupancy_year == "2018")
-                {
-                    DataTable dt = new DataTable();
-                    dt = db.QueryBySQLCode("SELECT o.fy as \"year\", o.mo as \"month\", to_char(to_date(o.date, 'YYYY-MM-DD'), 'Mon') as monthname, o.series1 as \"series1\", o.series2 as \"series2\", o.date as \"date\" FROM " + schema + ".occupanc_series_stat o WHERE date BETWEEN '2017-11-01' AND '2018-10-31' ORDER BY year, month");
-
-                    dgv_occupancy.Rows.Clear();
-
-                    for (int r = 0; r < dt.Rows.Count; r++)
-                    {
-                        int i = dgv_occupancy.Rows.Add();
-                        DataGridViewRow row = dgv_occupancy.Rows[i];
-
-                        Double variance = gm.toNormalDoubleFormat(dt.Rows[r]["series1"].ToString()) - gm.toNormalDoubleFormat(dt.Rows[r]["series2"].ToString());
+                //        Double variance = gm.toNormalDoubleFormat(dt.Rows[r]["series1"].ToString()) - gm.toNormalDoubleFormat(dt.Rows[r]["series2"].ToString());
 
 
-                        Double variancepct = (variance / gm.toNormalDoubleFormat(dt.Rows[r]["series1"].ToString())) * 100;
+                //        Double variancepct = (variance / gm.toNormalDoubleFormat(dt.Rows[r]["series1"].ToString())) * 100;
 
-                        row.Cells["dgvl_occ_year"].Value = dt.Rows[r]["year"].ToString();
-                        row.Cells["dgvl_occ_month"].Value = dt.Rows[r]["monthname"].ToString();
-                        row.Cells["dgvl_occ_series1"].Value = gm.toAccountingFormat(dt.Rows[r]["series1"].ToString());
-                        row.Cells["dgvl_occ_series2"].Value = gm.toAccountingFormat(dt.Rows[r]["series2"].ToString());
-                        row.Cells["dgvl_occ_var_amt"].Value = gm.toAccountingFormat(variance);
-                        row.Cells["dgvl_occ_var_pct"].Value = String.Format("{0}%", variancepct.ToString()); //gm.toNormalDoubleFormat(variancepct.ToString()); 
-                        row.Cells["dgvl_occ_m"].Value = dt.Rows[r]["month"].ToString();
+                //        row.Cells["dgvl_occ_year"].Value = dt.Rows[r]["year"].ToString();
+                //        row.Cells["dgvl_occ_month"].Value = dt.Rows[r]["monthname"].ToString();
+                //        row.Cells["dgvl_occ_series1"].Value = gm.toAccountingFormat(dt.Rows[r]["series1"].ToString());
+                //        row.Cells["dgvl_occ_series2"].Value = gm.toAccountingFormat(dt.Rows[r]["series2"].ToString());
+                //        row.Cells["dgvl_occ_var_amt"].Value = gm.toAccountingFormat(variance);
+                //        row.Cells["dgvl_occ_var_pct"].Value = String.Format("{0}%", variancepct.ToString()); //gm.toNormalDoubleFormat(variancepct.ToString()); 
+                //        row.Cells["dgvl_occ_m"].Value = dt.Rows[r]["month"].ToString();
 
-                        row.Cells["dgvl_occ_var_amt"].Style.ForeColor = Color.Red;
-                        row.Cells["dgvl_occ_var_pct"].Style.ForeColor = Color.Red;
-                    }
-                }
+                //        row.Cells["dgvl_occ_var_amt"].Style.ForeColor = Color.Red;
+                //        row.Cells["dgvl_occ_var_pct"].Style.ForeColor = Color.Red;
+                //    }
+                //}
+                //else if (occupancy_year == "2018")
+                //{
+                //    DataTable dt = new DataTable();
+                //    dt = db.QueryBySQLCode("SELECT o.fy as \"year\", o.mo as \"month\", to_char(to_date(o.date, 'YYYY-MM-DD'), 'Mon') as monthname, o.series1 as \"series1\", o.series2 as \"series2\", o.date as \"date\" FROM " + schema + ".occupanc_series_stat o WHERE date BETWEEN '2017-11-01' AND '2018-10-31' ORDER BY year, month");
+
+                //    dgv_occupancy.Rows.Clear();
+
+                //    for (int r = 0; r < dt.Rows.Count; r++)
+                //    {
+                //        int i = dgv_occupancy.Rows.Add();
+                //        DataGridViewRow row = dgv_occupancy.Rows[i];
+
+                //        Double variance = gm.toNormalDoubleFormat(dt.Rows[r]["series1"].ToString()) - gm.toNormalDoubleFormat(dt.Rows[r]["series2"].ToString());
+
+
+                //        Double variancepct = (variance / gm.toNormalDoubleFormat(dt.Rows[r]["series1"].ToString())) * 100;
+
+                //        row.Cells["dgvl_occ_year"].Value = dt.Rows[r]["year"].ToString();
+                //        row.Cells["dgvl_occ_month"].Value = dt.Rows[r]["monthname"].ToString();
+                //        row.Cells["dgvl_occ_series1"].Value = gm.toAccountingFormat(dt.Rows[r]["series1"].ToString());
+                //        row.Cells["dgvl_occ_series2"].Value = gm.toAccountingFormat(dt.Rows[r]["series2"].ToString());
+                //        row.Cells["dgvl_occ_var_amt"].Value = gm.toAccountingFormat(variance);
+                //        row.Cells["dgvl_occ_var_pct"].Value = String.Format("{0}%", variancepct.ToString()); //gm.toNormalDoubleFormat(variancepct.ToString()); 
+                //        row.Cells["dgvl_occ_m"].Value = dt.Rows[r]["month"].ToString();
+
+                //        row.Cells["dgvl_occ_var_amt"].Style.ForeColor = Color.Red;
+                //        row.Cells["dgvl_occ_var_pct"].Style.ForeColor = Color.Red;
+                //    }
+                //}
 
             }
             catch(Exception)
@@ -1428,41 +1427,41 @@ namespace Accounting_Application_System
              * */
             try
             {
-                foreach (var seriess in chart_occupancy.Series)
-                {
-                    seriess.Points.Clear();
-                }
+                //foreach (var seriess in chart_occupancy.Series)
+                //{
+                //    seriess.Points.Clear();
+                //}
 
-                String occupancy_year = cbo_occupancyfilteryear.SelectedValue.ToString();
+                //String occupancy_year = cbo_occupancyfilteryear.SelectedValue.ToString();
 
-                if (occupancy_year == "2017")
-                {
-                    DataTable dt = new DataTable();
+                //if (occupancy_year == "2017")
+                //{
+                //    DataTable dt = new DataTable();
 
-                    dt = db.QueryBySQLCode("SELECT o.fy as \"year\", o.mo as \"month\", to_char(to_date(o.date, 'YYYY-MM-DD'), 'Mon') as monthname, o.series1 as \"series1\", o.series2 as \"series2\", o.date as \"date\" FROM " + schema + ".occupanc_series_stat o WHERE date BETWEEN '2016-11-01' AND '2017-10-31' ORDER BY year, month");
+                //    dt = db.QueryBySQLCode("SELECT o.fy as \"year\", o.mo as \"month\", to_char(to_date(o.date, 'YYYY-MM-DD'), 'Mon') as monthname, o.series1 as \"series1\", o.series2 as \"series2\", o.date as \"date\" FROM " + schema + ".occupanc_series_stat o WHERE date BETWEEN '2016-11-01' AND '2017-10-31' ORDER BY year, month");
 
-                    chart_occupancy.DataSource = dt;
-                    chart_occupancy.Series["Projected Occupancy"].XValueMember = "monthname";
-                    chart_occupancy.Series["Actual Occupancy"].XValueMember = "monthname";
-                    chart_occupancy.Series["Projected Occupancy"].YValueMembers = "series1";
-                    chart_occupancy.Series["Actual Occupancy"].YValueMembers = "series2";
-                    chart_occupancy.Series["Projected Occupancy"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-                    chart_occupancy.Series["Actual Occupancy"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-                }
-                else if (occupancy_year == "2018")
-                {
-                    DataTable dt = new DataTable();
+                //    chart_occupancy.DataSource = dt;
+                //    chart_occupancy.Series["Projected Occupancy"].XValueMember = "monthname";
+                //    chart_occupancy.Series["Actual Occupancy"].XValueMember = "monthname";
+                //    chart_occupancy.Series["Projected Occupancy"].YValueMembers = "series1";
+                //    chart_occupancy.Series["Actual Occupancy"].YValueMembers = "series2";
+                //    chart_occupancy.Series["Projected Occupancy"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+                //    chart_occupancy.Series["Actual Occupancy"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+                //}
+                //else if (occupancy_year == "2018")
+                //{
+                //    DataTable dt = new DataTable();
 
-                    dt = db.QueryBySQLCode("SELECT o.fy as \"year\", o.mo as \"month\", to_char(to_date(o.date, 'YYYY-MM-DD'), 'Mon') as monthname, o.series1 as \"series1\", o.series2 as \"series2\", o.date as \"date\" FROM " + schema + ".occupanc_series_stat o WHERE date BETWEEN '2017-11-01' AND '2018-10-31' ORDER BY year, month");
+                //    dt = db.QueryBySQLCode("SELECT o.fy as \"year\", o.mo as \"month\", to_char(to_date(o.date, 'YYYY-MM-DD'), 'Mon') as monthname, o.series1 as \"series1\", o.series2 as \"series2\", o.date as \"date\" FROM " + schema + ".occupanc_series_stat o WHERE date BETWEEN '2017-11-01' AND '2018-10-31' ORDER BY year, month");
 
-                    chart_occupancy.DataSource = dt;
-                    chart_occupancy.Series["Projected Occupancy"].XValueMember = "monthname";
-                    chart_occupancy.Series["Actual Occupancy"].XValueMember = "monthname";
-                    chart_occupancy.Series["Projected Occupancy"].YValueMembers = "series1";
-                    chart_occupancy.Series["Actual Occupancy"].YValueMembers = "series2";
-                    chart_occupancy.Series["Projected Occupancy"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-                    chart_occupancy.Series["Actual Occupancy"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-                }
+                //    chart_occupancy.DataSource = dt;
+                //    chart_occupancy.Series["Projected Occupancy"].XValueMember = "monthname";
+                //    chart_occupancy.Series["Actual Occupancy"].XValueMember = "monthname";
+                //    chart_occupancy.Series["Projected Occupancy"].YValueMembers = "series1";
+                //    chart_occupancy.Series["Actual Occupancy"].YValueMembers = "series2";
+                //    chart_occupancy.Series["Projected Occupancy"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+                //    chart_occupancy.Series["Actual Occupancy"].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+                //}
             }
             catch(Exception)
             { }
@@ -1470,27 +1469,27 @@ namespace Accounting_Application_System
 
         private void disp_calc_collection()
         {
-            int r = dgv_collection.CurrentRow.Index;
+            //int r = dgv_collection.CurrentRow.Index;
 
-            string rental = dgv_collection["dgvl_rental", r].Value.ToString();
-            rental = rental.Replace(",", "");
-            rental = rental.Replace(".00", "");
+            //string rental = dgv_collection["dgvl_rental", r].Value.ToString();
+            //rental = rental.Replace(",", "");
+            //rental = rental.Replace(".00", "");
 
-            string utilities = dgv_collection["dgvl_utilities", r].Value.ToString();
-            utilities = utilities.Replace(",", "");
-            utilities = utilities.Replace(".00", "");
+            //string utilities = dgv_collection["dgvl_utilities", r].Value.ToString();
+            //utilities = utilities.Replace(",", "");
+            //utilities = utilities.Replace(".00", "");
 
-            string collection = dgv_collection["dgvl_collected", r].Value.ToString();
-            collection = collection.Replace(",", "");
-            collection = collection.Replace(".00", "");
+            //string collection = dgv_collection["dgvl_collected", r].Value.ToString();
+            //collection = collection.Replace(",", "");
+            //collection = collection.Replace(".00", "");
 
-            txt_cyear.Text = dgv_collection["dgvl_year", r].Value.ToString();
-            txt_cmonth.Text = dgv_collection["dgvl_month", r].Value.ToString();
-            txt_crental.Text = rental;
-            txt_cutilities.Text = utilities;
-            txt_ccollected.Text = collection;
+            //txt_cyear.Text = dgv_collection["dgvl_year", r].Value.ToString();
+            //txt_cmonth.Text = dgv_collection["dgvl_month", r].Value.ToString();
+            //txt_crental.Text = rental;
+            //txt_cutilities.Text = utilities;
+            //txt_ccollected.Text = collection;
 
-            tbcntrl_collectionstat.SelectTab(tpg_cupdate);
+            //tbcntrl_collectionstat.SelectTab(tpg_cupdate);
         }
 
         private void disp_calc_occupancy()
@@ -1499,26 +1498,26 @@ namespace Accounting_Application_System
             //txt_variance.Text = "0";
             //txt_variancepct.Text = "0";
 
-            int r = dgv_occupancy.CurrentRow.Index;
-            string series2 = dgv_occupancy["dgvl_occ_series2", r].Value.ToString();
-            series2 = series2.Replace(",", "");
-            series2 = series2.Replace(".00", "");
+            //int r = dgv_occupancy.CurrentRow.Index;
+            //string series2 = dgv_occupancy["dgvl_occ_series2", r].Value.ToString();
+            //series2 = series2.Replace(",", "");
+            //series2 = series2.Replace(".00", "");
 
-            string series1 = dgv_occupancy["dgvl_occ_series1", r].Value.ToString();
-            series1 = series1.Replace(",", "");
-            series1 = series1.Replace(".00", "");
+            //string series1 = dgv_occupancy["dgvl_occ_series1", r].Value.ToString();
+            //series1 = series1.Replace(",", "");
+            //series1 = series1.Replace(".00", "");
 
-            txt_series1.Text = series1;
-            txt_year.Text = dgv_occupancy["dgvl_occ_year", r].Value.ToString();
-            txt_month.Text = dgv_occupancy["dgvl_occ_month", r].Value.ToString();
-            txt_series2.Text = series2;
+            //txt_series1.Text = series1;
+            //txt_year.Text = dgv_occupancy["dgvl_occ_year", r].Value.ToString();
+            //txt_month.Text = dgv_occupancy["dgvl_occ_month", r].Value.ToString();
+            //txt_series2.Text = series2;
 
-            txt_year.Enabled = false;
-            txt_month.Enabled = false;
-            txt_variance.Enabled = false;
-            txt_variancepct.Enabled = false;
+            //txt_year.Enabled = false;
+            //txt_month.Enabled = false;
+            //txt_variance.Enabled = false;
+            //txt_variancepct.Enabled = false;
 
-            tbcntrl_main.SelectTab(tabPage2);
+            //tbcntrl_main.SelectTab(tabPage2);
         }
 
         //Market by: Roldan 04/04/18
@@ -1545,78 +1544,78 @@ namespace Accounting_Application_System
             catch(Exception)
             { }*/
 
-            DateTime s_date = dtp_sdate.Value;
-            DateTime e_date = dtp_edate.Value;
+            //DateTime s_date = dtp_sdate.Value;
+            //DateTime e_date = dtp_edate.Value;
 
-            String start_date = s_date.ToString("MM/dd/yyyy");
-            String end_date = e_date.ToString("MM/dd/yyyy");
+            //String start_date = s_date.ToString("MM/dd/yyyy");
+            //String end_date = e_date.ToString("MM/dd/yyyy");
 
-            Hotel_System.thisDatabase db = new Hotel_System.thisDatabase();
-            DataTable dt = db.QueryBySQLCode("SELECT gf.mkt_code as \"marketcode\", m.mkt_desc as \"market\", SUM(gf.rom_rate) as \"amount\" FROM " + schema + ".gfolio gf LEFT JOIN " + schema + ".market m ON gf.mkt_code = m.mkt_code WHERE to_char(gf.arr_date, 'MM/dd/yyyy')>='" + start_date + "' AND to_char(gf.arr_date, 'MM/dd/yyyy')<='" + end_date + "' GROUP BY marketcode, market ORDER BY marketcode");
+            //Hotel_System.thisDatabase db = new Hotel_System.thisDatabase();
+            //DataTable dt = db.QueryBySQLCode("SELECT gf.mkt_code as \"marketcode\", m.mkt_desc as \"market\", SUM(gf.rom_rate) as \"amount\" FROM " + schema + ".gfolio gf LEFT JOIN " + schema + ".market m ON gf.mkt_code = m.mkt_code WHERE to_char(gf.arr_date, 'MM/dd/yyyy')>='" + start_date + "' AND to_char(gf.arr_date, 'MM/dd/yyyy')<='" + end_date + "' GROUP BY marketcode, market ORDER BY marketcode");
 
-            clear_dgvmarket();
+            //clear_dgvmarket();
 
-            try
-            {
-                for (int r = 0; dt.Rows.Count > r; r++)
-                {
-                    int i = dgv_market.Rows.Add();
-                    DataGridViewRow row = dgv_market.Rows[i];
+            //try
+            //{
+            //    for (int r = 0; dt.Rows.Count > r; r++)
+            //    {
+            //        int i = dgv_market.Rows.Add();
+            //        DataGridViewRow row = dgv_market.Rows[i];
 
-                    row.Cells["dgvmarket_market"].Value = dt.Rows[r]["market"].ToString();
-                    row.Cells["dgvmarket_amount"].Value = gm.toAccountingFormat(dt.Rows[r]["amount"].ToString());
-                }
-            }
-            catch (Exception)
-            { }
+            //        row.Cells["dgvmarket_market"].Value = dt.Rows[r]["market"].ToString();
+            //        row.Cells["dgvmarket_amount"].Value = gm.toAccountingFormat(dt.Rows[r]["amount"].ToString());
+            //    }
+            //}
+            //catch (Exception)
+            //{ }
 
 
         }
 
         public void disp_dgv_travagnt()
         {
-            DateTime travagnt_s_date = dtp_travagnt_sdate.Value;
-            DateTime travagnt_e_date = dtp_travagnt_edate.Value;
+            //DateTime travagnt_s_date = dtp_travagnt_sdate.Value;
+            //DateTime travagnt_e_date = dtp_travagnt_edate.Value;
 
-            String travagnt_start_date = travagnt_s_date.ToString("MM/dd/yyyy");
-            String travagnt_end_date = travagnt_e_date.ToString("MM/dd/yyyy");
+            //String travagnt_start_date = travagnt_s_date.ToString("MM/dd/yyyy");
+            //String travagnt_end_date = travagnt_e_date.ToString("MM/dd/yyyy");
 
-            Hotel_System.thisDatabase db = new Hotel_System.thisDatabase();
-            DataTable dt_travagnt = db.QueryBySQLCode("SELECT gf.trv_code as \"travelcode\", t.trv_name as \"travel\", SUM(gf.rom_rate) as \"amount\" FROM " + schema + ".gfolio gf LEFT JOIN " + schema + ".travagnt t ON gf.trv_code = t.trv_code WHERE to_char(gf.arr_date, 'MM/dd/yyyy')>='" + travagnt_start_date + "' AND to_char(gf.arr_date, 'MM/dd/yyyy')<='" + travagnt_end_date + "' GROUP BY travelcode, travel ORDER BY travelcode");
+            //Hotel_System.thisDatabase db = new Hotel_System.thisDatabase();
+            //DataTable dt_travagnt = db.QueryBySQLCode("SELECT gf.trv_code as \"travelcode\", t.trv_name as \"travel\", SUM(gf.rom_rate) as \"amount\" FROM " + schema + ".gfolio gf LEFT JOIN " + schema + ".travagnt t ON gf.trv_code = t.trv_code WHERE to_char(gf.arr_date, 'MM/dd/yyyy')>='" + travagnt_start_date + "' AND to_char(gf.arr_date, 'MM/dd/yyyy')<='" + travagnt_end_date + "' GROUP BY travelcode, travel ORDER BY travelcode");
 
-            clear_dgvtravagnt();
+            //clear_dgvtravagnt();
 
-            try
-            {
-                for (int r = 0; dt_travagnt.Rows.Count > r; r++)
-                {
-                    int i = dgv_travagnt.Rows.Add();
-                    DataGridViewRow row = dgv_travagnt.Rows[i];
+            //try
+            //{
+            //    for (int r = 0; dt_travagnt.Rows.Count > r; r++)
+            //    {
+            //        int i = dgv_travagnt.Rows.Add();
+            //        DataGridViewRow row = dgv_travagnt.Rows[i];
 
-                    row.Cells["dgvtravagnt_travagnt"].Value = dt_travagnt.Rows[r]["travel"].ToString();
-                    row.Cells["dgvtravagnt_amount"].Value = gm.toAccountingFormat(dt_travagnt.Rows[r]["amount"].ToString());
-                }
-            }
-            catch (Exception)
-            { }
+            //        row.Cells["dgvtravagnt_travagnt"].Value = dt_travagnt.Rows[r]["travel"].ToString();
+            //        row.Cells["dgvtravagnt_amount"].Value = gm.toAccountingFormat(dt_travagnt.Rows[r]["amount"].ToString());
+            //    }
+            //}
+            //catch (Exception)
+            //{ }
 
 
         }
 
         public void disp_chart_market()
         {
-            DateTime s_date = dtp_sdate.Value;
-            DateTime e_date = dtp_edate.Value;
+            //DateTime s_date = dtp_sdate.Value;
+            //DateTime e_date = dtp_edate.Value;
 
-            String start_date = s_date.ToString("MM/dd/yyyy");
-            String end_date = e_date.ToString("MM/dd/yyyy");
+            //String start_date = s_date.ToString("MM/dd/yyyy");
+            //String end_date = e_date.ToString("MM/dd/yyyy");
 
-            Hotel_System.thisDatabase db = new Hotel_System.thisDatabase();
+            //Hotel_System.thisDatabase db = new Hotel_System.thisDatabase();
             /*
             DataTable dt = db.QueryBySQLCode("SELECT gf.mkt_code as \"marketcode\", m.mkt_desc as \"market\", to_char(gf.arr_date, 'MM/dd/yyyy') as \"date\", SUM(gf.rom_rate) as \"amount\" FROM " + schema + ".gfolio gf LEFT JOIN " + schema + ".market m ON gf.mkt_code = m.mkt_code WHERE to_char(gf.arr_date, 'MM/dd/yyyy')='08/01/2017' GROUP BY marketcode, market, gf.arr_date ORDER BY gf.arr_date");*/
             //DataTable dt_marketseries = db.QueryBySQLCode("SELECT m.mkt_code as \"marketcode\", m.mkt_desc as \"market\" FROM " + schema + ".market m ORDER BY m.mkt_code");
 
-            DataTable dt_marketseries = db.QueryBySQLCode("SELECT gf.mkt_code as \"marketcode\", m.mkt_desc as \"market\" FROM " + schema + ".gfolio gf LEFT JOIN " + schema + ".market m ON gf.mkt_code = m.mkt_code WHERE m.mkt_desc != 'RENTPAD' AND to_char(gf.arr_date, 'MM/dd/yyyy')>='" + start_date + "' AND to_char(gf.arr_date, 'MM/dd/yyyy')<='" + end_date + "'  GROUP BY marketcode, market ORDER BY marketcode");
+            //DataTable dt_marketseries = db.QueryBySQLCode("SELECT gf.mkt_code as \"marketcode\", m.mkt_desc as \"market\" FROM " + schema + ".gfolio gf LEFT JOIN " + schema + ".market m ON gf.mkt_code = m.mkt_code WHERE m.mkt_desc != 'RENTPAD' AND to_char(gf.arr_date, 'MM/dd/yyyy')>='" + start_date + "' AND to_char(gf.arr_date, 'MM/dd/yyyy')<='" + end_date + "'  GROUP BY marketcode, market ORDER BY marketcode");
 
             /*
             chart_market.DataSource = dt;
@@ -1643,88 +1642,88 @@ namespace Accounting_Application_System
                 catch(Exception)
                 { }
             }*/
-            chart_market.Series.Clear();
+            //chart_market.Series.Clear();
 
-            for (int r = 0; dt_marketseries.Rows.Count > r; r++)
-            {
-                try
-                {
-                    string seriesname = dt_marketseries.Rows[r]["market"].ToString();
-                    string mktcode = dt_marketseries.Rows[r]["marketcode"].ToString();
+            //for (int r = 0; dt_marketseries.Rows.Count > r; r++)
+            //{
+            //    try
+            //    {
+            //        string seriesname = dt_marketseries.Rows[r]["market"].ToString();
+            //        string mktcode = dt_marketseries.Rows[r]["marketcode"].ToString();
 
-                    DataTable dt_seriesvalue = db.QueryBySQLCode("SELECT gf.mkt_code as \"marketcode\", m.mkt_desc as \"market\", SUM(gf.rom_rate) as \"amount\" FROM " + schema + ".gfolio gf LEFT JOIN " + schema + ".market m ON gf.mkt_code = m.mkt_code WHERE gf.mkt_code = '" + mktcode + "' AND to_char(gf.arr_date, 'MM/dd/yyyy')>='" + start_date + "' AND to_char(gf.arr_date, 'MM/dd/yyyy')<='" + end_date + "' GROUP BY marketcode, market");
+            //        DataTable dt_seriesvalue = db.QueryBySQLCode("SELECT gf.mkt_code as \"marketcode\", m.mkt_desc as \"market\", SUM(gf.rom_rate) as \"amount\" FROM " + schema + ".gfolio gf LEFT JOIN " + schema + ".market m ON gf.mkt_code = m.mkt_code WHERE gf.mkt_code = '" + mktcode + "' AND to_char(gf.arr_date, 'MM/dd/yyyy')>='" + start_date + "' AND to_char(gf.arr_date, 'MM/dd/yyyy')<='" + end_date + "' GROUP BY marketcode, market");
                     
 
-                    chart_market.Series.Add(seriesname);
-                    chart_market.Series[seriesname].ChartType = SeriesChartType.Column;
-                    chart_market.Series[seriesname].Points.AddXY("Market", dt_seriesvalue.Rows[0]["amount"].ToString());
-                    chart_market.Series[seriesname].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-                    //chart_market.Size = new Size(1000, 1000);
-                }
-                catch (Exception)
-                { }
-            }
+            //        chart_market.Series.Add(seriesname);
+            //        chart_market.Series[seriesname].ChartType = SeriesChartType.Column;
+            //        chart_market.Series[seriesname].Points.AddXY("Market", dt_seriesvalue.Rows[0]["amount"].ToString());
+            //        chart_market.Series[seriesname].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            //        //chart_market.Size = new Size(1000, 1000);
+            //    }
+            //    catch (Exception)
+            //    { }
+            //}
 
             
         }
 
         public void disp_chart_travagnt()
         {
-            DateTime travagnt_s_date = dtp_travagnt_sdate.Value;
-            DateTime travagnt_e_date = dtp_travagnt_edate.Value;
+            //DateTime travagnt_s_date = dtp_travagnt_sdate.Value;
+            //DateTime travagnt_e_date = dtp_travagnt_edate.Value;
 
-            String travagnt_start_date = travagnt_s_date.ToString("MM/dd/yyyy");
-            String travagnt_end_date = travagnt_e_date.ToString("MM/dd/yyyy");
+            //String travagnt_start_date = travagnt_s_date.ToString("MM/dd/yyyy");
+            //String travagnt_end_date = travagnt_e_date.ToString("MM/dd/yyyy");
 
-            Hotel_System.thisDatabase db = new Hotel_System.thisDatabase();
+            //Hotel_System.thisDatabase db = new Hotel_System.thisDatabase();
 
 
-            DataTable dt_travagnt = db.QueryBySQLCode("SELECT gf.trv_code as \"travelcode\", t.trv_name as \"travel\" FROM " + schema + ".gfolio gf LEFT JOIN " + schema + ".travagnt t ON gf.trv_code = t.trv_code WHERE to_char(gf.arr_date, 'MM/dd/yyyy')>='" + travagnt_start_date + "' AND to_char(gf.arr_date, 'MM/dd/yyyy')<='" + travagnt_end_date + "' GROUP BY travelcode, travel ORDER BY travelcode");
+            //DataTable dt_travagnt = db.QueryBySQLCode("SELECT gf.trv_code as \"travelcode\", t.trv_name as \"travel\" FROM " + schema + ".gfolio gf LEFT JOIN " + schema + ".travagnt t ON gf.trv_code = t.trv_code WHERE to_char(gf.arr_date, 'MM/dd/yyyy')>='" + travagnt_start_date + "' AND to_char(gf.arr_date, 'MM/dd/yyyy')<='" + travagnt_end_date + "' GROUP BY travelcode, travel ORDER BY travelcode");
 
            
-            chart_travagnt.Series.Clear();
+            //chart_travagnt.Series.Clear();
 
-            for (int r = 0; dt_travagnt.Rows.Count > r; r++)
-            {
-                try
-                {
-                    string seriesname = dt_travagnt.Rows[r]["travel"].ToString();
-                    string trvcode = dt_travagnt.Rows[r]["travelcode"].ToString();
+            //for (int r = 0; dt_travagnt.Rows.Count > r; r++)
+            //{
+            //    try
+            //    {
+            //        string seriesname = dt_travagnt.Rows[r]["travel"].ToString();
+            //        string trvcode = dt_travagnt.Rows[r]["travelcode"].ToString();
 
-                    DataTable dt_seriesvalue = db.QueryBySQLCode("SELECT gf.trv_code as \"travelcode\", t.trv_name as \"travel\", SUM(gf.rom_rate) as \"amount\" FROM " + schema + ".gfolio gf LEFT JOIN " + schema + ".travagnt t ON gf.mkt_code = t.trv_code WHERE gf.trv_code = '"+ trvcode +"' AND to_char(gf.arr_date, 'MM/dd/yyyy')>='" + travagnt_start_date + "' AND to_char(gf.arr_date, 'MM/dd/yyyy')<='" + travagnt_end_date + "' GROUP BY travelcode, travel ORDER BY travelcode");
+            //        DataTable dt_seriesvalue = db.QueryBySQLCode("SELECT gf.trv_code as \"travelcode\", t.trv_name as \"travel\", SUM(gf.rom_rate) as \"amount\" FROM " + schema + ".gfolio gf LEFT JOIN " + schema + ".travagnt t ON gf.mkt_code = t.trv_code WHERE gf.trv_code = '"+ trvcode +"' AND to_char(gf.arr_date, 'MM/dd/yyyy')>='" + travagnt_start_date + "' AND to_char(gf.arr_date, 'MM/dd/yyyy')<='" + travagnt_end_date + "' GROUP BY travelcode, travel ORDER BY travelcode");
 
 
-                    chart_travagnt.Series.Add(seriesname);
-                    chart_travagnt.Series[seriesname].ChartType = SeriesChartType.Column;
-                    chart_travagnt.Series[seriesname].Points.AddXY("Travel Agency", dt_seriesvalue.Rows[0]["amount"].ToString());
-                    chart_travagnt.Series[seriesname].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
-                    //chart_market.Size = new Size(1000, 1000);
-                }
-                catch (Exception)
-                { }
-            }
+            //        chart_travagnt.Series.Add(seriesname);
+            //        chart_travagnt.Series[seriesname].ChartType = SeriesChartType.Column;
+            //        chart_travagnt.Series[seriesname].Points.AddXY("Travel Agency", dt_seriesvalue.Rows[0]["amount"].ToString());
+            //        chart_travagnt.Series[seriesname].YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
+            //        //chart_market.Size = new Size(1000, 1000);
+            //    }
+            //    catch (Exception)
+            //    { }
+            //}
 
 
         }
 
         public void clear_dgvmarket()
         {
-            try
-            {
-                dgv_market.Rows.Clear();
-            }
-            catch(Exception)
-            { }
+            //try
+            //{
+            //    dgv_market.Rows.Clear();
+            //}
+            //catch(Exception)
+            //{ }
         }
 
         public void clear_dgvtravagnt()
         {
-            try
-            {
-                dgv_travagnt.Rows.Clear();
-            }
-            catch (Exception)
-            { }
+            //try
+            //{
+            //    dgv_travagnt.Rows.Clear();
+            //}
+            //catch (Exception)
+            //{ }
         }
 
         private void dgv_occupancy_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -1752,14 +1751,14 @@ namespace Accounting_Application_System
         {
             try
             {
-                if (!string.IsNullOrEmpty(txt_series1.Text) && !string.IsNullOrEmpty(txt_series2.Text))
-                {
-                    Double var = gm.toNormalDoubleFormat(txt_series1.Text) - gm.toNormalDoubleFormat(txt_series2.Text);
-                    Double varpct = (var / gm.toNormalDoubleFormat(txt_series1.Text)) * 100;
+                //if (!string.IsNullOrEmpty(txt_series1.Text) && !string.IsNullOrEmpty(txt_series2.Text))
+                //{
+                //    Double var = gm.toNormalDoubleFormat(txt_series1.Text) - gm.toNormalDoubleFormat(txt_series2.Text);
+                //    Double varpct = (var / gm.toNormalDoubleFormat(txt_series1.Text)) * 100;
 
-                    txt_variance.Text = (var).ToString();
-                    txt_variancepct.Text = (varpct).ToString();//(var).ToString(); 
-                }
+                //    txt_variance.Text = (var).ToString();
+                //    txt_variancepct.Text = (varpct).ToString();//(var).ToString(); 
+                //}
             }
             catch(Exception)
             { }
@@ -1771,14 +1770,14 @@ namespace Accounting_Application_System
         {
             try
             {
-                if (!string.IsNullOrEmpty(txt_series1.Text) && !string.IsNullOrEmpty(txt_series2.Text))
-                {
-                    Double var = gm.toNormalDoubleFormat(txt_series1.Text) - gm.toNormalDoubleFormat(txt_series2.Text);
-                    Double varpct = (var / gm.toNormalDoubleFormat(txt_series1.Text)) * 100;
+                //if (!string.IsNullOrEmpty(txt_series1.Text) && !string.IsNullOrEmpty(txt_series2.Text))
+                //{
+                //    Double var = gm.toNormalDoubleFormat(txt_series1.Text) - gm.toNormalDoubleFormat(txt_series2.Text);
+                //    Double varpct = (var / gm.toNormalDoubleFormat(txt_series1.Text)) * 100;
 
-                    txt_variance.Text = (var).ToString();
-                    txt_variancepct.Text = (varpct).ToString();//(var).ToString(); 
-                }
+                //    txt_variance.Text = (var).ToString();
+                //    txt_variancepct.Text = (varpct).ToString();//(var).ToString(); 
+                //}
             }
             catch(Exception)
             { }
@@ -1786,70 +1785,70 @@ namespace Accounting_Application_System
 
         private void btn_occ_back_Click(object sender, EventArgs e)
         {
-            txt_series1.Text = string.Empty;
-            txt_variance.Text = "0";
-            txt_variancepct.Text = "0";
+            //txt_series1.Text = string.Empty;
+            //txt_variance.Text = "0";
+            //txt_variancepct.Text = "0";
 
-            tbcntrl_main.SelectTab(tabPage1);
+            //tbcntrl_main.SelectTab(tabPage1);
         }
 
         private void btn_occ_save_Click(object sender, EventArgs e)
         {
-            Hotel_System.thisDatabase db = new Hotel_System.thisDatabase();
-            Boolean success = false;
+            //Hotel_System.thisDatabase db = new Hotel_System.thisDatabase();
+            //Boolean success = false;
 
-            int r = dgv_occupancy.CurrentRow.Index;
+            //int r = dgv_occupancy.CurrentRow.Index;
 
-            int month = Int32.Parse(dgv_occupancy["dgvl_occ_m", r].Value.ToString());
-            int year = Int32.Parse(txt_year.Text);
-            Double series1 = gm.toNormalDoubleFormat(txt_series1.Text);
-            Double series2 = gm.toNormalDoubleFormat(txt_series2.Text);
+            //int month = Int32.Parse(dgv_occupancy["dgvl_occ_m", r].Value.ToString());
+            //int year = Int32.Parse(txt_year.Text);
+            //Double series1 = gm.toNormalDoubleFormat(txt_series1.Text);
+            //Double series2 = gm.toNormalDoubleFormat(txt_series2.Text);
 
-            DataTable dt_check = db.QueryBySQLCode("SELECT os.oid FROM " + schema + ".occupanc_series_stat os WHERE os.fy='"+ year +"' AND os.mo='"+ month +"'");
+            //DataTable dt_check = db.QueryBySQLCode("SELECT os.oid FROM " + schema + ".occupanc_series_stat os WHERE os.fy='"+ year +"' AND os.mo='"+ month +"'");
 
-            String col = "", val = "";
+            //String col = "", val = "";
 
-            if (String.IsNullOrEmpty(txt_series1.Text) && String.IsNullOrEmpty(txt_series2.Text))
-            {
-                MessageBox.Show("Please input the required fields.");
-            }
-            else if (dt_check.Rows.Count > 0)
-            {
-                col = "series1='" + series1 + "', series2='" + series2 + "'";
+            //if (String.IsNullOrEmpty(txt_series1.Text) && String.IsNullOrEmpty(txt_series2.Text))
+            //{
+            //    MessageBox.Show("Please input the required fields.");
+            //}
+            //else if (dt_check.Rows.Count > 0)
+            //{
+            //    col = "series1='" + series1 + "', series2='" + series2 + "'";
 
-                if (db.UpdateOnTable("occupanc_series_stat", col, "oid='" + dt_check.Rows[0]["oid"].ToString() + "'"))
-                {
-                    success = true;
-                    disp_dgv_occupancy();
-                    disp_chart_occupancy();
-                    tbcntrl_main.SelectTab(tabPage1);
-                }
-                else
-                {
-                    success = false;
-                    MessageBox.Show("Failed on saving.");
-                }
-            }
-            else
-            {
+            //    if (db.UpdateOnTable("occupanc_series_stat", col, "oid='" + dt_check.Rows[0]["oid"].ToString() + "'"))
+            //    {
+            //        success = true;
+            //        disp_dgv_occupancy();
+            //        disp_chart_occupancy();
+            //        tbcntrl_main.SelectTab(tabPage1);
+            //    }
+            //    else
+            //    {
+            //        success = false;
+            //        MessageBox.Show("Failed on saving.");
+            //    }
+            //}
+            //else
+            //{
 
-                col = "fy, mo, series1, series2";
-                val = "'" + year + "','" + month + "','" + series1 + "','" + series2 + "'";
+            //    col = "fy, mo, series1, series2";
+            //    val = "'" + year + "','" + month + "','" + series1 + "','" + series2 + "'";
 
-                if(db.InsertOnTable("occupanc_series_stat", col, val))
-                {
-                    success = true;
-                    disp_dgv_occupancy();
-                    disp_chart_occupancy();
-                    tbcntrl_main.SelectTab(tabPage1);
-                }
-                else
-                {
-                    success = false;
-                    MessageBox.Show("Failed on saving.");
-                }
+            //    if(db.InsertOnTable("occupanc_series_stat", col, val))
+            //    {
+            //        success = true;
+            //        disp_dgv_occupancy();
+            //        disp_chart_occupancy();
+            //        tbcntrl_main.SelectTab(tabPage1);
+            //    }
+            //    else
+            //    {
+            //        success = false;
+            //        MessageBox.Show("Failed on saving.");
+            //    }
 
-            }
+            //}
 
         }
 
@@ -1960,29 +1959,29 @@ namespace Accounting_Application_System
 
         private void button4_Click(object sender, EventArgs e)
         {
-            txt_cyear.Text = string.Empty;
-            txt_cmonth.Text = string.Empty;
-            txt_crental.Text = string.Empty;
-            txt_cutilities.Text = string.Empty;
-            txt_ccollected.Text = string.Empty;
+            //txt_cyear.Text = string.Empty;
+            //txt_cmonth.Text = string.Empty;
+            //txt_crental.Text = string.Empty;
+            //txt_cutilities.Text = string.Empty;
+            //txt_ccollected.Text = string.Empty;
 
-            tbcntrl_collectionstat.SelectTab(tpg_cmain);
+            //tbcntrl_collectionstat.SelectTab(tpg_cmain);
         }
 
         private void txt_ctotalbill_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                if (!string.IsNullOrEmpty(txt_ctotalbill.Text) && !string.IsNullOrEmpty(txt_ccollected.Text))
-                {
-                    Double uncollected = gm.toNormalDoubleFormat(txt_ccollected.Text) - gm.toNormalDoubleFormat(txt_ctotalbill.Text);
-                    Double pctcollected = (gm.toNormalDoubleFormat(txt_ccollected.Text) / gm.toNormalDoubleFormat(txt_ctotalbill.Text)) * 100;
-                    Double pctuncollected = (uncollected / gm.toNormalDoubleFormat(txt_ctotalbill.Text)) * 100;
+                //if (!string.IsNullOrEmpty(txt_ctotalbill.Text) && !string.IsNullOrEmpty(txt_ccollected.Text))
+                //{
+                //    Double uncollected = gm.toNormalDoubleFormat(txt_ccollected.Text) - gm.toNormalDoubleFormat(txt_ctotalbill.Text);
+                //    Double pctcollected = (gm.toNormalDoubleFormat(txt_ccollected.Text) / gm.toNormalDoubleFormat(txt_ctotalbill.Text)) * 100;
+                //    Double pctuncollected = (uncollected / gm.toNormalDoubleFormat(txt_ctotalbill.Text)) * 100;
 
-                    txt_cuncollected.Text = (uncollected).ToString();
-                    txt_cpctcollected.Text = (pctcollected).ToString();
-                    txt_cpctuncollected.Text = (pctuncollected).ToString();
-                }
+                //    txt_cuncollected.Text = (uncollected).ToString();
+                //    txt_cpctcollected.Text = (pctcollected).ToString();
+                //    txt_cpctuncollected.Text = (pctuncollected).ToString();
+                //}
             }
             catch (Exception)
             { }
@@ -1992,12 +1991,12 @@ namespace Accounting_Application_System
         {
             try
             {
-                if (!string.IsNullOrEmpty(txt_crental.Text) && !string.IsNullOrEmpty(txt_cutilities.Text))
-                {
-                    Double totalbill = gm.toNormalDoubleFormat(txt_crental.Text) + gm.toNormalDoubleFormat(txt_cutilities.Text);
+                //if (!string.IsNullOrEmpty(txt_crental.Text) && !string.IsNullOrEmpty(txt_cutilities.Text))
+                //{
+                //    Double totalbill = gm.toNormalDoubleFormat(txt_crental.Text) + gm.toNormalDoubleFormat(txt_cutilities.Text);
 
-                    txt_ctotalbill.Text = (totalbill).ToString();
-                }
+                //    txt_ctotalbill.Text = (totalbill).ToString();
+                //}
             }
             catch (Exception)
             { }
@@ -2007,12 +2006,12 @@ namespace Accounting_Application_System
         {
             try
             {
-                if (!string.IsNullOrEmpty(txt_crental.Text) && !string.IsNullOrEmpty(txt_cutilities.Text))
-                {
-                    Double totalbill = gm.toNormalDoubleFormat(txt_crental.Text) + gm.toNormalDoubleFormat(txt_cutilities.Text);
+                //if (!string.IsNullOrEmpty(txt_crental.Text) && !string.IsNullOrEmpty(txt_cutilities.Text))
+                //{
+                //    Double totalbill = gm.toNormalDoubleFormat(txt_crental.Text) + gm.toNormalDoubleFormat(txt_cutilities.Text);
 
-                    txt_ctotalbill.Text = (totalbill).ToString();
-                }
+                //    txt_ctotalbill.Text = (totalbill).ToString();
+                //}
             }
             catch (Exception)
             { }
@@ -2022,16 +2021,16 @@ namespace Accounting_Application_System
         {
             try
             {
-                if (!string.IsNullOrEmpty(txt_ctotalbill.Text) && !string.IsNullOrEmpty(txt_ccollected.Text))
-                {
-                    Double uncollected = gm.toNormalDoubleFormat(txt_ccollected.Text) - gm.toNormalDoubleFormat(txt_ctotalbill.Text);
-                    Double pctcollected = (gm.toNormalDoubleFormat(txt_ccollected.Text) / gm.toNormalDoubleFormat(txt_ctotalbill.Text)) * 100;
-                    Double pctuncollected = (uncollected / gm.toNormalDoubleFormat(txt_ctotalbill.Text)) * 100;
+                //if (!string.IsNullOrEmpty(txt_ctotalbill.Text) && !string.IsNullOrEmpty(txt_ccollected.Text))
+                //{
+                //    Double uncollected = gm.toNormalDoubleFormat(txt_ccollected.Text) - gm.toNormalDoubleFormat(txt_ctotalbill.Text);
+                //    Double pctcollected = (gm.toNormalDoubleFormat(txt_ccollected.Text) / gm.toNormalDoubleFormat(txt_ctotalbill.Text)) * 100;
+                //    Double pctuncollected = (uncollected / gm.toNormalDoubleFormat(txt_ctotalbill.Text)) * 100;
 
-                    txt_cuncollected.Text = (uncollected).ToString();
-                    txt_cpctcollected.Text = (pctcollected).ToString();
-                    txt_cpctuncollected.Text = (pctuncollected).ToString();
-                }
+                //    txt_cuncollected.Text = (uncollected).ToString();
+                //    txt_cpctcollected.Text = (pctcollected).ToString();
+                //    txt_cpctuncollected.Text = (pctuncollected).ToString();
+                //}
             }
             catch (Exception)
             { }
@@ -2045,38 +2044,81 @@ namespace Accounting_Application_System
         private void btn_collect_save_Click(object sender, EventArgs e)
         {
 
-            Hotel_System.thisDatabase db = new Hotel_System.thisDatabase();
-            Boolean success = false;
+            //Hotel_System.thisDatabase db = new Hotel_System.thisDatabase();
+            //Boolean success = false;
 
-            int r = dgv_collection.CurrentRow.Index;
+            //int r = dgv_collection.CurrentRow.Index;
 
-            int month = Int32.Parse(dgv_collection["dgvl_m", r].Value.ToString());
-            int year = Int32.Parse(txt_cyear.Text);
-            Double rental = gm.toNormalDoubleFormat(txt_crental.Text);
-            Double utilities = gm.toNormalDoubleFormat(txt_cutilities.Text);
-            Double collected = gm.toNormalDoubleFormat(txt_ccollected.Text);
+            //int month = Int32.Parse(dgv_collection["dgvl_m", r].Value.ToString());
+            //int year = Int32.Parse(txt_cyear.Text);
+            //Double rental = gm.toNormalDoubleFormat(txt_crental.Text);
+            //Double utilities = gm.toNormalDoubleFormat(txt_cutilities.Text);
+            //Double collected = gm.toNormalDoubleFormat(txt_ccollected.Text);
 
-            DataTable dt_getid = db.QueryBySQLCode("SELECT c.oid FROM " + schema + ".collection_stat c WHERE c.fy='" + year + "' AND c.mo='" + month + "'");
+            //DataTable dt_getid = db.QueryBySQLCode("SELECT c.oid FROM " + schema + ".collection_stat c WHERE c.fy='" + year + "' AND c.mo='" + month + "'");
 
-            String col = "", val = "";
+            //String col = "", val = "";
 
-                col = "rental='" + rental + "', utilities='" + utilities + "', collection='" + collected + "'";
+            //    col = "rental='" + rental + "', utilities='" + utilities + "', collection='" + collected + "'";
 
-                if (db.UpdateOnTable("collection_stat", col, "oid='" + dt_getid.Rows[0]["oid"].ToString() + "'"))
-                {
-                    success = true;
-                    disp_dgvcollection();
-                    disp_chart_collection();
-                    tbcntrl_collectionstat.SelectTab(tpg_cmain);
-                }
-                else
-                {
-                    success = false;
-                    MessageBox.Show("Failed on saving.");
-                }
+            //    if (db.UpdateOnTable("collection_stat", col, "oid='" + dt_getid.Rows[0]["oid"].ToString() + "'"))
+            //    {
+            //        success = true;
+            //        disp_dgvcollection();
+            //        disp_chart_collection();
+            //        tbcntrl_collectionstat.SelectTab(tpg_cmain);
+            //    }
+            //    else
+            //    {
+            //        success = false;
+            //        MessageBox.Show("Failed on saving.");
+            //    }
         }
 
 
+        public void set_reslist(String search_code)
+        {
+            Hotel_System.thisDatabase db = new Hotel_System.thisDatabase();
+            try
+            {
+                DataTable dt_curr = db.QueryBySQLCode("SELECT res_code, res_date, arr_time, full_name, pp.p_name, hl.name, COALESCE(SPLIT_PART(rf.occ_type, ', ', 4)) AS ttlpax, pck.package, pck1.activities, (CASE WHEN c_bool > 0 THEN true ELSE false END) AS cd, l_count AS lunch, res_date, reserv_by, remarks, arrived FROM rssys.resfil rf LEFT JOIN (SELECT name, code FROM rssys.hotel) hl ON hl.code = rf.hotel_code LEFT JOIN (SELECT string_agg(chg_desc, ', ') AS package, COALESCE(adult.occ_type, '0 ADULT') AS adult, COALESCE(kid.occ_type, '0 KID') AS kid, COALESCE(inf.occ_type, '0 INFANT') AS inf, res_gfil.rg_code FROM rssys.res_gfil LEFT JOIN (SELECT occ_type, rg_code FROM rssys.res_gfil WHERE UPPER(occ_type) LIKE '%ADULT') adult ON adult.rg_code = res_gfil.rg_code LEFT JOIN (SELECT occ_type, rg_code FROM rssys.res_gfil WHERE UPPER(occ_type) LIKE '%KID') kid ON kid.rg_code = res_gfil.rg_code LEFT JOIN (SELECT occ_type, rg_code FROM rssys.res_gfil WHERE UPPER(occ_type) LIKE '%INFANT') inf ON inf.rg_code = res_gfil.rg_code LEFT JOIN (SELECT chg_code, chg_desc FROM rssys.charge) cgh ON res_gfil.chg_code = cgh.chg_code WHERE res_gfil.chg_code IN (SELECT chg_code FROM rssys.charge WHERE UPPER(chg_code) LIKE 'PCK%') GROUP BY res_gfil.rg_code, adult.occ_type, kid.occ_type, inf.occ_type) pck ON pck.rg_code = rf.res_code LEFT JOIN (SELECT string_agg(chg_desc, ', ') AS activities, (occ_type) AS ttlpax, rg_code FROM rssys.res_gfil LEFT JOIN (SELECT chg_code, chg_desc FROM rssys.charge) cgh ON res_gfil.chg_code = cgh.chg_code WHERE res_gfil.chg_code IN (SELECT chg_code FROM rssys.charge WHERE UPPER(chg_code) LIKE 'ACT%') AND UPPER(occ_type) LIKE '%ALL' GROUP BY rg_code, occ_type) pck1 ON pck1.rg_code = rf.res_code  LEFT JOIN (SELECT chg_desc AS p_name, chg_code FROM rssys.charge WHERE chg_type = 'P') pp ON pp.chg_code = p_typ LEFT JOIN (SELECT COUNT(rg.chg_code) AS l_count, rg_code FROM rssys.res_gfil rg WHERE rg.chg_code IN (SELECT chg_code FROM rssys.charge WHERE UPPER(chg_code) LIKE 'ADTL%' AND UPPER(chg_desc) LIKE 'LUNCH%') GROUP BY rg_code LIMIT 1) l_b ON l_b.rg_code = rf.res_code LEFT JOIN (SELECT COUNT(rg.chg_code) AS c_bool, rg_code FROM rssys.res_gfil rg WHERE rg.chg_code IN (SELECT chg_code FROM rssys.charge WHERE UPPER(chg_code) LIKE 'ADTL%' AND UPPER(chg_desc) LIKE 'CAMERA%') GROUP BY rg_code LIMIT 1) c_b ON c_b.rg_code = rf.res_code" + search_code + "");
+                DataTable dt_ld = db.QueryBySQLCode("SELECT COALESCE(SUM(COALESCE(SPLIT_PART(rf.occ_type, ', ', 1)::numeric(15,0), 0)), 0) AS adult, COALESCE(SUM(COALESCE(SPLIT_PART(rf.occ_type, ', ', 2)::numeric(15,0), 0)), 0) AS kid, COALESCE(SUM(COALESCE(SPLIT_PART(rf.occ_type, ', ', 3)::numeric(15,0), 0)), 0) AS inf, COALESCE(SUM(COALESCE(SPLIT_PART(rf.occ_type, ', ', 4)::numeric(15,0), 0)), 0) AS all FROM rssys.resfil rf");
+
+                dgv_reslist.DataSource = dt_curr;
+
+                label2.Text = dt_curr.Rows.Count.ToString();
+                label3.Text = dt_ld.Rows[0]["adult"].ToString();
+                label5.Text = dt_ld.Rows[0]["kid"].ToString();
+                label7.Text = dt_ld.Rows[0]["inf"].ToString();
+                label9.Text = ((dt_ld.Rows[0]["all"].ToString() == "0") ? (Convert.ToDouble(dt_ld.Rows[0]["adult"].ToString()) + Convert.ToDouble(dt_ld.Rows[0]["kid"].ToString()) + Convert.ToDouble(dt_ld.Rows[0]["inf"].ToString())).ToString() : dt_ld.Rows[0]["all"].ToString());
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error on SQL");
+            }
+        }
+
+        private void dgv_reslist_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            DataGridViewCellStyle CellStyle = new DataGridViewCellStyle();
+            try
+            {
+                if (dgv_reslist["arrived", e.RowIndex].Value.ToString() == "Y")
+                {
+                    CellStyle.BackColor = Color.LimeGreen;
+                    CellStyle.ForeColor = Color.Black;
+                }
+                else
+                {
+                    CellStyle.BackColor = Color.Red;
+                    CellStyle.ForeColor = Color.White;
+                }
+
+                dgv_reslist.Rows[e.RowIndex].Cells["res_code"].Style = CellStyle;
+            }
+            catch { }
+        }
 
        
     }

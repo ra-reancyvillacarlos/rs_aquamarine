@@ -16,11 +16,16 @@ namespace Hotel_System
     public partial class add_charge : Form
     {
         //private rGuestBilling rGuestBill;
+        GlobalMethod gm = new GlobalMethod();
         private newGuestBilling rGuestBill;
         private Boolean isnew = true;
         bool blHasDot = false;
         String chgtype = "";
         String currency_code = "PHP"; //default currency
+        String rg_code = "";
+        String c_num = "";
+        public Boolean gisnew = false;
+        String c_ref = "";
 
         //public add_charge(rGuestBilling rgbilling)
         //{
@@ -33,7 +38,11 @@ namespace Hotel_System
             rGuestBill = rgbilling;
 
             InitializeComponent();
+            gm.load_charge_paymentsonly(comboBox1);
             load_chargecbo();
+
+
+            an_frm_load("", "", "");
         }
 
         private void add_charge_Load(object sender, EventArgs e)
@@ -48,8 +57,8 @@ namespace Hotel_System
             dtp_tdate.Value = Convert.ToDateTime(db.get_systemdate(""));
             // DateTime.Parse(rGuestBill.lbl_arrdate.Text);
             //
-            lbl_or_amt.Hide();
-            txt_or_amnt.Hide();
+            //lbl_or_amt.Hide();
+            //txt_or_amnt.Hide();
 
             pnl_side.BackColor = Color.DarkKhaki;
         }
@@ -61,11 +70,11 @@ namespace Hotel_System
                 DataTable dt = new DataTable();
                 thisDatabase db = new thisDatabase();
 
-                dt = db.QueryOnTableWithParams("charge", "chg_code, chg_desc", "", "ORDER BY chg_code ASC;");
+                dt = db.QueryBySQLCode("SELECT DISTINCT chg_type, (CASE WHEN chg_type = 'P' THEN 'PAYMENT' ELSE 'CHARGE' END) AS chg_desc FROM rssys.charge");
 
                 cbo_chg.DataSource = dt;
                 cbo_chg.DisplayMember = "chg_desc";
-                cbo_chg.ValueMember = "chg_code";
+                cbo_chg.ValueMember = "chg_type";
             }
             catch (Exception)
             {
@@ -182,120 +191,124 @@ namespace Hotel_System
         {
             thisDatabase db = new thisDatabase();
             GlobalMethod gm = new GlobalMethod();
-            Double vat_included = 0.00;
-            Double sc_included = 0.00;
 
-            String doctyp = "";
-            String tofr_fol = "";
-            String res_code = "";
+            Double pck = 0.00;
+            Double n_pck = 0.00;
+            Double adtl = 0.00;
 
-            Report rpt = new Report("", "");
-
-            if (chgtype == "P" && cbo_doctyp.Text != "")
+            Double ad = 0.00, kd = 0.00, inf = 0.00, all = 0.00;
+            try
             {
-                if (cbo_doctyp.Text == "Cash Credit")
+                ad = Convert.ToInt32(textBox2.Text.ToString());
+                kd = Convert.ToInt32(textBox3.Text.ToString());
+                inf = Convert.ToInt32(textBox4.Text.ToString());
+                all = Convert.ToInt32(textBox1.Text.ToString());
+            }
+            catch
+            {
+                textBox2.Text = "0";
+                textBox3.Text = "0";
+                textBox4.Text = "0";
+                textBox1.Text = "0";
+            }
+
+            if (cbo_chg.SelectedValue.ToString() == "C")
+            {
+                if (dataGridView1.Rows.Count > 0)
                 {
-                    doctyp = "CC";
-                }
-                else if (cbo_doctyp.Text == "No O.R.")
-                {
-                    doctyp = "NA";
-                }
-            }
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    {
+                        Boolean bol_ = false;
+                        try
+                        {
+                            bol_ = Convert.ToBoolean(dataGridView1["bool_check", i].Value.ToString());
+                        }
+                        catch { }
 
-            if (gm.is_Doublevalid(txt_amt.Text) == false)
-            {
-                MessageBox.Show("Invalid Amout.");
-            }
-            else if (chgtype == "P" && cbo_doctyp.Text == "")
-            {
-                MessageBox.Show("Pls enter the document type for payment charges");
-            }
-            else if (txt_ref.Text == "")
-            {
-                MessageBox.Show("Pls enter the reference textfield.");
-            }
-            else if (Convert.ToDouble(txt_amt.Text) == 0.00)
-            {
-                MessageBox.Show("Invalid Amount.");
-            }
-            else if (cbo_chg.SelectedIndex == -1)
-            {
-                MessageBox.Show("Pls select the valid charge.");
-            }
-            else if (db.iscardpayment(cbo_chg.SelectedValue.ToString()) && txt_ccard_no.Text == "")
-            {
-                MessageBox.Show("Card Number should be inputted.");
-            }
-            else if (db.iscardpayment(cbo_chg.SelectedValue.ToString()) && txt_traceno.Text == "")
-            {
-                MessageBox.Show("Trace Number should be inputted.");
+                        if (bol_)
+                        {
+                            try
+                            {
+                                if (Convert.ToBoolean(dataGridView1["bool_check", i].Value.ToString()) == true)
+                                {
+                                    if ((dataGridView1["chg_code", i].Value.ToString()).ToUpper().Contains("PCK"))
+                                    {
+                                        if ((dataGridView1["chg_desc", i].Value.ToString()).ToUpper().Contains("ADULT"))
+                                        {
+                                            Double val_en = 0;
+                                            Double add_this = 0;
+                                            c_ref = ad + " " + dataGridView1["chg_desc", i].Value.ToString() + "(" + lbl_resgname.Text.ToString() + ")";
+                                            try { val_en = Convert.ToDouble(dataGridView1["price", i].Value.ToString()); }
+                                            catch { }
+
+                                            if (dataGridView1["ifree", i].Value.ToString().ToUpper() == "TRUE" && textBox4.Text.ToString() != "0" && (dataGridView1["chg_code", i].Value.ToString().ToUpper().Contains("PCK")) == false)
+                                            {
+                                                try { add_this = Convert.ToDouble(dataGridView1["price", i].Value.ToString()); }
+                                                catch { }
+                                                c_ref = (ad - inf) + " " + dataGridView1["chg_desc", i].Value.ToString() + "(" + lbl_resgname.Text.ToString() + ")";
+                                                add_this = (add_this * inf) * -1;
+                                            }
+
+                                            val_en = (val_en * ad) + add_this;
+
+                                            vald_save(val_en, dataGridView1["chg_code", i].Value.ToString());
+                                        }
+                                        if ((dataGridView1["chg_desc", i].Value.ToString()).ToUpper().Contains("KID"))
+                                        {
+                                            Double val_en = 0;
+                                            Double add_this = 0;
+                                            c_ref = kd + " " + dataGridView1["chg_desc", i].Value.ToString() + "(" + lbl_resgname.Text.ToString() + ")";
+                                            try { val_en = Convert.ToDouble(dataGridView1["price", i].Value.ToString()); }
+                                            catch { }
+
+                                            if (dataGridView1["ifree", i].Value.ToString().ToUpper() == "TRUE" && textBox4.Text.ToString() != "0" && (dataGridView1["chg_code", i].Value.ToString().ToUpper().Contains("PCK")) == false)
+                                            {
+                                                try { add_this = Convert.ToDouble(dataGridView1["price", i].Value.ToString()); }
+                                                catch { }
+
+                                                c_ref = (kd - inf) + " " + dataGridView1["chg_desc", i].Value.ToString() + "(" + lbl_resgname.Text.ToString() + ")";
+                                                add_this = (add_this * inf) * -1;
+                                            }
+
+                                            val_en = (val_en * kd) + add_this;
+                                            vald_save(val_en, dataGridView1["chg_code", i].Value.ToString());
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Double val_en = 0;
+                                        Double add_this = 0.00;
+                                        c_ref = textBox1.Text.ToString() + " " + dataGridView1["chg_desc", i].Value.ToString() + "(" + lbl_resgname.Text.ToString() + ")";
+                                        try { val_en = Convert.ToDouble(dataGridView1["price", i].Value.ToString()); }
+                                        catch { }
+
+                                        if (dataGridView1["ifree", i].Value.ToString().ToUpper() == "TRUE" && textBox4.Text.ToString() != "0" && (dataGridView1["chg_code", i].Value.ToString().ToUpper().Contains("PCK")) == false)
+                                        {
+                                            try { add_this = Convert.ToDouble(dataGridView1["price", i].Value.ToString()); }
+                                            catch { }
+
+                                            c_ref = (all - inf) + " " + dataGridView1["chg_desc", i].Value.ToString() + "(" + lbl_resgname.Text.ToString() + ")";
+                                            add_this = (add_this * inf) * -1;
+                                        }
+
+                                        val_en = (val_en * all) + add_this;
+
+                                        vald_save(val_en, dataGridView1["chg_code", i].Value.ToString());
+                                    }
+                                }
+                            }
+                            catch { }
+                        }
+                    }
+                }
             }
             else
             {
-                String chg_code = cbo_chg.SelectedValue.ToString();
-
-                Double netamt = db.get_netrate(Convert.ToDouble(txt_amt.Text), 0.00, 0.00);
-
-                if (db.has_vat(chg_code))
-                {
-                    vat_included = db.get_tax(Convert.ToDouble(txt_amt.Text), 0.00, 0.00);
-                }
-                if (db.has_sc(chg_code))
-                {
-                    sc_included = db.get_svccharge(Convert.ToDouble(txt_amt.Text), 0.00, 0.00);
-                }
-
-                if (isnew)
-                {
-                    if (db.is_roomcharge(chg_code))
-                    {
-                        lbl_gfolionum.Text = rGuestBill.lbl_gfolio.Text;
-                        DataTable dt;
-                        dt = db.QueryBySQLCode("SELECT g.*, c.* from rssys.chgfil c LEFT JOIN rssys.gfolio g ON g.reg_num=c.reg_num WHERE g.reg_num='" + lbl_gfolionum.Text + "'");
-                        if (dt.Rows.Count != 0)
-                        {
-                            lbl_arrdate.Text = dt.Rows[0]["arr_date"].ToString();
-                        }
-
-                        if (db.roomcharge_reg(lbl_gfolionum.Text, chg_code, rGuestBill.rom_code, txt_ref.Text, dtp_tdate.Value.ToString("yyyy-MM-dd"), Convert.ToDouble(txt_amt.Text), "D", Convert.ToDateTime(dtp_tdate.Value.ToString("yyyy-MM-dd")), null, ""))
-                        {
-                            rGuestBill.disp_chgfil(lbl_gfolionum.Text);
-                            this.Close();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Error occured on saving charge.");
-                        }                        
-                    }
-                    else if (db.is_roomcharge_senior(chg_code))
-                    {
-                        /*
-                        if (db.romcharge_senior(lbl_gfolionum.Text, chg_code, rGuestBill.rom_code, txt_ref.Text, dtp_tdate.Value.ToString("yyyy-MM-dd"), Convert.ToDouble(txt_amt.Text)))
-                        {
-                            rGuestBill.disp_chgfil(lbl_gfolionum.Text);
-                            this.Close();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Error occured on saving charge.");
-                        }*/
-                    }
-                    else
-                    {
-                        db.insert_charges(lbl_gfolionum.Text, lbl_guestname.Text, chg_code, lbl_rom_code.Text, txt_ref.Text, Convert.ToDouble(txt_amt.Text), dtp_tdate.Value.ToString("yyyy-MM-dd"), "", "", res_code, tofr_fol, doctyp, vat_included, sc_included, Convert.ToDouble(txt_or_amnt.Text), txt_traceno.Text, txt_ccard_no.Text, currency_code, true);
-
-                        rGuestBill.disp_chgfil(lbl_gfolionum.Text);
-                        this.Close();
-                    }
-                }
-                //UPDATE CHARGES
-                else
-                {
-                    db.update_charges(lbl_gfolionum.Text, lbl_guestname.Text, chg_code, lbl_rom_code.Text, txt_ref.Text, Convert.ToDouble(txt_amt.Text), dtp_tdate.Value.ToString("yyyy-MM-dd"), "", "", res_code, tofr_fol, doctyp, vat_included, sc_included, txt_chg_num.Text, Convert.ToDouble(txt_amt.Text), txt_traceno.Text, txt_ccard_no.Text, currency_code, true);
-                    rGuestBill.disp_chgfil(lbl_gfolionum.Text);
-                    this.Close();
-                }
+                Double val_en = 0;
+                try { val_en = Convert.ToDouble(txt_amt.Text.ToString()); }
+                catch { }
+                val_en = val_en * -1;
+                vald_save(val_en, (comboBox1.SelectedValue ?? "").ToString());
             }
         }
 
@@ -330,92 +343,77 @@ namespace Hotel_System
 
         private void cbo_chg_SelectedIndexChanged(object sender, EventArgs e)
         {
-            thisDatabase db = new thisDatabase();
-
-            if (cbo_chg.SelectedIndex != -1)
-            {
-                String chg_code = cbo_chg.SelectedValue.ToString();
-
-                chgtype = db.get_chg_type(chg_code);
-
-                lbl_card_no_name.Enabled = false;
-                lbl_trace_no_name.Enabled = false;
-                txt_ccard_no.Enabled = false;
-                txt_traceno.Enabled = false;
-
-                //MessageBox.Show(chg_code);
-                if (chgtype == "")
-                {
-                    btn_save.Enabled = false;
-                }
-                else if (chgtype == "P")
-                {
-                    cbo_doctyp.Enabled = true;
-                    btn_save.Enabled = true;
-                    txt_amt.Enabled = true;
-
-                    if (chg_code == "102" || chg_code == "103" || chg_code == "104" || chg_code == "105")
-                    {
-                        lbl_card_no_name.Enabled = true;
-                        lbl_trace_no_name.Enabled = true;
-                        txt_ccard_no.Enabled = true;
-                        txt_traceno.Enabled = true;
-                    }
-                }
-                else if (chgtype == "C")
-                {
-                    if (db.is_roomcharge(chg_code) || db.is_roomcharge_senior(chg_code))
-                    {
-                        txt_ref.Text = "ROOM CHARGE";
-                        txt_amt.Text = rGuestBill.rom_rate;
-                        //txt_amt.Enabled = false;
-                    }
-                    cbo_doctyp.Enabled = false;
-                    btn_save.Enabled = true;
-                }
-            }
-            else
-            {
-                btn_save.Enabled = false;
-            }
+            on_chg();
         }
 
-        private void cbo_chg_TextChanged(object sender, EventArgs e)
+        private void on_chg()
         {
             thisDatabase db = new thisDatabase();
 
-            if (cbo_chg.SelectedIndex != -1)
+            if (cbo_chg.SelectedIndex > -1)
             {
-                String chg_code = cbo_chg.SelectedValue.ToString();
-
-                chgtype = db.get_chg_type(chg_code);
-                //MessageBox.Show(chg_code);
-                if (chgtype == "")
+                if (cbo_chg.SelectedValue.ToString() == "P")
                 {
-                    btn_save.Enabled = false;
-                }
-                else if (chgtype == "P")
-                {
-                    cbo_doctyp.Enabled = true;
-                    btn_save.Enabled = true;
+                    dataGridView1.Enabled = false;
+                    comboBox1.Enabled = true;
+                    comboBox1.DroppedDown = true;
+                    groupBox2.Enabled = false;
+                    textBox1.Enabled = false;
                     txt_amt.Enabled = true;
+                    txt_ref.Enabled = true;
+
+                    txt_amt.Text = "0.00";
                 }
-                else if (chgtype == "C")
+                else
                 {
-                    if (db.is_roomcharge(chg_code) || db.is_roomcharge_senior(chg_code))
-                    {
-                        txt_ref.Text = "ROOM CHARGE";
-                        txt_amt.Text = rGuestBill.rom_rate;
-                        //txt_amt.Enabled = false;
-                    }
-                    cbo_doctyp.Enabled = false;
-                    btn_save.Enabled = true;
+                    dataGridView1.Enabled = true;
+                    comboBox1.Enabled = false;
+                    //comboBox1.SelectedIndex = -1;
+                    groupBox2.Enabled = true;
+                    textBox1.Enabled = true;
+                    txt_amt.Enabled = false;
+                    txt_ref.Enabled = false;
+
+                    txt_amt.Text = "0.00";
                 }
             }
-            if (chgtype == "")
-            {
-                btn_save.Enabled = false;
-            }
+        }
+        private void cbo_chg_TextChanged(object sender, EventArgs e)
+        {
+            //thisDatabase db = new thisDatabase();
+
+            //if (cbo_chg.SelectedIndex != -1)
+            //{
+            //    String chg_code = cbo_chg.SelectedValue.ToString();
+
+            //    chgtype = db.get_chg_type(chg_code);
+            //    //MessageBox.Show(chg_code);
+            //    if (chgtype == "")
+            //    {
+            //        btn_save.Enabled = false;
+            //    }
+            //    else if (chgtype == "P")
+            //    {
+            //        cbo_doctyp.Enabled = true;
+            //        btn_save.Enabled = true;
+            //        txt_amt.Enabled = true;
+            //    }
+            //    else if (chgtype == "C")
+            //    {
+            //        if (db.is_roomcharge(chg_code) || db.is_roomcharge_senior(chg_code))
+            //        {
+            //            txt_ref.Text = "ROOM CHARGE";
+            //            txt_amt.Text = rGuestBill.rom_rate;
+            //            //txt_amt.Enabled = false;
+            //        }
+            //        cbo_doctyp.Enabled = false;
+            //        btn_save.Enabled = true;
+            //    }
+            //}
+            //if (chgtype == "")
+            //{
+            //    btn_save.Enabled = false;
+            //}
         }
 
         private void cbo_doctyp_SelectedIndexChanged(object sender, EventArgs e)
@@ -490,6 +488,249 @@ namespace Hotel_System
                     e.Handled = true;
                 }
             }
+        }
+
+        public void chg_add(String rg, String cc, String cn)
+        {
+            thisDatabase dbs = new thisDatabase();
+            DataTable dt_gs = dbs.QueryBySQLCode("SELECT * FROM rssys.gfolio WHERE reg_num = '" + rg + "' LIMIT 1");
+            DataTable dt_edt = dt_edt = dbs.QueryBySQLCode("SELECT * FROM rssys.chgfil WHERE reg_num = '" + rg + "' AND chg_code = '" + cc + "' AND chg_num = '" + cn + "'");
+            //an_frm_load(rg, cc, cn);
+
+            rg_code = rg;
+            c_num = cn;
+
+            if (gisnew)
+            {
+
+            }
+            else
+            {
+                cbo_chg.Enabled = false;
+                if (dt_edt.Rows.Count > 0)
+                {
+                    Double amount = 0.00;
+                    try
+                    {
+                        amount = Convert.ToDouble(dt_edt.Rows[0]["amount"].ToString());
+                    }
+                    catch { }
+                    if (amount < 0)
+                    {   
+                        cbo_chg.SelectedValue = "P";
+                        comboBox1.SelectedValue = dt_edt.Rows[0]["chg_code"].ToString();
+                        txt_ref.Text = dt_edt.Rows[0]["reference"].ToString();
+                        txt_amt.Text = (amount * -1).ToString();
+                    }
+                    else
+                    {
+                        cbo_chg.SelectedValue = "C";
+                        if(dataGridView1.Rows.Count > 0)
+                        {
+                            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                            {
+                                if (dataGridView1["chg_code", i].Value.ToString() == dt_edt.Rows[0]["chg_code"].ToString())
+                                {
+                                    String p_ds = dbs.QueryBySQLCodeRetStr("SELECT chg_desc FROM rssys.charge WHERE chg_code = '" + dt_edt.Rows[0]["chg_code"].ToString() + "'");
+                                    string[] spt = new string[] { " " };
+                                    dataGridView1["chg_code", i].Value = true;
+
+                                    if (dt_edt.Rows[0]["chg_code"].ToString().ToUpper().Contains("PCK"))
+                                    {
+                                        if ((p_ds).ToString().ToUpper().Contains("ADULT"))
+                                        {
+                                            textBox2.Text = (dt_edt.Rows[0]["reference"].ToString()).Split(spt, StringSplitOptions.None)[0];
+                                        }
+                                        if ((p_ds).ToString().ToUpper().Contains("KID"))
+                                        {
+                                            textBox3.Text = (dt_edt.Rows[0]["reference"].ToString()).Split(spt, StringSplitOptions.None)[0];
+                                        }
+                                    }
+                                    else
+                                    {
+                                        textBox1.Text = (dt_edt.Rows[0]["reference"].ToString()).Split(spt, StringSplitOptions.None)[0];
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            chg_add(rg, cc, cn);
+                        }
+                        get_tl();
+                    }
+                }
+            }
+            if (dt_gs.Rows.Count > 0)
+            {
+                lbl_resnum.Text = dt_gs.Rows[0]["res_code"].ToString();
+                lbl_resgname.Text = dt_gs.Rows[0]["full_name"].ToString();
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            get_tl();
+        }
+
+        private void get_tl()
+        {
+            thisDatabase db = new thisDatabase();
+            GlobalMethod gm = new GlobalMethod();
+            Double lessdiscount = 0.00;
+            Boolean issenior_disc = false;
+            Double pck = 0.00;
+            Double n_pck = 0.00;
+            Double adtl = 0.00;
+
+            try
+            {
+                Double ad = 0.00, kd = 0.00, inf = 0.00, all = 0.00;
+                try
+                {
+                    ad = Convert.ToInt32(textBox2.Text.ToString());
+                    kd = Convert.ToInt32(textBox3.Text.ToString());
+                    inf = Convert.ToInt32(textBox4.Text.ToString());
+                    all = Convert.ToInt32(textBox1.Text.ToString());
+                }
+                catch
+                {
+                    textBox2.Text = "0";
+                    textBox3.Text = "0";
+                    textBox4.Text = "0";
+                    textBox1.Text = "0";
+                }
+
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    try
+                    {
+                        if (Convert.ToBoolean(dataGridView1["bool_check", i].Value.ToString()) == true)
+                        {
+                            if ((dataGridView1["chg_desc", i].Value.ToString()).ToUpper().Contains("PACKAGE"))
+                            {
+                                if ((dataGridView1["chg_desc", i].Value.ToString()).ToUpper().Contains("ADULT"))
+                                {
+                                    Double val_en = 0;
+                                    try { val_en = Convert.ToDouble(dataGridView1["price", i].Value.ToString()); }
+                                    catch { }
+
+                                    pck += val_en * ad;
+                                }
+                                if ((dataGridView1["chg_desc", i].Value.ToString()).ToUpper().Contains("KID"))
+                                {
+                                    Double val_en = 0;
+                                    try { val_en = Convert.ToDouble(dataGridView1["price", i].Value.ToString()); }
+                                    catch { }
+
+                                    pck += val_en * kd;
+                                }
+                            }
+                            else
+                            {
+                                Double val_en = 0;
+                                try { val_en = Convert.ToDouble(dataGridView1["price", i].Value.ToString()); }
+                                catch { }
+
+                                n_pck += val_en * all;
+                            }
+
+                            if ((dataGridView1["ifree", i].Value.ToString()).ToUpper() == "TRUE" && (dataGridView1["chg_code", i].Value.ToString().ToUpper().Contains("PCK")) == false)
+                            {
+                                Double val_en = 0;
+                                try { val_en = Convert.ToDouble(dataGridView1["price", i].Value.ToString()); }
+                                catch { }
+
+                                n_pck += (val_en * inf) * -1;
+                            }
+                        }
+                    }
+                    catch { }
+                }
+                txt_or_amnt.Text = gm.toAccountingFormat(((pck + n_pck) - lessdiscount) + adtl);
+            }
+            catch (Exception)
+            { }
+        }
+
+        private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            get_tl();
+        }
+
+        private void dataGridView1_MouseMove(object sender, MouseEventArgs e)
+        {
+            get_tl();
+        }
+        public void an_frm_load(String rg, String cc, String cn)
+        {
+            thisDatabase dbs = new thisDatabase();
+            DataTable dt_cur = new DataTable();
+
+            String WHERE = (((rg == "" || String.IsNullOrEmpty(rg)) && (cc == "" || String.IsNullOrEmpty(cc)) && (cn == "" || String.IsNullOrEmpty(cn))) ? "SELECT false AS bool_check, 'NORC'::text AS chg_code" : "SELECT true AS bool_check, chg_code FROM rssys.chgfil WHERE reg_num = '" + rg + "' AND chg_code = '" + cc + "' AND chg_num = '" + cn + "' GROUP BY chg_code ORDER BY chg_code ASC");
+            dt_cur = dbs.QueryBySQLCode("SELECT (CASE WHEN bool_check = true THEN bool_check ELSE false END) AS bool_check, charge.chg_code, chg_desc, price, ifree FROM rssys.charge LEFT JOIN (" + WHERE + ") rs ON rs.chg_code = charge.chg_code WHERE UPPER(charge.chg_code) NOT LIKE 'TRNS%' AND chg_type = 'C' ORDER BY charge.chg_code ASC");
+
+            dataGridView1.DataSource = dt_cur;
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            get_tl();
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            get_tl();
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            get_tl();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            get_tl();
+        }
+
+        private void vald_save(Double price, String c_code)
+        {
+            thisDatabase db = new thisDatabase();
+            GlobalMethod gm = new GlobalMethod();
+            String curdate = dtp_tdate.Value.ToString("yyyy-MM-dd");
+            String curtime = DateTime.Now.ToString("HH:mm");
+            String reg_num = ((rg_code != "") ? rg_code : db.QueryBySQLCodeRetStr("SELECT reg_num FROM rssys.gfolio WHERE res_code = '" + lbl_resnum.Text.ToString() + "'"));
+            String chg_num = ((c_num != "") ? c_num : db.QueryBySQLCodeRetStr("SELECT chg_num FROM rssys.charge WHERE chg_code = '" + c_code + "'"));
+            MessageBox.Show(db.QueryBySQLCodeRetStr("SELECT chg_num FROM rssys.charge WHERE chg_code = '" + c_code + "'"));
+            String ref_c = (((cbo_chg.SelectedValue ?? "").ToString() == "P") ? txt_ref.Text.ToString() : c_ref);
+
+            String col = ((gisnew) ? "INSERT INTO rssys.chgfil (reg_num, chg_code, chg_num, rom_code, reference, amount, user_id, t_date, t_time, chg_date, res_code, food, misc, vat_amnt, sc_amnt, tax, bill_amnt) SELECT reg_num, '" + c_code + "', " + chg_num + ", rom_code, '" + ref_c + "', '" + price + "', user_id, '" + curdate + "' AS t_date, '" + curtime + "' AS t_time, current_date AS chg_date, res_code, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00 FROM rssys.gfolio WHERE reg_num = '" + reg_num + "'" : "chg_code = '" + c_code + "', reference = '" + txt_ref.Text.ToString() + "', amount = '" + price + "', t_date = '" + curdate + "', t_time = '" + curtime + "'");
+            String val = ((gisnew) ? "" : "reg_num = '" + reg_num + "' AND chg_num = '" + chg_num + "'");
+
+            Boolean stat = ((gisnew) ? db.QueryBySQLCode_bool(col) : db.UpdateOnTable("chgfil", col, val));
+
+            if (stat)
+            {
+                MessageBox.Show("Successfully " + ((gisnew) ? "added new" : "updated") + " entry.");
+                Boolean proc_d = ((gisnew) ? db.set_all_pk("charge", "chg_num", chg_num, "chg_code='" + c_code + "'", chg_num.Length) : false );
+                if (proc_d) { } else if(proc_d == false && gisnew == false) { } else { MessageBox.Show("Error on incrementing"); }
+                rGuestBill.up_dt();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Error on " + ((gisnew) ? "adding new" : "updating") + " entry.");
+            }
+        }
+
+        private void cbo_chg_SelectedValueChanged(object sender, EventArgs e)
+        {
+            on_chg();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

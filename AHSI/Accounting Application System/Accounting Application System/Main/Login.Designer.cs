@@ -33,6 +33,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbl_version = new System.Windows.Forms.Label();
             this.lbl_test_side = new System.Windows.Forms.Label();
+            this.pbox_db = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cbo_db = new System.Windows.Forms.ComboBox();
@@ -50,11 +51,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pbox_db = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbox_db)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -114,6 +114,17 @@
             this.lbl_test_side.TabIndex = 88;
             this.lbl_test_side.Text = "SAMPLE TEST DATABASE";
             this.lbl_test_side.Visible = false;
+            // 
+            // pbox_db
+            // 
+            this.pbox_db.Image = global::Accounting_Application_System.Properties.Resources.aquamarine;
+            this.pbox_db.Location = new System.Drawing.Point(3, 16);
+            this.pbox_db.Name = "pbox_db";
+            this.pbox_db.Size = new System.Drawing.Size(273, 70);
+            this.pbox_db.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbox_db.TabIndex = 87;
+            this.pbox_db.TabStop = false;
+            this.pbox_db.Visible = false;
             // 
             // label6
             // 
@@ -315,17 +326,6 @@
             this.pictureBox1.TabIndex = 81;
             this.pictureBox1.TabStop = false;
             // 
-            // pbox_db
-            // 
-            this.pbox_db.Image = global::Accounting_Application_System.Properties.Resources.aquamarine;
-            this.pbox_db.Location = new System.Drawing.Point(3, 16);
-            this.pbox_db.Name = "pbox_db";
-            this.pbox_db.Size = new System.Drawing.Size(273, 70);
-            this.pbox_db.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbox_db.TabIndex = 87;
-            this.pbox_db.TabStop = false;
-            this.pbox_db.Visible = false;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -349,8 +349,8 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbox_db)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -14,7 +14,7 @@ namespace Hotel_System
     public class thisDatabase
     {
         public static String driveloc = "\\\\RIGHTAPPS\\RightApps\\";//"\\\\RIGHTAPPS\\RightApps\\";
-        public static String comp_folder = "Eastland";
+        public static String comp_folder = "Aquamarine";
         public static String servers = System.IO.File.ReadAllText(driveloc + comp_folder + "\\Publish\\localDatabase.txt");
         //public static String servers = "localhost";
         public static String lcl_db = "aquamarine";
@@ -274,7 +274,6 @@ namespace Hotel_System
 
                 //MessageBox.Show(SQL);
                 NpgsqlDataAdapter da = new NpgsqlDataAdapter(SQL, conn);
-
                 ds.Reset();
 
                 da.Fill(ds);
@@ -287,6 +286,55 @@ namespace Hotel_System
             {
                 MessageBox.Show(er.Message);
                 return null;
+            }
+        }
+
+        public Boolean QueryBySQLCode_bool(String SQL)
+        {
+            Boolean flag = false;
+            try
+            {
+                conn.Close();
+                try
+                {
+                    conn.Open();
+                }
+                catch { }
+
+                NpgsqlCommand command = new NpgsqlCommand(SQL, conn);
+
+                Int32 rowsaffected = command.ExecuteNonQuery();
+
+                try
+                {
+                    conn.Close();
+                }
+                catch { }
+
+                flag = true;
+            }
+            catch (Exception er)
+            {
+
+            }
+
+            return flag;
+        }
+        public String QueryBySQLCodeRetStr(String SQL)
+        {
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+
+            try
+            {
+                DataTable dt_cur = QueryBySQLCode(SQL);
+
+                return dt_cur.Rows[0][0].ToString();
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show(er.Message);
+                return "0.00";
             }
         }
 
@@ -472,10 +520,16 @@ namespace Hotel_System
             try
             {
                 DataTable dt = this.QueryOnTableWithParams(table, col, cond, "ORDER BY " + col + " ASC");
-
-                for (Int32 i = 0; i < dt.Rows.Count; i++)
+                if (dt.Rows.Count > 0)
                 {
-                    pk = dt.Rows[i][col].ToString();
+                    for (Int32 i = 0; i < dt.Rows.Count; i++)
+                    {
+                        pk = dt.Rows[i][col].ToString();
+                    }
+                }
+                else
+                {
+                    pk = "000000";
                 }
             }
             catch (Exception er) { MessageBox.Show("T:" + table + "  |Col: "+col + "   |Cond: "+cond+ "\n" + er.Message); }
@@ -1295,14 +1349,8 @@ namespace Hotel_System
         //Guest Billing search room or guest name or guest folio
         public DataTable get_guest_currentlycheckin(String search)
         {
-            String aa = "SELECT gf.rom_code AS \"Room\", gf.typ_code AS \"Type\", gf.full_name AS \"Full Name\", gf.arr_date AS \"Arrived On\", gf.dep_date AS \"Departure\", gf.reg_num AS \"Guest Folio\", gf.user_id AS User, gf.t_date AS \"Trans. Date\", gf.t_time AS \"Trans. Time\", gf.rmrttyp AS \"RT\", (gf.dep_date - gf.t_date) AS total_date, gf.acct_no AS \"Tennat Code\", rrt.name FROM " + schema + ".gfolio gf LEFT JOIN " + schema + ".guest g ON g.acct_no=gf.acct_no LEFT JOIN " + schema + ".company c ON c.comp_code=g.comp_code LEFT JOIN " + schema + ".romratetyp rrt ON rrt.code=gf.rmrttyp WHERE (gf.cancel IS NULL OR gf.cancel ='')" + search + " ORDER BY gf.rom_code ASC";
-            //String gg = "SELECT gf.rom_code AS \"Room\", gf.typ_code AS \"Type\", gf.full_name AS \"Full Name\", gf.arr_date AS \"Arrived On\", gf.dep_date AS \"Departure\", gf.reg_num AS \"Guest Folio\", gf.user_id AS User, gf.t_date AS \"Trans. Date\", gf.t_time AS \"Trans. Time\", gf.rmrttyp AS \"RT\" FROM " + schema + ".gfolio gf LEFT JOIN " + schema + ".guest g ON g.acct_no=gf.acct_no LEFT JOIN " + schema + ".company c ON c.comp_code=g.comp_code WHERE (gf.cancel IS NULL OR gf.cancel ='')" + search + " ORDER BY gf.rom_code ASC";
-            //return QueryBySQLCode("SELECT gf.rom_code AS \"Room\", gf.typ_code AS \"Type\", gf.full_name AS \"Full Name\", gf.arr_date AS \"Arrived On\", gf.dep_date AS \"Departure\", gf.reg_num AS \"Guest Folio\", gf.user_id AS User, gf.t_date AS \"Trans. Date\", gf.t_time AS \"Trans. Time\", gf.rmrttyp AS \"RT\", (gf.dep_date - gf.t_date) AS total_date, gf.acct_no AS \"Tennat Code\" FROM " + schema + ".gfolio gf LEFT JOIN " + schema + ".guest g ON g.acct_no=gf.acct_no LEFT JOIN " + schema + ".company c ON c.comp_code=g.comp_code WHERE (gf.cancel IS NULL OR gf.cancel ='')" + search + " ORDER BY gf.rom_code ASC");
-            //return this.QueryOnTableWithParams("gfolio", "rom_code AS \"Room\", typ_code AS \"Type\", full_name AS \"Full Name\", arr_date AS \"Arrival Date\", dep_date AS \"Departure Date\", reg_num AS \"Guest Folio\", user_id AS User, t_date AS \"Trans. Date\", t_time AS \"Trans. Time\"", "cancel IS NULL" + search, "ORDER BY rom_code ASC");
-
-            return QueryBySQLCode("SELECT gf.rom_code AS \"Room\", gf.typ_code AS \"Type\", gf.full_name AS \"Full Name\", gf.arr_date AS \"Arrived On\", gf.dep_date AS \"Departure\", gf.reg_num AS \"Guest Folio\", gf.user_id AS User, gf.t_date AS \"Trans. Date\", gf.t_time AS \"Trans. Time\", gf.rmrttyp AS \"RT\", (gf.dep_date - gf.t_date) AS total_date, gf.acct_no AS \"Tennat Code\", rrt.name FROM " + schema + ".gfolio gf LEFT JOIN " + schema + ".guest g ON g.acct_no=gf.acct_no LEFT JOIN " + schema + ".company c ON c.comp_code=g.comp_code LEFT JOIN " + schema + ".romratetyp rrt ON rrt.code=gf.rmrttyp WHERE (gf.cancel IS NULL OR gf.cancel ='')" + search + " ORDER BY gf.rom_code ASC");
-
-            //return QueryBySQLCode("SELECT gf.rom_code AS \"Room\", gf.typ_code AS \"Type\", gf.full_name AS \"Full Name\", gf.arr_date AS \"Arrived On\", gf.dep_date AS \"Departure\", gf.reg_num AS \"Guest Folio\", gf.user_id AS User, gf.t_date AS \"Trans. Date\", gf.t_time AS \"Trans. Time\", gf.rmrttyp AS \"RT\", rrt.name FROM " + schema + ".gfolio gf LEFT JOIN " + schema + ".guest g ON g.acct_no=gf.acct_no LEFT JOIN " + schema + ".company c ON c.comp_code=g.comp_code LEFT JOIN " + schema + ".romratetyp rrt ON rrt.code=gf.rmrttyp  WHERE (gf.cancel IS NULL OR gf.cancel ='') " + search + " ORDER BY gf.rom_code ASC");
+            search = ((search != "") ? " WHERE " + search + "" : "");
+            return QueryBySQLCode("SELECT res_code, arr_date, full_name, acct_no, COALESCE(SPLIT_PART(rf.occ_type, ', ', 1), '0') AS adult, COALESCE(SPLIT_PART(rf.occ_type, ', ', 2), '0') AS kid, COALESCE(SPLIT_PART(rf.occ_type, ', ', 3), '0') AS inf, COALESCE(SPLIT_PART(rf.occ_type, ', ', 4), '0') AS ttlpax, hl.name, rom_code, trns, pck.package, pck1.activities, ent, (CASE WHEN cdr = TRUE THEN cdr ELSE FALSE END) AS cdr, prc.ttl AS price, rf.remarks, cp.cpttl AS com, trv_name, rf.seller, (wcd)::numeric(20,2) AS cpr, cp.remarks, r_date, cashier, (COALESCE(prc.ttl, 0.00) - (COALESCE(cp.cpttl, 0.00) - COALESCE(wcd, 0.00)))::numeric(20,2) AS net_income, user_id AS user_id1, (COALESCE(cp.cpttl, 0.00) - COALESCE(wcd, 0.00))::numeric(20,2) AS comttl FROM rssys.gfolio rf LEFT JOIN (SELECT name, code FROM rssys.hotel) hl ON hl.code = rf.hotel_code LEFT JOIN (SELECT cf.reg_num, cf.res_code AS rg_code, STRING_AGG(ch.chg_desc, ', ') AS package FROM rssys.chgfil cf LEFT JOIN rssys.charge ch ON cf.chg_code = ch.chg_code WHERE UPPER(cf.chg_code) LIKE 'PCK%' GROUP BY cf.reg_num, cf.res_code) pck ON pck.rg_code = rf.res_code LEFT JOIN (SELECT cf.reg_num, cf.res_code AS rg_code, STRING_AGG(ch.chg_desc, ', ') AS activities FROM rssys.chgfil cf LEFT JOIN rssys.charge ch ON cf.chg_code = ch.chg_code WHERE UPPER(cf.chg_code) LIKE 'ACT%' GROUP BY cf.reg_num, cf.res_code) pck1 ON pck1.rg_code = rf.res_code  LEFT JOIN (SELECT chg_desc AS p_name, chg_code FROM rssys.charge WHERE chg_type = 'P') pp ON pp.chg_code = p_typ LEFT JOIN (SELECT STRING_AGG(chg_desc, ', ') AS trns, res_code AS rg_code FROM rssys.chgfil INNER JOIN rssys.charge ON charge.chg_code = chgfil.chg_code WHERE UPPER(charge.chg_code) LIKE 'TRNS%' GROUP BY rg_code) trn ON trn.rg_code = rf.res_code LEFT JOIN (SELECT STRING_AGG(chg_desc, ', ') AS ent, res_code AS rg_code FROM rssys.chgfil INNER JOIN rssys.charge ON charge.chg_code = chgfil.chg_code WHERE UPPER(charge.chg_code) LIKE 'ADTL%' AND UPPER(charge.chg_desc) LIKE 'ENTRANCE%' GROUP BY rg_code) ent ON ent.rg_code = rf.res_code LEFT JOIN (SELECT TRUE AS cdr, res_code AS rg_code FROM rssys.chgfil INNER JOIN rssys.charge ON charge.chg_code = chgfil.chg_code WHERE UPPER(charge.chg_code) LIKE 'ADTL%' AND UPPER(charge.chg_desc) LIKE 'CAMERA%' GROUP BY rg_code) cdr ON cdr.rg_code = rf.res_code LEFT JOIN (SELECT trv_name, SUM(price * (c.com * 0.01)) AS wcd, SUM(cpttl) AS cpttl, ttl, c.com AS cpr, COALESCE(tr.com, 0.00) AS com, COALESCE(remarks, 'NOT RELEASED') AS remarks, c.res_code AS rg_code, r_date, cashier FROM (SELECT trv_name, seller, gf.trv_code, tr.com, res_code, ttl FROM rssys.gfolio gf LEFT JOIN (SELECT SUM(amount) AS ttl, res_code AS rg_code FROM rssys.chgfil WHERE amount >= 0 GROUP BY res_code) tl_t ON tl_t.rg_code = gf.res_code LEFT JOIN rssys.travagnt tr ON tr.trv_code = gf.trv_code) c LEFT JOIN rssys.com_p tr ON tr.trv_code = c.trv_code LEFT JOIN (SELECT price, COALESCE(SPLIT_PART(reference, ' ', 1)::numeric(15,0), 0) * ((com * 0.01) * price)::numeric(25,2) AS cpttl, res_code AS rg_code, reg_num AS rg_num FROM (SELECT * FROM rssys.charge WHERE chg_type = 'C' AND UPPER(chg_code) NOT LIKE 'TRNS%' AND UPPER(chg_desc) NOT LIKE 'ENTRANCE%') charge INNER JOIN rssys.chgfil ON charge.chg_code = chgfil.chg_code) cfg ON cfg.rg_code = c.res_code GROUP BY trv_name, ttl, c.com, tr.com, remarks, c.res_code, r_date, cashier) cp ON cp.rg_code  = rf.res_code LEFT JOIN (SELECT SUM(amount) AS ttl, res_code AS rg_code FROM rssys.chgfil WHERE amount >= 0 GROUP BY res_code) prc ON prc.rg_code = rf.res_code" + search + " ORDER BY arr_date, res_code");
         }
 
         //Guest Billing search room or guest name or guest folio
@@ -1331,7 +1379,7 @@ namespace Hotel_System
 
         public DataTable get_guest_info(String lcl_acctno)
         {
-            return QueryOnTableWithParams("guest", "acct_no, full_name, gender, address1, tel_num, email, cntry_code, title, last_name, first_name, mid_name, birth_date, comp_code, passport_no, passport_issued, passport_expiry, passport_place, mp_code, escaper,  nat_code, cntry_code ", "acct_no='" + lcl_acctno + "'", "");
+            return QueryOnTableWithParams("guest", "acct_no, full_name, gender, address1, tel_num, email, cntry_code, title, last_name, first_name, mid_name, birth_date, comp_code, passport_no, passport_issued, passport_expiry, passport_place, mp_code, escaper,  nat_code, cntry_code, g_typ", "acct_no='" + lcl_acctno + "'", "");
         }
 
         public DataTable get_guest_curchkin_selected(String reg_num)
@@ -1629,14 +1677,7 @@ namespace Hotel_System
         //reservation module
         public DataTable get_reservationlist(String srhcode)
         {
-            String ss = "SELECT r.res_code AS \"Code\", r.full_name AS \"Name\", r.rmrttyp AS \"Rm Rate Type\", r.rom_code AS \"Room\", r.typ_code AS \"Type Code\", r.arr_date AS \"Arrival\", r.dep_date AS \"Departure\", c.comp_name AS \"Company\", r.user_id AS \"User ID\", r.t_date AS \"Trnx Date\", r.t_time AS \"Tnx Time\", arrived FROM " + schema + ".resfil r INNER JOIN " + schema + ".guest g ON r.acct_no=g.acct_no LEFT JOIN " + schema + ".company c ON c.comp_code=g.comp_code WHERE (r.cancel IS NULL OR cancel != 'Y') AND r.rom_code != '' " + srhcode + " ORDER BY r.res_code ASC";
-            
-            /*
-            return QueryBySQLCode("SELECT r.res_code AS \"Code\", r.full_name AS \"Name\", r.rmrttyp AS \"Rm Rate Type\", r.rom_code AS \"Room\", r.typ_code AS \"Type Code\", r.arr_date AS \"Arrival\", r.dep_date AS \"Departure\", c.comp_name AS \"Company\", r.user_id AS \"User ID\", r.t_date AS \"Trnx Date\", r.t_time AS \"Tnx Time\", arrived FROM " + schema + ".resfil r INNER JOIN " + schema + ".guest g ON r.acct_no=g.acct_no LEFT JOIN " + schema + ".company c ON c.comp_code=g.comp_code WHERE (r.cancel IS NULL OR cancel != 'Y') AND r.rom_code != '' " + srhcode + " ORDER BY r.res_code DESC");*/
-            
-            //Start Modify By: Roldan 04/19/18
-            return QueryBySQLCode("SELECT r.res_code AS \"Code\", r.full_name AS \"Name\", r.rmrttyp AS \"Rm Rate Type\", r.rom_code AS \"Room\", r.typ_code AS \"Type Code\", r.arr_date AS \"Arrival\", r.dep_date AS \"Departure\", c.comp_name AS \"Company\", m.mkt_desc AS \"Market\", r.user_id AS \"User ID\", r.t_date AS \"Trnx Date\", r.t_time AS \"Tnx Time\", arrived FROM " + schema + ".resfil r INNER JOIN " + schema + ".guest g ON r.acct_no=g.acct_no LEFT JOIN " + schema + ".company c ON c.comp_code=g.comp_code LEFT JOIN " + schema + ".market m ON r.mkt_code=m.mkt_code WHERE (r.cancel IS NULL OR cancel != 'Y') AND r.rom_code != '' " + srhcode + " ORDER BY r.res_code DESC");
-            //End Modify By: Roldan 04/19/18
+            return QueryBySQLCode("SELECT res_code, full_name, pp.p_name, hl.name, arr_time, pck.package, COALESCE(SPLIT_PART(rf.occ_type, ', ', 1), '0') AS adult, COALESCE(SPLIT_PART(rf.occ_type, ', ', 2), '0') AS kid, COALESCE(SPLIT_PART(rf.occ_type, ', ', 3), '0') AS inf, pck1.activities, COALESCE(SPLIT_PART(rf.occ_type, ', ', 4), '0') AS ttlpax, res_date, reserv_by FROM rssys.resfil rf LEFT JOIN (SELECT name, code FROM rssys.hotel) hl ON hl.code = rf.hotel_code LEFT JOIN (SELECT string_agg(chg_desc, ', ') AS package, res_gfil.rg_code FROM rssys.res_gfil LEFT JOIN (SELECT chg_code, chg_desc FROM rssys.charge) cgh ON res_gfil.chg_code = cgh.chg_code WHERE res_gfil.chg_code IN (SELECT chg_code FROM rssys.charge WHERE UPPER(chg_code) LIKE 'PCK%') GROUP BY res_gfil.rg_code) pck ON pck.rg_code = rf.res_code LEFT JOIN (SELECT string_agg(chg_desc, ', ') AS activities, rg_code FROM rssys.res_gfil LEFT JOIN (SELECT chg_code, chg_desc FROM rssys.charge) cgh ON res_gfil.chg_code = cgh.chg_code WHERE res_gfil.chg_code IN (SELECT chg_code FROM rssys.charge WHERE UPPER(chg_code) LIKE 'ACT%') AND UPPER(occ_type) LIKE '%ALL' GROUP BY rg_code) pck1 ON pck1.rg_code = rf.res_code  LEFT JOIN (SELECT chg_desc AS p_name, chg_code FROM rssys.charge WHERE chg_type = 'P') pp ON pp.chg_code = p_typ" + srhcode + "");
         }
 
         public DataTable get_reservationlistforBilling(String search_resno_or_guestname)
@@ -1669,7 +1710,16 @@ namespace Hotel_System
 
         public DataTable get_res_info(String code)
         {
-            return QueryOnTableWithParams("resfil", "*", "res_code='" + code + "'", "");
+            //return QueryOnTableWithParams("resfil", "*", "res_code='" + code + "'", "");
+            //res_code, full_name, hl.code, pck.package, pck1.activities, arr_time, pck.adult, pck.kid, pck.inf, pck1.ttlpax, res_date, reserv_by, arr_date, rom_code, mkt_code, remarks, acct_no, disc_code, discount, p_typ, trv_code
+            return QueryBySQLCode("SELECT res_code, full_name, hl.code, pck.package, pck1.activities, arr_time, COALESCE(SUM(COALESCE(SPLIT_PART(rf.occ_type, ', ', 1)::numeric(15,0), 0)), 0) AS adult, COALESCE(SUM(COALESCE(SPLIT_PART(rf.occ_type, ', ', 2)::numeric(15,0), 0)), 0) AS kid, COALESCE(SUM(COALESCE(SPLIT_PART(rf.occ_type, ', ', 3)::numeric(15,0), 0)), 0) AS inf, COALESCE(SUM(COALESCE(SPLIT_PART(rf.occ_type, ', ', 4)::numeric(15,0), 0)), 0) AS ttlpax, res_date, reserv_by, arr_date, rom_code, mkt_code, remarks, acct_no, disc_code, discount, p_typ, trv_code, seller FROM rssys.resfil rf LEFT JOIN (SELECT name, code FROM rssys.hotel) hl ON hl.code = rf.hotel_code LEFT JOIN (SELECT string_agg(chg_desc, ', ') AS package, COALESCE(adult.occ_type, '0 ADULT') AS adult, COALESCE(kid.occ_type, '0 KID') AS kid, COALESCE(inf.occ_type, '0 INFANT') AS inf, res_gfil.rg_code FROM rssys.res_gfil LEFT JOIN (SELECT occ_type, rg_code FROM rssys.res_gfil WHERE UPPER(occ_type) LIKE '%ADULT') adult ON adult.rg_code = res_gfil.rg_code LEFT JOIN (SELECT occ_type, rg_code FROM rssys.res_gfil WHERE UPPER(occ_type) LIKE '%KID') kid ON kid.rg_code = res_gfil.rg_code LEFT JOIN (SELECT occ_type, rg_code FROM rssys.res_gfil WHERE UPPER(occ_type) LIKE '%INFANT') inf ON inf.rg_code = res_gfil.rg_code LEFT JOIN (SELECT chg_code, chg_desc FROM rssys.charge) cgh ON res_gfil.chg_code = cgh.chg_code WHERE res_gfil.chg_code IN (SELECT chg_code FROM rssys.charge WHERE UPPER(chg_code) LIKE 'PCK%') GROUP BY res_gfil.rg_code, adult.occ_type, kid.occ_type, inf.occ_type) pck ON pck.rg_code = rf.res_code LEFT JOIN (SELECT string_agg(chg_desc, ', ') AS activities, COALESCE((occ_type), '0 All') AS ttlpax, rg_code FROM rssys.res_gfil LEFT JOIN (SELECT chg_code, chg_desc FROM rssys.charge) cgh ON res_gfil.chg_code = cgh.chg_code WHERE res_gfil.chg_code IN (SELECT chg_code FROM rssys.charge WHERE UPPER(chg_code) LIKE 'ACT%') AND UPPER(res_gfil.occ_type) LIKE '%ALL' GROUP BY rg_code, occ_type) pck1 ON pck1.rg_code = rf.res_code  LEFT JOIN (SELECT chg_desc AS p_name, chg_code FROM rssys.charge WHERE chg_type = 'P') pp ON pp.chg_code = p_typ GROUP BY res_code, full_name, hl.code, pck.package, pck1.activities, arr_time, res_date, reserv_by, arr_date, rom_code, mkt_code, remarks, acct_no, disc_code, discount, p_typ, trv_code, seller WHERE res_code = '" + code + "'");
+        }
+
+        public DataTable get_gfolio_info(String code)
+        {
+            //return QueryOnTableWithParams("resfil", "*", "res_code='" + code + "'", "");
+            //res_code, full_name, hl.code, pck.package, pck1.activities, arr_time, pck.adult, pck.kid, pck.inf, pck1.ttlpax, res_date, reserv_by, arr_date, rom_code, mkt_code, remarks, acct_no, disc_code, discount, p_typ, trv_code
+            return QueryBySQLCode("SELECT reg_num, res_code, full_name, hl.code, pck.package, pck1.activities, arr_time, pck.adult, pck.kid, pck.inf, pck1.ttlpax, res_date, reserv_by, arr_date, rom_code, mkt_code, remarks, acct_no, disc_code, discount, p_typ, trv_code FROM rssys.gfolio rf LEFT JOIN (SELECT name, code FROM rssys.hotel) hl ON hl.code = rf.hotel_code LEFT JOIN (SELECT string_agg(chg_desc, ', ') AS package, COALESCE(adult.occ_type, '0 ADULT') AS adult, COALESCE(kid.occ_type, '0 KID') AS kid, COALESCE(inf.occ_type, '0 INFANT') AS inf, res_gfil.rg_code FROM rssys.res_gfil LEFT JOIN (SELECT occ_type, rg_code FROM rssys.res_gfil WHERE UPPER(occ_type) LIKE '%ADULT') adult ON adult.rg_code = res_gfil.rg_code LEFT JOIN (SELECT occ_type, rg_code FROM rssys.res_gfil WHERE UPPER(occ_type) LIKE '%KID') kid ON kid.rg_code = res_gfil.rg_code LEFT JOIN (SELECT occ_type, rg_code FROM rssys.res_gfil WHERE UPPER(occ_type) LIKE '%INFANT') inf ON inf.rg_code = res_gfil.rg_code LEFT JOIN (SELECT chg_code, chg_desc FROM rssys.charge) cgh ON res_gfil.chg_code = cgh.chg_code WHERE res_gfil.chg_code IN (SELECT chg_code FROM rssys.charge WHERE UPPER(chg_desc) LIKE 'PACKAGE%') GROUP BY res_gfil.rg_code, adult.occ_type, kid.occ_type, inf.occ_type) pck ON pck.rg_code = rf.res_code LEFT JOIN (SELECT string_agg(chg_desc, ', ') AS activities, COALESCE((CASE WHEN occ_type LIKE '%All' THEN occ_type END), '0 All') AS ttlpax, rg_code FROM rssys.res_gfil LEFT JOIN (SELECT chg_code, chg_desc FROM rssys.charge) cgh ON res_gfil.chg_code = cgh.chg_code WHERE res_gfil.chg_code NOT IN (SELECT chg_code FROM rssys.charge WHERE UPPER(chg_desc) LIKE 'PACKAGE%') GROUP BY rg_code, occ_type) pck1 ON pck1.rg_code = rf.res_code  LEFT JOIN (SELECT chg_desc AS p_name, chg_code FROM rssys.charge WHERE chg_type = 'P') pp ON pp.chg_code = p_typ WHERE reg_num = '" + code + "'");
         }
         //end of reservation 
 
@@ -2562,6 +2612,32 @@ namespace Hotel_System
             }
 
             return false;
+        }
+        public Boolean InsertSelect(String table, String col1, String table2, String col2, String cond)
+        {
+            Boolean flag = false;
+
+            try
+            {
+                this.OpenConn();
+                String whr = ((cond == "") ? "" : " WHERE " + cond + "");
+                string SQL = "INSERT INTO " + this.schema + "." + table + " (" + col1 + ") SELECT " + col2 + " FROM " + this.schema + "." + table2 + "" + whr + "";
+                //MessageBox.Show(SQL);
+                NpgsqlCommand command = new NpgsqlCommand(SQL, conn);
+
+                Int32 rowsaffected = command.ExecuteNonQuery();
+
+                this.CloseConn();
+
+                flag = true;
+            }
+            catch (Exception er)
+            {
+                flag = false;
+                MessageBox.Show(er.Message);
+            }
+
+            return flag;
         }
     }
 }

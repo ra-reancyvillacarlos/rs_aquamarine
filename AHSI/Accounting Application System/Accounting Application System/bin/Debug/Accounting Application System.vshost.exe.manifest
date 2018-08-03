@@ -44,14 +44,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Accounting Application System.exe" size="16146856">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Accounting Application System.exe" size="16212480">
       <assemblyIdentity name="Accounting Application System" version="2.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>yxiNy0n+6z0LwRO54zNZ1KiRAyY=</dsig:DigestValue>
+        <dsig:DigestValue>7J7kns569tkv+JVB/U77KAwEs1M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -224,14 +224,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Hotel System.exe" size="5588480">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Hotel System.exe" size="5594112">
       <assemblyIdentity name="Hotel System" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>/FNhXFGqXBx4249ttFL2Hfp79g0=</dsig:DigestValue>
+        <dsig:DigestValue>DPZRNU7xbZ1wS2a8upjGL7ZHIS0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -255,7 +255,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>6RmBqHZf0WRFV3un7RrZWD2+HZU=</dsig:DigestValue>
+        <dsig:DigestValue>X2+RyPDIRvtaFQM0jt3/oyYXJK8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

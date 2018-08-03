@@ -1275,5 +1275,10 @@ namespace Hotel_System
             }
         }
 
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

@@ -101,6 +101,36 @@ namespace Hotel_System
             }
             catch (Exception) { }
         }
+        public void load_hotel(ComboBox cbo)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                thisDatabase db = new thisDatabase();
+
+                dt = db.QueryOnTableWithParams("hotel", "code, name", "", " ORDER BY code ASC");
+                cbo.DataSource = dt;
+                cbo.DisplayMember = "name";
+                cbo.ValueMember = "code";
+                cbo.SelectedIndex = -1;
+            }
+            catch (Exception) { }
+        }
+        public void load_trns(ComboBox cbo)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                thisDatabase db = new thisDatabase();
+
+                dt = db.QueryOnTableWithParams("charge", "chg_code, chg_desc", "UPPER(chg_code) LIKE 'TRNS%'", " ORDER BY chg_desc ASC");
+                cbo.DataSource = dt;
+                cbo.DisplayMember = "chg_desc";
+                cbo.ValueMember = "chg_code";
+                cbo.SelectedIndex = -1;
+            }
+            catch (Exception) { }
+        }
         public void load_company(ComboBox cbo)
         {
             try
@@ -471,6 +501,21 @@ namespace Hotel_System
                 cbo.DataSource = dt;
                 cbo.DisplayMember = "trv_name";
                 cbo.ValueMember = "trv_code";
+                cbo.SelectedIndex = -1;
+            }
+            catch (Exception) { }
+        }
+        public void load_seller(ComboBox cbo, String cond)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                thisDatabase db = new thisDatabase();
+
+                dt = db.QueryOnTableWithParams("seller", "seller, seller", cond, "ORDER BY seller ASC;");
+                cbo.DataSource = dt;
+                cbo.DisplayMember = "seller";
+                cbo.ValueMember = "seller";
                 cbo.SelectedIndex = -1;
             }
             catch (Exception) { }

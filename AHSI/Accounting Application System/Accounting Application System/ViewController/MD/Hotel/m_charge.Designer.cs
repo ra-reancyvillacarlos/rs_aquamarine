@@ -60,6 +60,17 @@
             this.vat_incl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.transferred = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpg_info = new System.Windows.Forms.TabPage();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.chk_tax = new System.Windows.Forms.CheckBox();
             this.chk_sc = new System.Windows.Forms.CheckBox();
             this.txt_desc = new System.Windows.Forms.TextBox();
@@ -368,7 +379,7 @@
             this.tbcntrl_main.Location = new System.Drawing.Point(221, 0);
             this.tbcntrl_main.Name = "tbcntrl_main";
             this.tbcntrl_main.SelectedIndex = 0;
-            this.tbcntrl_main.Size = new System.Drawing.Size(763, 631);
+            this.tbcntrl_main.Size = new System.Drawing.Size(756, 631);
             this.tbcntrl_main.TabIndex = 4;
             // 
             // tpg_list
@@ -377,7 +388,7 @@
             this.tpg_list.Location = new System.Drawing.Point(4, 24);
             this.tpg_list.Name = "tpg_list";
             this.tpg_list.Padding = new System.Windows.Forms.Padding(3);
-            this.tpg_list.Size = new System.Drawing.Size(755, 603);
+            this.tpg_list.Size = new System.Drawing.Size(748, 603);
             this.tpg_list.TabIndex = 1;
             this.tpg_list.Text = "Charge List";
             this.tpg_list.UseVisualStyleBackColor = true;
@@ -402,7 +413,7 @@
             this.dgv_list.ReadOnly = true;
             this.dgv_list.RowHeadersWidth = 20;
             this.dgv_list.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_list.Size = new System.Drawing.Size(749, 597);
+            this.dgv_list.Size = new System.Drawing.Size(742, 597);
             this.dgv_list.TabIndex = 1;
             // 
             // chg_code
@@ -481,6 +492,17 @@
             // 
             // tpg_info
             // 
+            this.tpg_info.Controls.Add(this.checkBox1);
+            this.tpg_info.Controls.Add(this.label39);
+            this.tpg_info.Controls.Add(this.textBox1);
+            this.tpg_info.Controls.Add(this.label38);
+            this.tpg_info.Controls.Add(this.label37);
+            this.tpg_info.Controls.Add(this.label36);
+            this.tpg_info.Controls.Add(this.label31);
+            this.tpg_info.Controls.Add(this.label12);
+            this.tpg_info.Controls.Add(this.label11);
+            this.tpg_info.Controls.Add(this.label9);
+            this.tpg_info.Controls.Add(this.label7);
             this.tpg_info.Controls.Add(this.chk_tax);
             this.tpg_info.Controls.Add(this.chk_sc);
             this.tpg_info.Controls.Add(this.txt_desc);
@@ -507,10 +529,117 @@
             this.tpg_info.Location = new System.Drawing.Point(4, 24);
             this.tpg_info.Name = "tpg_info";
             this.tpg_info.Padding = new System.Windows.Forms.Padding(3);
-            this.tpg_info.Size = new System.Drawing.Size(755, 603);
+            this.tpg_info.Size = new System.Drawing.Size(748, 603);
             this.tpg_info.TabIndex = 2;
             this.tpg_info.Text = "Charge Info";
             this.tpg_info.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(406, 153);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(80, 19);
+            this.checkBox1.TabIndex = 123;
+            this.checkBox1.Text = "Infant free";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.ForeColor = System.Drawing.Color.Black;
+            this.label39.Location = new System.Drawing.Point(459, 99);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(24, 20);
+            this.label39.TabIndex = 122;
+            this.label39.Text = "%";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Location = new System.Drawing.Point(380, 99);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(73, 21);
+            this.textBox1.TabIndex = 121;
+            this.textBox1.Text = "0.00";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(297, 101);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(79, 15);
+            this.label38.TabIndex = 120;
+            this.label38.Text = "Commission:";
+            // 
+            // label37
+            // 
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(59, 453);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(355, 34);
+            this.label37.TabIndex = 119;
+            this.label37.Text = "Code for PRODUCTS must have PRDT (PRDT1)";
+            // 
+            // label36
+            // 
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(59, 411);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(443, 49);
+            this.label36.TabIndex = 118;
+            this.label36.Text = "Code for ADDITIONAL such as LUNCH must have ADTL (ADTL1)";
+            // 
+            // label31
+            // 
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(15, 502);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(378, 96);
+            this.label31.TabIndex = 117;
+            this.label31.Text = "If a new charge is added and it does not belong to PACKAGE, TRANSPORTATION OR ACT" +
+    "IVITES. Please refrain from using PCK, TRNS OR ACT in the code. Thank you";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(59, 388);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(314, 20);
+            this.label12.TabIndex = 116;
+            this.label12.Text = "Code for ACTIVIES must have ACT (ACT1)";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(59, 363);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(409, 20);
+            this.label11.TabIndex = 115;
+            this.label11.Text = "Code for TRANSPORTATION must have TRNS (TRNS1)";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(59, 343);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(317, 20);
+            this.label9.TabIndex = 114;
+            this.label9.Text = "Code for PACKAGE must have PCK (PCK1)";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(15, 313);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(321, 20);
+            this.label7.TabIndex = 113;
+            this.label7.Text = "ON ADDING NEW RECORD, REMEMBER:";
             // 
             // chk_tax
             // 
@@ -557,7 +686,7 @@
             this.panel2.Controls.Add(this.groupBox1);
             this.panel2.Controls.Add(this.grp_utility);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(509, 3);
+            this.panel2.Location = new System.Drawing.Point(502, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(243, 597);
             this.panel2.TabIndex = 104;
@@ -578,6 +707,7 @@
             this.groupBox1.TabIndex = 100;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Water Bill Computations";
+            this.groupBox1.Visible = false;
             // 
             // label34
             // 
@@ -679,6 +809,7 @@
             this.grp_utility.TabIndex = 99;
             this.grp_utility.TabStop = false;
             this.grp_utility.Text = "Electricity Bill Computations";
+            this.grp_utility.Visible = false;
             // 
             // txt_franchise_tax
             // 
@@ -1146,6 +1277,8 @@
             this.txt_code.Name = "txt_code";
             this.txt_code.Size = new System.Drawing.Size(108, 21);
             this.txt_code.TabIndex = 35;
+            this.txt_code.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txt_code_KeyUp);
+            this.txt_code.MouseHover += new System.EventHandler(this.txt_code_MouseHover);
             // 
             // label8
             // 
@@ -1170,7 +1303,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(984, 631);
+            this.ClientSize = new System.Drawing.Size(977, 631);
             this.Controls.Add(this.tbcntrl_main);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1300,5 +1433,16 @@
         private System.Windows.Forms.ComboBox cbo_chgclass;
         private System.Windows.Forms.CheckBox chk_tax;
         private System.Windows.Forms.CheckBox chk_sc;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

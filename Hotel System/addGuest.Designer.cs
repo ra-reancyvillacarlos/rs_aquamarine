@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgv_search = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -52,6 +52,8 @@
             this.dgv_gfoliohistory = new System.Windows.Forms.DataGridView();
             this.chk_complainer = new System.Windows.Forms.CheckBox();
             this.pnl_guestinfo1 = new System.Windows.Forms.Panel();
+            this.label30 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
             this.cbo_nationality = new System.Windows.Forms.ComboBox();
             this.txt_contact = new System.Windows.Forms.TextBox();
@@ -108,11 +110,6 @@
             this.txt_file1 = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.lbl_noofguest = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.btn_removefromlist = new System.Windows.Forms.Button();
-            this.btn_cancel_all = new System.Windows.Forms.Button();
-            this.btn_save_all = new System.Windows.Forms.Button();
             this.dgv_guests = new System.Windows.Forms.DataGridView();
             this.acct_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.full_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -121,6 +118,13 @@
             this.contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.country = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.g_typ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_removefromlist = new System.Windows.Forms.Button();
+            this.lbl_noofguest = new System.Windows.Forms.Label();
+            this.btn_cancel_all = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.btn_save_all = new System.Windows.Forms.Button();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -138,6 +142,7 @@
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_guests)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -171,8 +176,8 @@
             this.dgv_search.MultiSelect = false;
             this.dgv_search.Name = "dgv_search";
             this.dgv_search.ReadOnly = true;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.dgv_search.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.dgv_search.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_search.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_search.Size = new System.Drawing.Size(457, 369);
             this.dgv_search.TabIndex = 6;
@@ -367,11 +372,12 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(803, 369);
+            this.tabControl1.Size = new System.Drawing.Size(803, 392);
             this.tabControl1.TabIndex = 5;
             // 
             // tabPage1
             // 
+            this.tabPage1.AutoScroll = true;
             this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.chk_complainer);
             this.tabPage1.Controls.Add(this.pnl_guestinfo1);
@@ -385,10 +391,11 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(795, 341);
+            this.tabPage1.Size = new System.Drawing.Size(795, 364);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Customer Information";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // groupBox3
             // 
@@ -430,6 +437,8 @@
             // 
             // pnl_guestinfo1
             // 
+            this.pnl_guestinfo1.Controls.Add(this.label30);
+            this.pnl_guestinfo1.Controls.Add(this.comboBox1);
             this.pnl_guestinfo1.Controls.Add(this.label23);
             this.pnl_guestinfo1.Controls.Add(this.cbo_nationality);
             this.pnl_guestinfo1.Controls.Add(this.txt_contact);
@@ -459,8 +468,32 @@
             this.pnl_guestinfo1.Location = new System.Drawing.Point(3, 3);
             this.pnl_guestinfo1.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_guestinfo1.Name = "pnl_guestinfo1";
-            this.pnl_guestinfo1.Size = new System.Drawing.Size(322, 335);
+            this.pnl_guestinfo1.Size = new System.Drawing.Size(322, 358);
             this.pnl_guestinfo1.TabIndex = 92;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(5, 330);
+            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(67, 15);
+            this.label30.TabIndex = 101;
+            this.label30.Text = "Guest type:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "ADULT",
+            "KID",
+            "INFANT"});
+            this.comboBox1.Location = new System.Drawing.Point(78, 327);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(228, 23);
+            this.comboBox1.TabIndex = 100;
             // 
             // label23
             // 
@@ -800,7 +833,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(795, 343);
+            this.tabPage2.Size = new System.Drawing.Size(795, 366);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "IDs and Attached Files";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1027,84 +1060,17 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.lbl_noofguest);
-            this.groupBox4.Controls.Add(this.label19);
-            this.groupBox4.Controls.Add(this.btn_removefromlist);
-            this.groupBox4.Controls.Add(this.btn_cancel_all);
-            this.groupBox4.Controls.Add(this.btn_save_all);
             this.groupBox4.Controls.Add(this.dgv_guests);
+            this.groupBox4.Controls.Add(this.panel1);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox4.Location = new System.Drawing.Point(0, 369);
+            this.groupBox4.Location = new System.Drawing.Point(0, 392);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Size = new System.Drawing.Size(803, 220);
+            this.groupBox4.Size = new System.Drawing.Size(803, 197);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "All Guests List";
-            // 
-            // lbl_noofguest
-            // 
-            this.lbl_noofguest.AutoSize = true;
-            this.lbl_noofguest.Location = new System.Drawing.Point(95, 19);
-            this.lbl_noofguest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_noofguest.Name = "lbl_noofguest";
-            this.lbl_noofguest.Size = new System.Drawing.Size(14, 15);
-            this.lbl_noofguest.TabIndex = 43;
-            this.lbl_noofguest.Text = "0";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(8, 19);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(77, 15);
-            this.label19.TabIndex = 42;
-            this.label19.Text = "No of Guests";
-            // 
-            // btn_removefromlist
-            // 
-            this.btn_removefromlist.BackColor = System.Drawing.Color.Firebrick;
-            this.btn_removefromlist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_removefromlist.ForeColor = System.Drawing.SystemColors.Info;
-            this.btn_removefromlist.Location = new System.Drawing.Point(642, 32);
-            this.btn_removefromlist.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_removefromlist.Name = "btn_removefromlist";
-            this.btn_removefromlist.Size = new System.Drawing.Size(133, 31);
-            this.btn_removefromlist.TabIndex = 91;
-            this.btn_removefromlist.Text = "Remove from List";
-            this.btn_removefromlist.UseVisualStyleBackColor = false;
-            this.btn_removefromlist.Click += new System.EventHandler(this.btn_removefromlist_Click);
-            // 
-            // btn_cancel_all
-            // 
-            this.btn_cancel_all.Image = global::Hotel_System.Properties.Resources.back;
-            this.btn_cancel_all.Location = new System.Drawing.Point(642, 71);
-            this.btn_cancel_all.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_cancel_all.Name = "btn_cancel_all";
-            this.btn_cancel_all.Size = new System.Drawing.Size(133, 42);
-            this.btn_cancel_all.TabIndex = 92;
-            this.btn_cancel_all.Text = "Back to Main";
-            this.btn_cancel_all.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_cancel_all.UseVisualStyleBackColor = true;
-            this.btn_cancel_all.Click += new System.EventHandler(this.btn_cancel_all_Click);
-            // 
-            // btn_save_all
-            // 
-            this.btn_save_all.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btn_save_all.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_save_all.ForeColor = System.Drawing.SystemColors.Info;
-            this.btn_save_all.Image = global::Hotel_System.Properties.Resources.play_1_;
-            this.btn_save_all.Location = new System.Drawing.Point(642, 121);
-            this.btn_save_all.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_save_all.Name = "btn_save_all";
-            this.btn_save_all.Size = new System.Drawing.Size(133, 55);
-            this.btn_save_all.TabIndex = 93;
-            this.btn_save_all.Text = "TENNANT(S) SELECTED";
-            this.btn_save_all.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_save_all.UseVisualStyleBackColor = false;
-            this.btn_save_all.Click += new System.EventHandler(this.btn_save_all_Click);
             // 
             // dgv_guests
             // 
@@ -1116,13 +1082,15 @@
             this.address,
             this.contact,
             this.email,
-            this.country});
-            this.dgv_guests.Location = new System.Drawing.Point(8, 38);
+            this.country,
+            this.g_typ});
+            this.dgv_guests.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_guests.Location = new System.Drawing.Point(4, 18);
             this.dgv_guests.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_guests.Name = "dgv_guests";
             this.dgv_guests.ReadOnly = true;
             this.dgv_guests.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_guests.Size = new System.Drawing.Size(618, 174);
+            this.dgv_guests.Size = new System.Drawing.Size(631, 175);
             this.dgv_guests.TabIndex = 0;
             this.dgv_guests.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_guests_CellClick);
             // 
@@ -1171,6 +1139,88 @@
             this.country.Name = "country";
             this.country.ReadOnly = true;
             // 
+            // g_typ
+            // 
+            this.g_typ.HeaderText = "Guest Type";
+            this.g_typ.Name = "g_typ";
+            this.g_typ.ReadOnly = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btn_removefromlist);
+            this.panel1.Controls.Add(this.lbl_noofguest);
+            this.panel1.Controls.Add(this.btn_cancel_all);
+            this.panel1.Controls.Add(this.label19);
+            this.panel1.Controls.Add(this.btn_save_all);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(635, 18);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(164, 175);
+            this.panel1.TabIndex = 94;
+            // 
+            // btn_removefromlist
+            // 
+            this.btn_removefromlist.BackColor = System.Drawing.Color.Firebrick;
+            this.btn_removefromlist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_removefromlist.ForeColor = System.Drawing.SystemColors.Info;
+            this.btn_removefromlist.Location = new System.Drawing.Point(17, 18);
+            this.btn_removefromlist.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_removefromlist.Name = "btn_removefromlist";
+            this.btn_removefromlist.Size = new System.Drawing.Size(133, 31);
+            this.btn_removefromlist.TabIndex = 94;
+            this.btn_removefromlist.Text = "Remove from List";
+            this.btn_removefromlist.UseVisualStyleBackColor = false;
+            this.btn_removefromlist.Click += new System.EventHandler(this.btn_removefromlist_Click);
+            // 
+            // lbl_noofguest
+            // 
+            this.lbl_noofguest.AutoSize = true;
+            this.lbl_noofguest.Location = new System.Drawing.Point(91, 0);
+            this.lbl_noofguest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_noofguest.Name = "lbl_noofguest";
+            this.lbl_noofguest.Size = new System.Drawing.Size(14, 15);
+            this.lbl_noofguest.TabIndex = 43;
+            this.lbl_noofguest.Text = "0";
+            // 
+            // btn_cancel_all
+            // 
+            this.btn_cancel_all.Image = global::Hotel_System.Properties.Resources.back;
+            this.btn_cancel_all.Location = new System.Drawing.Point(17, 57);
+            this.btn_cancel_all.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_cancel_all.Name = "btn_cancel_all";
+            this.btn_cancel_all.Size = new System.Drawing.Size(133, 42);
+            this.btn_cancel_all.TabIndex = 95;
+            this.btn_cancel_all.Text = "Back to Main";
+            this.btn_cancel_all.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_cancel_all.UseVisualStyleBackColor = true;
+            this.btn_cancel_all.Click += new System.EventHandler(this.btn_cancel_all_Click);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(4, 0);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(77, 15);
+            this.label19.TabIndex = 42;
+            this.label19.Text = "No of Guests";
+            // 
+            // btn_save_all
+            // 
+            this.btn_save_all.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btn_save_all.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_save_all.ForeColor = System.Drawing.SystemColors.Info;
+            this.btn_save_all.Image = global::Hotel_System.Properties.Resources.play_1_;
+            this.btn_save_all.Location = new System.Drawing.Point(17, 107);
+            this.btn_save_all.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_save_all.Name = "btn_save_all";
+            this.btn_save_all.Size = new System.Drawing.Size(133, 55);
+            this.btn_save_all.TabIndex = 96;
+            this.btn_save_all.Text = "TENNANT(S) SELECTED";
+            this.btn_save_all.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_save_all.UseVisualStyleBackColor = false;
+            this.btn_save_all.Click += new System.EventHandler(this.btn_save_all_Click);
+            // 
             // addGuest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1207,8 +1257,9 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_guests)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1229,9 +1280,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.DataGridView dgv_guests;
-        private System.Windows.Forms.Button btn_removefromlist;
-        private System.Windows.Forms.Button btn_cancel_all;
-        private System.Windows.Forms.Button btn_save_all;
         private System.Windows.Forms.Label lbl_noofguest;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
@@ -1297,6 +1345,11 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.PictureBox pbox2;
         private System.Windows.Forms.PictureBox pbox1;
+        private System.Windows.Forms.Label lbl_pgno;
+        private System.Windows.Forms.Button btn_next;
+        private System.Windows.Forms.Button btn_prev;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn acct_no;
         private System.Windows.Forms.DataGridViewTextBoxColumn full_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn gender;
@@ -1304,8 +1357,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn contact;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn country;
-        private System.Windows.Forms.Label lbl_pgno;
-        private System.Windows.Forms.Button btn_next;
-        private System.Windows.Forms.Button btn_prev;
+        private System.Windows.Forms.DataGridViewTextBoxColumn g_typ;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btn_removefromlist;
+        private System.Windows.Forms.Button btn_cancel_all;
+        private System.Windows.Forms.Button btn_save_all;
     }
 }

@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tbcntrl_option = new System.Windows.Forms.TabControl();
             this.tpg_opt_1 = new System.Windows.Forms.TabPage();
@@ -90,6 +90,12 @@
             this.tpg_reg = new System.Windows.Forms.TabPage();
             this.panel89 = new System.Windows.Forms.Panel();
             this.grpbx_billing = new System.Windows.Forms.GroupBox();
+            this.cbo_agency = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbo_rmrttyp = new System.Windows.Forms.ComboBox();
+            this.cbo_mktsegment = new System.Windows.Forms.ComboBox();
+            this.label237 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.txt_discamt = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.lbl_clerk = new System.Windows.Forms.Label();
@@ -160,12 +166,6 @@
             this.label261 = new System.Windows.Forms.Label();
             this.dtp_resdt = new System.Windows.Forms.DateTimePicker();
             this.label262 = new System.Windows.Forms.Label();
-            this.cbo_agency = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbo_rmrttyp = new System.Windows.Forms.ComboBox();
-            this.cbo_mktsegment = new System.Windows.Forms.ComboBox();
-            this.label237 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tbcntrl_option.SuspendLayout();
             this.tpg_opt_1.SuspendLayout();
@@ -386,6 +386,7 @@
             this.btn_save.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_save.UseVisualStyleBackColor = false;
             this.btn_save.Visible = false;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // groupBox3
             // 
@@ -865,6 +866,68 @@
             this.grpbx_billing.TabStop = false;
             this.grpbx_billing.Text = "Billing Information";
             // 
+            // cbo_agency
+            // 
+            this.cbo_agency.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbo_agency.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbo_agency.FormattingEnabled = true;
+            this.cbo_agency.Location = new System.Drawing.Point(118, 44);
+            this.cbo_agency.Name = "cbo_agency";
+            this.cbo_agency.Size = new System.Drawing.Size(163, 23);
+            this.cbo_agency.TabIndex = 92;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(8, 47);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 15);
+            this.label6.TabIndex = 93;
+            this.label6.Text = "Travel Agency";
+            // 
+            // cbo_rmrttyp
+            // 
+            this.cbo_rmrttyp.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.cbo_rmrttyp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbo_rmrttyp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_rmrttyp.ForeColor = System.Drawing.Color.White;
+            this.cbo_rmrttyp.FormattingEnabled = true;
+            this.cbo_rmrttyp.Location = new System.Drawing.Point(118, 17);
+            this.cbo_rmrttyp.Name = "cbo_rmrttyp";
+            this.cbo_rmrttyp.Size = new System.Drawing.Size(163, 24);
+            this.cbo_rmrttyp.TabIndex = 91;
+            // 
+            // cbo_mktsegment
+            // 
+            this.cbo_mktsegment.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbo_mktsegment.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbo_mktsegment.FormattingEnabled = true;
+            this.cbo_mktsegment.Location = new System.Drawing.Point(344, 17);
+            this.cbo_mktsegment.Name = "cbo_mktsegment";
+            this.cbo_mktsegment.Size = new System.Drawing.Size(163, 23);
+            this.cbo_mktsegment.TabIndex = 89;
+            // 
+            // label237
+            // 
+            this.label237.AutoSize = true;
+            this.label237.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label237.Location = new System.Drawing.Point(293, 20);
+            this.label237.Name = "label237";
+            this.label237.Size = new System.Drawing.Size(45, 15);
+            this.label237.TabIndex = 90;
+            this.label237.Text = "Market";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(9, 23);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(87, 15);
+            this.label7.TabIndex = 88;
+            this.label7.Text = "Unit Rate Type";
+            // 
             // txt_discamt
             // 
             this.txt_discamt.Location = new System.Drawing.Point(424, 98);
@@ -1219,17 +1282,17 @@
             // 
             // dgv_guestlist
             // 
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_guestlist.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_guestlist.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_guestlist.BackgroundColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_guestlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_guestlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_guestlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_guestlist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.acct_no,
@@ -1239,26 +1302,26 @@
             this.contact,
             this.email,
             this.Country});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_guestlist.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_guestlist.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_guestlist.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_guestlist.Location = new System.Drawing.Point(3, 16);
             this.dgv_guestlist.Name = "dgv_guestlist";
             this.dgv_guestlist.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_guestlist.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_guestlist.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_guestlist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_guestlist.Size = new System.Drawing.Size(816, 115);
             this.dgv_guestlist.TabIndex = 19;
@@ -1619,68 +1682,6 @@
             this.label262.Size = new System.Drawing.Size(91, 15);
             this.label262.TabIndex = 18;
             this.label262.Text = "Reservation No";
-            // 
-            // cbo_agency
-            // 
-            this.cbo_agency.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cbo_agency.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbo_agency.FormattingEnabled = true;
-            this.cbo_agency.Location = new System.Drawing.Point(118, 44);
-            this.cbo_agency.Name = "cbo_agency";
-            this.cbo_agency.Size = new System.Drawing.Size(163, 23);
-            this.cbo_agency.TabIndex = 92;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(8, 47);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(82, 15);
-            this.label6.TabIndex = 93;
-            this.label6.Text = "Travel Agency";
-            // 
-            // cbo_rmrttyp
-            // 
-            this.cbo_rmrttyp.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.cbo_rmrttyp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbo_rmrttyp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_rmrttyp.ForeColor = System.Drawing.Color.White;
-            this.cbo_rmrttyp.FormattingEnabled = true;
-            this.cbo_rmrttyp.Location = new System.Drawing.Point(118, 17);
-            this.cbo_rmrttyp.Name = "cbo_rmrttyp";
-            this.cbo_rmrttyp.Size = new System.Drawing.Size(163, 24);
-            this.cbo_rmrttyp.TabIndex = 91;
-            // 
-            // cbo_mktsegment
-            // 
-            this.cbo_mktsegment.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.cbo_mktsegment.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbo_mktsegment.FormattingEnabled = true;
-            this.cbo_mktsegment.Location = new System.Drawing.Point(344, 17);
-            this.cbo_mktsegment.Name = "cbo_mktsegment";
-            this.cbo_mktsegment.Size = new System.Drawing.Size(163, 23);
-            this.cbo_mktsegment.TabIndex = 89;
-            // 
-            // label237
-            // 
-            this.label237.AutoSize = true;
-            this.label237.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label237.Location = new System.Drawing.Point(293, 20);
-            this.label237.Name = "label237";
-            this.label237.Size = new System.Drawing.Size(45, 15);
-            this.label237.TabIndex = 90;
-            this.label237.Text = "Market";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(9, 23);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 15);
-            this.label7.TabIndex = 88;
-            this.label7.Text = "Unit Rate Type";
             // 
             // newArrivalWalkin
             // 
