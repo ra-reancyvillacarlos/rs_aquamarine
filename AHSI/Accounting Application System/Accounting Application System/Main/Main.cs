@@ -427,7 +427,7 @@ namespace Accounting_Application_System
             closechild();
             lbl_modname.Text = "Activity and Payment Records";
             Hotel_System.newGuestBilling gbill = new Hotel_System.newGuestBilling();
-
+            gbill.forView = false;
             gbill.MdiParent = this;
 
             gbill.Show();
@@ -471,10 +471,19 @@ namespace Accounting_Application_System
         void btn_9_Click(object sender, EventArgs e)
         {
             closechild();
-            lbl_modname.Text = "UPDATE UNIT STATUS";
-            Hotel_System.UpdateRoomStatus urs = new Hotel_System.UpdateRoomStatus();
-            urs.MdiParent = this;
-            urs.Show();
+            //lbl_modname.Text = "UPDATE UNIT STATUS";
+            //Hotel_System.UpdateRoomStatus urs = new Hotel_System.UpdateRoomStatus();
+            //urs.MdiParent = this;
+            //urs.Show();
+
+            lbl_modname.Text = "Activity and Payment Records";
+            Hotel_System.newGuestBilling gbill = new Hotel_System.newGuestBilling();
+            gbill.forView = true;
+            gbill.forVv();
+            gbill.MdiParent = this;
+
+            gbill.Show();
+
             btn_color_reset();
 
             btn_9.BackColor = panel2.BackColor;

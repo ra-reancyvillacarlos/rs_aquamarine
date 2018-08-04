@@ -32,9 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -58,6 +55,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tbcntrl_option = new System.Windows.Forms.TabControl();
             this.tpg_opt_1 = new System.Windows.Forms.TabPage();
@@ -74,9 +74,9 @@
             this.tpg_opt_2 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.btn_chkout = new System.Windows.Forms.Button();
             this.btn_back = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btn_finalizedsoa = new System.Windows.Forms.Button();
@@ -85,12 +85,40 @@
             this.btn_add = new System.Windows.Forms.Button();
             this.btn_edit = new System.Windows.Forms.Button();
             this.btn_baltransfer = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.tbcntrl_res = new System.Windows.Forms.TabControl();
             this.tpg_list = new System.Windows.Forms.TabPage();
             this.pnl_main = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.dgv_guestlist = new System.Windows.Forms.DataGridView();
+            this.res_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.arr_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.full_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.acct_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adult = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ttlpax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rm_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trns = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.package = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activities = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cdr = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.com = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trv_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.seller = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remarks1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.r_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cashier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.net_income = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.user_id1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comttl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -137,6 +165,11 @@
             this.label24 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -163,39 +196,6 @@
             this.rtxt_gname = new System.Windows.Forms.RichTextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.res_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.arr_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.full_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.acct_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adult = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ttlpax = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rm_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trns = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.package = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activities = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cdr = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.remarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.com = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trv_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.seller = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cpr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.remarks1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.r_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cashier = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.net_income = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.user_id1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comttl = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tbcntrl_option.SuspendLayout();
             this.tpg_opt_1.SuspendLayout();
@@ -425,6 +425,22 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Option";
             // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Peru;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.button6.Image = global::Hotel_System.Properties.Resources._1343892237_DeleteRed;
+            this.button6.Location = new System.Drawing.Point(5, 124);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(178, 46);
+            this.button6.TabIndex = 27;
+            this.button6.Text = "Delete Charge/Payment";
+            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // btn_chkout
             // 
             this.btn_chkout.BackColor = System.Drawing.Color.Maroon;
@@ -453,22 +469,6 @@
             this.btn_back.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_back.UseVisualStyleBackColor = false;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Peru;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.button5.Image = global::Hotel_System.Properties.Resources._1365167226_user_walk_copy1;
-            this.button5.Location = new System.Drawing.Point(68, 85);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(176, 36);
-            this.button5.TabIndex = 26;
-            this.button5.Text = "Released Commission";
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -592,6 +592,22 @@
             this.btn_baltransfer.Visible = false;
             this.btn_baltransfer.Click += new System.EventHandler(this.btn_baltransfer_Click);
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Peru;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.button5.Image = global::Hotel_System.Properties.Resources._1365167226_user_walk_copy1;
+            this.button5.Location = new System.Drawing.Point(68, 85);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(176, 36);
+            this.button5.TabIndex = 26;
+            this.button5.Text = "Released Commission";
+            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // tbcntrl_res
             // 
             this.tbcntrl_res.Controls.Add(this.tpg_list);
@@ -711,6 +727,297 @@
             this.dgv_guestlist.TabIndex = 53;
             this.dgv_guestlist.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_guestlist_CellDoubleClick);
             this.dgv_guestlist.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_guestlist_CellFormatting);
+            // 
+            // res_code
+            // 
+            this.res_code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.res_code.DataPropertyName = "res_code";
+            this.res_code.HeaderText = "Code";
+            this.res_code.Name = "res_code";
+            this.res_code.ReadOnly = true;
+            this.res_code.Width = 61;
+            // 
+            // arr_date
+            // 
+            this.arr_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.arr_date.DataPropertyName = "arr_date";
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.arr_date.DefaultCellStyle = dataGridViewCellStyle2;
+            this.arr_date.HeaderText = "Date";
+            this.arr_date.Name = "arr_date";
+            this.arr_date.ReadOnly = true;
+            this.arr_date.Width = 58;
+            // 
+            // full_name
+            // 
+            this.full_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.full_name.DataPropertyName = "full_name";
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.full_name.DefaultCellStyle = dataGridViewCellStyle3;
+            this.full_name.HeaderText = "Name";
+            this.full_name.Name = "full_name";
+            this.full_name.ReadOnly = true;
+            this.full_name.Width = 66;
+            // 
+            // acct_no
+            // 
+            this.acct_no.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.acct_no.DataPropertyName = "acct_no";
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.acct_no.DefaultCellStyle = dataGridViewCellStyle4;
+            this.acct_no.HeaderText = "No.";
+            this.acct_no.Name = "acct_no";
+            this.acct_no.ReadOnly = true;
+            this.acct_no.Width = 51;
+            // 
+            // adult
+            // 
+            this.adult.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.adult.DataPropertyName = "adult";
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.adult.DefaultCellStyle = dataGridViewCellStyle5;
+            this.adult.HeaderText = "A";
+            this.adult.Name = "adult";
+            this.adult.ReadOnly = true;
+            this.adult.Width = 39;
+            // 
+            // kid
+            // 
+            this.kid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.kid.DataPropertyName = "kid";
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.kid.DefaultCellStyle = dataGridViewCellStyle6;
+            this.kid.HeaderText = "K";
+            this.kid.Name = "kid";
+            this.kid.ReadOnly = true;
+            this.kid.Width = 40;
+            // 
+            // inf
+            // 
+            this.inf.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.inf.DataPropertyName = "inf";
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.inf.DefaultCellStyle = dataGridViewCellStyle7;
+            this.inf.HeaderText = "I";
+            this.inf.Name = "inf";
+            this.inf.ReadOnly = true;
+            this.inf.Width = 35;
+            // 
+            // ttlpax
+            // 
+            this.ttlpax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ttlpax.DataPropertyName = "ttlpax";
+            this.ttlpax.HeaderText = "Pax";
+            this.ttlpax.Name = "ttlpax";
+            this.ttlpax.ReadOnly = true;
+            this.ttlpax.Width = 53;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.name.DataPropertyName = "name";
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.name.DefaultCellStyle = dataGridViewCellStyle8;
+            this.name.HeaderText = "Hotel";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.Width = 61;
+            // 
+            // rm_no
+            // 
+            this.rm_no.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.rm_no.DataPropertyName = "rom_code";
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.rm_no.DefaultCellStyle = dataGridViewCellStyle9;
+            this.rm_no.HeaderText = "Rm#";
+            this.rm_no.Name = "rm_no";
+            this.rm_no.ReadOnly = true;
+            this.rm_no.Width = 59;
+            // 
+            // trns
+            // 
+            this.trns.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.trns.DataPropertyName = "trns";
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.trns.DefaultCellStyle = dataGridViewCellStyle10;
+            this.trns.HeaderText = "Transportation";
+            this.trns.Name = "trns";
+            this.trns.ReadOnly = true;
+            this.trns.Width = 111;
+            // 
+            // package
+            // 
+            this.package.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.package.DataPropertyName = "package";
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.package.DefaultCellStyle = dataGridViewCellStyle11;
+            this.package.HeaderText = "Package";
+            this.package.Name = "package";
+            this.package.ReadOnly = true;
+            this.package.Width = 80;
+            // 
+            // activities
+            // 
+            this.activities.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.activities.DataPropertyName = "activities";
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.activities.DefaultCellStyle = dataGridViewCellStyle12;
+            this.activities.HeaderText = "Activities";
+            this.activities.Name = "activities";
+            this.activities.ReadOnly = true;
+            this.activities.Width = 78;
+            // 
+            // ent
+            // 
+            this.ent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ent.DataPropertyName = "ent";
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ent.DefaultCellStyle = dataGridViewCellStyle13;
+            this.ent.HeaderText = "Entrance";
+            this.ent.Name = "ent";
+            this.ent.ReadOnly = true;
+            this.ent.Width = 81;
+            // 
+            // cdr
+            // 
+            this.cdr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cdr.DataPropertyName = "cdr";
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle14.NullValue = false;
+            this.cdr.DefaultCellStyle = dataGridViewCellStyle14;
+            this.cdr.HeaderText = "CDR";
+            this.cdr.Name = "cdr";
+            this.cdr.ReadOnly = true;
+            this.cdr.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cdr.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.cdr.Width = 58;
+            // 
+            // price
+            // 
+            this.price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.price.DataPropertyName = "price";
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.price.DefaultCellStyle = dataGridViewCellStyle15;
+            this.price.HeaderText = "Sales";
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            this.price.Width = 63;
+            // 
+            // remarks
+            // 
+            this.remarks.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.remarks.DataPropertyName = "remarks";
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.remarks.DefaultCellStyle = dataGridViewCellStyle16;
+            this.remarks.HeaderText = "Remarks";
+            this.remarks.Name = "remarks";
+            this.remarks.ReadOnly = true;
+            this.remarks.Width = 82;
+            // 
+            // com
+            // 
+            this.com.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.com.DataPropertyName = "com";
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.Aqua;
+            this.com.DefaultCellStyle = dataGridViewCellStyle17;
+            this.com.HeaderText = "Com";
+            this.com.Name = "com";
+            this.com.ReadOnly = true;
+            this.com.Width = 58;
+            // 
+            // trv_name
+            // 
+            this.trv_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.trv_name.DataPropertyName = "trv_name";
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.Aqua;
+            this.trv_name.DefaultCellStyle = dataGridViewCellStyle18;
+            this.trv_name.HeaderText = "Agency";
+            this.trv_name.Name = "trv_name";
+            this.trv_name.ReadOnly = true;
+            this.trv_name.Width = 71;
+            // 
+            // seller
+            // 
+            this.seller.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.seller.DataPropertyName = "seller";
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.Aqua;
+            this.seller.DefaultCellStyle = dataGridViewCellStyle19;
+            this.seller.HeaderText = "Seller";
+            this.seller.Name = "seller";
+            this.seller.ReadOnly = true;
+            this.seller.Width = 64;
+            // 
+            // cpr
+            // 
+            this.cpr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cpr.DataPropertyName = "cpr";
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cpr.DefaultCellStyle = dataGridViewCellStyle20;
+            this.cpr.HeaderText = "Com Price";
+            this.cpr.Name = "cpr";
+            this.cpr.ReadOnly = true;
+            this.cpr.Width = 89;
+            // 
+            // remarks1
+            // 
+            this.remarks1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.remarks1.DataPropertyName = "remarks1";
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.Aqua;
+            this.remarks1.DefaultCellStyle = dataGridViewCellStyle21;
+            this.remarks1.HeaderText = "Remarks";
+            this.remarks1.Name = "remarks1";
+            this.remarks1.ReadOnly = true;
+            this.remarks1.Width = 82;
+            // 
+            // r_date
+            // 
+            this.r_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.r_date.DataPropertyName = "r_date";
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.Aqua;
+            this.r_date.DefaultCellStyle = dataGridViewCellStyle22;
+            this.r_date.HeaderText = "Release date";
+            this.r_date.Name = "r_date";
+            this.r_date.ReadOnly = true;
+            this.r_date.Width = 105;
+            // 
+            // cashier
+            // 
+            this.cashier.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.cashier.DataPropertyName = "cashier";
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.Aqua;
+            this.cashier.DefaultCellStyle = dataGridViewCellStyle23;
+            this.cashier.HeaderText = "Cashier";
+            this.cashier.Name = "cashier";
+            this.cashier.ReadOnly = true;
+            this.cashier.Width = 74;
+            // 
+            // net_income
+            // 
+            this.net_income.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.net_income.DataPropertyName = "net_income";
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.Aquamarine;
+            this.net_income.DefaultCellStyle = dataGridViewCellStyle24;
+            this.net_income.HeaderText = "Net Income";
+            this.net_income.Name = "net_income";
+            this.net_income.ReadOnly = true;
+            this.net_income.Width = 95;
+            // 
+            // user_id1
+            // 
+            this.user_id1.DataPropertyName = "user_id1";
+            this.user_id1.HeaderText = "USERID";
+            this.user_id1.Name = "user_id1";
+            this.user_id1.ReadOnly = true;
+            this.user_id1.Visible = false;
+            // 
+            // comttl
+            // 
+            this.comttl.DataPropertyName = "comttl";
+            this.comttl.HeaderText = "COM";
+            this.comttl.Name = "comttl";
+            this.comttl.ReadOnly = true;
+            this.comttl.Visible = false;
             // 
             // panel5
             // 
@@ -1298,6 +1605,53 @@
             this.groupBox6.Text = "Selected Tennant Info";
             this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.label19);
+            this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Location = new System.Drawing.Point(642, 13);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(260, 130);
+            this.groupBox1.TabIndex = 105;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Commission";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(111, 55);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(133, 21);
+            this.textBox5.TabIndex = 106;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(12, 58);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(57, 15);
+            this.label19.TabIndex = 105;
+            this.label19.Text = "Remarks";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(111, 21);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(133, 21);
+            this.textBox4.TabIndex = 104;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(12, 24);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(76, 15);
+            this.label13.TabIndex = 103;
+            this.label13.Text = "Commission";
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -1524,360 +1878,6 @@
             this.label20.Size = new System.Drawing.Size(71, 15);
             this.label20.TabIndex = 43;
             this.label20.Text = "Contract No";
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.Peru;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.button6.Image = global::Hotel_System.Properties.Resources._1343892237_DeleteRed;
-            this.button6.Location = new System.Drawing.Point(5, 124);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(178, 46);
-            this.button6.TabIndex = 27;
-            this.button6.Text = "Delete Charge/Payment";
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(111, 21);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(133, 21);
-            this.textBox4.TabIndex = 104;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(12, 24);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(76, 15);
-            this.label13.TabIndex = 103;
-            this.label13.Text = "Commission";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.label19);
-            this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Location = new System.Drawing.Point(642, 13);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(260, 130);
-            this.groupBox1.TabIndex = 105;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Commission";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(111, 55);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(133, 21);
-            this.textBox5.TabIndex = 106;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(12, 58);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(57, 15);
-            this.label19.TabIndex = 105;
-            this.label19.Text = "Remarks";
-            // 
-            // res_code
-            // 
-            this.res_code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.res_code.DataPropertyName = "res_code";
-            this.res_code.HeaderText = "Code";
-            this.res_code.Name = "res_code";
-            this.res_code.ReadOnly = true;
-            this.res_code.Width = 61;
-            // 
-            // arr_date
-            // 
-            this.arr_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.arr_date.DataPropertyName = "arr_date";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.arr_date.DefaultCellStyle = dataGridViewCellStyle2;
-            this.arr_date.HeaderText = "Date";
-            this.arr_date.Name = "arr_date";
-            this.arr_date.ReadOnly = true;
-            this.arr_date.Width = 58;
-            // 
-            // full_name
-            // 
-            this.full_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.full_name.DataPropertyName = "full_name";
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.full_name.DefaultCellStyle = dataGridViewCellStyle3;
-            this.full_name.HeaderText = "Name";
-            this.full_name.Name = "full_name";
-            this.full_name.ReadOnly = true;
-            this.full_name.Width = 66;
-            // 
-            // acct_no
-            // 
-            this.acct_no.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.acct_no.DataPropertyName = "acct_no";
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.acct_no.DefaultCellStyle = dataGridViewCellStyle4;
-            this.acct_no.HeaderText = "No.";
-            this.acct_no.Name = "acct_no";
-            this.acct_no.ReadOnly = true;
-            this.acct_no.Width = 51;
-            // 
-            // adult
-            // 
-            this.adult.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.adult.DataPropertyName = "adult";
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.adult.DefaultCellStyle = dataGridViewCellStyle5;
-            this.adult.HeaderText = "A";
-            this.adult.Name = "adult";
-            this.adult.ReadOnly = true;
-            this.adult.Width = 39;
-            // 
-            // kid
-            // 
-            this.kid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.kid.DataPropertyName = "kid";
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.kid.DefaultCellStyle = dataGridViewCellStyle6;
-            this.kid.HeaderText = "K";
-            this.kid.Name = "kid";
-            this.kid.ReadOnly = true;
-            this.kid.Width = 40;
-            // 
-            // inf
-            // 
-            this.inf.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.inf.DataPropertyName = "inf";
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.inf.DefaultCellStyle = dataGridViewCellStyle7;
-            this.inf.HeaderText = "I";
-            this.inf.Name = "inf";
-            this.inf.ReadOnly = true;
-            this.inf.Width = 35;
-            // 
-            // ttlpax
-            // 
-            this.ttlpax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ttlpax.DataPropertyName = "ttlpax";
-            this.ttlpax.HeaderText = "Pax";
-            this.ttlpax.Name = "ttlpax";
-            this.ttlpax.ReadOnly = true;
-            this.ttlpax.Width = 53;
-            // 
-            // name
-            // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.name.DataPropertyName = "name";
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.name.DefaultCellStyle = dataGridViewCellStyle8;
-            this.name.HeaderText = "Hotel";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            this.name.Width = 61;
-            // 
-            // rm_no
-            // 
-            this.rm_no.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.rm_no.DataPropertyName = "rom_code";
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.rm_no.DefaultCellStyle = dataGridViewCellStyle9;
-            this.rm_no.HeaderText = "Rm#";
-            this.rm_no.Name = "rm_no";
-            this.rm_no.ReadOnly = true;
-            this.rm_no.Width = 59;
-            // 
-            // trns
-            // 
-            this.trns.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.trns.DataPropertyName = "trns";
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.trns.DefaultCellStyle = dataGridViewCellStyle10;
-            this.trns.HeaderText = "Transportation";
-            this.trns.Name = "trns";
-            this.trns.ReadOnly = true;
-            this.trns.Width = 111;
-            // 
-            // package
-            // 
-            this.package.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.package.DataPropertyName = "package";
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.package.DefaultCellStyle = dataGridViewCellStyle11;
-            this.package.HeaderText = "Package";
-            this.package.Name = "package";
-            this.package.ReadOnly = true;
-            this.package.Width = 80;
-            // 
-            // activities
-            // 
-            this.activities.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.activities.DataPropertyName = "activities";
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.activities.DefaultCellStyle = dataGridViewCellStyle12;
-            this.activities.HeaderText = "Activities";
-            this.activities.Name = "activities";
-            this.activities.ReadOnly = true;
-            this.activities.Width = 78;
-            // 
-            // ent
-            // 
-            this.ent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ent.DataPropertyName = "ent";
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ent.DefaultCellStyle = dataGridViewCellStyle13;
-            this.ent.HeaderText = "Entrance";
-            this.ent.Name = "ent";
-            this.ent.ReadOnly = true;
-            this.ent.Width = 81;
-            // 
-            // cdr
-            // 
-            this.cdr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cdr.DataPropertyName = "cdr";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle14.NullValue = false;
-            this.cdr.DefaultCellStyle = dataGridViewCellStyle14;
-            this.cdr.HeaderText = "CDR";
-            this.cdr.Name = "cdr";
-            this.cdr.ReadOnly = true;
-            this.cdr.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.cdr.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.cdr.Width = 58;
-            // 
-            // price
-            // 
-            this.price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.price.DataPropertyName = "price";
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.price.DefaultCellStyle = dataGridViewCellStyle15;
-            this.price.HeaderText = "Sales";
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            this.price.Width = 63;
-            // 
-            // remarks
-            // 
-            this.remarks.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.remarks.DataPropertyName = "remarks";
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.remarks.DefaultCellStyle = dataGridViewCellStyle16;
-            this.remarks.HeaderText = "Remarks";
-            this.remarks.Name = "remarks";
-            this.remarks.ReadOnly = true;
-            this.remarks.Width = 82;
-            // 
-            // com
-            // 
-            this.com.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.com.DataPropertyName = "com";
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.Aqua;
-            this.com.DefaultCellStyle = dataGridViewCellStyle17;
-            this.com.HeaderText = "Com";
-            this.com.Name = "com";
-            this.com.ReadOnly = true;
-            this.com.Width = 58;
-            // 
-            // trv_name
-            // 
-            this.trv_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.trv_name.DataPropertyName = "trv_name";
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.Aqua;
-            this.trv_name.DefaultCellStyle = dataGridViewCellStyle18;
-            this.trv_name.HeaderText = "Agency";
-            this.trv_name.Name = "trv_name";
-            this.trv_name.ReadOnly = true;
-            this.trv_name.Width = 71;
-            // 
-            // seller
-            // 
-            this.seller.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.seller.DataPropertyName = "seller";
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.Aqua;
-            this.seller.DefaultCellStyle = dataGridViewCellStyle19;
-            this.seller.HeaderText = "Seller";
-            this.seller.Name = "seller";
-            this.seller.ReadOnly = true;
-            this.seller.Width = 64;
-            // 
-            // cpr
-            // 
-            this.cpr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cpr.DataPropertyName = "cpr";
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cpr.DefaultCellStyle = dataGridViewCellStyle20;
-            this.cpr.HeaderText = "Com Price";
-            this.cpr.Name = "cpr";
-            this.cpr.ReadOnly = true;
-            this.cpr.Width = 89;
-            // 
-            // remarks1
-            // 
-            this.remarks1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.remarks1.DataPropertyName = "remarks1";
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.Aqua;
-            this.remarks1.DefaultCellStyle = dataGridViewCellStyle21;
-            this.remarks1.HeaderText = "Remarks";
-            this.remarks1.Name = "remarks1";
-            this.remarks1.ReadOnly = true;
-            this.remarks1.Width = 82;
-            // 
-            // r_date
-            // 
-            this.r_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.r_date.DataPropertyName = "r_date";
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.Aqua;
-            this.r_date.DefaultCellStyle = dataGridViewCellStyle22;
-            this.r_date.HeaderText = "Release date";
-            this.r_date.Name = "r_date";
-            this.r_date.ReadOnly = true;
-            this.r_date.Width = 105;
-            // 
-            // cashier
-            // 
-            this.cashier.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.cashier.DataPropertyName = "cashier";
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.Aqua;
-            this.cashier.DefaultCellStyle = dataGridViewCellStyle23;
-            this.cashier.HeaderText = "Cashier";
-            this.cashier.Name = "cashier";
-            this.cashier.ReadOnly = true;
-            this.cashier.Width = 74;
-            // 
-            // net_income
-            // 
-            this.net_income.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.net_income.DataPropertyName = "net_income";
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.Aquamarine;
-            this.net_income.DefaultCellStyle = dataGridViewCellStyle24;
-            this.net_income.HeaderText = "Net Income";
-            this.net_income.Name = "net_income";
-            this.net_income.ReadOnly = true;
-            this.net_income.Width = 95;
-            // 
-            // user_id1
-            // 
-            this.user_id1.DataPropertyName = "user_id1";
-            this.user_id1.HeaderText = "USERID";
-            this.user_id1.Name = "user_id1";
-            this.user_id1.ReadOnly = true;
-            this.user_id1.Visible = false;
-            // 
-            // comttl
-            // 
-            this.comttl.DataPropertyName = "comttl";
-            this.comttl.HeaderText = "COM";
-            this.comttl.Name = "comttl";
-            this.comttl.ReadOnly = true;
-            this.comttl.Visible = false;
             // 
             // newGuestBilling
             // 

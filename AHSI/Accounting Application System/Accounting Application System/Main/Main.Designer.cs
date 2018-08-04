@@ -2502,7 +2502,7 @@
             this.btn_12.Dock = System.Windows.Forms.DockStyle.Left;
             this.btn_12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_12.Image = global::Accounting_Application_System.Properties.Resources.search_32x32;
-            this.btn_12.Location = new System.Drawing.Point(1263, 0);
+            this.btn_12.Location = new System.Drawing.Point(1299, 0);
             this.btn_12.Name = "btn_12";
             this.btn_12.Size = new System.Drawing.Size(79, 51);
             this.btn_12.TabIndex = 30;
@@ -2517,7 +2517,7 @@
             this.btn_11.Dock = System.Windows.Forms.DockStyle.Left;
             this.btn_11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_11.Image = global::Accounting_Application_System.Properties.Resources.search_32x32;
-            this.btn_11.Location = new System.Drawing.Point(1163, 0);
+            this.btn_11.Location = new System.Drawing.Point(1199, 0);
             this.btn_11.Name = "btn_11";
             this.btn_11.Size = new System.Drawing.Size(100, 51);
             this.btn_11.TabIndex = 29;
@@ -2532,7 +2532,7 @@
             this.btn_10.Dock = System.Windows.Forms.DockStyle.Left;
             this.btn_10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_10.Image = global::Accounting_Application_System.Properties.Resources.landing_icons_auto_search___34;
-            this.btn_10.Location = new System.Drawing.Point(1063, 0);
+            this.btn_10.Location = new System.Drawing.Point(1099, 0);
             this.btn_10.Name = "btn_10";
             this.btn_10.Size = new System.Drawing.Size(100, 51);
             this.btn_10.TabIndex = 28;
@@ -2547,14 +2547,15 @@
             this.btn_9.Dock = System.Windows.Forms.DockStyle.Left;
             this.btn_9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_9.Image = global::Accounting_Application_System.Properties.Resources.room_status_update;
+            this.btn_9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_9.Location = new System.Drawing.Point(963, 0);
             this.btn_9.Name = "btn_9";
-            this.btn_9.Size = new System.Drawing.Size(100, 51);
+            this.btn_9.Size = new System.Drawing.Size(136, 51);
             this.btn_9.TabIndex = 27;
-            this.btn_9.Text = "Update Unit Stat";
-            this.btn_9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_9.Text = "Reservation and Guest History";
+            this.btn_9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_9.UseVisualStyleBackColor = true;
-            this.btn_9.Visible = false;
             this.btn_9.Click += new System.EventHandler(this.btn_9_Click);
             // 
             // btn_8

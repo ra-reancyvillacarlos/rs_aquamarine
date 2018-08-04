@@ -34,20 +34,6 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dgv_reslist = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.res_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.arr_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.arr_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +49,24 @@
             this.reserv_by = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.remarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.arrived = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.chg_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chg_desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.count = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tbcntrl_res.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -71,6 +75,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tbcntrl_res
@@ -99,6 +104,7 @@
             // 
             this.groupBox6.BackColor = System.Drawing.Color.DarkKhaki;
             this.groupBox6.Controls.Add(this.dgv_reslist);
+            this.groupBox6.Controls.Add(this.dataGridView1);
             this.groupBox6.Controls.Add(this.panel1);
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox6.Location = new System.Drawing.Point(3, 3);
@@ -144,9 +150,133 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_reslist.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_reslist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_reslist.Size = new System.Drawing.Size(1334, 607);
+            this.dgv_reslist.Size = new System.Drawing.Size(1100, 607);
             this.dgv_reslist.TabIndex = 1;
             this.dgv_reslist.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_reslist_CellFormatting);
+            // 
+            // res_code
+            // 
+            this.res_code.DataPropertyName = "res_code";
+            this.res_code.HeaderText = "Reservation Code";
+            this.res_code.Name = "res_code";
+            this.res_code.ReadOnly = true;
+            // 
+            // arr_date
+            // 
+            this.arr_date.DataPropertyName = "arr_date";
+            this.arr_date.HeaderText = "Date";
+            this.arr_date.Name = "arr_date";
+            this.arr_date.ReadOnly = true;
+            // 
+            // arr_time
+            // 
+            this.arr_time.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.arr_time.DataPropertyName = "arr_time";
+            this.arr_time.HeaderText = "Time";
+            this.arr_time.Name = "arr_time";
+            this.arr_time.ReadOnly = true;
+            this.arr_time.Width = 64;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.name.DataPropertyName = "full_name";
+            this.name.HeaderText = "Name";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.Width = 70;
+            // 
+            // p_name
+            // 
+            this.p_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.p_name.DataPropertyName = "p_name";
+            this.p_name.HeaderText = "Payment";
+            this.p_name.Name = "p_name";
+            this.p_name.ReadOnly = true;
+            this.p_name.Width = 86;
+            // 
+            // hotel_name
+            // 
+            this.hotel_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.hotel_name.DataPropertyName = "name";
+            this.hotel_name.HeaderText = "Hotel";
+            this.hotel_name.Name = "hotel_name";
+            this.hotel_name.ReadOnly = true;
+            this.hotel_name.Width = 65;
+            // 
+            // ttlpax
+            // 
+            this.ttlpax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ttlpax.DataPropertyName = "ttlpax";
+            this.ttlpax.HeaderText = "Pax";
+            this.ttlpax.Name = "ttlpax";
+            this.ttlpax.ReadOnly = true;
+            this.ttlpax.Width = 56;
+            // 
+            // package
+            // 
+            this.package.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.package.DataPropertyName = "package";
+            this.package.HeaderText = "Package";
+            this.package.Name = "package";
+            this.package.ReadOnly = true;
+            this.package.Width = 88;
+            // 
+            // activities
+            // 
+            this.activities.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.activities.DataPropertyName = "activities";
+            this.activities.HeaderText = "Activities";
+            this.activities.Name = "activities";
+            this.activities.ReadOnly = true;
+            this.activities.Width = 86;
+            // 
+            // cd
+            // 
+            this.cd.DataPropertyName = "cd";
+            this.cd.HeaderText = "CD";
+            this.cd.Name = "cd";
+            this.cd.ReadOnly = true;
+            this.cd.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cd.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // lunch
+            // 
+            this.lunch.DataPropertyName = "lunch";
+            this.lunch.HeaderText = "Lunch";
+            this.lunch.Name = "lunch";
+            this.lunch.ReadOnly = true;
+            // 
+            // reserv_date
+            // 
+            this.reserv_date.DataPropertyName = "res_date";
+            this.reserv_date.HeaderText = "Date of Boooking";
+            this.reserv_date.Name = "reserv_date";
+            this.reserv_date.ReadOnly = true;
+            // 
+            // reserv_by
+            // 
+            this.reserv_by.DataPropertyName = "reserv_by";
+            this.reserv_by.HeaderText = "Booked by";
+            this.reserv_by.Name = "reserv_by";
+            this.reserv_by.ReadOnly = true;
+            // 
+            // remarks
+            // 
+            this.remarks.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.remarks.DataPropertyName = "remarks";
+            this.remarks.HeaderText = "Remarks";
+            this.remarks.Name = "remarks";
+            this.remarks.ReadOnly = true;
+            this.remarks.Width = 88;
+            // 
+            // arrived
+            // 
+            this.arrived.DataPropertyName = "arrived";
+            this.arrived.HeaderText = "Arrived";
+            this.arrived.Name = "arrived";
+            this.arrived.ReadOnly = true;
+            this.arrived.Visible = false;
             // 
             // panel1
             // 
@@ -299,129 +429,51 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Total Reservations made:";
             // 
-            // res_code
+            // dataGridView1
             // 
-            this.res_code.DataPropertyName = "res_code";
-            this.res_code.HeaderText = "Reservation Code";
-            this.res_code.Name = "res_code";
-            this.res_code.ReadOnly = true;
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.chg_code,
+            this.chg_desc,
+            this.count});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.Location = new System.Drawing.Point(1103, 18);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(234, 607);
+            this.dataGridView1.TabIndex = 3;
             // 
-            // arr_date
+            // chg_code
             // 
-            this.arr_date.DataPropertyName = "arr_date";
-            this.arr_date.HeaderText = "Date";
-            this.arr_date.Name = "arr_date";
-            this.arr_date.ReadOnly = true;
+            this.chg_code.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.chg_code.DataPropertyName = "chg_code";
+            this.chg_code.HeaderText = "CODE";
+            this.chg_code.Name = "chg_code";
+            this.chg_code.ReadOnly = true;
+            this.chg_code.Visible = false;
+            this.chg_code.Width = 71;
             // 
-            // arr_time
+            // chg_desc
             // 
-            this.arr_time.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.arr_time.DataPropertyName = "arr_time";
-            this.arr_time.HeaderText = "Time";
-            this.arr_time.Name = "arr_time";
-            this.arr_time.ReadOnly = true;
-            this.arr_time.Width = 64;
+            this.chg_desc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.chg_desc.DataPropertyName = "chg_desc";
+            this.chg_desc.HeaderText = "Service";
+            this.chg_desc.Name = "chg_desc";
+            this.chg_desc.ReadOnly = true;
+            this.chg_desc.Width = 79;
             // 
-            // name
+            // count
             // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.name.DataPropertyName = "full_name";
-            this.name.HeaderText = "Name";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            this.name.Width = 70;
-            // 
-            // p_name
-            // 
-            this.p_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.p_name.DataPropertyName = "p_name";
-            this.p_name.HeaderText = "Payment";
-            this.p_name.Name = "p_name";
-            this.p_name.ReadOnly = true;
-            this.p_name.Width = 86;
-            // 
-            // hotel_name
-            // 
-            this.hotel_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.hotel_name.DataPropertyName = "name";
-            this.hotel_name.HeaderText = "Hotel";
-            this.hotel_name.Name = "hotel_name";
-            this.hotel_name.ReadOnly = true;
-            this.hotel_name.Width = 65;
-            // 
-            // ttlpax
-            // 
-            this.ttlpax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ttlpax.DataPropertyName = "ttlpax";
-            this.ttlpax.HeaderText = "Pax";
-            this.ttlpax.Name = "ttlpax";
-            this.ttlpax.ReadOnly = true;
-            this.ttlpax.Width = 56;
-            // 
-            // package
-            // 
-            this.package.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.package.DataPropertyName = "package";
-            this.package.HeaderText = "Package";
-            this.package.Name = "package";
-            this.package.ReadOnly = true;
-            this.package.Width = 88;
-            // 
-            // activities
-            // 
-            this.activities.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.activities.DataPropertyName = "activities";
-            this.activities.HeaderText = "Activities";
-            this.activities.Name = "activities";
-            this.activities.ReadOnly = true;
-            this.activities.Width = 86;
-            // 
-            // cd
-            // 
-            this.cd.DataPropertyName = "cd";
-            this.cd.HeaderText = "CD";
-            this.cd.Name = "cd";
-            this.cd.ReadOnly = true;
-            this.cd.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.cd.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // lunch
-            // 
-            this.lunch.DataPropertyName = "lunch";
-            this.lunch.HeaderText = "Lunch";
-            this.lunch.Name = "lunch";
-            this.lunch.ReadOnly = true;
-            // 
-            // reserv_date
-            // 
-            this.reserv_date.DataPropertyName = "res_date";
-            this.reserv_date.HeaderText = "Date of Boooking";
-            this.reserv_date.Name = "reserv_date";
-            this.reserv_date.ReadOnly = true;
-            // 
-            // reserv_by
-            // 
-            this.reserv_by.DataPropertyName = "reserv_by";
-            this.reserv_by.HeaderText = "Booked by";
-            this.reserv_by.Name = "reserv_by";
-            this.reserv_by.ReadOnly = true;
-            // 
-            // remarks
-            // 
-            this.remarks.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.remarks.DataPropertyName = "remarks";
-            this.remarks.HeaderText = "Remarks";
-            this.remarks.Name = "remarks";
-            this.remarks.ReadOnly = true;
-            this.remarks.Width = 88;
-            // 
-            // arrived
-            // 
-            this.arrived.DataPropertyName = "arrived";
-            this.arrived.HeaderText = "Arrived";
-            this.arrived.Name = "arrived";
-            this.arrived.ReadOnly = true;
-            this.arrived.Visible = false;
+            this.count.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.count.DataPropertyName = "count";
+            this.count.HeaderText = "Pax";
+            this.count.Name = "count";
+            this.count.ReadOnly = true;
+            this.count.Width = 56;
             // 
             // z_Notification
             // 
@@ -448,6 +500,7 @@
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -487,6 +540,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn reserv_by;
         private System.Windows.Forms.DataGridViewTextBoxColumn remarks;
         private System.Windows.Forms.DataGridViewTextBoxColumn arrived;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chg_code;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chg_desc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn count;
 
     }
 }

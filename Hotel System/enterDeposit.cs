@@ -138,7 +138,7 @@ namespace Hotel_System
                                         catch { }
                                     }
                                 }
-                                db.UpdateOnTable("resfil", "remarks = 'PAID'", "res_code = '" + cur_res_code + "'");
+                                //db.UpdateOnTable("resfil", "remarks = 'PAID'", "res_code = '" + cur_res_code + "'");
                                 MessageBox.Show("Successfully updated amount.");
                                 this.Close();
                             }

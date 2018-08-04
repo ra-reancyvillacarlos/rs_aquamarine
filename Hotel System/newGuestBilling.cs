@@ -16,6 +16,7 @@ namespace Hotel_System
         public String rom_rate = "";
         thisDatabase db = new thisDatabase();
         Boolean forUp = false;
+        public Boolean forView = false;
         public newGuestBilling()
         {
             InitializeComponent();
@@ -166,7 +167,7 @@ namespace Hotel_System
             {
                 DateTime curdate = Convert.ToDateTime(db.get_systemdate(""));
 
-                dt = db.get_guest_currentlycheckin(cond);
+                dt = ((forView == true) ? db.get_guest_histforview(cond) : db.get_guest_currentlycheckin(cond));
 
                 if (forUp)
                 {
@@ -196,7 +197,7 @@ namespace Hotel_System
                     dgv_guestlist.DataSource = dt;
                 }
             }
-            catch (Exception er) { MessageBox.Show(er.Message); }
+            catch (Exception er) {  }
         }
         private void clr_frm()
         {
@@ -238,180 +239,32 @@ namespace Hotel_System
                 }
                 else
                 {
-                    DialogResult dialogResult = MessageBox.Show("Are you sure you want to check out this guest?", "Confirm", MessageBoxButtons.YesNo);
+                    DialogResult dialogResult = MessageBox.Show("Are you sure you want to check out this guest?", "Confirmation Dialog", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                     if (dialogResult == DialogResult.Yes)
                     {
-                        dt = db.QueryOnTableWithParams("chgfil", "*", "reg_num='" + reg_num + "'", "");
+                        Boolean gf_ins = db.QueryBySQLCode_bool("INSERT INTO rssys.gfhist (reg_num, res_code, acct_no, full_name, arr_date, arr_time, dep_date, dep_time, rom_code, typ_code, occ_type, rate_code, rom_rate, govt_tax, serv_chg, extra_bed, pay_code, mkt_code, src_code, trv_code, free_bfast, rm_features, bill_info, remarks, rom_class, rgrp_code, rgrp_ln, user_id, t_date, t_time, cancel, canc_reason, canc_user, canc_date, canc_time, grp_code, co_user, co_date, co_time, out_fol, chg_code, fctr_code, disc_code, disc_pct, or_no1, or_amnt1, or_no2, or_amnt2, or_no3, or_amnt3, branch, transferred, paymentform, doc_ref, doctype, dep_amnt, nodeposit_rmrk, rmrttyp, ap_paymentform, ap_doc_ref, ap_doctype, ap_dep_amnt, ap_nodeposit_rmrk, d_currency_code, discount, hotel_code, p_typ, price, seller) SELECT reg_num, res_code, acct_no, full_name, arr_date, arr_time, dep_date, dep_time, rom_code, typ_code, occ_type, rate_code, rom_rate, govt_tax, serv_chg, extra_bed, pay_code, mkt_code, src_code, trv_code, free_bfast, rm_features, bill_info, remarks, rom_class, rgrp_code, rgrp_ln, user_id, t_date, t_time, cancel, canc_reason, canc_user, canc_date, canc_time, grp_code, '" + GlobalClass.username + "', current_date, '" + DateTime.Now.ToString("HH:mm") + "', out_fol, chg_code, fctr_code, disc_code, disc_pct, or_no1, or_amnt1, or_no2, or_amnt2, or_no3, or_amnt3, branch, transferred, paymentform, doc_ref, doctype, dep_amnt, nodeposit_rmrk, rmrttyp, ap_paymentform, ap_doc_ref, ap_doctype, ap_dep_amnt, ap_nodeposit_rmrk, d_currency_code, discount, hotel_code, p_typ, price, seller FROM rssys.gfolio WHERE reg_num = '" + reg_num + "'");
+                        Boolean cf_ins = db.QueryBySQLCode_bool("INSERT INTO rssys.chghist (reg_num, chg_code, chg_num, rom_code, reference, amount, user_id, t_date, t_time, fol_num, chg_date, jrnlz, fol_name, food, misc, fcontract, res_code, tofr_fol, soa_code, doc_type, vat_amnt, sc_amnt, trace_no, ccrd_no, currency_code, tax) SELECT reg_num, chg_code, chg_num, rom_code, reference, amount, user_id, t_date, t_time, fol_num, chg_date, jrnlz, fol_name, food, misc, fcontract, res_code, tofr_fol, soa_code, doc_type, vat_amnt, sc_amnt, trace_no, ccrd_no, currency_code, tax FROM rssys.chgfil WHERE reg_num = '" + reg_num + "'");
 
-                        foreach (DataRow row in dt.Rows)
+                        if (gf_ins)
                         {
-                            chg_code = row["chg_code"].ToString();
-                            chg_num = row["chg_num"].ToString();
-                            rom_code = row["rom_code"].ToString();
-                            reference = row["reference"].ToString();
-                            amount = row["amount"].ToString();
-                            user_id = row["user_id"].ToString();
-                            t_date = Convert.ToDateTime(row["t_date"].ToString()).ToString("yyyy-MM-dd");
-                            t_time = row["t_time"].ToString();
-                            fol_num = row["fol_num"].ToString();
-                            chg_date = Convert.ToDateTime(row["chg_date"].ToString()).ToString("yyyy-MM-dd");
-                            jrnlz = row["jrnlz"].ToString();
-                            fol_name = row["fol_name"].ToString();
-                            food = row["food"].ToString();
-                            misc = row["misc"].ToString();
-                            fcontract = row["fcontract"].ToString();
-                            res_code = row["res_code"].ToString();
-                            tofr_fol = row["tofr_fol"].ToString();
-                            soa_code = row["soa_code"].ToString();
-                            doc_type = row["doc_type"].ToString();
-                            vat_amnt = row["vat_amnt"].ToString();
-                            sc_amnt = row["sc_amnt"].ToString();
-
-                            trace_no = row["trace_no"].ToString();
-                            ccrd_no = row["ccrd_no"].ToString();
-
-                            if (food == "")
+                            if (cf_ins)
                             {
-                                food = "0.00";
+                                db.DeleteOnTable("chgfil", "reg_num = '" + reg_num + "'");
+                                db.DeleteOnTable("gfolio", "reg_num = '" + reg_num + "'");
+                                dis_dgvguest("");
+                                MessageBox.Show("Successfully checked out guest");
                             }
-                            if (misc == "")
+                            else
                             {
-                                misc = "0.00";
+                                db.DeleteOnTable("gfhist", "reg_num = '" + reg_num + "'");
+                                MessageBox.Show("Error on removing guest transactions.");
                             }
-                            if (vat_amnt == "")
-                            {
-                                vat_amnt = "0.00";
-                            }
-                            if (sc_amnt == "")
-                            {
-                                sc_amnt = "0.00";
-                            }
-
-                            dt_result = db.InsertOnTable("chghist", "reg_num, chg_code, chg_num, rom_code, reference, amount, user_id, t_date, t_time, fol_num, chg_date, jrnlz, fol_name, food, misc, fcontract, res_code, tofr_fol, soa_code, doc_type, vat_amnt, sc_amnt, trace_no, ccrd_no", "'" + reg_num + "', '" + chg_code + "', '" + chg_num + "', '" + rom_code + "', '" + reference + "', '" + amount + "', '" + user_id + "', '" + t_date + "', '" + t_time + "', '" + fol_num + "', '" + chg_date + "', '" + jrnlz + "', '" + fol_name + "', '" + food + "', '" + misc + "', '" + fcontract + "', '" + res_code + "', '" + tofr_fol + "', '" + soa_code + "', '" + doc_type + "', '" + vat_amnt + "', '" + sc_amnt + "', '" + trace_no + "', '" + ccrd_no + "'");
                         }
-                        //gfhist
-                        dt2 = db.QueryOnTableWithParams("gfolio", "*", "reg_num='" + reg_num + "'", "");
-
-                        foreach (DataRow row2 in dt2.Rows)
+                        else
                         {
-                            reg_num = row2["reg_num"].ToString();
-                            res_code = row2["res_code"].ToString();
-                            acct_no = row2["acct_no"].ToString();
-                            full_name = row2["full_name"].ToString();
-                            reg_date = row2["reg_date"].ToString();
-                            arr_date = row2["arr_date"].ToString();
-                            arr_time = row2["arr_time"].ToString();
-                            dep_date = row2["dep_date"].ToString();
-                            dep_time = row2["dep_time"].ToString();
-                            rom_code = row2["rom_code"].ToString();
-                            typ_code = row2["typ_code"].ToString();
-                            occ_type = row2["occ_type"].ToString();
-                            rate_code = row2["rate_code"].ToString();
-                            rom_rate = row2["rom_rate"].ToString();
-                            govt_tax = row2["govt_tax"].ToString();
-                            serv_chg = row2["serv_chg"].ToString();
-                            extra_bed = row2["extra_bed"].ToString();
-                            pay_code = row2["pay_code"].ToString();
-                            mkt_code = row2["mkt_code"].ToString();
-                            src_code = row2["src_code"].ToString();
-                            trv_code = row2["trv_code"].ToString();
-                            free_bfast = row2["free_bfast"].ToString();
-                            rm_features = row2["rm_features"].ToString();
-                            bill_info = row2["bill_info"].ToString();
-                            remarks = row2["remarks"].ToString();
-                            rom_class = row2["rom_class"].ToString();
-                            rgrp_code = row2["rgrp_code"].ToString();
-                            rgrp_ln = row2["rgrp_ln"].ToString();
-                            user_id = row2["user_id"].ToString();
-                            t_date = row2["t_date"].ToString();
-                            t_time = row2["t_time"].ToString();
-                            cancel = row2["cancel"].ToString();
-                            canc_reason = row2["canc_reason"].ToString();
-                            canc_user = row2["canc_user"].ToString();
-                            canc_date = row2["canc_date"].ToString();
-                            canc_time = row2["canc_time"].ToString();
-                            grp_code = row2["grp_code"].ToString();
-                            co_user = GlobalClass.username;
-                            co_date = db.get_systemdate("");
-                            co_time = DateTime.Now.ToString("HH:mm");
-                            out_fol = row2["out_fol"].ToString();
-                            fctr_code = row2["fctr_code"].ToString();
-                            disc_code = row2["disc_code"].ToString();
-                            disc_pct = row2["disc_pct"].ToString();
-
-                            if (reg_date != "")
-                            {
-                                reg_date = Convert.ToDateTime(reg_date).ToString("yyyy-MM-dd");
-                            }
-                            if (arr_date != "")
-                            {
-                                arr_date = Convert.ToDateTime(arr_date).ToString("yyyy-MM-dd");
-                            }
-                            if (dep_date != "")
-                            {
-                                dep_date = Convert.ToDateTime(dep_date).ToString("yyyy-MM-dd");
-                            }
-                            if (t_date != "")
-                            {
-                                t_date = Convert.ToDateTime(t_date).ToString("yyyy-MM-dd");
-                            }
-                            if (canc_date != "")
-                            {
-                                canc_date = Convert.ToDateTime(canc_date).ToString("yyyy-MM-dd");
-                            }
-                            if (canc_date == "")
-                            {
-                                canc_date = "1899-12-30";
-                            }
-                            if (rom_rate == "")
-                            {
-                                rom_rate = "0.00";
-                            }
-                            if (govt_tax == "")
-                            {
-                                govt_tax = "0.00";
-                            }
-                            if (serv_chg == "")
-                            {
-                                serv_chg = "0.00";
-                            }
-                            if (extra_bed == "")
-                            {
-                                extra_bed = "0.00";
-                            }
-                            if (free_bfast == "")
-                            {
-                                free_bfast = "0.00";
-                            }
-                            if (rgrp_ln == "")
-                            {
-                                rgrp_ln = "0";
-                            }
-                            if (disc_pct == "")
-                            {
-                                disc_pct = "0.00";
-                            }
-
-                            val2 = "'" + reg_num + "', '" + res_code + "', '" + acct_no + "', '" + full_name + "', '" + reg_date + "', '" + arr_date + "', '" + arr_time + "', '" + dep_date + "', '" + dep_time + "', '" + rom_code + "', '" + typ_code + "', '" + occ_type + "', '" + rate_code + "', '" + rom_rate + "', '" + govt_tax + "', '" + serv_chg + "', '" + extra_bed + "', '" + pay_code + "', '" + mkt_code + "', '" + src_code + "', '" + trv_code + "', '" + free_bfast + "', '" + rm_features + "', '" + bill_info + "', '" + remarks + "', '" + rom_class + "', '" + rgrp_code + "', '" + rgrp_ln + "', '" + user_id + "', '" + t_date + "', '" + t_time + "', '" + cancel + "', '" + canc_reason + "', '" + canc_user + "', '" + canc_date + "', '" + canc_time + "', '" + grp_code + "', '" + co_user + "', '" + co_date + "', '" + co_time + "', '" + out_fol + "', '" + fctr_code + "', '" + disc_code + "', '" + disc_pct + "'";
-
-                            dt2_result = db.InsertOnTable("gfhist", "reg_num, res_code, acct_no, full_name, reg_date, arr_date, arr_time, dep_date, dep_time, rom_code, typ_code, occ_type, rate_code, rom_rate, govt_tax, serv_chg, extra_bed, pay_code, mkt_code, src_code, trv_code, free_bfast, rm_features, bill_info, remarks, rom_class, rgrp_code, rgrp_ln, user_id, t_date, t_time, cancel, canc_reason, canc_user, canc_date, canc_time, grp_code, co_user, co_date, co_time, out_fol, fctr_code, disc_code, disc_pct", val2);
+                            MessageBox.Show("Error on checking out Guest");
                         }
-
-                        dt.Rows.Clear();
-                        dt2.Rows.Clear();
-                        //remove chgfil
-                        if (dt_result)
-                            db.DeleteOnTable("chgfil", "reg_num='" + lbl_gfolio.Text + "'");
-                        if (dt2_result)
-                            db.DeleteOnTable("gfolio", "reg_num='" + lbl_gfolio.Text + "'");
-
-                        UpdateRoomStatus urs = new UpdateRoomStatus();
-
-                        //urs.set_rmstatus("VD", lbl_rm.Text);
-                        MessageBox.Show("Check out Successful.");
-                        dis_dgvguest("");
-                        clr_frm();
                     }
                 }
             }
@@ -562,10 +415,10 @@ namespace Hotel_System
                 String guest = ((dgv_guestlist.SelectedRows.Count > 0) ? dgv_guestlist["res_code", dgv_guestlist.CurrentRow.Index].Value.ToString() : textBox1.Text.ToString());
                 dis_dgvguest("res_code = '" + guest + "'");
 
-                dgv_gfolio.DataSource = db.QueryBySQLCode("SELECT reg_num, res_code AS r_code, chg_code, chg_num, rom_code AS room_code, reference, amount, user_id, t_date, t_time FROM rssys.chgfil WHERE res_code = '" + guest + "'");
-
-                DataTable dt_pbd = db.QueryBySQLCode("SELECT SUM(amount) AS ttl FROM rssys.chgfil WHERE res_code = '" + guest + "'");
-
+                DataTable dt_stat = ((forView == true) ? db.QueryBySQLCode("SELECT reg_num, res_code AS r_code, chg_code, chg_num, rom_code AS room_code, reference, amount, user_id, t_date, t_time FROM rssys.chghist WHERE res_code = '" + guest + "'") : db.QueryBySQLCode("SELECT reg_num, res_code AS r_code, chg_code, chg_num, rom_code AS room_code, reference, amount, user_id, t_date, t_time FROM rssys.chgfil WHERE res_code = '" + guest + "'"));
+                DataTable dt_pbd = ((forView == true) ? db.QueryBySQLCode("SELECT SUM(amount) AS ttl FROM rssys.chghist WHERE res_code = '" + guest + "'") : db.QueryBySQLCode("SELECT SUM(amount) AS ttl FROM rssys.chgfil WHERE res_code = '" + guest + "'"));
+                dgv_gfolio.DataSource = null;
+                dgv_gfolio.DataSource = dt_stat;
                 if (dt_pbd.Rows.Count > 0)
                 {
                     Double tl = 0.00;
@@ -654,6 +507,37 @@ namespace Hotel_System
                 dgv_guestlist.Rows[e.RowIndex].Cells["res_code"].Style = CellStyle;
             }
             catch { }
-        }        		
+        }
+
+        public void forVv()
+        {
+            if (forView == true)
+            {
+                btn_upditem.Text = "View Entry history";
+                btn_upditem.Image = Hotel_System.Properties.Resources.note_search___32;
+                btn_chkout.Visible = false;
+                btn_add.Visible = false;
+                btn_edit.Visible = false;
+                button6.Visible = false;
+
+                btn_chkout.Enabled = false;
+                btn_add.Enabled = false;
+                btn_edit.Enabled = false;
+                button6.Enabled = false;
+            }
+            else
+            {
+                btn_upditem.Text = "View Entry history";
+                btn_chkout.Visible = true;
+                btn_add.Visible = true;
+                btn_edit.Visible = true;
+                button6.Visible = true;
+
+                btn_chkout.Enabled = true;
+                btn_add.Enabled = true;
+                btn_edit.Enabled = true;
+                button6.Enabled = true;
+            }
+        }
     }
 }
