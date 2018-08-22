@@ -52,34 +52,18 @@
             this.tpg_list = new System.Windows.Forms.TabPage();
             this.lbl_notification = new System.Windows.Forms.Label();
             this.dgv_list = new System.Windows.Forms.DataGridView();
-            this.d_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.d_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.d_addr2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.d_cntc_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.d_tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.d_fax = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.d_email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.d_tin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.d_cntc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.limit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.at_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mp_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.remarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.source = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.d_oldcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tpg_info = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label9 = new System.Windows.Forms.Label();
             this.rtxt_remark = new System.Windows.Forms.RichTextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.cbo_subledger = new System.Windows.Forms.ComboBox();
             this.cbo_oldaccount = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbo_mop = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.cbo_subledger = new System.Windows.Forms.ComboBox();
             this.txt_limit = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -125,6 +109,23 @@
             this.pbar = new System.Windows.Forms.ProgressBar();
             this.importBgWorker = new System.ComponentModel.BackgroundWorker();
             this.openFile = new System.Windows.Forms.OpenFileDialog();
+            this.d_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.d_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.d_addr2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.d_cntc_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.d_tel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.d_fax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.d_email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.d_tin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.d_cntc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.limit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.at_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mp_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.source = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.d_oldcode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soatype = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tbcntrl_option.SuspendLayout();
             this.tpg_opt_1.SuspendLayout();
@@ -416,7 +417,7 @@
             this.tpg_list.Location = new System.Drawing.Point(4, 24);
             this.tpg_list.Name = "tpg_list";
             this.tpg_list.Padding = new System.Windows.Forms.Padding(3);
-            this.tpg_list.Size = new System.Drawing.Size(717, 560);
+            this.tpg_list.Size = new System.Drawing.Size(717, 537);
             this.tpg_list.TabIndex = 0;
             this.tpg_list.Text = "Customer List";
             this.tpg_list.UseVisualStyleBackColor = true;
@@ -450,9 +451,10 @@
             this.remarks,
             this.source,
             this.type,
-            this.d_oldcode});
+            this.d_oldcode,
+            this.soatype});
             this.dgv_list.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgv_list.Location = new System.Drawing.Point(3, 47);
+            this.dgv_list.Location = new System.Drawing.Point(3, 24);
             this.dgv_list.Name = "dgv_list";
             this.dgv_list.RowHeadersWidth = 25;
             this.dgv_list.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -460,106 +462,6 @@
             this.dgv_list.TabIndex = 0;
             this.dgv_list.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgv_list_CellPainting);
             this.dgv_list.DoubleClick += new System.EventHandler(this.dgv_list_DoubleClick);
-            // 
-            // d_code
-            // 
-            this.d_code.HeaderText = "ID";
-            this.d_code.Name = "d_code";
-            this.d_code.ReadOnly = true;
-            this.d_code.Width = 70;
-            // 
-            // d_name
-            // 
-            this.d_name.HeaderText = "CUSTOMER";
-            this.d_name.Name = "d_name";
-            this.d_name.ReadOnly = true;
-            this.d_name.Width = 340;
-            // 
-            // d_addr2
-            // 
-            this.d_addr2.HeaderText = "ADDRESS";
-            this.d_addr2.Name = "d_addr2";
-            this.d_addr2.ReadOnly = true;
-            this.d_addr2.Width = 250;
-            // 
-            // d_cntc_no
-            // 
-            this.d_cntc_no.HeaderText = "MOBILE";
-            this.d_cntc_no.Name = "d_cntc_no";
-            this.d_cntc_no.ReadOnly = true;
-            // 
-            // d_tel
-            // 
-            this.d_tel.HeaderText = "PHONE";
-            this.d_tel.Name = "d_tel";
-            this.d_tel.ReadOnly = true;
-            // 
-            // d_fax
-            // 
-            this.d_fax.HeaderText = "FAX";
-            this.d_fax.Name = "d_fax";
-            this.d_fax.ReadOnly = true;
-            // 
-            // d_email
-            // 
-            this.d_email.HeaderText = "EMAIL";
-            this.d_email.Name = "d_email";
-            this.d_email.ReadOnly = true;
-            // 
-            // d_tin
-            // 
-            this.d_tin.HeaderText = "TIN";
-            this.d_tin.Name = "d_tin";
-            this.d_tin.ReadOnly = true;
-            // 
-            // d_cntc
-            // 
-            this.d_cntc.HeaderText = "CONTACT NAME (ICOE)";
-            this.d_cntc.Name = "d_cntc";
-            this.d_cntc.ReadOnly = true;
-            this.d_cntc.Width = 200;
-            // 
-            // limit
-            // 
-            this.limit.HeaderText = "CREDIT LIMIT";
-            this.limit.Name = "limit";
-            this.limit.ReadOnly = true;
-            this.limit.Width = 120;
-            // 
-            // at_code
-            // 
-            this.at_code.HeaderText = "SUB-LEDGER";
-            this.at_code.Name = "at_code";
-            this.at_code.ReadOnly = true;
-            // 
-            // mp_code
-            // 
-            this.mp_code.HeaderText = "PAYMENT";
-            this.mp_code.Name = "mp_code";
-            this.mp_code.ReadOnly = true;
-            // 
-            // remarks
-            // 
-            this.remarks.HeaderText = "REMARKS";
-            this.remarks.Name = "remarks";
-            this.remarks.ReadOnly = true;
-            // 
-            // source
-            // 
-            this.source.HeaderText = "SOURCE";
-            this.source.Name = "source";
-            this.source.ReadOnly = true;
-            // 
-            // type
-            // 
-            this.type.HeaderText = "TYPE";
-            this.type.Name = "type";
-            // 
-            // d_oldcode
-            // 
-            this.d_oldcode.HeaderText = "LINK OLD ACCOUNT";
-            this.d_oldcode.Name = "d_oldcode";
-            this.d_oldcode.Width = 150;
             // 
             // tpg_info
             // 
@@ -640,6 +542,17 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Settings";
             // 
+            // cbo_subledger
+            // 
+            this.cbo_subledger.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.cbo_subledger.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_subledger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbo_subledger.FormattingEnabled = true;
+            this.cbo_subledger.Location = new System.Drawing.Point(128, 75);
+            this.cbo_subledger.Name = "cbo_subledger";
+            this.cbo_subledger.Size = new System.Drawing.Size(259, 23);
+            this.cbo_subledger.TabIndex = 33;
+            // 
             // cbo_oldaccount
             // 
             this.cbo_oldaccount.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
@@ -694,17 +607,6 @@
             this.label20.Size = new System.Drawing.Size(16, 20);
             this.label20.TabIndex = 36;
             this.label20.Text = "*";
-            // 
-            // cbo_subledger
-            // 
-            this.cbo_subledger.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.cbo_subledger.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbo_subledger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbo_subledger.FormattingEnabled = true;
-            this.cbo_subledger.Location = new System.Drawing.Point(128, 75);
-            this.cbo_subledger.Name = "cbo_subledger";
-            this.cbo_subledger.Size = new System.Drawing.Size(259, 23);
-            this.cbo_subledger.TabIndex = 33;
             // 
             // txt_limit
             // 
@@ -1031,7 +933,7 @@
             this.tpg_import.Controls.Add(this.pbar);
             this.tpg_import.Location = new System.Drawing.Point(4, 24);
             this.tpg_import.Name = "tpg_import";
-            this.tpg_import.Size = new System.Drawing.Size(717, 560);
+            this.tpg_import.Size = new System.Drawing.Size(717, 537);
             this.tpg_import.TabIndex = 2;
             this.tpg_import.Text = "Import Excel";
             this.tpg_import.UseVisualStyleBackColor = true;
@@ -1166,6 +1068,127 @@
             // openFile
             // 
             this.openFile.FileOk += new System.ComponentModel.CancelEventHandler(this.openFile_FileOk);
+            // 
+            // d_code
+            // 
+            this.d_code.HeaderText = "ID";
+            this.d_code.Name = "d_code";
+            this.d_code.ReadOnly = true;
+            this.d_code.Width = 70;
+            // 
+            // d_name
+            // 
+            this.d_name.HeaderText = "CUSTOMER";
+            this.d_name.Name = "d_name";
+            this.d_name.ReadOnly = true;
+            this.d_name.Width = 340;
+            // 
+            // d_addr2
+            // 
+            this.d_addr2.HeaderText = "ADDRESS";
+            this.d_addr2.Name = "d_addr2";
+            this.d_addr2.ReadOnly = true;
+            this.d_addr2.Visible = false;
+            this.d_addr2.Width = 250;
+            // 
+            // d_cntc_no
+            // 
+            this.d_cntc_no.HeaderText = "MOBILE";
+            this.d_cntc_no.Name = "d_cntc_no";
+            this.d_cntc_no.ReadOnly = true;
+            this.d_cntc_no.Visible = false;
+            // 
+            // d_tel
+            // 
+            this.d_tel.HeaderText = "PHONE";
+            this.d_tel.Name = "d_tel";
+            this.d_tel.ReadOnly = true;
+            this.d_tel.Visible = false;
+            // 
+            // d_fax
+            // 
+            this.d_fax.HeaderText = "FAX";
+            this.d_fax.Name = "d_fax";
+            this.d_fax.ReadOnly = true;
+            this.d_fax.Visible = false;
+            // 
+            // d_email
+            // 
+            this.d_email.HeaderText = "EMAIL";
+            this.d_email.Name = "d_email";
+            this.d_email.ReadOnly = true;
+            this.d_email.Visible = false;
+            // 
+            // d_tin
+            // 
+            this.d_tin.HeaderText = "TIN";
+            this.d_tin.Name = "d_tin";
+            this.d_tin.ReadOnly = true;
+            this.d_tin.Visible = false;
+            // 
+            // d_cntc
+            // 
+            this.d_cntc.HeaderText = "CONTACT NAME (ICOE)";
+            this.d_cntc.Name = "d_cntc";
+            this.d_cntc.ReadOnly = true;
+            this.d_cntc.Visible = false;
+            this.d_cntc.Width = 200;
+            // 
+            // limit
+            // 
+            this.limit.HeaderText = "CREDIT LIMIT";
+            this.limit.Name = "limit";
+            this.limit.ReadOnly = true;
+            this.limit.Visible = false;
+            this.limit.Width = 120;
+            // 
+            // at_code
+            // 
+            this.at_code.HeaderText = "SUB-LEDGER";
+            this.at_code.Name = "at_code";
+            this.at_code.ReadOnly = true;
+            this.at_code.Visible = false;
+            // 
+            // mp_code
+            // 
+            this.mp_code.HeaderText = "PAYMENT";
+            this.mp_code.Name = "mp_code";
+            this.mp_code.ReadOnly = true;
+            this.mp_code.Visible = false;
+            // 
+            // remarks
+            // 
+            this.remarks.HeaderText = "REMARKS";
+            this.remarks.Name = "remarks";
+            this.remarks.ReadOnly = true;
+            this.remarks.Visible = false;
+            // 
+            // source
+            // 
+            this.source.HeaderText = "SOURCE";
+            this.source.Name = "source";
+            this.source.ReadOnly = true;
+            this.source.Visible = false;
+            // 
+            // type
+            // 
+            this.type.HeaderText = "TYPE";
+            this.type.Name = "type";
+            this.type.Visible = false;
+            // 
+            // d_oldcode
+            // 
+            this.d_oldcode.HeaderText = "LINK OLD ACCOUNT";
+            this.d_oldcode.Name = "d_oldcode";
+            this.d_oldcode.Visible = false;
+            this.d_oldcode.Width = 150;
+            // 
+            // soatype
+            // 
+            this.soatype.DataPropertyName = "soatype";
+            this.soatype.HeaderText = "TYPE";
+            this.soatype.Name = "soatype";
+            this.soatype.ReadOnly = true;
             // 
             // m_customers
             // 
@@ -1310,5 +1333,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn source;
         private System.Windows.Forms.DataGridViewTextBoxColumn type;
         private System.Windows.Forms.DataGridViewTextBoxColumn d_oldcode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soatype;
     }
 }

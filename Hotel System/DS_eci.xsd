@@ -437,7 +437,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="soa" msprop:Generator_TableClassName="soaDataTable" msprop:Generator_TableVarName="tablesoa" msprop:Generator_TablePropName="soa" msprop:Generator_RowDeletingName="soaRowDeleting" msprop:Generator_RowChangingName="soaRowChanging" msprop:Generator_RowEvHandlerName="soaRowChangeEventHandler" msprop:Generator_RowDeletedName="soaRowDeleted" msprop:Generator_UserTableName="soa" msprop:Generator_RowChangedName="soaRowChanged" msprop:Generator_RowEvArgName="soaRowChangeEvent" msprop:Generator_RowClassName="soaRow">
+        <xs:element name="soa" msprop:Generator_TableClassName="soaDataTable" msprop:Generator_TableVarName="tablesoa" msprop:Generator_RowChangedName="soaRowChanged" msprop:Generator_TablePropName="soa" msprop:Generator_RowDeletingName="soaRowDeleting" msprop:Generator_RowChangingName="soaRowChanging" msprop:Generator_RowEvHandlerName="soaRowChangeEventHandler" msprop:Generator_RowDeletedName="soaRowDeleted" msprop:Generator_RowClassName="soaRow" msprop:Generator_UserTableName="soa" msprop:Generator_RowEvArgName="soaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="soa_code" msprop:Generator_ColumnVarNameInTable="columnsoa_code" msprop:Generator_ColumnPropNameInRow="soa_code" msprop:Generator_ColumnPropNameInTable="soa_codeColumn" msprop:Generator_UserColumnName="soa_code" type="xs:string" minOccurs="0" />
@@ -462,7 +462,7 @@
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="rpt_gfolio_billing_rpt_gfolio_billing_detail" msdata:parent="rpt_gfolio_billing" msdata:child="rpt_gfolio_billing_detail" msdata:parentkey="reg_num" msdata:childkey="reg_num" msprop:Generator_UserChildTable="rpt_gfolio_billing_detail" msprop:Generator_ChildPropName="Getrpt_gfolio_billing_detailRows" msprop:Generator_UserRelationName="rpt_gfolio_billing_rpt_gfolio_billing_detail" msprop:Generator_RelationVarName="relationrpt_gfolio_billing_rpt_gfolio_billing_detail" msprop:Generator_UserParentTable="rpt_gfolio_billing" msprop:Generator_ParentPropName="rpt_gfolio_billingRow" />
+      <msdata:Relationship name="rpt_gfolio_billing_rpt_gfolio_billing_detail" msdata:parent="rpt_gfolio_billing" msdata:child="rpt_gfolio_billing_detail" msdata:parentkey="reg_num" msdata:childkey="reg_num" msprop:Generator_UserChildTable="rpt_gfolio_billing_detail" msprop:Generator_ChildPropName="Getrpt_gfolio_billing_detailRows" msprop:Generator_UserRelationName="rpt_gfolio_billing_rpt_gfolio_billing_detail" msprop:Generator_ParentPropName="rpt_gfolio_billingRow" msprop:Generator_RelationVarName="relationrpt_gfolio_billing_rpt_gfolio_billing_detail" msprop:Generator_UserParentTable="rpt_gfolio_billing" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

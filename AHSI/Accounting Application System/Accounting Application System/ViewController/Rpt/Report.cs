@@ -55,6 +55,7 @@ namespace Accounting_Application_System
         String vsi_no = "", guardby = "", pickupby = "", unitdelby = "", releasedby = "", t_unitdel = "", t_release = "", d_unitdel = "", d_release = "", d_receive = "", remarks = "";
         String preparedby = "", finalizedby = "", approvedby = "";
         String _WHERE = "";
+        DataTable dt_trv = null;
         //
         // 
         public Report()
@@ -414,6 +415,19 @@ namespace Accounting_Application_System
             due_date = _due_date;
 
             bgWorker.RunWorkerAsync();
+        }
+        public void print_statementofaccount_agency(String _trv_code, String _soa_code, String _t_dates)
+        {
+            action = 40522;
+            thisDatabase dbsss = new thisDatabase();
+            //Int32 datenoow = DateTime.DaysInMonth(DateTime.Now.Year, Int32.Parse(datedate));
+            //String dateyes = "" + ((datedate == "1") ? (DateTime.Now.Year - 1) : DateTime.Now.Year) + "-" + ((datedate == "1") ? 12 : (Int32.Parse(datedate) - 1)) + "-" + DateTime.DaysInMonth(((datedate == "1") ? (DateTime.Now.Year - 1) : DateTime.Now.Year), ((datedate == "1") ? 12 : (Int32.Parse(datedate) - 1))) + "";
+            //String dateone = "" + ((datedate == "1") ? (DateTime.Now.Year - 1) : DateTime.Now.Year) + "-" + ((datedate == "1") ? 12 : (Int32.Parse(datedate) - 1)) + "-01";
+            MessageBox.Show(DateTime.Parse(_t_dates).Month.ToString());
+            t_date = DateTime.Now.ToString("yyyy-MM-dd");
+            //dt_trv = dbsss.QueryBySQLCode("SELECT trv_code, trv_name FROM rssys.travagnt WHERE trv_code = '" + _trv_code + "'");
+            //trans_no = _soa_code;
+            //bgWorker.RunWorkerAsync();
         }
 
         public void print_collectionentry(String _form, String _coll_code, String _debt_name, String _coll_date, String _collector, String _reference, String _t_date, String _t_time)
@@ -1468,7 +1482,7 @@ namespace Accounting_Application_System
                     //HOtel CHarge==
                 else if (action == 2005)
                 {
-                    DataTable dt = db.QueryAllOnTable("charge");
+                    DataTable dt = db.QueryBySQLCode("SELECT * FROM rssys.charge WHERE chg_type = 'C' ORDER BY chg_code ASC");
 
                     inc_pbar(10);
                     myReportDocument.Load(fileloc_md + "m_hotel_charge.rpt");
@@ -2418,7 +2432,8 @@ namespace Accounting_Application_System
 
                         //dt2 = db.QueryBySQLCode("SELECT _cur30days + _3160days + _6190days + _91120days + _over120days AS total_balance FROM (SELECT sl_code, sl_name, SUM(CASE WHEN mo<=30 THEN amnt ELSE 0.00 END) as _cur30days, SUM(CASE WHEN 31<=mo AND mo<=60 THEN amnt ELSE 0.00 END) as _3160days, SUM(CASE WHEN 61<=mo AND mo<=90 THEN amnt ELSE 0.00 END) as _6190days, SUM(CASE WHEN 91<=mo AND mo<=120 THEN amnt ELSE 0.00 END) as _91120days, SUM(CASE WHEN 120<mo THEN amnt ELSE 0.00 END) as _over120days FROM (SELECT t1.t_desc, CASE WHEN COALESCE(inv.invoice,'')<>'' THEN to_char(inv.t_date,'MM/dd/yyyy')  ELSE to_char(t1.t_date,'MM/dd/yyyy')  END AS t_date, CASE WHEN COALESCE(inv.invoice,'')<>'' THEN inv.t_date  ELSE t1.t_date END AS t_date2, (('" + _t_date + "')::date - (CASE WHEN COALESCE(inv.invoice,'')<>'' THEN inv.t_date  ELSE t1.t_date END)) AS mo, COALESCE(t2.debit,0.00) + (COALESCE(t2.credit,0.00) * -1) + COALESCE(crt2.amnt,0.00) AS amnt, t2.sl_name, t2.sl_code, t2.invoice FROM (SELECT m6.d_name AS sl_name, m6.d_code AS sl_code, m6.d_codes AS sl_codes, t2.invoice, t2.at_code, t2.debit, t2.credit, t2.j_num, t2.j_code, t2.seq_num, t2.seq_desc FROM rssys.tr02 t2 JOIN (SELECT m6.*, cm6.d_codes FROM rssys.m06 m6 JOIN (SELECT DISTINCT om6.link AS d_code,  string_agg(m6.d_code,',') AS d_codes FROM rssys.m06 m6 JOIN (SELECT d_code, CASE WHEN COALESCE(d_oldcode,'')='' THEN d_code ELSE d_oldcode END AS link FROM rssys.m06 m6 WHERE 1=1 AND d_code='" + acct_no + "')  om6 ON (om6.link=COALESCE(m6.d_oldcode,m6.d_code)) GROUP BY om6.link) cm6 ON cm6.d_code=m6.d_code ORDER BY d_code) m6 ON (m6.d_codes LIKE '%'||COALESCE(t2.sl_code,'')||'%' AND COALESCE(t2.sl_code,'')<>'')) t2 LEFT JOIN rssys.tr01 t1 ON (t1.j_num=t2.j_num AND t1.j_code=t2.j_code AND t_date<='" + _t_date + "'::date) LEFT JOIN (SELECT t2.invoice, t2.sl_code, SUM(COALESCE(t2.debit,0.00) + ( COALESCE(t2.credit,0.00) * -1)) AS amnt, CASE WHEN COALESCE(drt2.invoice,'')<>'' THEN 'Y' ELSE 'N' END AS is_invoice FROM (SELECT m6.d_name AS sl_name, m6.d_code AS sl_code, m6.d_codes AS sl_codes, t2.invoice, t2.at_code, t2.debit, t2.credit, t2.j_num, t2.j_code, t2.seq_num, t2.seq_desc FROM rssys.tr02 t2 JOIN (SELECT m6.*, cm6.d_codes FROM rssys.m06 m6 JOIN (SELECT DISTINCT om6.link AS d_code,  string_agg(m6.d_code,',') AS d_codes FROM rssys.m06 m6 JOIN (SELECT d_code, CASE WHEN COALESCE(d_oldcode,'')='' THEN d_code ELSE d_oldcode END AS link FROM rssys.m06 m6 WHERE 1=1 AND d_code='" + acct_no + "')  om6 ON (om6.link=COALESCE(m6.d_oldcode,m6.d_code)) GROUP BY om6.link) cm6 ON cm6.d_code=m6.d_code ORDER BY d_code) m6 ON (m6.d_codes LIKE '%'||COALESCE(t2.sl_code,'')||'%' AND COALESCE(t2.sl_code,'')<>'')) t2 LEFT JOIN rssys.tr01 t1 ON (t1.j_num=t2.j_num AND t1.j_code=t2.j_code AND t_date<='" + _t_date + "'::date)  LEFT JOIN rssys.tr02 drt2 ON (drt2.invoice=t2.invoice AND drt2.sl_code=t2.sl_code AND drt2.debit<>0)   WHERE t2.credit<>0 AND COALESCE(t2.invoice,'')<>''     AND t2.at_code = '" + at_code + "' AND t1.branch='" + GlobalClass.branch + "'  AND  t2.invoice<>'" + trans_no + "'            GROUP BY t2.invoice, t2.sl_code, drt2.invoice ORDER BY t2.sl_code, t2.invoice) crt2 ON (crt2.invoice=t2.invoice AND crt2.sl_code=t2.sl_code AND crt2.is_invoice='Y')    LEFT JOIN (SELECT max(t1.t_date) AS t_date, invoice, sl_code FROM rssys.tr02 t2 JOIN rssys.tr01 t1 ON (t1.j_code=t2.j_code AND t1.j_num=t2.j_num) GROUP BY invoice, sl_code) inv ON (t2.invoice=inv.invoice AND inv.sl_code=t2.sl_code AND inv.t_date<='" + _t_date + "'::date)     WHERE (t2.debit<>0 OR COALESCE(crt2.amnt,0)=0)     AND t2.at_code = '" + at_code + "' AND t1.branch='" + GlobalClass.branch + "'   AND  t2.invoice<>'" + trans_no + "'         ) res GROUP BY sl_code, sl_name  ORDER BY sl_code) res WHERE (COALESCE(_cur30days,0)<>0 OR COALESCE(_3160days,0)<>0 OR COALESCE(_6190days,0)<>0 OR COALESCE(_91120days,0)<>0 OR COALESCE(_over120days,0)<>0) AND ((COALESCE(_cur30days,0) + COALESCE(_3160days,0) + COALESCE(_6190days,0) + COALESCE(_91120days,0) + COALESCE(_over120days,0)))<>0 AND (lower(sl_name) not like '%beg%' AND lower(sl_name) not like '%bal%')");
 
-                        try { _prevbal += gm.toNormalDoubleFormat(dt2.Rows[0]["total_balance"].ToString()); } catch { }
+                        try { _prevbal += gm.toNormalDoubleFormat(dt2.Rows[0]["total_balance"].ToString()); }
+                        catch { }
 
                         total_amount = _prevbal;
                         for (int i = 0; i < dt.Rows.Count; i++)
@@ -2450,7 +2465,48 @@ namespace Accounting_Application_System
                     add_fieldparam("reg_num", reg_num);
                     add_fieldparam("prevbal", prevbal);
                     add_fieldparam("total_amnt", balance);
-                    
+
+                    add_fieldparam("userid", GlobalClass.username);
+                    add_fieldparam("comp_number", comp_number);
+                }
+                else if (action == 40522) //  statement of account
+                {
+                    //SELECT arr_date AS chg_date, acct_no AS gfolio, full_name AS tenant, hl.name AS roomno, CONCAT_WS(', ', pck.package1, pck1.activities1) AS chg_code, CONCAT_WS(', ', pck.package, pck1.activities) AS chg_desc, COALESCE(SPLIT_PART(rf.occ_type, ', ', 4), '0') AS ttlpax, prc.ttl AS amount FROM rssys.gfolio rf LEFT JOIN (SELECT name, code FROM rssys.hotel) hl ON hl.code = rf.hotel_code LEFT JOIN (SELECT cf.reg_num, cf.res_code AS rg_code, STRING_AGG(ch.chg_desc, ', ') AS package, STRING_AGG(ch.chg_code, ', ') AS package1 FROM rssys.chgfil cf LEFT JOIN rssys.charge ch ON cf.chg_code = ch.chg_code WHERE UPPER(cf.chg_code) LIKE 'PCK%' GROUP BY cf.reg_num, cf.res_code) pck ON pck.rg_code = rf.res_code LEFT JOIN (SELECT cf.reg_num, cf.res_code AS rg_code, STRING_AGG(ch.chg_desc, ', ') AS activities, STRING_AGG(ch.chg_code, ', ') AS activities1 FROM rssys.chgfil cf LEFT JOIN rssys.charge ch ON cf.chg_code = ch.chg_code WHERE UPPER(cf.chg_code) LIKE 'ACT%' GROUP BY cf.reg_num, cf.res_code) pck1 ON pck1.rg_code = rf.res_code  LEFT JOIN (SELECT SUM(COALESCE(amount, 0.00)) AS ttl, res_code AS rg_code FROM rssys.chgfil WHERE amount >= 0 AND (UPPER(chg_code) LIKE 'ACT%' OR UPPER(chg_code) LIKE 'PCK%') GROUP BY res_code) prc ON prc.rg_code = rf.res_code WHERE rf.trv_code = '" + dt_trv.Rows[0]["trv_code"].ToString() + "' AND (rf.t_date BETWEEN '" + dt_trv.Rows[0]["start"].ToString() + "' AND '" + dt_trv.Rows[0]["end"].ToString() + "')
+                    DataTable dt = db.QueryBySQLCode("SELECT TO_CHAR(chg_date::date,'MM/DD/YYYY') AS chg_date, s.*, c.chg_desc FROM " + db.schema + ".soalne s LEFT JOIN " + db.schema + ".charge c ON c.chg_code=s.chg_code WHERE soa_code='" + trans_no + "' ORDER BY ln_num"), dt2 = new DataTable();
+                    inc_pbar(10);
+                    myReportDocument.Load(fileloc_acctg + "a_statementofaccount_angency.rpt");
+                    myReportDocument.Database.Tables[0].SetDataSource(dt);
+                    inc_pbar(10);
+                    clr_param();
+                    String prevbal = "", balance = "", amount_word = "";
+                    Double _prevbal = 0.00, total_amount = 0.00;
+
+                    DataTable dt_prevbal = db.QueryBySQLCode("SELECT COALESCE(SUM(COAlESCE(prc.ttl, 0.00)), 0.00) AS price FROM rssys.gfolio rf LEFT JOIN (SELECT COALESCE(SUM(COALESCE(amount, 0.00)), 0.00) AS ttl, res_code AS rg_code FROM rssys.chgfil WHERE amount >= 0 AND (UPPER(chg_code) LIKE 'ACT%' OR UPPER(chg_code) LIKE 'PCK%') GROUP BY res_code) prc ON prc.rg_code = rf.res_code WHERE rf.trv_code = '" + dt_trv.Rows[0]["trv_code"].ToString() + "' AND t1.branch='" + GlobalClass.branch + "' AND rf.t_date <= '" + t_date + "'");
+                    try { _prevbal = Convert.ToDouble(dt_prevbal.Rows[0]["price"].ToString()); }
+                    catch { }
+                    if (dt.Rows.Count > 0)
+                    {
+                        for (int i = 0; i < dt.Rows.Count; i++)
+                        {
+                            try { total_amount = total_amount + Convert.ToDouble(dt.Rows[i]["amount"].ToString()); }
+                            catch { }
+                        }
+                    }
+                    prevbal = _prevbal.ToString("0.00");
+                    balance = (total_amount - _prevbal).ToString("0.00");
+                    amount_word = nte.changeNumericToWords(total_amount).ToUpper() + " ONLY (Php " + gm.toAccountingFormat(total_amount) + ")";
+
+                    add_fieldparam("soa_no", trans_no);
+                    add_fieldparam("client", dt_trv.Rows[0]["trv_name"].ToString());
+                    add_fieldparam("soa_date", soa_date);
+                    add_fieldparam("due_date", due_date);
+                    //add_fieldparam("dt_trans", t_date + " " + t_time);
+                    add_fieldparam("notes", notes);
+
+                    add_fieldparam("amount_word", amount_word);
+                    add_fieldparam("prevbal", prevbal);
+                    add_fieldparam("total_amnt", balance);
+
                     add_fieldparam("userid", GlobalClass.username);
                     add_fieldparam("comp_number", comp_number);
                 }

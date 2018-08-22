@@ -531,6 +531,22 @@ namespace Accounting_Application_System
             }
             catch (Exception) { }
         }
+        //for customer ledger 
+        public void load_agency(ComboBox cbo)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                thisDatabase db = new thisDatabase();
+
+                dt = db.QueryOnTableWithParams("travagnt", "trv_code, trv_name", "", "");
+                cbo.DataSource = dt;
+                cbo.DisplayMember = "trv_name";
+                cbo.ValueMember = "trv_code";
+                cbo.SelectedIndex = -1;
+            }
+            catch (Exception) { }
+        }
 
         public void load_soa(ComboBox cbo)
         {

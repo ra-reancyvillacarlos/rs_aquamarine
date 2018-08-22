@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tbcntrl_option = new System.Windows.Forms.TabControl();
             this.tpg_opt_1 = new System.Windows.Forms.TabPage();
@@ -68,6 +68,21 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dgv_reslist = new System.Windows.Forms.DataGridView();
+            this.res_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.arr_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.p_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hotel_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.arr_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.package = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adult = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.inf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activities = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ttlpax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reserv_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.reserv_by = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.chk_active = new System.Windows.Forms.CheckBox();
@@ -172,23 +187,10 @@
             this.label262 = new System.Windows.Forms.Label();
             this.dgvl_chk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dgvl_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pax = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvl_sdesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvl_price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ifree = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.res_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.arr_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.p_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hotel_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.arr_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.package = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adult = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.inf = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activities = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ttlpax = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reserv_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.reserv_by = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tbcntrl_option.SuspendLayout();
             this.tpg_opt_1.SuspendLayout();
@@ -565,8 +567,8 @@
             // 
             // dgv_reslist
             // 
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dgv_reslist.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.Color.White;
+            this.dgv_reslist.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle34;
             this.dgv_reslist.BackgroundColor = System.Drawing.SystemColors.HighlightText;
             this.dgv_reslist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_reslist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -583,25 +585,167 @@
             this.activities,
             this.ttlpax,
             this.reserv_date,
-            this.reserv_by});
+            this.reserv_by,
+            this.remarks});
             this.dgv_reslist.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_reslist.Location = new System.Drawing.Point(3, 18);
             this.dgv_reslist.MultiSelect = false;
             this.dgv_reslist.Name = "dgv_reslist";
             this.dgv_reslist.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_reslist.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle41.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle41.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle41.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle41.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle41.SelectionForeColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_reslist.RowHeadersDefaultCellStyle = dataGridViewCellStyle41;
             this.dgv_reslist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_reslist.Size = new System.Drawing.Size(851, 435);
             this.dgv_reslist.TabIndex = 0;
             this.dgv_reslist.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_reslist_CellDoubleClick);
             this.dgv_reslist.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgv_reslist_MouseClick);
+            // 
+            // res_code
+            // 
+            this.res_code.DataPropertyName = "res_code";
+            this.res_code.HeaderText = "Reservation Code";
+            this.res_code.Name = "res_code";
+            this.res_code.ReadOnly = true;
+            // 
+            // arr_date
+            // 
+            this.arr_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.arr_date.DataPropertyName = "arr_date";
+            this.arr_date.HeaderText = "Date";
+            this.arr_date.Name = "arr_date";
+            this.arr_date.ReadOnly = true;
+            this.arr_date.Width = 62;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.name.DataPropertyName = "full_name";
+            this.name.HeaderText = "Name";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.Width = 70;
+            // 
+            // p_name
+            // 
+            this.p_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.p_name.DataPropertyName = "p_name";
+            this.p_name.HeaderText = "Payment";
+            this.p_name.Name = "p_name";
+            this.p_name.ReadOnly = true;
+            this.p_name.Width = 86;
+            // 
+            // hotel_name
+            // 
+            this.hotel_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.hotel_name.DataPropertyName = "name";
+            this.hotel_name.HeaderText = "Hotel";
+            this.hotel_name.Name = "hotel_name";
+            this.hotel_name.ReadOnly = true;
+            this.hotel_name.Width = 65;
+            // 
+            // arr_time
+            // 
+            this.arr_time.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.arr_time.DataPropertyName = "arr_time";
+            this.arr_time.HeaderText = "Expected Time Arrival";
+            this.arr_time.Name = "arr_time";
+            this.arr_time.ReadOnly = true;
+            this.arr_time.Width = 165;
+            // 
+            // package
+            // 
+            this.package.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.package.DataPropertyName = "package";
+            dataGridViewCellStyle35.BackColor = System.Drawing.Color.Lime;
+            this.package.DefaultCellStyle = dataGridViewCellStyle35;
+            this.package.HeaderText = "Package";
+            this.package.Name = "package";
+            this.package.ReadOnly = true;
+            this.package.Width = 88;
+            // 
+            // adult
+            // 
+            this.adult.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.adult.DataPropertyName = "adult";
+            dataGridViewCellStyle36.BackColor = System.Drawing.Color.Lime;
+            this.adult.DefaultCellStyle = dataGridViewCellStyle36;
+            this.adult.HeaderText = "Adult";
+            this.adult.Name = "adult";
+            this.adult.ReadOnly = true;
+            this.adult.Width = 63;
+            // 
+            // kid
+            // 
+            this.kid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.kid.DataPropertyName = "kid";
+            dataGridViewCellStyle37.BackColor = System.Drawing.Color.Lime;
+            this.kid.DefaultCellStyle = dataGridViewCellStyle37;
+            this.kid.HeaderText = "Kid";
+            this.kid.Name = "kid";
+            this.kid.ReadOnly = true;
+            this.kid.Width = 52;
+            // 
+            // inf
+            // 
+            this.inf.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.inf.DataPropertyName = "inf";
+            dataGridViewCellStyle38.BackColor = System.Drawing.Color.Lime;
+            this.inf.DefaultCellStyle = dataGridViewCellStyle38;
+            this.inf.HeaderText = "Infant";
+            this.inf.Name = "inf";
+            this.inf.ReadOnly = true;
+            this.inf.Width = 64;
+            // 
+            // activities
+            // 
+            this.activities.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.activities.DataPropertyName = "activities";
+            dataGridViewCellStyle39.BackColor = System.Drawing.Color.Yellow;
+            this.activities.DefaultCellStyle = dataGridViewCellStyle39;
+            this.activities.HeaderText = "Activities";
+            this.activities.Name = "activities";
+            this.activities.ReadOnly = true;
+            this.activities.Width = 86;
+            // 
+            // ttlpax
+            // 
+            this.ttlpax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ttlpax.DataPropertyName = "ttlpax";
+            dataGridViewCellStyle40.BackColor = System.Drawing.Color.Yellow;
+            this.ttlpax.DefaultCellStyle = dataGridViewCellStyle40;
+            this.ttlpax.HeaderText = "Total Pax";
+            this.ttlpax.Name = "ttlpax";
+            this.ttlpax.ReadOnly = true;
+            this.ttlpax.Width = 90;
+            // 
+            // reserv_date
+            // 
+            this.reserv_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.reserv_date.DataPropertyName = "res_date";
+            this.reserv_date.HeaderText = "Date of Boooking";
+            this.reserv_date.Name = "reserv_date";
+            this.reserv_date.ReadOnly = true;
+            this.reserv_date.Width = 137;
+            // 
+            // reserv_by
+            // 
+            this.reserv_by.DataPropertyName = "reserv_by";
+            this.reserv_by.HeaderText = "Booked by";
+            this.reserv_by.Name = "reserv_by";
+            this.reserv_by.ReadOnly = true;
+            // 
+            // remarks
+            // 
+            this.remarks.DataPropertyName = "remarks";
+            this.remarks.HeaderText = "Remarks";
+            this.remarks.Name = "remarks";
+            this.remarks.ReadOnly = true;
             // 
             // panel5
             // 
@@ -767,6 +911,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvl_chk,
             this.dgvl_code,
+            this.pax,
             this.dgvl_sdesc,
             this.dgvl_price,
             this.ifree});
@@ -776,6 +921,8 @@
             this.dataGridView1.Size = new System.Drawing.Size(302, 240);
             this.dataGridView1.TabIndex = 90;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             this.dataGridView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseMove);
             this.dataGridView1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseUp);
@@ -1150,6 +1297,7 @@
             this.label9.Size = new System.Drawing.Size(55, 15);
             this.label9.TabIndex = 84;
             this.label9.Text = "Discount";
+            this.label9.Visible = false;
             // 
             // cbo_rmrttyp
             // 
@@ -1184,6 +1332,7 @@
             this.cbo_disc.Name = "cbo_disc";
             this.cbo_disc.Size = new System.Drawing.Size(145, 23);
             this.cbo_disc.TabIndex = 49;
+            this.cbo_disc.Visible = false;
             this.cbo_disc.SelectedIndexChanged += new System.EventHandler(this.cbo_disc_SelectedIndexChanged);
             // 
             // label237
@@ -1214,6 +1363,7 @@
             this.txt_discamt.Size = new System.Drawing.Size(154, 21);
             this.txt_discamt.TabIndex = 63;
             this.txt_discamt.Text = "0.00";
+            this.txt_discamt.Visible = false;
             // 
             // label235
             // 
@@ -1325,6 +1475,7 @@
             this.label246.Size = new System.Drawing.Size(69, 15);
             this.label246.TabIndex = 44;
             this.label246.Text = "or Disc Amt";
+            this.label246.Visible = false;
             // 
             // lbl_clerk
             // 
@@ -1359,14 +1510,14 @@
             // dgv_guestlist
             // 
             this.dgv_guestlist.BackgroundColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_guestlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle42.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle42.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle42.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_guestlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle42;
             this.dgv_guestlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_guestlist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.acct_no,
@@ -1377,25 +1528,25 @@
             this.email,
             this.Country,
             this.g_typ});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_guestlist.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle43.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle43.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle43.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_guestlist.DefaultCellStyle = dataGridViewCellStyle43;
             this.dgv_guestlist.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_guestlist.Location = new System.Drawing.Point(3, 16);
             this.dgv_guestlist.Name = "dgv_guestlist";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_guestlist.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_guestlist.RowHeadersDefaultCellStyle = dataGridViewCellStyle44;
             this.dgv_guestlist.RowHeadersWidth = 25;
             this.dgv_guestlist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_guestlist.Size = new System.Drawing.Size(708, 121);
@@ -1768,10 +1919,11 @@
             // 
             // dgvl_chk
             // 
+            this.dgvl_chk.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dgvl_chk.DataPropertyName = "bool_check";
             this.dgvl_chk.HeaderText = "";
             this.dgvl_chk.Name = "dgvl_chk";
-            this.dgvl_chk.Width = 50;
+            this.dgvl_chk.Width = 21;
             // 
             // dgvl_code
             // 
@@ -1780,6 +1932,14 @@
             this.dgvl_code.Name = "dgvl_code";
             this.dgvl_code.ReadOnly = true;
             this.dgvl_code.Visible = false;
+            // 
+            // pax
+            // 
+            this.pax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.pax.HeaderText = "Pax";
+            this.pax.Name = "pax";
+            this.pax.ReadOnly = true;
+            this.pax.Width = 56;
             // 
             // dgvl_sdesc
             // 
@@ -1808,140 +1968,6 @@
             this.ifree.Name = "ifree";
             this.ifree.ReadOnly = true;
             this.ifree.Visible = false;
-            // 
-            // res_code
-            // 
-            this.res_code.DataPropertyName = "res_code";
-            this.res_code.HeaderText = "Reservation Code";
-            this.res_code.Name = "res_code";
-            this.res_code.ReadOnly = true;
-            // 
-            // arr_date
-            // 
-            this.arr_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.arr_date.DataPropertyName = "arr_date";
-            this.arr_date.HeaderText = "Date";
-            this.arr_date.Name = "arr_date";
-            this.arr_date.ReadOnly = true;
-            this.arr_date.Width = 62;
-            // 
-            // name
-            // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.name.DataPropertyName = "full_name";
-            this.name.HeaderText = "Name";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            this.name.Width = 70;
-            // 
-            // p_name
-            // 
-            this.p_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.p_name.DataPropertyName = "p_name";
-            this.p_name.HeaderText = "Payment";
-            this.p_name.Name = "p_name";
-            this.p_name.ReadOnly = true;
-            this.p_name.Width = 86;
-            // 
-            // hotel_name
-            // 
-            this.hotel_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.hotel_name.DataPropertyName = "name";
-            this.hotel_name.HeaderText = "Hotel";
-            this.hotel_name.Name = "hotel_name";
-            this.hotel_name.ReadOnly = true;
-            this.hotel_name.Width = 65;
-            // 
-            // arr_time
-            // 
-            this.arr_time.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.arr_time.DataPropertyName = "arr_time";
-            this.arr_time.HeaderText = "Expected Time Arrival";
-            this.arr_time.Name = "arr_time";
-            this.arr_time.ReadOnly = true;
-            this.arr_time.Width = 165;
-            // 
-            // package
-            // 
-            this.package.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.package.DataPropertyName = "package";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Lime;
-            this.package.DefaultCellStyle = dataGridViewCellStyle2;
-            this.package.HeaderText = "Package";
-            this.package.Name = "package";
-            this.package.ReadOnly = true;
-            this.package.Width = 88;
-            // 
-            // adult
-            // 
-            this.adult.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.adult.DataPropertyName = "adult";
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Lime;
-            this.adult.DefaultCellStyle = dataGridViewCellStyle3;
-            this.adult.HeaderText = "Adult";
-            this.adult.Name = "adult";
-            this.adult.ReadOnly = true;
-            this.adult.Width = 63;
-            // 
-            // kid
-            // 
-            this.kid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.kid.DataPropertyName = "kid";
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Lime;
-            this.kid.DefaultCellStyle = dataGridViewCellStyle4;
-            this.kid.HeaderText = "Kid";
-            this.kid.Name = "kid";
-            this.kid.ReadOnly = true;
-            this.kid.Width = 52;
-            // 
-            // inf
-            // 
-            this.inf.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.inf.DataPropertyName = "inf";
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Lime;
-            this.inf.DefaultCellStyle = dataGridViewCellStyle5;
-            this.inf.HeaderText = "Infant";
-            this.inf.Name = "inf";
-            this.inf.ReadOnly = true;
-            this.inf.Width = 64;
-            // 
-            // activities
-            // 
-            this.activities.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.activities.DataPropertyName = "activities";
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Yellow;
-            this.activities.DefaultCellStyle = dataGridViewCellStyle6;
-            this.activities.HeaderText = "Activities";
-            this.activities.Name = "activities";
-            this.activities.ReadOnly = true;
-            this.activities.Width = 86;
-            // 
-            // ttlpax
-            // 
-            this.ttlpax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ttlpax.DataPropertyName = "ttlpax";
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Yellow;
-            this.ttlpax.DefaultCellStyle = dataGridViewCellStyle7;
-            this.ttlpax.HeaderText = "Total Pax";
-            this.ttlpax.Name = "ttlpax";
-            this.ttlpax.ReadOnly = true;
-            this.ttlpax.Width = 90;
-            // 
-            // reserv_date
-            // 
-            this.reserv_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.reserv_date.DataPropertyName = "res_date";
-            this.reserv_date.HeaderText = "Date of Boooking";
-            this.reserv_date.Name = "reserv_date";
-            this.reserv_date.ReadOnly = true;
-            this.reserv_date.Width = 137;
-            // 
-            // reserv_by
-            // 
-            this.reserv_by.DataPropertyName = "reserv_by";
-            this.reserv_by.HeaderText = "Booked by";
-            this.reserv_by.Name = "reserv_by";
-            this.reserv_by.ReadOnly = true;
             // 
             // newReservation
             // 
@@ -2134,11 +2160,6 @@
         public System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dgvl_chk;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvl_code;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvl_sdesc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvl_price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ifree;
         private System.Windows.Forms.DataGridViewTextBoxColumn res_code;
         private System.Windows.Forms.DataGridViewTextBoxColumn arr_date;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
@@ -2153,5 +2174,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ttlpax;
         private System.Windows.Forms.DataGridViewTextBoxColumn reserv_date;
         private System.Windows.Forms.DataGridViewTextBoxColumn reserv_by;
+        private System.Windows.Forms.DataGridViewTextBoxColumn remarks;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dgvl_chk;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvl_code;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pax;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvl_sdesc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvl_price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ifree;
     }
 }

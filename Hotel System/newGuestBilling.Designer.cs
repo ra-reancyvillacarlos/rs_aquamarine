@@ -447,7 +447,7 @@
             this.btn_chkout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_chkout.ForeColor = System.Drawing.SystemColors.Info;
             this.btn_chkout.Image = global::Hotel_System.Properties.Resources._1343918692_door_out;
-            this.btn_chkout.Location = new System.Drawing.Point(5, 394);
+            this.btn_chkout.Location = new System.Drawing.Point(5, 420);
             this.btn_chkout.Name = "btn_chkout";
             this.btn_chkout.Size = new System.Drawing.Size(178, 46);
             this.btn_chkout.TabIndex = 22;
@@ -461,7 +461,7 @@
             this.btn_back.BackColor = System.Drawing.Color.Peru;
             this.btn_back.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_back.Image = global::Hotel_System.Properties.Resources.back;
-            this.btn_back.Location = new System.Drawing.Point(5, 440);
+            this.btn_back.Location = new System.Drawing.Point(5, 466);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(178, 46);
             this.btn_back.TabIndex = 21;
@@ -490,7 +490,7 @@
             this.button3.BackColor = System.Drawing.Color.SeaGreen;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Image = global::Hotel_System.Properties.Resources.Print;
-            this.button3.Location = new System.Drawing.Point(4, 286);
+            this.button3.Location = new System.Drawing.Point(5, 229);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(178, 46);
             this.button3.TabIndex = 9;
@@ -519,7 +519,7 @@
             this.btn_presentbill.BackColor = System.Drawing.Color.SeaGreen;
             this.btn_presentbill.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_presentbill.Image = global::Hotel_System.Properties.Resources.Print;
-            this.btn_presentbill.Location = new System.Drawing.Point(5, 234);
+            this.btn_presentbill.Location = new System.Drawing.Point(6, 177);
             this.btn_presentbill.Name = "btn_presentbill";
             this.btn_presentbill.Size = new System.Drawing.Size(178, 46);
             this.btn_presentbill.TabIndex = 21;
@@ -534,7 +534,7 @@
             this.btn_paymttransfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_paymttransfer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_paymttransfer.Image = global::Hotel_System.Properties.Resources.transfer;
-            this.btn_paymttransfer.Location = new System.Drawing.Point(4, 388);
+            this.btn_paymttransfer.Location = new System.Drawing.Point(4, 414);
             this.btn_paymttransfer.Name = "btn_paymttransfer";
             this.btn_paymttransfer.Size = new System.Drawing.Size(178, 46);
             this.btn_paymttransfer.TabIndex = 20;
@@ -582,7 +582,7 @@
             this.btn_baltransfer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_baltransfer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_baltransfer.Image = global::Hotel_System.Properties.Resources.transfer;
-            this.btn_baltransfer.Location = new System.Drawing.Point(4, 401);
+            this.btn_baltransfer.Location = new System.Drawing.Point(4, 427);
             this.btn_baltransfer.Name = "btn_baltransfer";
             this.btn_baltransfer.Size = new System.Drawing.Size(178, 46);
             this.btn_baltransfer.TabIndex = 8;
@@ -601,9 +601,9 @@
             this.button5.Image = global::Hotel_System.Properties.Resources._1365167226_user_walk_copy1;
             this.button5.Location = new System.Drawing.Point(68, 85);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(176, 36);
+            this.button5.Size = new System.Drawing.Size(176, 42);
             this.button5.TabIndex = 26;
-            this.button5.Text = "Released Commission";
+            this.button5.Text = "Release/Update Commission";
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
@@ -1614,7 +1614,7 @@
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Location = new System.Drawing.Point(642, 13);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(260, 130);
+            this.groupBox1.Size = new System.Drawing.Size(268, 130);
             this.groupBox1.TabIndex = 105;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Commission";

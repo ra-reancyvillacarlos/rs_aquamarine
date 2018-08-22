@@ -261,7 +261,7 @@ namespace Hotel_System
 
 
                     //disp_computed_bill();
-                    get_tl();
+                    gchk_rows();
                     //get_aki();
 
                     tbcntrl_res.SelectedTab = tpg_reg;
@@ -432,8 +432,8 @@ namespace Hotel_System
                                     String val_typ = "";
                                     try
                                     {
-                                        val_dat = ((dataGridView1["dgvl_sdesc", i].Value.ToString().ToUpper().Contains("ADULT")) ? (Convert.ToDouble(label6.Text.ToString()) * Convert.ToDouble(dataGridView1["dgvl_price", i].Value.ToString())) : (Convert.ToDouble(label7.Text.ToString()) * Convert.ToDouble(dataGridView1["dgvl_price", i].Value.ToString())));
-                                        val_typ = ((dataGridView1["dgvl_sdesc", i].Value.ToString().ToUpper().Contains("ADULT")) ? "" + label6.Text.ToString() + " ADULT" : "" + label7.Text.ToString() + " KID");
+                                        val_dat = ((dataGridView1["dgvl_sdesc", i].Value.ToString().ToUpper().Contains("ADULT")) ? (Convert.ToDouble(dataGridView1["pax", i].Value.ToString()) * Convert.ToDouble(dataGridView1["dgvl_price", i].Value.ToString())) : (Convert.ToDouble(dataGridView1["pax", i].Value.ToString()) * Convert.ToDouble(dataGridView1["dgvl_price", i].Value.ToString())));
+                                        val_typ = ((dataGridView1["dgvl_sdesc", i].Value.ToString().ToUpper().Contains("ADULT")) ? "" + dataGridView1["pax", i].Value.ToString() + " ADULT" : "" + dataGridView1["pax", i].Value.ToString() + " KID");
 
                                         if ((dataGridView1["dgvl_sdesc", i].Value.ToString().ToUpper().Contains("ADULT")))
                                         {
@@ -443,11 +443,6 @@ namespace Hotel_System
                                         {
                                             vald_save(val_dat, val_typ, dataGridView1["dgvl_code", i].Value.ToString());
                                         }
-
-                                        if (label8.Text.ToString() != "0")
-                                        {
-                                            vald_save(0.00, (label8.Text.ToString() + " INFANT"), dataGridView1["dgvl_code", i].Value.ToString());
-                                        }
                                     }
                                     catch { }
                                 }
@@ -456,16 +451,15 @@ namespace Hotel_System
                                     Double val_dat = 0.00;
                                     try
                                     {
-                                        val_dat = ((Convert.ToDouble(lbl_noofguest.Text.ToString()) * Convert.ToDouble(dataGridView1["dgvl_price", i].Value.ToString())));
+                                        val_dat = ((Convert.ToDouble(dataGridView1["pax", i].Value.ToString()) * Convert.ToDouble(dataGridView1["dgvl_price", i].Value.ToString())));
 
-                                        vald_save(val_dat, "" + lbl_noofguest.Text.ToString() + " All", dataGridView1["dgvl_code", i].Value.ToString());
+                                        vald_save(val_dat, "" + dataGridView1["pax", i].Value.ToString() + " All", dataGridView1["dgvl_code", i].Value.ToString());
 
                                     }
                                     catch { }
                                 }
 
-
-                                if (dataGridView1["ifree", i].Value.ToString().ToUpper() == "TRUE" && label8.Text.ToString() != "0" && (dataGridView1["dgvl_code", i].Value.ToString().ToUpper().Contains("PCK")) == false)
+                                if (dataGridView1["ifree", i].Value.ToString().ToUpper() == "TRUE" && label8.Text.ToString() != "0" && (Convert.ToDouble(dataGridView1["pax", i].Value.ToString()) == Convert.ToDouble(lbl_noofguest.Text.ToString())))
                                 {
                                     vald_save(((Convert.ToDouble(label8.Text.ToString()) * Convert.ToDouble(dataGridView1["dgvl_price", i].Value.ToString())) * -1), ("" + label8.Text.ToString() + " INFANT"), dataGridView1["dgvl_code", i].Value.ToString());
                                 }
@@ -886,7 +880,7 @@ namespace Hotel_System
                 }
             }
 
-            get_tl();
+            gchk_rows();
         }
 
         private void btn_back_Click_1(object sender, EventArgs e)
@@ -1027,7 +1021,7 @@ namespace Hotel_System
 
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
         {
-            get_tl();
+            gchk_rows();
         }
 
         private void trash_bin()
@@ -1248,50 +1242,20 @@ namespace Hotel_System
                     {
                         if (Convert.ToBoolean(dataGridView1["dgvl_chk", i].Value.ToString()) == true)
                         {
-                            if ((dataGridView1["dgvl_sdesc", i].Value.ToString()).ToUpper().Contains("PACKAGE"))
-                            {
-                                if ((dataGridView1["dgvl_sdesc", i].Value.ToString()).ToUpper().Contains("ADULT"))
-                                {
-                                    Double val_en = 0;
-                                    try { val_en = Convert.ToDouble(dataGridView1["dgvl_price", i].Value.ToString()); }
-                                    catch { }
-
-                                    pck += val_en * ad;
-                                }
-                                if ((dataGridView1["dgvl_sdesc", i].Value.ToString()).ToUpper().Contains("KID"))
-                                {
-                                    Double val_en = 0;
-                                    try { val_en = Convert.ToDouble(dataGridView1["dgvl_price", i].Value.ToString()); }
-                                    catch { }
-
-                                    pck += val_en * kd;
-                                }
-                            }
-                            else
-                            {
-                                Double val_en = 0;
-                                try { val_en = Convert.ToDouble(dataGridView1["dgvl_price", i].Value.ToString()); }
-                                catch { }
-
-                                n_pck += val_en * all;
-                            }
-
-
-                            if ((dataGridView1["ifree", i].Value.ToString()).ToUpper() == "TRUE" && !dataGridView1["dgvl_code", i].Value.ToString().ToUpper().Contains("PCK"))
-                            {
-                                Double val_en = 0;
-                                try { val_en = Convert.ToDouble(dataGridView1["dgvl_price", i].Value.ToString()); }
-                                catch { }
-
-                                n_pck += (val_en * inf)*-1;
-                            }
+                            //if ((dataGridView1["dgvl_sdesc", i].Value.ToString()).ToUpper().Contains("PACKAGE")) { if ((dataGridView1["dgvl_sdesc", i].Value.ToString()).ToUpper().Contains("ADULT")) { Double val_en = 0; try { val_en = Convert.ToDouble(dataGridView1["dgvl_price", i].Value.ToString()); } catch { } pck += val_en * ad; } if ((dataGridView1["dgvl_sdesc", i].Value.ToString()).ToUpper().Contains("KID")) { Double val_en = 0; try { val_en = Convert.ToDouble(dataGridView1["dgvl_price", i].Value.ToString()); } catch { } pck += val_en * kd; } } else { Double val_en = 0; try { val_en = Convert.ToDouble(dataGridView1["dgvl_price", i].Value.ToString()); } catch { } n_pck += val_en * all; } if ((dataGridView1["ifree", i].Value.ToString()).ToUpper() == "TRUE" && !dataGridView1["dgvl_code", i].Value.ToString().ToUpper().Contains("PCK")) { Double val_en = 0; try { val_en = Convert.ToDouble(dataGridView1["dgvl_price", i].Value.ToString()); } catch { } n_pck += (val_en * inf) * -1; }
+                            Double val_en = 0, totl = 0;
+                            try { val_en = Convert.ToDouble(dataGridView1["dgvl_price", i].Value.ToString()); }
+                            catch { }
+                            try { totl = Convert.ToDouble(dataGridView1["pax", i].Value.ToString()); }
+                            catch { }
+                            pck += totl * val_en;
                         }
                     }
                     catch { }
                 }
-                lessdiscount = ((pck + n_pck) * lessdiscount);
-                try { lessdiscount += Convert.ToDouble(txt_discamt.Text.ToString()); }
-                catch { }
+                //lessdiscount = ((pck + n_pck) * lessdiscount);
+                //try { lessdiscount += Convert.ToDouble(txt_discamt.Text.ToString()); }
+                //catch { }
                 txt_total_amt.Text = gm.toAccountingFormat(((pck + n_pck) - lessdiscount) + adtl);
             }
             catch (Exception)
@@ -1321,22 +1285,22 @@ namespace Hotel_System
         }
         private void newReservation_MouseClick(object sender, MouseEventArgs e)
         {
-            get_tl();
+            gchk_rows();
         }
 
         private void newReservation_MouseMove(object sender, MouseEventArgs e)
         {
-            get_tl();
+            gchk_rows();
         }
 
         private void dataGridView1_MouseUp(object sender, MouseEventArgs e)
         {
-            get_tl();
+            gchk_rows();
         }
 
         private void lbl_noofguest_TextChanged(object sender, EventArgs e)
         {
-            get_tl();
+            ent_kc(lbl_noofguest);
         }
 
         private void chk_active_CheckedChanged(object sender, EventArgs e)
@@ -1383,92 +1347,103 @@ namespace Hotel_System
 
         private void button2_Click(object sender, EventArgs e)
         {
-            vor_get();
+                vor_get();
         }
 
         private void vor_get()
         {
-            thisDatabase db = new thisDatabase();
-            GlobalMethod gm = new GlobalMethod();
-            String curdate = DateTime.Today.ToString("yyyy-MM-dd");
-            String curtime = DateTime.Now.ToString("HH:mm");
-
-            String reg_num = db.get_pk("reg_num");
-            
-            String res_code = ((forWalkIn == "") ? ((lbl_resno.Text.ToString() == "") ? dgv_reslist["res_code", dgv_reslist.CurrentRow.Index].Value.ToString() : lbl_resno.Text.ToString()) : forWalkIn);
-
-            String full_name = ((forWalkIn == "") ? ((lbl_resno.Text.ToString() == "") ? dgv_reslist["name", dgv_reslist.CurrentRow.Index].Value.ToString() : db.QueryBySQLCodeRetStr("SELECT full_name FROM rssys.resfil WHERE res_code = '" + lbl_resno.Text.ToString() + "'")) : db.QueryBySQLCodeRetStr("SELECT full_name FROM rssys.resfil WHERE res_code = '" + forWalkIn + "'"));
-            
-            //MessageBox.Show(res_code);
-            //(dgv_reslist.SelectedRows.Count > 0 || dgv_reslist.SelectedRows.Count < 1) && cur_load == false
-            if (res_code != "")
+            try
             {
-                if (MessageBox.Show("Continue on setting guest " + full_name + " as arrived?", "Confirmation dialog", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                thisDatabase db = new thisDatabase();
+                GlobalMethod gm = new GlobalMethod();
+                String curdate = DateTime.Today.ToString("yyyy-MM-dd");
+                String curtime = DateTime.Now.ToString("HH:mm");
+
+                String reg_num = db.get_pk("reg_num");
+            
+                String res_code = ((forWalkIn == "") ? ((lbl_resno.Text.ToString() == "") ? dgv_reslist["res_code", dgv_reslist.CurrentRow.Index].Value.ToString() : lbl_resno.Text.ToString()) : forWalkIn);
+
+                String full_name = ((forWalkIn == "") ? ((lbl_resno.Text.ToString() == "") ? dgv_reslist["name", dgv_reslist.CurrentRow.Index].Value.ToString() : db.QueryBySQLCodeRetStr("SELECT full_name FROM rssys.resfil WHERE res_code = '" + lbl_resno.Text.ToString() + "'")) : db.QueryBySQLCodeRetStr("SELECT full_name FROM rssys.resfil WHERE res_code = '" + forWalkIn + "'"));
+            
+                //MessageBox.Show(res_code);
+                //(dgv_reslist.SelectedRows.Count > 0 || dgv_reslist.SelectedRows.Count < 1) && cur_load == false
+                if (res_code != "")
                 {
-                    String col1 = "reg_num, res_code, acct_no, full_name, arr_date, arr_time, dep_date, hotel_code, rom_code, mkt_code, remarks, user_id, t_date, t_time, occ_type, chg_code, price, disc_code, discount, p_typ, trv_code, reg_date, seller";
-                    String col2 = "'" + reg_num + "' AS reg_num, res_code, acct_no, full_name, arr_date, arr_time, dep_date, hotel_code, rom_code, mkt_code, remarks, user_id, t_date, t_time, occ_type, chg_code, price, disc_code, discount, p_typ, trv_code, '" + curdate + "', seller";
-                    String cond = "res_code = '" + res_code + "'";
-                    try
+                    if (MessageBox.Show("Continue on setting guest " + full_name + " as arrived?", "Confirmation dialog", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        if (db.InsertSelect("gfolio", col1, "resfil", col2, cond))
+                        String col1 = "reg_num, res_code, acct_no, full_name, arr_date, arr_time, dep_date, hotel_code, rom_code, mkt_code, remarks, user_id, t_date, t_time, occ_type, chg_code, price, disc_code, discount, p_typ, trv_code, reg_date, seller";
+                        String col2 = "'" + reg_num + "' AS reg_num, res_code, acct_no, full_name, arr_date, arr_time, dep_date, hotel_code, rom_code, mkt_code, remarks, user_id, t_date, t_time, occ_type, chg_code, price, disc_code, discount, p_typ, trv_code, '" + curdate + "', seller";
+                        String cond = "res_code = '" + res_code + "'";
+                        try
                         {
-                            if (db.UpdateOnTable("resfil", "arrived ='Y'", "res_code = '" + res_code + "'"))
+                            if (db.InsertSelect("gfolio", col1, "resfil", col2, cond))
                             {
-                                db.set_pkm99("reg_num", db.get_nextincrementlimitchar(reg_num, 8));
-                                MessageBox.Show("Successfully updated guest " + full_name + " to arrived.");
-                                set_reslist(""); btn_back.PerformClick();
-                                enterDeposit ed = new enterDeposit(this);
-                                ed.load_items(res_code);
-                                ed.ShowDialog();
+                                if (db.UpdateOnTable("resfil", "arrived ='Y'", "res_code = '" + res_code + "'"))
+                                {
+                                    db.set_pkm99("reg_num", db.get_nextincrementlimitchar(reg_num, 8));
+                                    MessageBox.Show("Successfully updated guest " + full_name + " to arrived.");
+                                    set_reslist(""); btn_back.PerformClick();
+                                    enterDeposit ed = new enterDeposit(this);
+                                    ed.load_items(res_code);
+                                    ed.ShowDialog();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Error on updating status");
+                                }
                             }
-                            else
-                            {
-                                MessageBox.Show("Error on updating status");
-                            }
+                            else { MessageBox.Show("Error on updating"); }
                         }
-                        else { MessageBox.Show("Error on updating"); }
+                        catch (Exception er) { MessageBox.Show(er.Message); }
                     }
-                    catch (Exception er) { MessageBox.Show(er.Message); }
                 }
+                else
+                {
+                    MessageBox.Show("Please select 1 record");
+                }
+
             }
-            else
-            {
-                MessageBox.Show("Please select 1 record");
-            }
+            catch { MessageBox.Show("Please select 1 resservation made"); }
         }
         private void label6_TextChanged(object sender, EventArgs e)
         {
-            get_tl();
+            //get_tlpc();
+            //get_tl();
+            ent_kc(label6);
         }
 
         private void label7_TextChanged(object sender, EventArgs e)
         {
-            get_tl();
+            //get_tlpc();
+            //get_tl();
+            ent_kc(label7);
         }
 
         private void label8_TextChanged(object sender, EventArgs e)
         {
-            get_tl();
+            //get_tlpc();
+            //get_tl();
+            ent_kc(label8);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            get_tl();
+            gchk_rows();
         }
 
         private void dataGridView1_MouseMove(object sender, MouseEventArgs e)
         {
-            get_tl();
+            gchk_rows();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            get_tl();
+            gchk_rows();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            get_tl();
+            gchk_rows();
         }
 
         private void cbo_agency_SelectedIndexChanged(object sender, EventArgs e)
@@ -1488,6 +1463,132 @@ namespace Hotel_System
             grp_roominfo.Enabled = true;
             grp_guest.Enabled = true;
             grpbx_billing.Enabled = true;
+        }
+
+        private void get_tlpc()
+        {
+            int ad = 0, kd = 0, inf = 0;
+
+            try
+            {
+                ad = Convert.ToInt32(label6.Text);
+            }
+            catch { }
+            try
+            {
+                kd = Convert.ToInt32(label7.Text);
+            }
+            catch { }
+            try
+            {
+                inf = Convert.ToInt32(label8.Text);
+            }
+            catch { }
+
+            int tl = ad + kd + inf;
+            lbl_noofguest.Text = tl.ToString();
+        }
+
+        private void ent_kc(TextBox txtbox)
+        {
+            int newTxt = 0;
+            String newStr = txtbox.Text.ToString().Replace(" ", "");
+            try
+            {
+                newTxt = Convert.ToInt32(newStr);
+                gchk_rows();
+            }
+            catch
+            {
+                newTxt = 0;
+                MessageBox.Show("Please input a numeric value.");
+                txtbox.Focus();
+            }
+            txtbox.Text = ((newTxt == 0) ? "" : newTxt.ToString());
+        }
+        private String ent_kc_st(String txtbox)
+        {
+            int newTxt = 0;
+            String newStr = txtbox.ToString().Replace(" ", ""), newestString = "";
+            try
+            {
+                newTxt = Convert.ToInt32(newStr);
+            }
+            catch
+            {
+                newTxt = 0;
+
+            }
+            newestString = ((newTxt == 0) ? "0" : newTxt.ToString());
+            return newestString;
+        }
+
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            gchk_rows();
+        }
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            gchk_rows();
+        }
+
+        private void gchk_rows()
+        {
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                try
+                {
+                    if (Convert.ToBoolean(dataGridView1["dgvl_chk", i].Value.ToString()) == true)
+                    {
+                        Double val_en = 0;
+                        if ((dataGridView1["dgvl_sdesc", i].Value.ToString()).ToUpper().Contains("PACKAGE"))
+                        {
+                            if ((dataGridView1["dgvl_sdesc", i].Value.ToString()).ToUpper().Contains("ADULT"))
+                            {
+                                try
+                                {
+                                    val_en = Convert.ToDouble(label6.Text.ToString());
+                                }
+                                catch { }
+                            }
+                            if ((dataGridView1["dgvl_sdesc", i].Value.ToString()).ToUpper().Contains("KID"))
+                            {
+                                try
+                                {
+                                    val_en = Convert.ToDouble(label7.Text.ToString());
+                                }
+                                catch { }
+                            }
+                            else
+                            {
+                                try
+                                {
+                                    val_en = Convert.ToDouble(label8.Text.ToString());
+                                }
+                                catch { }
+                            }
+                        }
+                        else
+                        {
+                            try
+                            {
+                                val_en = Convert.ToDouble(lbl_noofguest.Text.ToString());
+                            }
+                            catch { }
+                        }
+                        dataGridView1["pax", i].ReadOnly = false;
+                        dataGridView1["pax", i].Value = ent_kc_st(((dataGridView1["pax", i].Value.ToString() == "") ? val_en.ToString() : dataGridView1["pax", i].Value.ToString()));
+                    }
+                    else
+                    {
+                        dataGridView1["pax", i].ReadOnly = true;
+                        dataGridView1["pax", i].Value = ent_kc_st("0");
+                    }
+                }
+                catch { }
+            }
+            get_tl();
         }
     }
 }

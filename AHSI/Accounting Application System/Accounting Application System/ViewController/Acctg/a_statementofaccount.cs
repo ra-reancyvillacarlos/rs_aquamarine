@@ -22,6 +22,7 @@ namespace Accounting_Application_System
         GlobalClass gc;
         GlobalMethod gm;
         int _lnno=1;
+        Boolean isCustomer = false;
 
         Boolean updateHasJrnlz = false;
 
@@ -31,12 +32,13 @@ namespace Accounting_Application_System
             gc = new GlobalClass();
             gm = new GlobalMethod();
             db = new thisDatabase();
-            gc.load_customer(cbo_customer);
+            load_customer_agency(cbo_customer);
             gc.load_salesclerk(cbo_cashier);
 
             load_soaperiod(cbo_soaperiod);
             load_soaperiod(cbo_soaperiods);
-
+            gc.load_agency(comboBox2);
+            
             cbo_cashier.Text = GlobalClass.username;
             
             thisDatabase db2 = new thisDatabase();
@@ -82,6 +84,21 @@ namespace Accounting_Application_System
             disp_dgvlist();
             isReady = true;
         }
+        public void load_customer_agency(ComboBox cbo)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                thisDatabase db = new thisDatabase();
+
+                dt = db.QueryBySQLCode("SELECT trv_code AS d_code, trv_name AS d_name, '' AS d_addr2, '' AS d_cntc_no, '' AS d_tel, '' AS d_fax, '' AS d_email, '' AS d_tin, '' AS d_cntc, 0 AS limit, '' AS at_code, '' AS mp_code, '' AS remarks, '' AS type, '' AS d_oldcode, 'Agency' AS soatype FROM rssys.travagnt UNION ALL SELECT d_code, d_name, d_addr2, d_cntc_no, d_tel, d_fax, d_email, d_tin, d_cntc, m06.limit, at_code, mp_code, remarks, type, d_oldcode, 'Customer' AS soatype FROM rssys.m06 ORDER BY d_name ASC");
+                cbo.DataSource = dt;
+                cbo.DisplayMember = "d_name";
+                cbo.ValueMember = "d_code";
+                cbo.SelectedIndex = -1;
+            }
+            catch (Exception) { }
+        }
         private void load_soaperiod(ComboBox cbo)
         {
             cbo.DataSource = db.QueryBySQLCode("SELECT soa_desc, to_Char(soafrom,'yyyy/MM/dd')||'-'||to_Char(soato,'yyyy/MM/dd') AS soa_dt FROM rssys.soa_period WHERE COALESCE(closed,'')<>'Y' ORDER BY soafrom desc,soato desc");
@@ -93,6 +110,8 @@ namespace Accounting_Application_System
         private void a_statementofaccount_Load(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Maximized;
+
+            comboBox1.SelectedIndex = 0;
         }
 
         private void btn_new_Click(object sender, EventArgs e)
@@ -137,6 +156,7 @@ namespace Accounting_Application_System
                         txt_code.Text = code;
                         cbo_customer.SelectedValue = dgv_list["dgvl_debt_code", r].Value.ToString();
                         cbo_cashier.Text = dgv_list["dgvl_user_id", r].Value.ToString();
+                        comboBox4.SelectedIndex = ((dgv_list["dgvl_user_id", r].Value.ToString() == "Agency") ? 1 : 0);
 
                         dtp_dt_due.Value = gm.toDateValue(dgv_list["dgvl_due_date", r].Value.ToString());
 
@@ -182,7 +202,15 @@ namespace Accounting_Application_System
 
         private void disp_itemlist(String code)
         {
-            DataTable dt = db.QueryBySQLCode("SELECT sl.*, c.chg_desc FROM rssys.soalne sl LEFT JOIN rssys.charge c ON c.chg_code=sl.chg_code WHERE soa_code='" + code + "' ORDER BY ln_num");
+            DataTable dt = db.QueryBySQLCode("SELECT sl.*, gf.acct_no, gf.full_name, hf.name, CONCAT_WS(', ', pck.package1, pck1.activities1) AS chg_code1, CONCAT_WS(', ', pck.package, pck1.activities) AS chg_desc1, COALESCE(SPLIT_PART(gf.occ_type, ', ', 4), '0') AS ttlpax, c.chg_desc FROM rssys.soalne sl LEFT JOIN rssys.charge c ON c.chg_code=sl.chg_code LEFT JOIN rssys.gfolio gf ON gf.reg_num = sl.gfolio LEFT JOIN rssys.hotel hf ON hf.code = gf.hotel_code LEFT JOIN (SELECT cf.reg_num, cf.res_code AS rg_code, STRING_AGG(ch.chg_desc, ', ') AS package, STRING_AGG(ch.chg_code, ', ') AS package1 FROM rssys.chgfil cf LEFT JOIN rssys.charge ch ON cf.chg_code = ch.chg_code WHERE UPPER(cf.chg_code) LIKE 'PCK%' GROUP BY cf.reg_num, cf.res_code) pck ON pck.rg_code = gf.res_code LEFT JOIN (SELECT cf.reg_num, cf.res_code AS rg_code, STRING_AGG(ch.chg_desc, ', ') AS activities, STRING_AGG(ch.chg_code, ', ') AS activities1 FROM rssys.chgfil cf LEFT JOIN rssys.charge ch ON cf.chg_code = ch.chg_code WHERE UPPER(cf.chg_code) LIKE 'ACT%' GROUP BY cf.reg_num, cf.res_code) pck1 ON pck1.rg_code = gf.res_code WHERE soa_code='" + code + "' ORDER BY ln_num");
+            if (comboBox4.SelectedIndex == 1)
+            {
+                dgv_itemlist.Columns["dgvl2_gfolio"].Visible = true; dgv_itemlist.Columns["acct_no"].Visible = true; dgv_itemlist.Columns["full_name"].Visible = true; dgv_itemlist.Columns["name"].Visible = true; dgv_itemlist.Columns["chg_code"].Visible = true; dgv_itemlist.Columns["chg_desc"].Visible = true; dgv_itemlist.Columns["ttlpax"].Visible = true; dgv_itemlist.Columns["dgvl2_charge_desc"].Visible = false; dgv_itemlist.Columns["dgvl2_chg_date"].Visible = false; dgv_itemlist.Columns["dgvl2_desc"].Visible = false; dgv_itemlist.Columns["dgvl2_chg_code"].Visible = false; dgv_itemlist.Columns["dgvl2_chg_num"].Visible = false; dgv_itemlist.Columns["dgvl2_istransferred"].Visible = false;
+            }
+            else
+            {
+                dgv_itemlist.Columns["dgvl2_gfolio"].Visible = false; dgv_itemlist.Columns["acct_no"].Visible = false; dgv_itemlist.Columns["full_name"].Visible = false; dgv_itemlist.Columns["name"].Visible = false; dgv_itemlist.Columns["chg_code"].Visible = false; dgv_itemlist.Columns["chg_desc"].Visible = false; dgv_itemlist.Columns["ttlpax"].Visible = false; dgv_itemlist.Columns["dgvl2_charge_desc"].Visible = true; dgv_itemlist.Columns["dgvl2_chg_date"].Visible = true; dgv_itemlist.Columns["dgvl2_desc"].Visible = true; dgv_itemlist.Columns["dgvl2_chg_code"].Visible = true; dgv_itemlist.Columns["dgvl2_chg_num"].Visible = true; dgv_itemlist.Columns["dgvl2_istransferred"].Visible = true;
+            }
 
             try { dgv_itemlist.Rows.Clear(); }
             catch (Exception er) { MessageBox.Show(er.Message); }
@@ -204,6 +232,13 @@ namespace Accounting_Application_System
                     dgv_itemlist["dgvl2_chg_code", i].Value = dt.Rows[i]["chg_code"].ToString();
                     dgv_itemlist["dgvl2_chg_num", i].Value = dt.Rows[i]["chg_num"].ToString();
                     dgv_itemlist["dgvl2_istransferred", i].Value = dt.Rows[i]["istransferred"].ToString();
+
+                    dgv_itemlist["acct_no", i].Value = dt.Rows[i]["acct_no"].ToString();
+                    dgv_itemlist["full_name", i].Value = dt.Rows[i]["full_name"].ToString();
+                    dgv_itemlist["name", i].Value = dt.Rows[i]["name"].ToString();
+                    dgv_itemlist["chg_code", i].Value = dt.Rows[i]["chg_code1"].ToString();
+                    dgv_itemlist["chg_desc", i].Value = dt.Rows[i]["chg_desc1"].ToString();
+                    dgv_itemlist["ttlpax", i].Value = dt.Rows[i]["ttlpax"].ToString();
                 }
             }
             catch(Exception er) { MessageBox.Show(er.Message); }
@@ -298,30 +333,36 @@ namespace Accounting_Application_System
 
         private void btn_print_Click(object sender, EventArgs e)
         {
-
-            if (dgv_list.Rows.Count > 0)
+            int r = dgv_list.CurrentRow.Index;
+            String soa_code = (dgv_list["dgvl_soa_code", r].Value ?? "").ToString();
+            if (comboBox1.SelectedIndex == 0)
             {
-                int r = dgv_list.CurrentRow.Index;
-                String soa_code = (dgv_list["dgvl_soa_code", r].Value ?? "").ToString();
-                if (!String.IsNullOrEmpty(soa_code))
+                if (dgv_list.Rows.Count > 0)
                 {
-                    if ((dgv_list["dgvl_cancel", r].Value ?? "").ToString() == "Y")
+                    if (!String.IsNullOrEmpty(soa_code))
                     {
-                        MessageBox.Show("Selected SAO already cancel.");
+                        if ((dgv_list["dgvl_cancel", r].Value ?? "").ToString() == "Y")
+                        {
+                            MessageBox.Show("Selected SAO already cancel.");
+                        }
+                        else
+                        {
+                            String debt_code = dgv_list["dgvl_debt_code", r].Value.ToString()
+                                , debt_name = dgv_list["dgvl_debt_name", r].Value.ToString()
+                                , sao_date = dgv_list["dgvl_soa_date", r].Value.ToString()
+                                , due_date = dgv_list["dgvl_due_date", r].Value.ToString()
+                                , t_date = dgv_list["dgvl_t_date", r].Value.ToString()
+                                , t_time = dgv_list["dgvl_t_time", r].Value.ToString()
+                                , comments = dgv_list["dgvl_comments", r].Value.ToString();
+
+                            Report rpt = new Report();
+                            rpt.print_statementofaccount(soa_code, debt_code, debt_name, sao_date, due_date, gm.toDateString(t_date, ""), t_time, comments);
+                            rpt.ShowDialog();
+                        }
                     }
                     else
                     {
-                        String debt_code = dgv_list["dgvl_debt_code", r].Value.ToString()
-                            , debt_name = dgv_list["dgvl_debt_name", r].Value.ToString()
-                            , sao_date = dgv_list["dgvl_soa_date", r].Value.ToString()
-                            , due_date = dgv_list["dgvl_due_date", r].Value.ToString()
-                            , t_date = dgv_list["dgvl_t_date", r].Value.ToString()
-                            , t_time = dgv_list["dgvl_t_time", r].Value.ToString()
-                            , comments = dgv_list["dgvl_comments", r].Value.ToString();
-
-                        Report rpt = new Report();
-                        rpt.print_statementofaccount(soa_code, debt_code, debt_name, sao_date, due_date, gm.toDateString(t_date, ""), t_time, comments);
-                        rpt.ShowDialog();
+                        MessageBox.Show("No SOA item selected.");
                     }
                 }
                 else
@@ -329,9 +370,19 @@ namespace Accounting_Application_System
                     MessageBox.Show("No SOA item selected.");
                 }
             }
-            else
+            else if(comboBox1.SelectedIndex == 1)
             {
-                MessageBox.Show("No SOA item selected.");
+                if (!String.IsNullOrEmpty(soa_code))
+                {
+                        
+                    Report rpt = new Report();
+                    rpt.print_statementofaccount_agency(dgv_list["dgvl_debt_code", r].Value.ToString(), soa_code, dgv_list["dgvl_t_date", r].Value.ToString());
+                    rpt.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("No SOA item selected.");
+                }
             }
         }
 
@@ -417,7 +468,7 @@ namespace Accounting_Application_System
         {
             if (cbo_customer.SelectedIndex != -1)
             {
-                z_add_folio frm_addfolio = new z_add_folio(this, true);
+                z_add_folio frm_addfolio = new z_add_folio(this, true, isCustomer);
 
                 frm_addfolio.ShowDialog();
             }
@@ -522,8 +573,8 @@ namespace Accounting_Application_System
                     try
                     {
                         code = db.get_pk("soa_code");
-                        col = "soa_code, debt_code, debt_name, soa_period, user_id, comments, due_date, t_date, t_time, branch";
-                        val = "'" + code + "', '" + customerid + "', '" + customer_name + "', '" + soa_period + "', '" + user_id + "', '" + comments + "', '" + due_date + "', '" + t_date + "', '" + t_time + "', '" + GlobalClass.branch + "'";
+                        col = "soa_code, debt_code, debt_name, soa_period, user_id, comments, due_date, t_date, t_time, branch, soatype";
+                        val = "'" + code + "', '" + customerid + "', '" + customer_name + "', '" + soa_period + "', '" + user_id + "', '" + comments + "', '" + due_date + "', '" + t_date + "', '" + t_time + "', '" + GlobalClass.branch + "', '" + comboBox4.Text.ToString() + "'";
 
                         if (db.InsertOnTable(table, col, val))
                         {
@@ -541,7 +592,7 @@ namespace Accounting_Application_System
                 }
                 else
                 {
-                    col = "soa_code='" + code + "', debt_code='" + customerid + "', debt_name='" + customer_name + "', soa_period='" + soa_period + "', user_id='" + user_id + "', due_date='" + due_date + "', comments='" + comments + "', t_date='" + t_date + "', t_time='" + t_time + "'";
+                    col = "soa_code='" + code + "', debt_code='" + customerid + "', debt_name='" + customer_name + "', soa_period='" + soa_period + "', user_id='" + user_id + "', due_date='" + due_date + "', comments='" + comments + "', t_date='" + t_date + "', t_time='" + t_time + "', soatype='" + comboBox4.Text.ToString() + "'";
 
                     if (db.UpdateOnTable(table, col, "soa_code='" + code + "'"))
                     {
@@ -794,9 +845,18 @@ namespace Accounting_Application_System
             frm_cust.ShowDialog();
         }
 
-        public void set_custvalue_frm(String custcode, String custname)
+        public void set_custvalue_frm(String custcode, String custname, String soatype)
         {
             cbo_customer.SelectedValue = custcode;
+
+            if (soatype == "Agency")
+            {
+                comboBox4.SelectedIndex = 1;
+            }
+            else
+            {
+                comboBox4.SelectedIndex = 0;
+            }
         }
 
         public String get_custcode_frm()
@@ -842,7 +902,10 @@ namespace Accounting_Application_System
             {
                 WHERE += " AND t_date BETWEEN '" + dtp_from.Value.ToString("yyyy-MM-dd") + "' AND '" + dtp_to.Value.ToString("yyyy-MM-dd") + "' ";
             }
-
+            if (comboBox1.SelectedIndex > -1)
+            {
+                WHERE += " AND sh.soatype = '" + comboBox1.Text + "'";
+            }
 
             //dt = db.get_soalist1(search, searchtype);
 
@@ -882,6 +945,7 @@ namespace Accounting_Application_System
                         row.Cells["dgvl_soa_date"].Value = DateTime.Parse(dt.Rows[r]["soa_period"].ToString()).ToString("MMMM dd,yyyy");
                     }
                     row.Cells["dgvl_soa_period"].Value = dt.Rows[r]["soa_period"].ToString();
+                    row.Cells["soatype"].Value = dt.Rows[r]["soatype"].ToString();
 
                     //dgvl_rmrttyp
                 }
@@ -1003,7 +1067,7 @@ namespace Accounting_Application_System
 
         private void btn_itemupd_Click(object sender, EventArgs e)
         {
-            z_add_folio frm_addfolio = new z_add_folio(this, false);
+            z_add_folio frm_addfolio = new z_add_folio(this, false, isCustomer);
             frm_addfolio.Show();
         }
 
@@ -1118,5 +1182,23 @@ namespace Accounting_Application_System
 
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            disp_dgvlist();
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox4.SelectedIndex == 1)
+            {
+                isCustomer = false;
+                dgv_itemlist.Columns["dgvl2_gfolio"].Visible = true; dgv_itemlist.Columns["acct_no"].Visible = true; dgv_itemlist.Columns["full_name"].Visible = true; dgv_itemlist.Columns["name"].Visible = true; dgv_itemlist.Columns["chg_code"].Visible = true; dgv_itemlist.Columns["chg_desc"].Visible = true; dgv_itemlist.Columns["ttlpax"].Visible = true; dgv_itemlist.Columns["dgvl2_charge_desc"].Visible = false; dgv_itemlist.Columns["dgvl2_chg_date"].Visible = false; dgv_itemlist.Columns["dgvl2_desc"].Visible = false; dgv_itemlist.Columns["dgvl2_chg_code"].Visible = false; dgv_itemlist.Columns["dgvl2_chg_num"].Visible = false; dgv_itemlist.Columns["dgvl2_istransferred"].Visible = false;
+            }
+            else
+            {
+                isCustomer = true;
+                dgv_itemlist.Columns["dgvl2_gfolio"].Visible = false; dgv_itemlist.Columns["acct_no"].Visible = false; dgv_itemlist.Columns["full_name"].Visible = false; dgv_itemlist.Columns["name"].Visible = false; dgv_itemlist.Columns["chg_code"].Visible = false; dgv_itemlist.Columns["chg_desc"].Visible = false; dgv_itemlist.Columns["ttlpax"].Visible = false; dgv_itemlist.Columns["dgvl2_charge_desc"].Visible = true; dgv_itemlist.Columns["dgvl2_chg_date"].Visible = true; dgv_itemlist.Columns["dgvl2_desc"].Visible = true; dgv_itemlist.Columns["dgvl2_chg_code"].Visible = true; dgv_itemlist.Columns["dgvl2_chg_num"].Visible = true; dgv_itemlist.Columns["dgvl2_istransferred"].Visible = true;
+            }
+        }
     }
 }

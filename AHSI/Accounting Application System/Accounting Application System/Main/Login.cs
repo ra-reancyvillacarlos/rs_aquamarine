@@ -238,8 +238,8 @@ namespace Accounting_Application_System
             {
                 if (cbo_db.SelectedIndex == 0)
                 {
-                    Accounting_Application_System.thisDatabase.db_name = "aquamarine"; //tsc residences;
-                    Hotel_System.thisDatabase.db_name = "aquamarine"; //pms_eastland_050318 pms_eastland pms_eastland_after_closing pms_eastland_before_closing pms_eastland_compare_backup reancy_eastland pms_eastland_060618 curr_eastland pms_curr
+                    Accounting_Application_System.thisDatabase.db_name = "aquamarine_try"; //tsc residences;
+                    Hotel_System.thisDatabase.db_name = "aquamarine_try"; //pms_eastland_050318 pms_eastland pms_eastland_after_closing pms_eastland_before_closing pms_eastland_compare_backup reancy_eastland pms_eastland_060618 curr_eastland pms_curr
                     gc.load_branch(cbo_branch);
 
                     pbox_db.Image = Properties.Resources.aquamarine;

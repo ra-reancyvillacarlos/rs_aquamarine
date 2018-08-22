@@ -28,6 +28,7 @@ namespace Accounting_Application_System
         Boolean isnew = false;
         dbSales db;
         GlobalMethod gm;
+        Boolean isSOA = false;
 
         public m_customers()
         {
@@ -92,6 +93,7 @@ namespace Accounting_Application_System
             gc.load_mop(cbo_mop);
             gc.load_accounttitle_sl_only(cbo_subledger);
 
+            isSOA = true;
             disp_list("");
         }
 
@@ -394,7 +396,7 @@ namespace Accounting_Application_System
                 {
                     if (iscallbackfrm)
                     {
-                        setValuefromFrm(code, d_name);
+                        setValuefromFrm(code, d_name, "");
                     }
                     else
                     {
@@ -506,7 +508,17 @@ namespace Accounting_Application_System
                    
             try
             {
-                DataTable dt = db.QueryOnTableWithParams("m06", "*", WHERE, " ORDER BY d_name ASC");
+                DataTable dt = new DataTable();
+                if (isSOA == true)
+                {
+                    dt = db.QueryBySQLCode("SELECT trv_code AS d_code, trv_name AS d_name, '' AS d_addr2, '' AS d_cntc_no, '' AS d_tel, '' AS d_fax, '' AS d_email, '' AS d_tin, '' AS d_cntc, 0 AS limit, '' AS at_code, '' AS mp_code, '' AS remarks, '' AS type, '' AS d_oldcode, 'Agency' AS soatype FROM rssys.travagnt UNION ALL SELECT d_code, d_name, d_addr2, d_cntc_no, d_tel, d_fax, d_email, d_tin, d_cntc, m06.limit, at_code, mp_code, remarks, type, d_oldcode, 'Customer' AS soatype FROM rssys.m06" + ((WHERE != "") ? " WHERE " + WHERE + "" : "") + " ORDER BY d_name ASC");
+                    dgv_list.Columns["d_addr2"].Visible = false; dgv_list.Columns["d_cntc_no"].Visible = false; dgv_list.Columns["d_tel"].Visible = false; dgv_list.Columns["d_fax"].Visible = false; dgv_list.Columns["d_email"].Visible = false; dgv_list.Columns["d_tin"].Visible = false; dgv_list.Columns["d_cntc"].Visible = false; dgv_list.Columns["limit"].Visible = false; dgv_list.Columns["at_code"].Visible = false; dgv_list.Columns["mp_code"].Visible = false; dgv_list.Columns["remarks"].Visible = false; dgv_list.Columns["type"].Visible = false; dgv_list.Columns["d_oldcode"].Visible = false; dgv_list.Columns["soatype"].Visible = true;
+                }
+                else
+                {
+                    dt = db.QueryOnTableWithParams("m06", "*, '' AS soatype", WHERE, " ORDER BY d_name ASC");
+                    dgv_list.Columns["d_addr2"].Visible = true; dgv_list.Columns["d_cntc_no"].Visible = true; dgv_list.Columns["d_tel"].Visible = true; dgv_list.Columns["d_fax"].Visible = true; dgv_list.Columns["d_email"].Visible = true; dgv_list.Columns["d_tin"].Visible = true; dgv_list.Columns["d_cntc"].Visible = true; dgv_list.Columns["limit"].Visible = true; dgv_list.Columns["at_code"].Visible = true; dgv_list.Columns["mp_code"].Visible = true; dgv_list.Columns["remarks"].Visible = true; dgv_list.Columns["type"].Visible = true; dgv_list.Columns["d_oldcode"].Visible = true; dgv_list.Columns["soatype"].Visible = false;
+                }
 
                 for (int r = 0; dt.Rows.Count > r; r++)
                 {
@@ -528,6 +540,7 @@ namespace Accounting_Application_System
                     row.Cells["remarks"].Value = dt.Rows[r]["remarks"].ToString();
                     row.Cells["type"].Value = dt.Rows[r]["type"].ToString();
                     row.Cells["d_oldcode"].Value = dt.Rows[r]["d_oldcode"].ToString();
+                    row.Cells["soatype"].Value = dt.Rows[r]["soatype"].ToString();
                 }
             }
             catch (Exception er) 
@@ -633,7 +646,7 @@ namespace Accounting_Application_System
         private void dgv_list_DoubleClick(object sender, EventArgs e)
         {
             int r = 0;
-            String custcode = "", custname = "";
+            String custcode = "", custname = "", soatype = "";
 
             try
             {
@@ -643,18 +656,26 @@ namespace Accounting_Application_System
 
                     custcode = dgv_list[0, r].Value.ToString();
                     custname = dgv_list[1, r].Value.ToString();
+                    if (isSOA == true)
+                    {
+                        soatype = dgv_list["soatype", r].Value.ToString();
 
-                    setValuefromFrm(custcode, custname);
+                        setValuefromFrm(custcode, custname, soatype);
+                    }
+                    else
+                    {
+                        setValuefromFrm(custcode, custname, "");
+                    }
                 }
             }
             catch (Exception) { }
         }
 
-        private void setValuefromFrm(String custcode, String custname)
+        private void setValuefromFrm(String custcode, String custname, String soatype)
         {
             if (_frm_soa != null)
             {
-                _frm_soa.set_custvalue_frm(custcode, custname);
+                _frm_soa.set_custvalue_frm(custcode, custname, soatype);
                 this.Close();
             }
             if (_frm_sales != null)

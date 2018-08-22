@@ -19,8 +19,9 @@ namespace Accounting_Application_System
         Boolean newitem = false;
         String custid = "";
         thisDatabase db = new thisDatabase();
+        Boolean isCustomer = true;
 
-        public z_add_folio(a_statementofaccount frm,Boolean isnew)
+        public z_add_folio(a_statementofaccount frm,Boolean isnew, Boolean _isCustomer)
         {
             InitializeComponent();
             gc = new GlobalClass();
@@ -29,7 +30,7 @@ namespace Accounting_Application_System
             this.newitem = isnew;
 
             //txt_gfolio.Text = frm.cbo_customer.Text;
-
+            isCustomer = _isCustomer;
             disp_dgv_list_folio();
         }
 
@@ -199,7 +200,7 @@ namespace Accounting_Application_System
         {
             GlobalMethod gm = new GlobalMethod();
             String custcode = _frm_soa.get_custcode_frm();
-            DataTable dt;
+            DataTable dt = null;
             
             String searchtxt = txt_gfolio.Text;
             Double debit = 0, credit = 0;
@@ -209,7 +210,20 @@ namespace Accounting_Application_System
             //dt = db.QueryBySQLCode("SELECT o.ord_code, o.customer, o.ord_amnt, o.user_id, o.reference, ol.out_desc, ol.out_code FROM rssys.orhdr o LEFT JOIN rssys.outlet ol ON ol.out_code=o.out_code  WHERE (o.customer LIKE '%" + gfolio + "%' OR o.ord_code  LIKE '%" + gfolio + "%' OR o.reference LIKE '%" + gfolio + "%') AND o.debt_code LIKE '%" + custid + "%'");
             //dt = db.QueryBySQLCode("SELECT DISTINCT tr.*,o.trnx_date AS date, o.total_amnt ,o.out_code,ot.out_desc FROM rssys.tr02 tr LEFT JOIN rssys.orhdr o ON tr.invoice=o.ord_code LEFT JOIN rssys.outlet ot ON o.out_code=ot.out_code WHERE tr.sl_code ='" + _frm_soa.cbo_customer.SelectedValue.ToString() + "'");
             //t2.invoice=cf.soa_code
-            dt = db.QueryBySQLCode("SELECT cf.*, c.chg_desc, t2.*, gf.acct_no, gf.full_name FROM rssys.chgfil cf JOIN rssys.gfolio gf ON gf.reg_num=cf.reg_num LEFT JOIN rssys.tr02 t2 ON (cf.chg_code=t2.chg_code AND cf.chg_num=t2.chg_num) LEFT JOIN rssys.charge c ON c.chg_code=cf.chg_code WHERE c.isdeposit=FALSE AND c.chg_type='C' AND ((gf.acct_no LIKE '%" + searchtxt + "%' OR gf.full_name LIKE '%" + searchtxt + "%' OR cf.soa_code LIKE '%" + searchtxt + "%' OR gf.reg_num LIKE '%" + searchtxt + "%' OR c.chg_desc LIKE '%" + searchtxt + "%') AND gf.acct_no='" + (_frm_soa.cbo_customer.SelectedValue ?? "").ToString() + "') ORDER BY chg_date desc,t_time  desc");
+            if (isCustomer == false)
+            {
+                dt = db.QueryBySQLCode("SELECT cf.*, c.chg_desc, t2.*, gf.acct_no, gf.full_name FROM rssys.chgfil cf JOIN rssys.gfolio gf ON gf.reg_num=cf.reg_num LEFT JOIN rssys.tr02 t2 ON (cf.chg_code=t2.chg_code AND cf.chg_num=t2.chg_num) LEFT JOIN rssys.charge c ON c.chg_code=cf.chg_code WHERE c.isdeposit=FALSE AND c.chg_type='C' AND ((gf.acct_no LIKE '%" + searchtxt + "%' OR gf.full_name LIKE '%" + searchtxt + "%' OR cf.soa_code LIKE '%" + searchtxt + "%' OR gf.reg_num LIKE '%" + searchtxt + "%' OR c.chg_desc LIKE '%" + searchtxt + "%') AND gf.acct_no='" + (_frm_soa.cbo_customer.SelectedValue ?? "").ToString() + "') ORDER BY chg_date desc,t_time  desc");
+
+                dgv_list_folio.Columns["dgvl1_gfolio"].Visible = true; dgv_list_folio.Columns["acct_no"].Visible = true; dgv_list_folio.Columns["full_name"].Visible = true; dgv_list_folio.Columns["name"].Visible = true; dgv_list_folio.Columns["chg_code"].Visible = true; dgv_list_folio.Columns["chg_desc"].Visible = true; dgv_list_folio.Columns["ttlpax"].Visible = true;
+                dgv_list_folio.Columns["dgvl1_chg_desc"].Visible = false; dgv_list_folio.Columns["dgvl1_invoice"].Visible = false; dgv_list_folio.Columns["dgvl1_customer"].Visible = false; dgv_list_folio.Columns["dgvl1_chg_code"].Visible = false; dgv_list_folio.Columns["dgvl1_chg_num"].Visible = false; dgv_list_folio.Columns["dgvl1_out_code1"].Visible = false;
+            }
+            else
+            {
+                dt = db.QueryBySQLCode("SELECT cf.*, c.chg_desc, t2.*, gf.acct_no, gf.full_name FROM rssys.chgfil cf JOIN rssys.gfolio gf ON gf.reg_num=cf.reg_num LEFT JOIN rssys.tr02 t2 ON (cf.chg_code=t2.chg_code AND cf.chg_num=t2.chg_num) LEFT JOIN rssys.charge c ON c.chg_code=cf.chg_code WHERE c.isdeposit=FALSE AND c.chg_type='C' AND ((gf.acct_no LIKE '%" + searchtxt + "%' OR gf.full_name LIKE '%" + searchtxt + "%' OR cf.soa_code LIKE '%" + searchtxt + "%' OR gf.reg_num LIKE '%" + searchtxt + "%' OR c.chg_desc LIKE '%" + searchtxt + "%') AND gf.acct_no='" + (_frm_soa.cbo_customer.SelectedValue ?? "").ToString() + "') ORDER BY chg_date desc,t_time  desc");
+
+                dgv_list_folio.Columns["dgvl1_gfolio"].Visible = false; dgv_list_folio.Columns["acct_no"].Visible = false; dgv_list_folio.Columns["full_name"].Visible = false; dgv_list_folio.Columns["name"].Visible = false; dgv_list_folio.Columns["chg_code"].Visible = false; dgv_list_folio.Columns["chg_desc"].Visible = false; dgv_list_folio.Columns["ttlpax"].Visible = false;
+                dgv_list_folio.Columns["dgvl1_chg_desc"].Visible = true; dgv_list_folio.Columns["dgvl1_invoice"].Visible = true; dgv_list_folio.Columns["dgvl1_customer"].Visible = true; dgv_list_folio.Columns["dgvl1_chg_code"].Visible = true; dgv_list_folio.Columns["dgvl1_chg_num"].Visible = true; dgv_list_folio.Columns["dgvl1_out_code1"].Visible = true;
+            }
 
             try
             {
@@ -224,9 +238,19 @@ namespace Accounting_Application_System
                         isExistItem = false;
                         for (int j = 0; j < _frm_soa.dgv_itemlist.Rows.Count; j++)
                         {
-                            if (dt.Rows[r]["reg_num"].ToString() == _frm_soa.dgv_itemlist["dgvl2_gfolio", j].Value.ToString() && dt.Rows[r]["chg_num"].ToString() == _frm_soa.dgv_itemlist["dgvl2_chg_num", j].Value.ToString() && dt.Rows[r]["chg_code"].ToString() == _frm_soa.dgv_itemlist["dgvl2_chg_code", j].Value.ToString())
-                            {  
-                                isExistItem = true;
+                            if (isCustomer == true)
+                            {
+                                if (dt.Rows[r]["reg_num"].ToString() == _frm_soa.dgv_itemlist["dgvl2_gfolio", j].Value.ToString() && dt.Rows[r]["chg_num"].ToString() == _frm_soa.dgv_itemlist["dgvl2_chg_num", j].Value.ToString() && dt.Rows[r]["chg_code"].ToString() == _frm_soa.dgv_itemlist["dgvl2_chg_code", j].Value.ToString())
+                                {
+                                    isExistItem = true;
+                                }
+                            }
+                            else
+                            {
+                                if (dt.Rows[r]["reg_num"].ToString() == _frm_soa.dgv_itemlist["dgvl2_gfolio", j].Value.ToString())
+                                {
+                                    isExistItem = true;
+                                }
                             }
                         }
 
@@ -269,6 +293,13 @@ namespace Accounting_Application_System
                             }
 
                             row.Cells["dgvl1_customer"].Value = dt.Rows[r]["full_name"].ToString();
+                            row.Cells["dgvl1_description"].Value = dt.Rows[r]["reference"].ToString();
+
+                            row.Cells["dgvl1_description"].Value = dt.Rows[r]["reference"].ToString();
+                            row.Cells["dgvl1_description"].Value = dt.Rows[r]["reference"].ToString();
+                            row.Cells["dgvl1_description"].Value = dt.Rows[r]["reference"].ToString();
+                            row.Cells["dgvl1_description"].Value = dt.Rows[r]["reference"].ToString();
+                            row.Cells["dgvl1_description"].Value = dt.Rows[r]["reference"].ToString();
                             row.Cells["dgvl1_description"].Value = dt.Rows[r]["reference"].ToString();
                         }
                     }

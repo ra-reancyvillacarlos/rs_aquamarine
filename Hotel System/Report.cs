@@ -24,7 +24,7 @@ namespace Hotel_System
         int action = 0;
         String fol_num;
         String rpt_no = "";
-        String fileloc_hotel = @"\\RIGHTAPPS\RightApps\Eastland\Reports\Hotel\";
+        String fileloc_hotel = @"\\RIGHTAPPS\RightApps\Aquamarine\Reports\Hotel\";
         /*
          * RPT NO
          * 001 - arr_chkin          - arvlchkin_register.rpt
@@ -58,7 +58,6 @@ namespace Hotel_System
             _schema = db.get_schema();
 
             String system_loc = db.get_system_loc();
-
             fileloc_hotel = system_loc + "\\Reports\\Hotel\\";
         }
 
@@ -85,6 +84,13 @@ namespace Hotel_System
         private void Report_Load(object sender, EventArgs e)
         {
             
+        }
+
+        public void print_chargeslist()
+        {
+            action = 1001;
+
+            bgWorker.RunWorkerAsync();
         }
 
         public void print_contract(String lreg_num)
@@ -272,6 +278,29 @@ namespace Hotel_System
             noofnights = lnoofnights;
             totalcharges = ltotalcharges;
             totalpayments = ltotalpayments;
+
+            action = 6;
+
+            bgWorker.RunWorkerAsync();
+        }
+
+        public void printcurr_gfoliodt(DataTable asdf)
+        {
+            reg_num = asdf.Rows[0]["reg_num"].ToString();
+            acct_no = asdf.Rows[0]["acct_no"].ToString();
+            rom_code = asdf.Rows[0]["rom_code"].ToString();
+            full_name = asdf.Rows[0]["full_name"].ToString();
+            //romrate = "";
+            //pax = "";
+            romtype = db.QueryBySQLCodeRetStr("SELECT name FROM rssys.hotel WHERE code = '" + asdf.Rows[0]["hotel_code"].ToString() + "'");
+            address = db.QueryBySQLCodeRetStr("SELECT address1 FROM rssys.guest WHERE acct_no = '" + asdf.Rows[0]["acct_no"].ToString() + "'");
+            arr_dt = asdf.Rows[0]["arr_date"].ToString();
+            arr_time = asdf.Rows[0]["arr_time"].ToString();
+            dep_dt = asdf.Rows[0]["dep_date"].ToString();
+            dep_time = asdf.Rows[0]["dep_time"].ToString();
+            disc_pct = "0.00";
+            totalcharges = db.QueryBySQLCodeRetStr("SELECT SUM(amount) FROM rssys.chgfil cf LEFT JOIN rssys.charge ch ON ch.chg_code = cf.chg_code WHERE reg_num = '" + asdf.Rows[0]["reg_num"].ToString() + "' AND chg_type = 'C'");
+            totalpayments = db.QueryBySQLCodeRetStr("SELECT SUM(COALESCE((amount * -1), 0.00)) FROM rssys.chgfil cf LEFT JOIN rssys.charge ch ON ch.chg_code = cf.chg_code WHERE reg_num = '" + asdf.Rows[0]["reg_num"].ToString() + "' AND chg_type = 'P'"); ;
 
             action = 6;
 
@@ -1222,187 +1251,15 @@ namespace Hotel_System
                 Double sc_amnt = 0.00, vat_amnt = 0.00, lessdiscount = 0.00, lessdisc_amt = 0.00;
                 String status = "Balance", disc_name = "Discount";
 
-                /*
-                dt_summary.Columns.Add("chg_code", typeof(String));
-                dt_summary.Columns.Add("description", typeof(String));
-                dt_summary.Columns.Add("amount", typeof(double));
-                dt_summary.Columns.Add("vat", typeof(double));
-                dt_summary.Columns.Add("sc", typeof(double));
-                dt_summary.Columns.Add("totalamount", typeof(double));
-                dt_summary.Columns.Add("sumry_status", typeof(String));
-                
-                foreach (DataRow row in dt_summary_sql.Rows)
-                {
-                    inc_pbar(1);
-                    String sumry_status = "1";
-
-                    if(row[0].ToString() == "001" || row[0].ToString() == "018" || row[1].ToString() == "002")
-                    {
-                        try
-                        {
-                            vat_amnt = Convert.ToDouble(row[3].ToString());
-                        }
-                        catch (Exception)
-                        {
-                            vat_amnt = 0.00;
-                        }
-                        try
-                        {
-                            sc_amnt = Convert.ToDouble(row[4].ToString());
-                        }
-                        catch (Exception)
-                        {
-                            sc_amnt = 0.00;
-                        }
-                        row[2] = (Convert.ToDouble(row[2].ToString()) + vat_amnt + sc_amnt).ToString();
-                    }
-                    else if (row[0].ToString() == "011")
-                    {
-                        try
-                        {
-                            vat_amnt = Convert.ToDouble(row[7].ToString());
-                        }
-                        catch (Exception)
-                        {
-                            vat_amnt = 0.00;
-                        }
-                        try
-                        {
-                            sc_amnt = Convert.ToDouble(row[8].ToString());
-                        }
-                        catch (Exception)
-                        {
-                            sc_amnt = 0.00;
-                        }
-
-                        sumry_status = "2";
-                    }
-                    else
-                    {
-                        if (row[6].ToString() == "Y" && row[5].ToString() == "Y")
-                        {
-                            vat_amnt = db.get_tax(Convert.ToDouble(row[2].ToString()), lessdiscount, lessdisc_amt);
-                            sc_amnt = db.get_svccharge(Convert.ToDouble(row[2].ToString()), lessdiscount, lessdisc_amt);
-                        }
-                        else
-                        {
-                            //vat
-                            if (String.IsNullOrEmpty(row[3].ToString()) && row[6].ToString() == "Y")
-                            {
-                                try
-                                {
-                                    vat_amnt = Convert.ToDouble(row[2].ToString()) - (Convert.ToDouble(row[2].ToString()) / 1.12);
-                                }
-                                catch (Exception) { vat_amnt = 0.00; }
-                            }
-                            else
-                            {
-                                vat_amnt = 0.00;
-                            }
-                            //service charge
-                            if (String.IsNullOrEmpty(row[4].ToString()) && row[5].ToString() == "Y")
-                            {
-                                try
-                                {
-                                    sc_amnt = Convert.ToDouble(row[2].ToString()) - (Convert.ToDouble(row[2].ToString()) / 1.11);
-                                }
-                                catch (Exception) { sc_amnt = 0.00; }
-                            }
-                            else
-                            {
-                                sc_amnt = 0.00;
-                            }
-                        }
-                    }
-
-                    //dt_summary.Rows.Add(row[0].ToString(), row[1].ToString(), (Convert.ToDouble(row[2].ToString()) - (vat_amnt + sc_amnt)).ToString("0.00"), vat_amnt.ToString("0.00"), sc_amnt.ToString("0.00"), row[2].ToString(), sumry_status);
-
-                    grand_amnt += Convert.ToDouble(row[2].ToString());
-                    //grand_vat += vat_amnt;
-                    //grand_sc += sc_amnt;
-                }
-
-                transfbal = db.get_transfbal(reg_num);
-                paidout = db.get_paidout(reg_num);
-                totalpayment = db.get_guestchkin_totalpayment(reg_num);
-                //totalpayment = Math.Abs(totalpayment);
-                //MessageBox.Show(grand_amnt.ToString("0.00") + ", " +totalpayment.ToString("0.00"));
-                
-                balance = (grand_amnt + transfbal + paidout) - Math.Abs(totalpayment);
-
-                if (balance >= 0)
-                {
-                    status = "Guest Balance";
-                }
-                else
-                {
-                    status = "Guest Changed";
-                }
-
-                if (Convert.ToDouble(disc_pct) != 0)
-                {
-                    disc_name = "Discount(%)";                    
-                }
-                else
-                {
-                    disc_name = "";
-                    disc_pct = "";
-                } */
-
                 inc_pbar(5);
                 myReportDocument.Load(fileloc_hotel + "CrystalReport1.rpt");
                 myReportDocument.Database.Tables[0].SetDataSource(dt_charge);
-                // myReportDocument.Subreports[0].Database.Tables[0].SetDataSource(dt_summary);
-                /*
-               inc_pbar(2);
-               crParameterDiscreteValue.Value = paidout.ToString("0.00");
-               crParameterFieldDefinitions = myReportDocument.DataDefinition.ParameterFields;
-               crParameterFieldDefinition = crParameterFieldDefinitions["paidout"];
-               crParameterValues = crParameterFieldDefinition.CurrentValues;
-               clr_param();
-
-               inc_pbar(2);
-               crParameterDiscreteValue.Value = Math.Abs(totalpayment).ToString("0.00");
-               crParameterFieldDefinitions = myReportDocument.DataDefinition.ParameterFields;
-               crParameterFieldDefinition = crParameterFieldDefinitions["payment"];
-               crParameterValues = crParameterFieldDefinition.CurrentValues;
-               clr_param();
-
-
-               inc_pbar(2);
-               crParameterDiscreteValue.Value = balance.ToString("0.00");
-               crParameterFieldDefinitions = myReportDocument.DataDefinition.ParameterFields;
-               crParameterFieldDefinition = crParameterFieldDefinitions["balance"];
-               crParameterValues = crParameterFieldDefinition.CurrentValues;
-               clr_param();
-
-               inc_pbar(2);
-               crParameterDiscreteValue.Value = status;
-               crParameterFieldDefinitions = myReportDocument.DataDefinition.ParameterFields;
-               crParameterFieldDefinition = crParameterFieldDefinitions["status"];
-               crParameterValues = crParameterFieldDefinition.CurrentValues;
-               clr_param(); 
-                 
                 inc_pbar(2);
-               crParameterDiscreteValue.Value = transfbal.ToString("0.00");
-               crParameterFieldDefinitions = myReportDocument.DataDefinition.ParameterFields;
-               crParameterFieldDefinition = crParameterFieldDefinitions["transfbal"];
-               crParameterValues = crParameterFieldDefinition.CurrentValues;
-               clr_param();
-                 
-                inc_pbar(2);
-               crParameterDiscreteValue.Value = totalcharges;
-               crParameterFieldDefinitions = myReportDocument.DataDefinition.ParameterFields;
-               crParameterFieldDefinition = crParameterFieldDefinitions["charge"];
-               crParameterValues = crParameterFieldDefinition.CurrentValues;
-               clr_param();                
-                */
-                inc_pbar(2);
-                crParameterDiscreteValue.Value = disc_pct;
-                crParameterFieldDefinitions = myReportDocument.DataDefinition.ParameterFields;
-                crParameterFieldDefinition = crParameterFieldDefinitions["discount"];
-                crParameterValues = crParameterFieldDefinition.CurrentValues;
-                clr_param();
+                //crParameterDiscreteValue.Value = disc_pct;
+                //crParameterFieldDefinitions = myReportDocument.DataDefinition.ParameterFields;
+                //crParameterFieldDefinition = crParameterFieldDefinitions["discount"];
+                //crParameterValues = crParameterFieldDefinition.CurrentValues;
+                //clr_param();
 
                 inc_pbar(2);
                 crParameterDiscreteValue.Value = prevbill;
@@ -1412,11 +1269,7 @@ namespace Hotel_System
                 clr_param();
 
                 inc_pbar(2);
-                crParameterDiscreteValue.Value = disc_name;
-                crParameterFieldDefinitions = myReportDocument.DataDefinition.ParameterFields;
-                crParameterFieldDefinition = crParameterFieldDefinitions["disc_name"];
-                crParameterValues = crParameterFieldDefinition.CurrentValues;
-                clr_param();
+
 
                 inc_pbar(2);
                 crParameterDiscreteValue.Value = reg_num;
@@ -1433,32 +1286,19 @@ namespace Hotel_System
                 clr_param();
 
                 inc_pbar(2);
+                crParameterDiscreteValue.Value = romtype;
+                crParameterFieldDefinitions = myReportDocument.DataDefinition.ParameterFields;
+                crParameterFieldDefinition = crParameterFieldDefinitions["romtype"];
+                crParameterValues = crParameterFieldDefinition.CurrentValues;
+                clr_param();
+
+                inc_pbar(2);
                 crParameterDiscreteValue.Value = full_name;
                 crParameterFieldDefinitions = myReportDocument.DataDefinition.ParameterFields;
                 crParameterFieldDefinition = crParameterFieldDefinitions["guest"];
                 crParameterValues = crParameterFieldDefinition.CurrentValues;
                 clr_param();
 
-                inc_pbar(2);
-                crParameterDiscreteValue.Value = grossrate;
-                crParameterFieldDefinitions = myReportDocument.DataDefinition.ParameterFields;
-                crParameterFieldDefinition = crParameterFieldDefinitions["romrate"];
-                crParameterValues = crParameterFieldDefinition.CurrentValues;
-                clr_param();
-
-                inc_pbar(2);
-                crParameterDiscreteValue.Value = pax;
-                crParameterFieldDefinitions = myReportDocument.DataDefinition.ParameterFields;
-                crParameterFieldDefinition = crParameterFieldDefinitions["pax"];
-                crParameterValues = crParameterFieldDefinition.CurrentValues;
-                clr_param();
-
-                inc_pbar(2);
-                crParameterDiscreteValue.Value = romtype;
-                crParameterFieldDefinitions = myReportDocument.DataDefinition.ParameterFields;
-                crParameterFieldDefinition = crParameterFieldDefinitions["romtype"];
-                crParameterValues = crParameterFieldDefinition.CurrentValues;
-                clr_param();
 
                 inc_pbar(2);
                 crParameterDiscreteValue.Value = address;
@@ -1481,26 +1321,6 @@ namespace Hotel_System
                 crParameterValues = crParameterFieldDefinition.CurrentValues;
                 clr_param();
 
-                inc_pbar(2);
-                crParameterDiscreteValue.Value = dep_dt;
-                crParameterFieldDefinitions = myReportDocument.DataDefinition.ParameterFields;
-                crParameterFieldDefinition = crParameterFieldDefinitions["dep_date"];
-                crParameterValues = crParameterFieldDefinition.CurrentValues;
-                clr_param();
-
-                inc_pbar(2);
-                crParameterDiscreteValue.Value = dep_time;
-                crParameterFieldDefinitions = myReportDocument.DataDefinition.ParameterFields;
-                crParameterFieldDefinition = crParameterFieldDefinitions["dep_time"];
-                crParameterValues = crParameterFieldDefinition.CurrentValues;
-                clr_param();
-
-                inc_pbar(2);
-                crParameterDiscreteValue.Value = noofnights;
-                crParameterFieldDefinitions = myReportDocument.DataDefinition.ParameterFields;
-                crParameterFieldDefinition = crParameterFieldDefinitions["noofnights"];
-                crParameterValues = crParameterFieldDefinition.CurrentValues;
-                clr_param();
 
                 inc_pbar(2);
                 crParameterDiscreteValue.Value = romrate;

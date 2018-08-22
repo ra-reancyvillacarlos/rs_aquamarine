@@ -960,7 +960,6 @@
             this.collectionEntryToolStripMenuItem.Name = "collectionEntryToolStripMenuItem";
             this.collectionEntryToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.collectionEntryToolStripMenuItem.Text = "Collection Entry";
-            this.collectionEntryToolStripMenuItem.Visible = false;
             this.collectionEntryToolStripMenuItem.Click += new System.EventHandler(this.collectionEntryToolStripMenuItem_Click);
             // 
             // disbursementEntryToolStripMenuItem
@@ -968,7 +967,6 @@
             this.disbursementEntryToolStripMenuItem.Name = "disbursementEntryToolStripMenuItem";
             this.disbursementEntryToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.disbursementEntryToolStripMenuItem.Text = "Disbursement Entry";
-            this.disbursementEntryToolStripMenuItem.Visible = false;
             this.disbursementEntryToolStripMenuItem.Click += new System.EventHandler(this.disbursementEntryToolStripMenuItem_Click);
             // 
             // toolStripMenuItem15

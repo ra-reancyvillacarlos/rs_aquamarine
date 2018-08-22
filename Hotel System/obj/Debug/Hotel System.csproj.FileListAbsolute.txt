@@ -3714,4 +3714,3 @@ D:\RIGHTAPPS\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel System.exe.mani
 D:\RIGHTAPPS\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel System.application
 D:\RIGHTAPPS\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel System.exe
 D:\RIGHTAPPS\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel System.pdb
-D:\RIGHTAPPS\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel System.csprojResolveAssemblyReference.cache

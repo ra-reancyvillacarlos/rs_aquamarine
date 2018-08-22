@@ -80,18 +80,10 @@ namespace Hotel_System
             if (lbl_gfolio.Text != "")
             {
                 thisDatabase db = new thisDatabase();
-                //Report rpt = new Report("", "");
-                //double val = (Convert.ToDateTime(lbl_depdate.Text) - Convert.ToDateTime(lbl_arrdate.Text)).TotalDays;
-                //String noofnight = val.ToString();
-                //String rmtyp_desc = db.get_colval("rtype", "typ_desc", "typ_code='" + lbl_rmtype.Text + "'");
-                //String acct_no = db.get_colval("gfolio", "acct_no", "reg_num='" + lbl_gfolio.Text + "'");
+                Report rpt = new Report("", "");
 
-                //if (val == 0)
-                //{
-                //    noofnight = "1";
-                //}
-                //rpt.Show();
-                //rpt.printcurr_gfolio(lbl_gfolio.Text, acct_no, lbl_rm.Text, rtxt_gname.Text, lbl_rate.Text, lbl_pax.Text, rmtyp_desc, lbl_address.Text + " | " + lbl_company.Text, lbl_arrdate.Text, lbl_arrtime.Text, lbl_depdate.Text, lbl_deptime.Text, noofnight, db.get_folio_totalcharges(lbl_gfolio.Text).ToString(), db.get_folio_totalpayment(lbl_gfolio.Text).ToString(), lbl_disc.Text, lbl_grossrate.Text);
+                rpt.printcurr_gfoliodt(db.QueryBySQLCode("SELECT * FROM rssys.gfolio WHERE reg_num = '" + lbl_gfolio.Text + "'"));
+                rpt.Show();
             }
             else
             {
@@ -417,7 +409,6 @@ namespace Hotel_System
 
                 DataTable dt_stat = ((forView == true) ? db.QueryBySQLCode("SELECT reg_num, res_code AS r_code, chg_code, chg_num, rom_code AS room_code, reference, amount, user_id, t_date, t_time FROM rssys.chghist WHERE res_code = '" + guest + "'") : db.QueryBySQLCode("SELECT reg_num, res_code AS r_code, chg_code, chg_num, rom_code AS room_code, reference, amount, user_id, t_date, t_time FROM rssys.chgfil WHERE res_code = '" + guest + "'"));
                 DataTable dt_pbd = ((forView == true) ? db.QueryBySQLCode("SELECT SUM(amount) AS ttl FROM rssys.chghist WHERE res_code = '" + guest + "'") : db.QueryBySQLCode("SELECT SUM(amount) AS ttl FROM rssys.chgfil WHERE res_code = '" + guest + "'"));
-                dgv_gfolio.DataSource = null;
                 dgv_gfolio.DataSource = dt_stat;
                 if (dt_pbd.Rows.Count > 0)
                 {
@@ -524,6 +515,8 @@ namespace Hotel_System
                 btn_add.Enabled = false;
                 btn_edit.Enabled = false;
                 button6.Enabled = false;
+                btn_presentbill.Enabled = true;
+                button3.Enabled = true;
             }
             else
             {
@@ -537,6 +530,8 @@ namespace Hotel_System
                 btn_add.Enabled = true;
                 btn_edit.Enabled = true;
                 button6.Enabled = true;
+                btn_presentbill.Enabled = false;
+                button3.Enabled = false;
             }
         }
     }

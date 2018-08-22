@@ -100,6 +100,7 @@
             this.lbl_balance = new System.Windows.Forms.Label();
             this.bool_check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.chg_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pax = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chg_desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ifree = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -388,6 +389,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.bool_check,
             this.chg_code,
+            this.pax,
             this.chg_desc,
             this.price,
             this.ifree});
@@ -398,6 +400,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(211, 252);
             this.dataGridView1.TabIndex = 37;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             this.dataGridView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseMove);
             // 
@@ -921,6 +924,14 @@
             this.chg_code.ReadOnly = true;
             this.chg_code.Visible = false;
             // 
+            // pax
+            // 
+            this.pax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.pax.HeaderText = "Pax";
+            this.pax.Name = "pax";
+            this.pax.ReadOnly = true;
+            this.pax.Width = 53;
+            // 
             // chg_desc
             // 
             this.chg_desc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -1051,14 +1062,15 @@
         private System.Windows.Forms.TextBox txt_or_amnt;
         public System.Windows.Forms.Label lbl_deposit;
         public System.Windows.Forms.Label lbl_balance;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn bool_check;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chg_code;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chg_desc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ifree;
         public System.Windows.Forms.TextBox textBox2;
         public System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.TextBox textBox4;
         public System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn bool_check;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chg_code;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pax;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chg_desc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ifree;
     }
 }
