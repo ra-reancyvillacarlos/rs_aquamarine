@@ -50,6 +50,12 @@
             this.label16 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.bool_check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.chg_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chg_desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ifree = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbl_grossrate = new System.Windows.Forms.Label();
             this.txt_chg_num = new System.Windows.Forms.TextBox();
             this.lbl_romrate = new System.Windows.Forms.Label();
@@ -98,12 +104,6 @@
             this.label25 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbl_balance = new System.Windows.Forms.Label();
-            this.bool_check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.chg_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pax = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chg_desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ifree = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_side.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_reslist)).BeginInit();
             this.grpbx_res.SuspendLayout();
@@ -403,6 +403,56 @@
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseClick);
             this.dataGridView1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dataGridView1_MouseMove);
+            // 
+            // bool_check
+            // 
+            this.bool_check.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.bool_check.DataPropertyName = "bool_check";
+            this.bool_check.HeaderText = "";
+            this.bool_check.Name = "bool_check";
+            this.bool_check.Width = 5;
+            // 
+            // chg_code
+            // 
+            this.chg_code.DataPropertyName = "chg_code";
+            this.chg_code.HeaderText = "CODE";
+            this.chg_code.Name = "chg_code";
+            this.chg_code.ReadOnly = true;
+            this.chg_code.Visible = false;
+            // 
+            // pax
+            // 
+            this.pax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.pax.HeaderText = "Pax";
+            this.pax.Name = "pax";
+            this.pax.ReadOnly = true;
+            this.pax.Width = 53;
+            // 
+            // chg_desc
+            // 
+            this.chg_desc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.chg_desc.DataPropertyName = "chg_desc";
+            this.chg_desc.HeaderText = "Service";
+            this.chg_desc.Name = "chg_desc";
+            this.chg_desc.ReadOnly = true;
+            this.chg_desc.Width = 72;
+            // 
+            // price
+            // 
+            this.price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.price.DataPropertyName = "price";
+            this.price.HeaderText = "Price";
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            this.price.Width = 60;
+            // 
+            // ifree
+            // 
+            this.ifree.DataPropertyName = "ifree";
+            this.ifree.HeaderText = "INFREE";
+            this.ifree.Name = "ifree";
+            this.ifree.ReadOnly = true;
+            this.ifree.Visible = false;
             // 
             // lbl_grossrate
             // 
@@ -907,56 +957,6 @@
             this.lbl_balance.Size = new System.Drawing.Size(36, 16);
             this.lbl_balance.TabIndex = 5;
             this.lbl_balance.Text = "0.00";
-            // 
-            // bool_check
-            // 
-            this.bool_check.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.bool_check.DataPropertyName = "bool_check";
-            this.bool_check.HeaderText = "";
-            this.bool_check.Name = "bool_check";
-            this.bool_check.Width = 5;
-            // 
-            // chg_code
-            // 
-            this.chg_code.DataPropertyName = "chg_code";
-            this.chg_code.HeaderText = "CODE";
-            this.chg_code.Name = "chg_code";
-            this.chg_code.ReadOnly = true;
-            this.chg_code.Visible = false;
-            // 
-            // pax
-            // 
-            this.pax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.pax.HeaderText = "Pax";
-            this.pax.Name = "pax";
-            this.pax.ReadOnly = true;
-            this.pax.Width = 53;
-            // 
-            // chg_desc
-            // 
-            this.chg_desc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.chg_desc.DataPropertyName = "chg_desc";
-            this.chg_desc.HeaderText = "Service";
-            this.chg_desc.Name = "chg_desc";
-            this.chg_desc.ReadOnly = true;
-            this.chg_desc.Width = 72;
-            // 
-            // price
-            // 
-            this.price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.price.DataPropertyName = "price";
-            this.price.HeaderText = "Price";
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            this.price.Width = 60;
-            // 
-            // ifree
-            // 
-            this.ifree.DataPropertyName = "ifree";
-            this.ifree.HeaderText = "INFREE";
-            this.ifree.Name = "ifree";
-            this.ifree.ReadOnly = true;
-            this.ifree.Visible = false;
             // 
             // add_charge
             // 

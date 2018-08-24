@@ -617,6 +617,11 @@ namespace Hotel_System
                             catch { }
                             try { totl = Convert.ToDouble(dataGridView1["pax", i].Value.ToString()); }
                             catch { }
+                            if (dataGridView1["ifree", i].Value.ToString().ToUpper() == "TRUE" && textBox4.Text.ToString() != "0" && (Convert.ToDouble(dataGridView1["pax", i].Value.ToString()) == Convert.ToDouble(textBox4.Text.ToString())))
+                            {
+                                try { totl = totl - Convert.ToDouble(textBox4.Text.ToString()); }
+                                catch { }
+                            }
                             pck += totl * val_en;
                         }
                     }
@@ -751,7 +756,7 @@ namespace Hotel_System
                             catch { }
                         }
                         dataGridView1["pax", i].ReadOnly = false;
-                        dataGridView1["pax", i].Value = ent_kc_st(((dataGridView1["pax", i].Value.ToString() == "") ? val_en.ToString() : dataGridView1["pax", i].Value.ToString()));
+                        dataGridView1["pax", i].Value = ent_kc_st(((dataGridView1["pax", i].Value.ToString() == "") ? val_en.ToString() : ((dataGridView1["ifree", i].Value.ToString().ToUpper() == "TRUE" && textBox4.Text.ToString() != "0" && (Convert.ToDouble(dataGridView1["pax", i].Value.ToString()) == Convert.ToDouble(textBox4.Text.ToString()))) ? (Convert.ToDouble(dataGridView1["pax", i].Value.ToString()) - Convert.ToDouble(textBox4.Text.ToString())).ToString() : dataGridView1["pax", i].Value.ToString())));
                     }
                     else
                     {
