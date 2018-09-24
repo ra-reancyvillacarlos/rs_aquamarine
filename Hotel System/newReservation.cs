@@ -603,8 +603,8 @@ namespace Hotel_System
             thisDatabase dbs = new thisDatabase();
             DataTable dt_cur = new DataTable();
             DataTable dt_cur_adtl = new DataTable();
-            String WHERE = ((rc == "" || String.IsNullOrEmpty(rc)) ? "SELECT false AS bool_check, 'NORC'::text AS chg_code" : "SELECT true AS bool_check, chg_code FROM rssys.res_gfil WHERE rg_code = '" + rc + "' GROUP BY chg_code ORDER BY chg_code ASC");
-            dt_cur = dbs.QueryBySQLCode("SELECT (CASE WHEN bool_check = true THEN bool_check ELSE false END) AS bool_check, charge.chg_code, chg_desc, price, ifree FROM rssys.charge LEFT JOIN (" + WHERE + ") rs ON rs.chg_code = charge.chg_code WHERE UPPER(charge.chg_code) NOT LIKE 'TRNS%' AND UPPER(charge.chg_code) NOT LIKE 'ADTL%' AND chg_type = 'C' ORDER BY charge.chg_code ASC");
+            String WHERE = ((rc == "" || String.IsNullOrEmpty(rc)) ? "SELECT false AS bool_check, '0'::text AS pax, 'NORC'::text AS chg_code" : "SELECT true AS bool_check, COALESCE(SPLIT_PART(occ_type, ' ', 1), occ_type, '0') AS pax, chg_code FROM rssys.res_gfil WHERE rg_code = '" + rc + "' GROUP BY chg_code, occ_type ORDER BY chg_code ASC");
+            dt_cur = dbs.QueryBySQLCode("SELECT (CASE WHEN bool_check = true THEN bool_check ELSE false END) AS bool_check, COALESCE(pax, '0') AS pax, charge.chg_code, chg_desc, price, ifree FROM rssys.charge LEFT JOIN (" + WHERE + ") rs ON rs.chg_code = charge.chg_code WHERE UPPER(charge.chg_code) NOT LIKE 'TRNS%' AND UPPER(charge.chg_code) NOT LIKE 'ADTL%' AND chg_type = 'C' ORDER BY charge.chg_code ASC");
             dt_cur_adtl = dbs.QueryBySQLCode("SELECT l_code, l_desc, l_price, c_code, c_desc, c_price FROM (SELECT chg_code AS l_code, chg_desc AS l_desc, price AS l_price FROM rssys.charge WHERE UPPER(chg_code) LIKE 'ADTL%' AND UPPER(chg_desc) = 'LUNCH' LIMIT 1) l_b LEFT JOIN (SELECT chg_code AS c_code, chg_desc AS c_desc, price AS c_price FROM rssys.charge WHERE UPPER(chg_code) LIKE 'ADTL%' AND UPPER(chg_desc) = 'CAMERA' LIMIT 1) c_b ON 1=1");
 
             if (dt_cur_adtl.Rows.Count > 0)
@@ -1229,7 +1229,7 @@ namespace Hotel_System
                 {
                     adtl = adtl + (l_price * Convert.ToDouble(textBox1.Text.ToString()));
                 }
-                catch { MessageBox.Show("Please input a numeric value in for lunch"); }
+                catch {  }
 
                 Double ad = Convert.ToInt32(label6.Text.ToString());
                 Double kd = Convert.ToInt32(label7.Text.ToString());
@@ -1305,7 +1305,15 @@ namespace Hotel_System
 
         private void chk_active_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (chk_active.Checked == true)
+            {
+                active_res_where = " WHERE arr_date = current_date";
+            }
+            else
+            {
+                active_res_where = "";
+            }
+            set_reslist(active_res_where);
         }
 
         private void groupBox4_Enter(object sender, EventArgs e)
@@ -1589,6 +1597,19 @@ namespace Hotel_System
                 catch { }
             }
             get_tl();
+        }
+
+        private void btn_print_Click_1(object sender, EventArgs e)
+        {
+            if (comboBox6.SelectedIndex < 0)
+            {
+                MessageBox.Show("Please select Month.");
+                comboBox6.DroppedDown = true;
+            }
+            else
+            {
+
+            }
         }
     }
 }

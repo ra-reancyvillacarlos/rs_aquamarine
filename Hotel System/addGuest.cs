@@ -464,33 +464,33 @@ namespace Hotel_System
             {
                 MessageBox.Show("Pls fill a name.");
             }
-            else if (cbo_company.SelectedIndex == -1)
-            {
-                MessageBox.Show("Company should be selected.");
-            }
-            else if (cbo_country.SelectedIndex == -1)
-            {
-                MessageBox.Show("Country should be selected.");
-            }
-            else if (cbo_title.Text == "")
-            {
-                MessageBox.Show("Name Title should be selected.");
-            }
-            else if (comboBox1.Text == "")
-            {
-                MessageBox.Show("Please select type of guest");
-                comboBox1.DroppedDown = true;
-            }
+            //else if (cbo_company.SelectedIndex == -1)
+            //{
+            //    MessageBox.Show("Company should be selected.");
+            //}
+            //else if (cbo_country.SelectedIndex == -1)
+            //{
+            //    MessageBox.Show("Country should be selected.");
+            //}
+            //else if (cbo_title.Text == "")
+            //{
+            //    MessageBox.Show("Name Title should be selected.");
+            //}
+            //else if (comboBox1.Text == "")
+            //{
+            //    MessageBox.Show("Please select type of guest");
+            //    comboBox1.DroppedDown = true;
+            //}
             else
             {
                 try
                 {
-                    if (cbo_gender.Text == "Female")
-                    {
-                        gender = "F";
-                    }
+                    //if (cbo_gender.Text == "Female")
+                    //{
+                    //    gender = "F";
+                    //}
 
-                    String g_typ = ((comboBox1.Text == "ADULT") ? "A" : ((comboBox1.Text == "KID") ? "K" : "I"));
+                    String g_typ = "A";
 
                     fname = txt_fname.Text.Trim();
                     lname = txt_lname.Text.Trim();

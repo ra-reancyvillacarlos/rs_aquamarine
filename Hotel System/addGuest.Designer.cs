@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgv_search = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -111,6 +111,12 @@
             this.label26 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dgv_guests = new System.Windows.Forms.DataGridView();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_removefromlist = new System.Windows.Forms.Button();
+            this.lbl_noofguest = new System.Windows.Forms.Label();
+            this.btn_cancel_all = new System.Windows.Forms.Button();
+            this.label19 = new System.Windows.Forms.Label();
+            this.btn_save_all = new System.Windows.Forms.Button();
             this.acct_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.full_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -119,12 +125,6 @@
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.country = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.g_typ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_removefromlist = new System.Windows.Forms.Button();
-            this.lbl_noofguest = new System.Windows.Forms.Label();
-            this.btn_cancel_all = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
-            this.btn_save_all = new System.Windows.Forms.Button();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -163,23 +163,23 @@
             this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.Info;
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
             this.splitContainer1.Panel2.Controls.Add(this.groupBox4);
-            this.splitContainer1.Size = new System.Drawing.Size(1264, 589);
-            this.splitContainer1.SplitterDistance = 457;
+            this.splitContainer1.Size = new System.Drawing.Size(1047, 389);
+            this.splitContainer1.SplitterDistance = 404;
             this.splitContainer1.TabIndex = 0;
             // 
             // dgv_search
             // 
             this.dgv_search.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_search.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_search.Location = new System.Drawing.Point(0, 220);
+            this.dgv_search.Location = new System.Drawing.Point(0, 163);
             this.dgv_search.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_search.MultiSelect = false;
             this.dgv_search.Name = "dgv_search";
             this.dgv_search.ReadOnly = true;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.dgv_search.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.dgv_search.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_search.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_search.Size = new System.Drawing.Size(457, 369);
+            this.dgv_search.Size = new System.Drawing.Size(404, 226);
             this.dgv_search.TabIndex = 6;
             this.dgv_search.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_search_CellDoubleClick);
             this.dgv_search.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_search_CellContentClick);
@@ -208,7 +208,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(457, 220);
+            this.groupBox2.Size = new System.Drawing.Size(404, 163);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Search Tennants";
@@ -216,7 +216,7 @@
             // lbl_pgno
             // 
             this.lbl_pgno.AutoSize = true;
-            this.lbl_pgno.Location = new System.Drawing.Point(400, 196);
+            this.lbl_pgno.Location = new System.Drawing.Point(310, 128);
             this.lbl_pgno.Name = "lbl_pgno";
             this.lbl_pgno.Size = new System.Drawing.Size(14, 15);
             this.lbl_pgno.TabIndex = 17;
@@ -225,7 +225,7 @@
             // btn_next
             // 
             this.btn_next.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btn_next.Location = new System.Drawing.Point(419, 188);
+            this.btn_next.Location = new System.Drawing.Point(329, 120);
             this.btn_next.Name = "btn_next";
             this.btn_next.Size = new System.Drawing.Size(31, 25);
             this.btn_next.TabIndex = 16;
@@ -236,7 +236,7 @@
             // btn_prev
             // 
             this.btn_prev.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btn_prev.Location = new System.Drawing.Point(363, 188);
+            this.btn_prev.Location = new System.Drawing.Point(273, 120);
             this.btn_prev.Name = "btn_prev";
             this.btn_prev.Size = new System.Drawing.Size(31, 25);
             this.btn_prev.TabIndex = 15;
@@ -249,7 +249,7 @@
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label20.Location = new System.Drawing.Point(146, 10);
+            this.label20.Location = new System.Drawing.Point(83, 12);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(237, 16);
@@ -261,7 +261,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label21.Location = new System.Drawing.Point(98, 25);
+            this.label21.Location = new System.Drawing.Point(35, 27);
             this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(332, 16);
@@ -272,10 +272,10 @@
             // 
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button1.Image = global::Hotel_System.Properties.Resources.search_32x32;
-            this.button1.Location = new System.Drawing.Point(331, 124);
+            this.button1.Location = new System.Drawing.Point(22, 109);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 55);
+            this.button1.Size = new System.Drawing.Size(122, 47);
             this.button1.TabIndex = 5;
             this.button1.Text = "Search";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -286,49 +286,53 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(9, 157);
+            this.label4.Location = new System.Drawing.Point(36, 116);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 15);
             this.label4.TabIndex = 8;
             this.label4.Text = "Country";
+            this.label4.Visible = false;
             // 
             // cbo_srh_country
             // 
             this.cbo_srh_country.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbo_srh_country.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbo_srh_country.FormattingEnabled = true;
-            this.cbo_srh_country.Location = new System.Drawing.Point(82, 157);
+            this.cbo_srh_country.Location = new System.Drawing.Point(109, 111);
             this.cbo_srh_country.Margin = new System.Windows.Forms.Padding(4);
             this.cbo_srh_country.Name = "cbo_srh_country";
             this.cbo_srh_country.Size = new System.Drawing.Size(237, 23);
             this.cbo_srh_country.TabIndex = 4;
+            this.cbo_srh_country.Visible = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(9, 124);
+            this.label3.Location = new System.Drawing.Point(36, 114);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 15);
             this.label3.TabIndex = 6;
             this.label3.Text = "Company";
+            this.label3.Visible = false;
             // 
             // cbo_srh_company
             // 
             this.cbo_srh_company.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbo_srh_company.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbo_srh_company.FormattingEnabled = true;
-            this.cbo_srh_company.Location = new System.Drawing.Point(82, 126);
+            this.cbo_srh_company.Location = new System.Drawing.Point(109, 111);
             this.cbo_srh_company.Margin = new System.Windows.Forms.Padding(4);
             this.cbo_srh_company.Name = "cbo_srh_company";
             this.cbo_srh_company.Size = new System.Drawing.Size(237, 23);
             this.cbo_srh_company.TabIndex = 3;
+            this.cbo_srh_company.Visible = false;
             // 
             // txt_srh_fname
             // 
-            this.txt_srh_fname.Location = new System.Drawing.Point(82, 95);
+            this.txt_srh_fname.Location = new System.Drawing.Point(109, 80);
             this.txt_srh_fname.Margin = new System.Windows.Forms.Padding(4);
             this.txt_srh_fname.Name = "txt_srh_fname";
             this.txt_srh_fname.Size = new System.Drawing.Size(237, 21);
@@ -338,7 +342,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(8, 92);
+            this.label2.Location = new System.Drawing.Point(35, 77);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 15);
@@ -347,7 +351,7 @@
             // 
             // txt_srh_lname
             // 
-            this.txt_srh_lname.Location = new System.Drawing.Point(82, 65);
+            this.txt_srh_lname.Location = new System.Drawing.Point(109, 50);
             this.txt_srh_lname.Margin = new System.Windows.Forms.Padding(4);
             this.txt_srh_lname.Name = "txt_srh_lname";
             this.txt_srh_lname.Size = new System.Drawing.Size(237, 21);
@@ -357,7 +361,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(8, 64);
+            this.label1.Location = new System.Drawing.Point(35, 49);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 15);
@@ -372,12 +376,11 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(803, 392);
+            this.tabControl1.Size = new System.Drawing.Size(639, 195);
             this.tabControl1.TabIndex = 5;
             // 
             // tabPage1
             // 
-            this.tabPage1.AutoScroll = true;
             this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.chk_complainer);
             this.tabPage1.Controls.Add(this.pnl_guestinfo1);
@@ -391,7 +394,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(795, 364);
+            this.tabPage1.Size = new System.Drawing.Size(631, 167);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Customer Information";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -410,6 +413,7 @@
             this.groupBox3.TabIndex = 91;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tennant Folio History";
+            this.groupBox3.Visible = false;
             // 
             // dgv_gfoliohistory
             // 
@@ -423,6 +427,7 @@
             this.dgv_gfoliohistory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_gfoliohistory.Size = new System.Drawing.Size(443, 156);
             this.dgv_gfoliohistory.TabIndex = 86;
+            this.dgv_gfoliohistory.Visible = false;
             // 
             // chk_complainer
             // 
@@ -434,6 +439,7 @@
             this.chk_complainer.TabIndex = 92;
             this.chk_complainer.Text = "Complainer";
             this.chk_complainer.UseVisualStyleBackColor = true;
+            this.chk_complainer.Visible = false;
             // 
             // pnl_guestinfo1
             // 
@@ -468,7 +474,7 @@
             this.pnl_guestinfo1.Location = new System.Drawing.Point(3, 3);
             this.pnl_guestinfo1.Margin = new System.Windows.Forms.Padding(4);
             this.pnl_guestinfo1.Name = "pnl_guestinfo1";
-            this.pnl_guestinfo1.Size = new System.Drawing.Size(322, 358);
+            this.pnl_guestinfo1.Size = new System.Drawing.Size(322, 161);
             this.pnl_guestinfo1.TabIndex = 92;
             // 
             // label30
@@ -480,6 +486,7 @@
             this.label30.Size = new System.Drawing.Size(67, 15);
             this.label30.TabIndex = 101;
             this.label30.Text = "Guest type:";
+            this.label30.Visible = false;
             // 
             // comboBox1
             // 
@@ -494,6 +501,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(228, 23);
             this.comboBox1.TabIndex = 100;
+            this.comboBox1.Visible = false;
             // 
             // label23
             // 
@@ -504,6 +512,7 @@
             this.label23.Size = new System.Drawing.Size(64, 15);
             this.label23.TabIndex = 98;
             this.label23.Text = "Nationality";
+            this.label23.Visible = false;
             // 
             // cbo_nationality
             // 
@@ -516,6 +525,7 @@
             this.cbo_nationality.Name = "cbo_nationality";
             this.cbo_nationality.Size = new System.Drawing.Size(228, 23);
             this.cbo_nationality.TabIndex = 99;
+            this.cbo_nationality.Visible = false;
             // 
             // txt_contact
             // 
@@ -524,6 +534,7 @@
             this.txt_contact.Name = "txt_contact";
             this.txt_contact.Size = new System.Drawing.Size(228, 21);
             this.txt_contact.TabIndex = 96;
+            this.txt_contact.Visible = false;
             // 
             // label11
             // 
@@ -534,6 +545,7 @@
             this.label11.Size = new System.Drawing.Size(67, 15);
             this.label11.TabIndex = 94;
             this.label11.Text = "Contact No";
+            this.label11.Visible = false;
             // 
             // label12
             // 
@@ -544,6 +556,7 @@
             this.label12.Size = new System.Drawing.Size(39, 15);
             this.label12.TabIndex = 95;
             this.label12.Text = "Email";
+            this.label12.Visible = false;
             // 
             // txt_email
             // 
@@ -552,6 +565,7 @@
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(228, 21);
             this.txt_email.TabIndex = 97;
+            this.txt_email.Visible = false;
             // 
             // label22
             // 
@@ -562,6 +576,7 @@
             this.label22.Size = new System.Drawing.Size(54, 15);
             this.label22.TabIndex = 93;
             this.label22.Text = "Guest ID";
+            this.label22.Visible = false;
             // 
             // txt_acctno
             // 
@@ -571,6 +586,7 @@
             this.txt_acctno.ReadOnly = true;
             this.txt_acctno.Size = new System.Drawing.Size(80, 21);
             this.txt_acctno.TabIndex = 70;
+            this.txt_acctno.Visible = false;
             // 
             // cbo_title
             // 
@@ -605,6 +621,7 @@
             this.txt_addr.Name = "txt_addr";
             this.txt_addr.Size = new System.Drawing.Size(228, 21);
             this.txt_addr.TabIndex = 75;
+            this.txt_addr.Visible = false;
             // 
             // label15
             // 
@@ -615,6 +632,7 @@
             this.label15.Size = new System.Drawing.Size(51, 15);
             this.label15.TabIndex = 52;
             this.label15.Text = "Address";
+            this.label15.Visible = false;
             // 
             // label14
             // 
@@ -625,6 +643,7 @@
             this.label14.Size = new System.Drawing.Size(32, 15);
             this.label14.TabIndex = 51;
             this.label14.Text = "Birth";
+            this.label14.Visible = false;
             // 
             // label13
             // 
@@ -635,6 +654,7 @@
             this.label13.Size = new System.Drawing.Size(59, 15);
             this.label13.TabIndex = 50;
             this.label13.Text = "Company";
+            this.label13.Visible = false;
             // 
             // cbo_company
             // 
@@ -647,6 +667,7 @@
             this.cbo_company.Name = "cbo_company";
             this.cbo_company.Size = new System.Drawing.Size(228, 23);
             this.cbo_company.TabIndex = 79;
+            this.cbo_company.Visible = false;
             // 
             // cbo_gender
             // 
@@ -660,6 +681,7 @@
             this.cbo_gender.Name = "cbo_gender";
             this.cbo_gender.Size = new System.Drawing.Size(134, 23);
             this.cbo_gender.TabIndex = 77;
+            this.cbo_gender.Visible = false;
             // 
             // label9
             // 
@@ -670,6 +692,7 @@
             this.label9.Size = new System.Drawing.Size(48, 15);
             this.label9.TabIndex = 44;
             this.label9.Text = "Country";
+            this.label9.Visible = false;
             // 
             // cbo_country
             // 
@@ -682,6 +705,7 @@
             this.cbo_country.Name = "cbo_country";
             this.cbo_country.Size = new System.Drawing.Size(228, 23);
             this.cbo_country.TabIndex = 78;
+            this.cbo_country.Visible = false;
             // 
             // dtp_dob
             // 
@@ -691,6 +715,7 @@
             this.dtp_dob.Name = "dtp_dob";
             this.dtp_dob.Size = new System.Drawing.Size(86, 21);
             this.dtp_dob.TabIndex = 76;
+            this.dtp_dob.Visible = false;
             // 
             // txt_mname
             // 
@@ -756,10 +781,11 @@
             this.chk_escaper.TabIndex = 91;
             this.chk_escaper.Text = "Escaper";
             this.chk_escaper.UseVisualStyleBackColor = true;
+            this.chk_escaper.Visible = false;
             // 
             // btn_cancel
             // 
-            this.btn_cancel.Location = new System.Drawing.Point(646, 128);
+            this.btn_cancel.Location = new System.Drawing.Point(497, 64);
             this.btn_cancel.Margin = new System.Windows.Forms.Padding(4);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(125, 28);
@@ -771,10 +797,10 @@
             // btn_save
             // 
             this.btn_save.Image = global::Hotel_System.Properties.Resources._1343892363_plus_24;
-            this.btn_save.Location = new System.Drawing.Point(646, 69);
+            this.btn_save.Location = new System.Drawing.Point(497, 22);
             this.btn_save.Margin = new System.Windows.Forms.Padding(4);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(125, 56);
+            this.btn_save.Size = new System.Drawing.Size(125, 39);
             this.btn_save.TabIndex = 96;
             this.btn_save.Text = "Add to list / Save";
             this.btn_save.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -783,7 +809,7 @@
             // 
             // btn_edit
             // 
-            this.btn_edit.Location = new System.Drawing.Point(646, 39);
+            this.btn_edit.Location = new System.Drawing.Point(338, 64);
             this.btn_edit.Margin = new System.Windows.Forms.Padding(4);
             this.btn_edit.Name = "btn_edit";
             this.btn_edit.Size = new System.Drawing.Size(125, 28);
@@ -794,10 +820,10 @@
             // 
             // btn_new
             // 
-            this.btn_new.Location = new System.Drawing.Point(646, 9);
+            this.btn_new.Location = new System.Drawing.Point(338, 22);
             this.btn_new.Margin = new System.Windows.Forms.Padding(4);
             this.btn_new.Name = "btn_new";
-            this.btn_new.Size = new System.Drawing.Size(125, 28);
+            this.btn_new.Size = new System.Drawing.Size(125, 39);
             this.btn_new.TabIndex = 94;
             this.btn_new.Text = "New";
             this.btn_new.UseVisualStyleBackColor = true;
@@ -812,6 +838,7 @@
             this.label16.Size = new System.Drawing.Size(57, 15);
             this.label16.TabIndex = 55;
             this.label16.Text = "Remarks";
+            this.label16.Visible = false;
             // 
             // rtxt_remarks
             // 
@@ -821,6 +848,7 @@
             this.rtxt_remarks.Size = new System.Drawing.Size(228, 100);
             this.rtxt_remarks.TabIndex = 80;
             this.rtxt_remarks.Text = "";
+            this.rtxt_remarks.Visible = false;
             // 
             // tabPage2
             // 
@@ -1063,11 +1091,11 @@
             this.groupBox4.Controls.Add(this.dgv_guests);
             this.groupBox4.Controls.Add(this.panel1);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox4.Location = new System.Drawing.Point(0, 392);
+            this.groupBox4.Location = new System.Drawing.Point(0, 195);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Size = new System.Drawing.Size(803, 197);
+            this.groupBox4.Size = new System.Drawing.Size(639, 194);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "All Guests List";
@@ -1090,60 +1118,9 @@
             this.dgv_guests.Name = "dgv_guests";
             this.dgv_guests.ReadOnly = true;
             this.dgv_guests.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_guests.Size = new System.Drawing.Size(631, 175);
+            this.dgv_guests.Size = new System.Drawing.Size(464, 172);
             this.dgv_guests.TabIndex = 0;
             this.dgv_guests.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_guests_CellClick);
-            // 
-            // acct_no
-            // 
-            this.acct_no.HeaderText = "Tennant#";
-            this.acct_no.Name = "acct_no";
-            this.acct_no.ReadOnly = true;
-            this.acct_no.Width = 55;
-            // 
-            // full_name
-            // 
-            this.full_name.HeaderText = "Tennant Name";
-            this.full_name.Name = "full_name";
-            this.full_name.ReadOnly = true;
-            this.full_name.Width = 150;
-            // 
-            // gender
-            // 
-            this.gender.HeaderText = "Gender";
-            this.gender.Name = "gender";
-            this.gender.ReadOnly = true;
-            this.gender.Width = 50;
-            // 
-            // address
-            // 
-            this.address.HeaderText = "Address";
-            this.address.Name = "address";
-            this.address.ReadOnly = true;
-            // 
-            // contact
-            // 
-            this.contact.HeaderText = "Contact";
-            this.contact.Name = "contact";
-            this.contact.ReadOnly = true;
-            // 
-            // email
-            // 
-            this.email.HeaderText = "Email";
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            // 
-            // country
-            // 
-            this.country.HeaderText = "Country";
-            this.country.Name = "country";
-            this.country.ReadOnly = true;
-            // 
-            // g_typ
-            // 
-            this.g_typ.HeaderText = "Guest Type";
-            this.g_typ.Name = "g_typ";
-            this.g_typ.ReadOnly = true;
             // 
             // panel1
             // 
@@ -1153,9 +1130,9 @@
             this.panel1.Controls.Add(this.label19);
             this.panel1.Controls.Add(this.btn_save_all);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(635, 18);
+            this.panel1.Location = new System.Drawing.Point(468, 18);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(164, 175);
+            this.panel1.Size = new System.Drawing.Size(167, 172);
             this.panel1.TabIndex = 94;
             // 
             // btn_removefromlist
@@ -1221,11 +1198,68 @@
             this.btn_save_all.UseVisualStyleBackColor = false;
             this.btn_save_all.Click += new System.EventHandler(this.btn_save_all_Click);
             // 
+            // acct_no
+            // 
+            this.acct_no.HeaderText = "Tennant#";
+            this.acct_no.Name = "acct_no";
+            this.acct_no.ReadOnly = true;
+            this.acct_no.Width = 55;
+            // 
+            // full_name
+            // 
+            this.full_name.HeaderText = "Tennant Name";
+            this.full_name.Name = "full_name";
+            this.full_name.ReadOnly = true;
+            this.full_name.Width = 400;
+            // 
+            // gender
+            // 
+            this.gender.HeaderText = "Gender";
+            this.gender.Name = "gender";
+            this.gender.ReadOnly = true;
+            this.gender.Visible = false;
+            this.gender.Width = 50;
+            // 
+            // address
+            // 
+            this.address.HeaderText = "Address";
+            this.address.Name = "address";
+            this.address.ReadOnly = true;
+            this.address.Visible = false;
+            // 
+            // contact
+            // 
+            this.contact.HeaderText = "Contact";
+            this.contact.Name = "contact";
+            this.contact.ReadOnly = true;
+            this.contact.Visible = false;
+            // 
+            // email
+            // 
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            this.email.Visible = false;
+            // 
+            // country
+            // 
+            this.country.HeaderText = "Country";
+            this.country.Name = "country";
+            this.country.ReadOnly = true;
+            this.country.Visible = false;
+            // 
+            // g_typ
+            // 
+            this.g_typ.HeaderText = "Guest Type";
+            this.g_typ.Name = "g_typ";
+            this.g_typ.ReadOnly = true;
+            this.g_typ.Visible = false;
+            // 
             // addGuest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 589);
+            this.ClientSize = new System.Drawing.Size(1047, 389);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -1350,6 +1384,10 @@
         private System.Windows.Forms.Button btn_prev;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btn_removefromlist;
+        private System.Windows.Forms.Button btn_cancel_all;
+        private System.Windows.Forms.Button btn_save_all;
         private System.Windows.Forms.DataGridViewTextBoxColumn acct_no;
         private System.Windows.Forms.DataGridViewTextBoxColumn full_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn gender;
@@ -1358,9 +1396,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn country;
         private System.Windows.Forms.DataGridViewTextBoxColumn g_typ;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_removefromlist;
-        private System.Windows.Forms.Button btn_cancel_all;
-        private System.Windows.Forms.Button btn_save_all;
     }
 }

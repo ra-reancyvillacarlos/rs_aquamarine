@@ -423,6 +423,7 @@
             // pax
             // 
             this.pax.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.pax.DataPropertyName = "pax";
             this.pax.HeaderText = "Pax";
             this.pax.Name = "pax";
             this.pax.ReadOnly = true;

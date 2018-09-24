@@ -301,14 +301,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Hotel System.exe" size="5709824">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Hotel System.exe" size="5715456">
       <assemblyIdentity name="Hotel System" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>sakIIM6POaF8JcDM/E4ZeNqZmnk=</dsig:DigestValue>
+        <dsig:DigestValue>kBZspdf3tzK5yKvceuv3ySXctpg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -3647,6 +3647,7 @@ D:\RIGHTAPPS\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.Wind
 D:\RIGHTAPPS\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\Microsoft.ReportViewer.Common.dll
 D:\RIGHTAPPS\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
 D:\RIGHTAPPS\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\Microsoft.ReportViewer.WebForms.DLL
+D:\RIGHTAPPS\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel System.csprojResolveAssemblyReference.cache
 D:\RIGHTAPPS\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel System.csproj.ResolveComReference.cache
 D:\RIGHTAPPS\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.AboutBox1.resources
 D:\RIGHTAPPS\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.addGroup.resources

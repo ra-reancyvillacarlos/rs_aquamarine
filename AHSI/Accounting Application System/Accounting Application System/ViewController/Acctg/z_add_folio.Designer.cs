@@ -28,18 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.dgv_list_folio = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txt_gfolio = new System.Windows.Forms.TextBox();
-            this.btn_search = new System.Windows.Forms.Button();
             this.btn_close = new System.Windows.Forms.Button();
-            this.btn_submit = new System.Windows.Forms.Button();
-            this.bgworker = new System.ComponentModel.BackgroundWorker();
+            this.dgv_list_folio = new System.Windows.Forms.DataGridView();
             this.dgvl1_chk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dgvl1_lnnum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvl1_gfolio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +55,12 @@
             this.dgvl1_out_desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvl1_chg_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvl1_chg_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_gfolio = new System.Windows.Forms.TextBox();
+            this.btn_search = new System.Windows.Forms.Button();
+            this.btn_submit = new System.Windows.Forms.Button();
+            this.bgworker = new System.ComponentModel.BackgroundWorker();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_list_folio)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -78,20 +78,36 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Guest Folio Charges List";
             // 
+            // btn_close
+            // 
+            this.btn_close.BackColor = System.Drawing.SystemColors.Info;
+            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_close.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.btn_close.Location = new System.Drawing.Point(562, 439);
+            this.btn_close.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(112, 41);
+            this.btn_close.TabIndex = 73;
+            this.btn_close.Text = "Close";
+            this.btn_close.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_close.UseVisualStyleBackColor = false;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+            // 
             // dgv_list_folio
             // 
             this.dgv_list_folio.AllowUserToDeleteRows = false;
             this.dgv_list_folio.AllowUserToResizeRows = false;
             this.dgv_list_folio.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgv_list_folio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_list_folio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_list_folio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_list_folio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_list_folio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvl1_chk,
@@ -115,28 +131,28 @@
             this.dgvl1_out_desc,
             this.dgvl1_chg_code,
             this.dgvl1_chg_num});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_list_folio.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_list_folio.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_list_folio.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgv_list_folio.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dgv_list_folio.Location = new System.Drawing.Point(3, 16);
             this.dgv_list_folio.MultiSelect = false;
             this.dgv_list_folio.Name = "dgv_list_folio";
             this.dgv_list_folio.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_list_folio.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_list_folio.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_list_folio.RowHeadersWidth = 15;
             this.dgv_list_folio.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_list_folio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -145,92 +161,6 @@
             this.dgv_list_folio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_list_folio_CellContentClick);
             this.dgv_list_folio.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_list_folio_CellDoubleClick);
             this.dgv_list_folio.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgv_list_folio_CellPainting);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.txt_gfolio);
-            this.groupBox2.Controls.Add(this.btn_search);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox2.Location = new System.Drawing.Point(0, 0);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(806, 62);
-            this.groupBox2.TabIndex = 72;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Search";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 17);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 13);
-            this.label4.TabIndex = 77;
-            this.label4.Text = "Tennant Or  Guest Folio";
-            // 
-            // txt_gfolio
-            // 
-            this.txt_gfolio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_gfolio.Location = new System.Drawing.Point(19, 36);
-            this.txt_gfolio.Name = "txt_gfolio";
-            this.txt_gfolio.Size = new System.Drawing.Size(261, 21);
-            this.txt_gfolio.TabIndex = 75;
-            this.txt_gfolio.TextChanged += new System.EventHandler(this.txt_gfolio_TextChanged);
-            // 
-            // btn_search
-            // 
-            this.btn_search.BackColor = System.Drawing.SystemColors.Info;
-            this.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_search.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.btn_search.Image = global::Accounting_Application_System.Properties.Resources.journal3;
-            this.btn_search.Location = new System.Drawing.Point(285, 16);
-            this.btn_search.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_search.Name = "btn_search";
-            this.btn_search.Size = new System.Drawing.Size(112, 41);
-            this.btn_search.TabIndex = 73;
-            this.btn_search.Text = "Search";
-            this.btn_search.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_search.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_search.UseVisualStyleBackColor = false;
-            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
-            // 
-            // btn_close
-            // 
-            this.btn_close.BackColor = System.Drawing.SystemColors.Info;
-            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_close.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.btn_close.Location = new System.Drawing.Point(562, 439);
-            this.btn_close.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(112, 41);
-            this.btn_close.TabIndex = 73;
-            this.btn_close.Text = "Close";
-            this.btn_close.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_close.UseVisualStyleBackColor = false;
-            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
-            // 
-            // btn_submit
-            // 
-            this.btn_submit.BackColor = System.Drawing.SystemColors.Info;
-            this.btn_submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_submit.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.btn_submit.Location = new System.Drawing.Point(678, 501);
-            this.btn_submit.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_submit.Name = "btn_submit";
-            this.btn_submit.Size = new System.Drawing.Size(112, 41);
-            this.btn_submit.TabIndex = 69;
-            this.btn_submit.Text = "Add to List";
-            this.btn_submit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_submit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_submit.UseVisualStyleBackColor = false;
-            this.btn_submit.Click += new System.EventHandler(this.btn_submit_Click);
-            // 
-            // bgworker
-            // 
-            this.bgworker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgworker_DoWork);
             // 
             // dgvl1_chk
             // 
@@ -369,6 +299,76 @@
             this.dgvl1_chg_num.HeaderText = "Chg Num";
             this.dgvl1_chg_num.Name = "dgvl1_chg_num";
             this.dgvl1_chg_num.ReadOnly = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.txt_gfolio);
+            this.groupBox2.Controls.Add(this.btn_search);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(806, 62);
+            this.groupBox2.TabIndex = 72;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Search";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(16, 17);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(120, 13);
+            this.label4.TabIndex = 77;
+            this.label4.Text = "Tennant Or  Guest Folio";
+            // 
+            // txt_gfolio
+            // 
+            this.txt_gfolio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_gfolio.Location = new System.Drawing.Point(19, 36);
+            this.txt_gfolio.Name = "txt_gfolio";
+            this.txt_gfolio.Size = new System.Drawing.Size(261, 21);
+            this.txt_gfolio.TabIndex = 75;
+            this.txt_gfolio.TextChanged += new System.EventHandler(this.txt_gfolio_TextChanged);
+            // 
+            // btn_search
+            // 
+            this.btn_search.BackColor = System.Drawing.SystemColors.Info;
+            this.btn_search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_search.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.btn_search.Image = global::Accounting_Application_System.Properties.Resources.journal3;
+            this.btn_search.Location = new System.Drawing.Point(285, 16);
+            this.btn_search.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_search.Name = "btn_search";
+            this.btn_search.Size = new System.Drawing.Size(112, 41);
+            this.btn_search.TabIndex = 73;
+            this.btn_search.Text = "Search";
+            this.btn_search.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_search.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_search.UseVisualStyleBackColor = false;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
+            // 
+            // btn_submit
+            // 
+            this.btn_submit.BackColor = System.Drawing.SystemColors.Info;
+            this.btn_submit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_submit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_submit.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.btn_submit.Location = new System.Drawing.Point(678, 501);
+            this.btn_submit.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_submit.Name = "btn_submit";
+            this.btn_submit.Size = new System.Drawing.Size(112, 41);
+            this.btn_submit.TabIndex = 69;
+            this.btn_submit.Text = "Add to List";
+            this.btn_submit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_submit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_submit.UseVisualStyleBackColor = false;
+            this.btn_submit.Click += new System.EventHandler(this.btn_submit_Click);
+            // 
+            // bgworker
+            // 
+            this.bgworker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgworker_DoWork);
             // 
             // z_add_folio
             // 

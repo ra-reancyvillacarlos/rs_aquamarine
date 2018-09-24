@@ -196,6 +196,7 @@
             this.rtxt_gname = new System.Windows.Forms.RichTextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.tbcntrl_option.SuspendLayout();
             this.tpg_opt_1.SuspendLayout();
@@ -277,7 +278,7 @@
             this.groupBox2.Controls.Add(this.btn_search);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.ForeColor = System.Drawing.SystemColors.Info;
-            this.groupBox2.Location = new System.Drawing.Point(0, 273);
+            this.groupBox2.Location = new System.Drawing.Point(0, 367);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(187, 165);
             this.groupBox2.TabIndex = 47;
@@ -316,6 +317,7 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.comboBox6);
             this.groupBox7.Controls.Add(this.btn_print);
             this.groupBox7.Controls.Add(this.btn_additem);
             this.groupBox7.Controls.Add(this.btn_delitem);
@@ -324,7 +326,7 @@
             this.groupBox7.ForeColor = System.Drawing.SystemColors.Info;
             this.groupBox7.Location = new System.Drawing.Point(0, 0);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(187, 273);
+            this.groupBox7.Size = new System.Drawing.Size(187, 367);
             this.groupBox7.TabIndex = 46;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Main Option";
@@ -333,13 +335,14 @@
             // 
             this.btn_print.BackColor = System.Drawing.Color.Peru;
             this.btn_print.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_print.Location = new System.Drawing.Point(12, 204);
+            this.btn_print.Location = new System.Drawing.Point(12, 271);
             this.btn_print.Name = "btn_print";
             this.btn_print.Size = new System.Drawing.Size(160, 55);
             this.btn_print.TabIndex = 9;
             this.btn_print.Text = "Print List";
             this.btn_print.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_print.UseVisualStyleBackColor = false;
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
             // 
             // btn_additem
             // 
@@ -1879,6 +1882,30 @@
             this.label20.TabIndex = 43;
             this.label20.Text = "Contract No";
             // 
+            // comboBox6
+            // 
+            this.comboBox6.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Items.AddRange(new object[] {
+            "JANUARY",
+            "FEBRUARY",
+            "MARCH",
+            "APRIL",
+            "MAY",
+            "JUNE",
+            "JULY",
+            "AUGUST",
+            "SEPTEMBER",
+            "OCTOBER",
+            "NOVEMBER",
+            "DECEMBER"});
+            this.comboBox6.Location = new System.Drawing.Point(12, 242);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(160, 23);
+            this.comboBox6.TabIndex = 12;
+            // 
             // newGuestBilling
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -2073,5 +2100,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn net_income;
         private System.Windows.Forms.DataGridViewTextBoxColumn user_id1;
         private System.Windows.Forms.DataGridViewTextBoxColumn comttl;
+        private System.Windows.Forms.ComboBox comboBox6;
     }
 }

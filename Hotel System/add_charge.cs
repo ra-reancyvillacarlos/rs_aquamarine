@@ -647,8 +647,8 @@ namespace Hotel_System
             thisDatabase dbs = new thisDatabase();
             DataTable dt_cur = new DataTable();
 
-            String WHERE = (((rg == "" || String.IsNullOrEmpty(rg)) && (cc == "" || String.IsNullOrEmpty(cc)) && (cn == "" || String.IsNullOrEmpty(cn))) ? "SELECT false AS bool_check, 'NORC'::text AS chg_code" : "SELECT true AS bool_check, chg_code FROM rssys.chgfil WHERE reg_num = '" + rg + "' AND chg_code = '" + cc + "' AND chg_num = '" + cn + "' GROUP BY chg_code ORDER BY chg_code ASC");
-            dt_cur = dbs.QueryBySQLCode("SELECT (CASE WHEN bool_check = true THEN bool_check ELSE false END) AS bool_check, charge.chg_code, chg_desc, price, ifree FROM rssys.charge LEFT JOIN (" + WHERE + ") rs ON rs.chg_code = charge.chg_code WHERE UPPER(charge.chg_code) NOT LIKE 'TRNS%' AND chg_type = 'C' ORDER BY charge.chg_code ASC");
+            String WHERE = (((rg == "" || String.IsNullOrEmpty(rg)) && (cc == "" || String.IsNullOrEmpty(cc)) && (cn == "" || String.IsNullOrEmpty(cn))) ? "SELECT false AS bool_check, '0'::text AS pax, 'NORC'::text AS chg_code" : "SELECT true AS bool_check, SPLIT_PART(reference, ' ', 1) AS pax, chg_code FROM rssys.chgfil WHERE reg_num = '" + rg + "' AND chg_code = '" + cc + "' AND chg_num = '" + cn + "' GROUP BY chg_code, reference ORDER BY chg_code ASC");
+            dt_cur = dbs.QueryBySQLCode("SELECT (CASE WHEN bool_check = true THEN bool_check ELSE false END) AS bool_check, COALESCE(pax, '0') AS pax, charge.chg_code, chg_desc, price, ifree FROM rssys.charge LEFT JOIN (" + WHERE + ") rs ON rs.chg_code = charge.chg_code WHERE UPPER(charge.chg_code) NOT LIKE 'TRNS%' AND chg_type = 'C' ORDER BY charge.chg_code ASC");
 
             dataGridView1.DataSource = dt_cur;
         }

@@ -534,5 +534,21 @@ namespace Hotel_System
                 button3.Enabled = false;
             }
         }
+
+        private void btn_print_Click(object sender, EventArgs e)
+        {
+            if (comboBox6.SelectedIndex < 0)
+            {
+                MessageBox.Show("Please select Month.");
+                comboBox6.DroppedDown = true;
+            }
+            else
+            {
+                Report rpt = new Report();
+
+                rpt.print_monthlyreserv((comboBox6.SelectedIndex + 1).ToString());
+                rpt.ShowDialog();
+            }
+        }
     }
 }

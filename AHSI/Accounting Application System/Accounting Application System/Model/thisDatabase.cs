@@ -19,8 +19,8 @@ namespace Accounting_Application_System
 
         public static String schema_static = "rssys";
 
-        public static String servers = System.IO.File.ReadAllText(driveloc + comp_folder + "\\Publish\\localDatabase.txt");
-        //public static String servers = "localhost";
+        //public static String servers = System.IO.File.ReadAllText(driveloc + comp_folder + "\\Publish\\localDatabase.txt");
+        public static String servers = "localhost";
         public String serv = servers;
         public String pwd = svr_pass;
         public String l_db = lcl_db;
@@ -430,6 +430,34 @@ namespace Accounting_Application_System
                 this.CloseConn();
 
                 return ds.Tables[0];
+            }
+            catch (Exception er)
+            {
+                //MessageBox.Show(er.Message);
+                return null;
+            }
+        }
+        public String QueryBySQLCodeRetStr(String SQL)
+        {
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+
+            try
+            {
+                this.OpenConn();
+
+                //MessageBox.Show(SQL);
+                //Console.WriteLine(SQL);
+
+                NpgsqlDataAdapter da = new NpgsqlDataAdapter(SQL, conn);
+
+                ds.Reset();
+
+                da.Fill(ds);
+
+                this.CloseConn();
+
+                return ds.Tables[0].Rows[0][0].ToString();
             }
             catch (Exception er)
             {

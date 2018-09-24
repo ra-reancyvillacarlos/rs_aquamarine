@@ -333,31 +333,58 @@ namespace Accounting_Application_System
 
         private void btn_print_Click(object sender, EventArgs e)
         {
-            int r = dgv_list.CurrentRow.Index;
-            String soa_code = (dgv_list["dgvl_soa_code", r].Value ?? "").ToString();
-            if (comboBox1.SelectedIndex == 0)
+            try
             {
-                if (dgv_list.Rows.Count > 0)
+                int r = dgv_list.CurrentRow.Index;
+                String soa_code = (dgv_list["dgvl_soa_code", r].Value ?? "").ToString();
+                String soatype = (dgv_list["soatype", r].Value ?? "").ToString();
+                if (comboBox5.SelectedIndex < 0)
                 {
-                    if (!String.IsNullOrEmpty(soa_code))
+                    MessageBox.Show("Select what to print.");
+                    comboBox5.DroppedDown = true;
+                }
+                else
+                {
+                    if (dgv_list.Rows.Count > 0)
                     {
-                        if ((dgv_list["dgvl_cancel", r].Value ?? "").ToString() == "Y")
+                        if (!String.IsNullOrEmpty(soa_code))
                         {
-                            MessageBox.Show("Selected SAO already cancel.");
+                            if ((dgv_list["dgvl_cancel", r].Value ?? "").ToString() == "Y")
+                            {
+                                MessageBox.Show("Selected SAO already cancel.");
+                            }
+                            else
+                            {
+                                String debt_code = dgv_list["dgvl_debt_code", r].Value.ToString()
+                                    , debt_name = dgv_list["dgvl_debt_name", r].Value.ToString()
+                                    , sao_date = dgv_list["dgvl_soa_date", r].Value.ToString()
+                                    , due_date = dgv_list["dgvl_due_date", r].Value.ToString()
+                                    , t_date = dgv_list["dgvl_t_date", r].Value.ToString()
+                                    , t_time = dgv_list["dgvl_t_time", r].Value.ToString()
+                                    , comments = dgv_list["dgvl_comments", r].Value.ToString();
+
+                                Report rpt = new Report();
+                                if (comboBox5.SelectedIndex == 0)
+                                {
+                                    if (soatype == "Agency")
+                                    {
+                                        rpt.print_statementofaccount_agency(dgv_list["dgvl_debt_code", r].Value.ToString(), soa_code, dgv_list["dgvl_t_date", r].Value.ToString());
+                                    }
+                                    else if (soatype == "Customer")
+                                    {
+                                        rpt.print_statementofaccount(soa_code, debt_code, debt_name, sao_date, due_date, gm.toDateString(t_date, ""), t_time, comments);
+                                    }
+                                }
+                                else
+                                {
+                                    rpt.print_commissionforagency(dgv_list["dgvl_debt_code", r].Value.ToString(), soa_code, dgv_list["dgvl_t_date", r].Value.ToString());
+                                }
+                                rpt.ShowDialog();
+                            }
                         }
                         else
                         {
-                            String debt_code = dgv_list["dgvl_debt_code", r].Value.ToString()
-                                , debt_name = dgv_list["dgvl_debt_name", r].Value.ToString()
-                                , sao_date = dgv_list["dgvl_soa_date", r].Value.ToString()
-                                , due_date = dgv_list["dgvl_due_date", r].Value.ToString()
-                                , t_date = dgv_list["dgvl_t_date", r].Value.ToString()
-                                , t_time = dgv_list["dgvl_t_time", r].Value.ToString()
-                                , comments = dgv_list["dgvl_comments", r].Value.ToString();
-
-                            Report rpt = new Report();
-                            rpt.print_statementofaccount(soa_code, debt_code, debt_name, sao_date, due_date, gm.toDateString(t_date, ""), t_time, comments);
-                            rpt.ShowDialog();
+                            MessageBox.Show("No SOA item selected.");
                         }
                     }
                     else
@@ -365,25 +392,25 @@ namespace Accounting_Application_System
                         MessageBox.Show("No SOA item selected.");
                     }
                 }
-                else
-                {
-                    MessageBox.Show("No SOA item selected.");
-                }
+                //if (comboBox1.SelectedIndex == 0)
+                //{
+                //}
+                //else if(comboBox1.SelectedIndex == 1)
+                //{
+                //    if (!String.IsNullOrEmpty(soa_code))
+                //    {
+
+                //        Report rpt = new Report();
+                //        rpt.print_statementofaccount_agency(dgv_list["dgvl_debt_code", r].Value.ToString(), soa_code, dgv_list["dgvl_t_date", r].Value.ToString());
+                //        rpt.ShowDialog();
+                //    }
+                //    else
+                //    {
+                //        MessageBox.Show("No SOA item selected.");
+                //    }
+                //}
             }
-            else if(comboBox1.SelectedIndex == 1)
-            {
-                if (!String.IsNullOrEmpty(soa_code))
-                {
-                        
-                    Report rpt = new Report();
-                    rpt.print_statementofaccount_agency(dgv_list["dgvl_debt_code", r].Value.ToString(), soa_code, dgv_list["dgvl_t_date", r].Value.ToString());
-                    rpt.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("No SOA item selected.");
-                }
-            }
+            catch { }
         }
 
         private void btn_printsoa_Click(object sender, EventArgs e)
@@ -592,19 +619,23 @@ namespace Accounting_Application_System
                 }
                 else
                 {
-                    col = "soa_code='" + code + "', debt_code='" + customerid + "', debt_name='" + customer_name + "', soa_period='" + soa_period + "', user_id='" + user_id + "', due_date='" + due_date + "', comments='" + comments + "', t_date='" + t_date + "', t_time='" + t_time + "', soatype='" + comboBox4.Text.ToString() + "'";
+                    try
+                    {
+                        col = "soa_code='" + code + "', debt_code='" + customerid + "', debt_name='" + customer_name + "', soa_period='" + soa_period + "', user_id='" + user_id + "', due_date='" + due_date + "', comments='" + comments + "', t_date='" + t_date + "', t_time='" + t_time + "', soatype='" + comboBox4.Text.ToString() + "'";
 
-                    if (db.UpdateOnTable(table, col, "soa_code='" + code + "'"))
-                    {
-                        db.DeleteOnTable("soalne", "soa_code='" + code + "'");
-                        add_items(code);
+                        if (db.UpdateOnTable(table, col, "soa_code='" + code + "'"))
+                        {
+                            db.DeleteOnTable("soalne", "soa_code='" + code + "'");
+                            add_items(code);
                         
-                        success = true;
+                            success = true;
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed on saving.");
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("Failed on saving.");
-                    }
+                    catch { }
                 }
 
                 if (success)
