@@ -36,41 +36,9 @@ namespace Accounting_Application_System
             String j_type = db.get_colval("m05type", "code", "lower(name)='" + jtype_name.ToLower() + "'");
             gc.load_journal(cbo_ctype, j_type);
             gc.load_journal(cbo_codetype, j_type);
-            thisDatabase db2 = new thisDatabase();
-            String grp_id2 = "";
-            DataTable dt24 = db2.QueryBySQLCode("SELECT * from rssys.x08 WHERE uid='" + GlobalClass.username + "'");
-            if (dt24.Rows.Count > 0)
-            {
-                grp_id2 = dt24.Rows[0]["grp_id"].ToString();
-            }
-            DataTable dt23 = db2.QueryBySQLCode("SELECT a.*, b.* FROM rssys.x06 a LEFT JOIN rssys.x05 b ON a.mod_id = b.mod_id  WHERE a.grp_id = '" + grp_id2 + "' AND a.mod_id='A4000' ORDER BY b.pla, b.mod_id");
 
-            if (dt23.Rows.Count > 0)
-            {
-                String add = "", update = "", delete = "", print = "";
-                add = dt23.Rows[0]["add"].ToString();
-                update = dt23.Rows[0]["upd"].ToString();
-                delete = dt23.Rows[0]["cancel"].ToString();
-                print = dt23.Rows[0]["print"].ToString();
+            dtp_frm.Value = DateTime.Parse(dtp_frm.Value.ToString("yyyy-MM-01"));
 
-                if (add == "n")
-                {
-                    btn_new.Enabled = false;
-                }
-                if (update == "n")
-                {
-                    btn_upd.Enabled = false;
-                }
-                if (delete == "n")
-                {
-                    btn_cancel.Enabled = false;
-                }
-                if (print == "n")
-                {
-                    btn_print.Enabled = false;
-                }
-
-            }
             disp_dgvlist();
         }
 
@@ -223,8 +191,8 @@ namespace Accounting_Application_System
             String tbl_ln1 = "collne";
             String tbl_ln2 = "collne2";
             Boolean success = false;
-            DateTime mydate = DateTime.Parse(db.get_systemdate("yyyy-MM-dd"));
-            String ord_code = "", ord_date = "", customer = "", jrnlz = "", out_code = "", fy = "", j_code = "", j_num = "", at_code = "", total_amnt = "", dr_cr = "", t_desc = "", collector = "";
+
+            String ord_code = "", ord_date = "", customer = "", jrnlz = "", out_code = "", fy = "", mo = "", fymo = "", j_code = "", j_num = "", at_code = "", total_amnt = "", dr_cr = "", t_desc = "", collector = "";
 
             //if(cbo_collector.SelectedIndex == -1)
             //{
@@ -246,11 +214,15 @@ namespace Accounting_Application_System
             }
             else
             {
+                trnx_date = dtp_trnxdate.Value.ToString("yyyy-MM-dd");
+                fymo = db.get_fy_period(trnx_date);
+                fy = fymo.Split('-').GetValue(0).ToString();
+                mo = fymo.Split('-').GetValue(1).ToString();
+
                 j_num = txt_code.Text; 
                 j_code = this.j_code;
                 debt_code = cbo_customer.SelectedValue.ToString();
                 debt_name = cbo_customer.Text;
-                trnx_date = dtp_trnxdate.Value.ToString("yyyy-MM-dd");
                 user_id = GlobalClass.username;
                 t_date = db.get_systemdate("yyyy-MM-dd");
                 t_time = DateTime.Now.ToString("HH:mm");
@@ -258,12 +230,8 @@ namespace Accounting_Application_System
                 or_type = "NA";
                 or_ref = txt_reference.Text;
                 coll_code = (cbo_collector.SelectedValue ?? "").ToString();
-                DataTable dtfy = new DataTable();
-                dtfy = db.QueryBySQLCode("SELECT fy from rssys.m99");
-                if (dtfy.Rows.Count > 0)
-                {
-                    fy = dtfy.Rows[0]["fy"].ToString();
-                }
+                
+                
                 t_desc = txt_reference.Text;
                 if (String.IsNullOrEmpty(t_desc))
                 {
@@ -281,7 +249,7 @@ namespace Accounting_Application_System
                     // or_ref = "REF#:" + code;
                     // col = "col_code, soa_code, debt_code, debt_name, trnx_date, or_type, or_ref, coll_code, user_id, t_date, t_time";
                     col = "fy,j_code,j_num,t_date,t_desc,user_id,sysdate, systime,mo,collectorid";
-                    val = "'" + fy + "', '" + j_code + "', '" + j_num + "', '" + t_date + "', '" + t_desc + "', '" + user_id + "', '" + t_date + "', '" + t_time + "', '" + mydate.ToString("MM") + "','" + collector + "'";
+                    val = "'" + fy + "', '" + j_code + "', '" + j_num + "', '" + trnx_date + "', '" + t_desc + "', '" + user_id + "', '" + t_date + "', '" + t_time + "', '" + mo + "','" + collector + "'";
 
                     if (db.InsertOnTable("tr01", col, val))
                     {
@@ -300,7 +268,7 @@ namespace Accounting_Application_System
                 }
                 else
                 {
-                    col = "fy='" + fy + "', j_code='" + j_code + "', j_num='" + j_num + "', t_date='" + t_date + "', t_desc='" + t_desc + "', user_id='" + user_id + "', sysdate='" + t_date + "', systime='" + t_time + "', mo='" + mydate.ToString("MM") + "', collectorid='" + collector + "'";
+                    col = "fy='" + fy + "', j_code='" + j_code + "', j_num='" + j_num + "', t_date='" + trnx_date + "', t_desc='" + t_desc + "', user_id='" + user_id + "', sysdate='" + t_date + "', systime='" + t_time + "', mo='" + mo + "', collectorid='" + collector + "'";
 
                     if (db.UpdateOnTable("tr01", col, "j_num='" + j_num + "' AND j_code='" + j_code + "'"))
                     {
@@ -447,7 +415,7 @@ namespace Accounting_Application_System
             try
             {
                 //dt2 = db.get_collne2_list(code);
-                dt2 = db.QueryBySQLCode("SELECT tr2.*,tr1.ck_num,tr1.ck_date FROM rssys.tr02 tr2 LEFT JOIN rssys.tr01 tr1 ON (tr2.j_num = tr1.j_num  AND tr2.j_code = tr1.j_code) WHERE tr2.j_num='" + code + "' AND tr2.j_code='" + this.j_code + "'");
+                dt2 = db.QueryBySQLCode("SELECT tr2.*,tr1.ck_num,tr1.ck_date FROM rssys.tr02 tr2 LEFT JOIN rssys.tr01 tr1 ON (tr2.j_num = tr1.j_num  AND tr2.j_code = tr1.j_code) WHERE tr2.j_num='" + code + "' AND tr2.j_code='" + this.j_code + "' AND COALESCE(sl_code,'')<>''");
 
                 //SELECT DISTINCT tr1.*, tr2.sl_code, tr2.sl_name  FROM rssys.tr01 tr1 LEFT JOIN rssys.tr02 tr2 ON tr1.j_num=tr2.j_num WHERE  COALESCE(sl_code,'')<>'' AND tr1.sysdate BETWEEN '" + dateFrom + "' AND '" + dateTo + "' " + WHERE + " ORDER BY j_num ASC
 
@@ -520,7 +488,7 @@ namespace Accounting_Application_System
                     WHERE = " AND tr1.j_code IN (SELECT m5.j_code FROM rssys.m05 m5 WHERE m5.j_type='" + j_type + "') ";
                 }
 
-                dt = db.QueryBySQLCode("SELECT DISTINCT tr1.*, tr2.sl_code, tr2.sl_name  FROM rssys.tr01 tr1 LEFT JOIN rssys.tr02 tr2 ON tr1.j_num=tr2.j_num WHERE  COALESCE(tr2.sl_code,'')<>'' AND tr1.sysdate BETWEEN '" + dateFrom + "' AND '" + dateTo + "' " + WHERE + " ORDER BY j_num ASC");
+                dt = db.QueryBySQLCode("SELECT DISTINCT tr1.*, tr2.sl_code, tr2.sl_name  FROM rssys.tr01 tr1 LEFT JOIN rssys.tr02 tr2 ON tr1.j_num=tr2.j_num AND tr1.j_code=tr2.j_code WHERE  COALESCE(tr2.sl_code,'')<>'' AND tr1.t_date BETWEEN '" + dateFrom + "' AND '" + dateTo + "' " + WHERE + " ORDER BY j_num ASC");
 
                 for (int r = 0; r < dt.Rows.Count; r++)
                 {
@@ -719,7 +687,7 @@ namespace Accounting_Application_System
 
         private void save_collection_data(String j_code, String j_num)
         {
-            String ln_num, invoice, t_desc, rep_code, amnt_paid, fol_code, reg_num, full_name, rmrttyyp, soa_code = "", payment_desc = "", at_code = "", subledger = "", dr_cr = "";
+            String ln_num, invoice, t_desc, rep_code, amnt_paid, fol_code, reg_num, full_name, rmrttyyp, soa_code = "", payment_desc = "", at_code = "", sl_atcode = "", subledger = "", dr_cr = "", sl_code = "", sl_drcr = "";
             String type, chk_num = "", chk_date = "", amount;
             String rom_code, arr_date, dep_date;
             String col = "", val = "", add_col = "", add_val = "";
@@ -728,10 +696,11 @@ namespace Accounting_Application_System
 
             Boolean success = false;
             String chg_dtfrm = "", chg_dtto = "";
+            String credit , debit ;
+            int indx = -1;
 
             if (isnew == false)
             {
-                //db.DeleteOnTable(tbl_ln1, "or_code='" + code + "'");
                 db.DeleteOnTable("tr02", "j_num='" + j_num + "' AND j_code='" + j_code + "'");
             }
 
@@ -741,89 +710,64 @@ namespace Accounting_Application_System
 
             try
             {
+                indx = 1;
+                sl_code = (cbo_customer.SelectedValue ?? "").ToString();
+                sl_atcode = db.get_colval("m06", "at_code", "d_code='" + sl_code + "'");
+
                 for (int j = 0; j < dgv_collection.Rows.Count - 1; j++)
                 {
-                    ln_num = dgv_collection["dgvl2_ln", j].Value.ToString();
+                    //ln_num = dgv_collection["dgvl2_ln", j].Value.ToString();
+                    ln_num = (indx++).ToString("0");
                     type = dgv_collection["dgvl2_paymentcode", j].Value.ToString();
-                    soa_code = dgv_collection["dgvl_invoice", j].Value.ToString();
                     payment_desc = dgv_collection["dgvl2_paymentdesc", j].Value.ToString();
+                    soa_code = dgv_collection["dgvl_invoice", j].Value.ToString();
                     amount = gm.toNormalDoubleFormat(dgv_collection["dgvl2_amount", j].Value.ToString()).ToString();
-                    DataTable atdt, dt = new DataTable();
-                    atdt = db.QueryBySQLCode("SELECT at_code FROM rssys.m06 WHERE d_code='" + cbo_customer.SelectedValue.ToString() + "'");
+
+                    at_code = db.get_colval("m10", "at_code", "mp_code='" + type + "'");
+                    dr_cr = db.get_colval("m04", "dr_cr", "at_code='" + at_code + "'");
 
                     chk_num = (dgv_collection["dgvl2_chknumber", j].Value ?? "").ToString();
                     chk_date = db.get_systemdate("");
+
                     try { chk_date = DateTime.Parse((dgv_collection["dgvl2_chkdate", j].Value ?? "").ToString()).ToString("yyyy-MM-dd"); }
                     catch { }
+
                     if (!String.IsNullOrEmpty(chk_num))
                     {
                         db.UpdateOnTable("tr01", "ck_date='" + Convert.ToDateTime(chk_date).ToString("yyyy-MM-dd") + "', ck_num='" + chk_num + "'", "j_num='" + j_num + "' AND j_code='" + j_code + "'");
                     }
 
-
-                    if (atdt.Rows.Count > 0)
+                    credit = "0.00"; debit = "0.00";
+                    if (dr_cr == "D")
                     {
-                        at_code = atdt.Rows[0]["at_code"].ToString();
+                        debit = amount;
                     }
                     else
                     {
-                        at_code = "";
+                        credit = amount;
                     }
-
-                    dt = db.QueryBySQLCode("SELECT dr_cr from rssys.m04 WHERE at_code='" + at_code + "'");
-                    if (dt.Rows.Count > 0)
-                    {
-                        dr_cr = dt.Rows[0]["dr_cr"].ToString();
-                    }
-
-                    String credit = "0.00";
-                    String debit = "0.00";
-                    if (!string.IsNullOrEmpty(amount))
-                    {
-                        if (dr_cr == "D")
-                        {
-
-                            debit = amount;
-                        }
-                        else
-                        {
-
-                            credit = amount;
-                        }
-                    }
-
-                    //if (String.IsNullOrEmpty(dgv_collection["dgvl2_chknumber", j].Value.ToString()) == false)
-                    //{
-                    //    chk_num = dgv_collection["dgvl2_chknumber", j].Value.ToString();
-                    //    chk_date = gm.toDateString(dgv_collection["dgvl2_chkdate", j].Value.ToString(), "");
-                    //    add_col = ", chk_num, chk_date";
-                    //    add_val = ", '" + chk_num + "', '" + chk_date + "'";
-                    // } 
-                    val = "'" + j_code + "', '" + j_num + "', '" + ln_num + "', '" + at_code + "', '" + cbo_customer.SelectedValue.ToString() + "','" + cbo_customer.Text + "','" + debit + "','" + credit + "','" + soa_code + "','" + type + "','" + payment_desc + "', '" + type + "'";
+                    
+                    val = "'" + j_code + "', '" + j_num + "', '" + ln_num + "', '" + at_code + "', '','','" + debit + "','" + credit + "','','" + type + "','" + payment_desc + "', '" + type + "'";
 
                     if (db.InsertOnTable("tr02", col, val))
                     {
-                        // MessageBox.Show("Record Succesfully In tr02");
-                        // db.UpdateOnTable("tr01", "ck_num='"+chk_num+"' AND ck_date='"+chk_date+"'", "j_num='" + j_num + "'");
-                        //db.InsertOnTable(tbl_ln2, col + "" + add_col, val + "" + add_val);
+                        ln_num = (indx++).ToString("0");
+                        credit = "0.00"; debit = "0.00";
+                        if (dr_cr == "D")
+                        {
+                            credit = amount;
+                        }
+                        else
+                        {
+                            debit = amount;
+                        }
+
+                        val = "'" + j_code + "', '" + j_num + "', '" + ln_num + "', '" + sl_atcode + "', '" + sl_code + "','" + cbo_customer.Text + "','" + debit + "','" + credit + "','" + soa_code + "','" + type + "','" + payment_desc + "', ''";
+
+                        db.InsertOnTable("tr02", col, val);
                     }
 
-                    //else {
-                    //    val = "'" + j_code + "', '" + j_num + "', '" + ln_num + "', '" + at_code + "', '" + cbo_customer.SelectedValue.ToString() + "','" + cbo_customer.Text + "','" + debit + "','" + credit + "','" + soa_code + "','" + type + "','" + payment_desc + "'";
-
-                    //    if (db.InsertOnTable("tr02", col, val))
-                    //    {
-                    //        //db.UpdateOnTable("tr01", "ck_num='' AND ck_date=''", "j_num='" + j_num + "'");
-                    //        MessageBox.Show("Record Succesfully In tr02");
-                    //        //db.InsertOnTable(tbl_ln2, col + "" + add_col, val + "" + add_val);
-                    //    }
-                    //}
-
                 }
-                //if (chk_num != "" && chk_date != "")
-                //{
-                    //db.UpdateOnTable("tr01", "ck_num='" + chk_num + "' , ck_date='" + chk_date + "'", "j_num='" + j_num + "'");
-                //}
             }
             catch (Exception er) { MessageBox.Show(er.Message + "Item Error"); }
         }
@@ -1046,6 +990,7 @@ namespace Accounting_Application_System
         {
             disp_dgvlist();
         }
+
 
 
     }

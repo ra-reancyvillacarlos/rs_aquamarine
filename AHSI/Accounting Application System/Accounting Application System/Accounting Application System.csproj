@@ -14,7 +14,7 @@
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\Reancy\Desktop\RIGHTAPPS\AQM_PUBLISH\</PublishUrl>
+    <PublishUrl>D:\RightApps\Aquamarine\Publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -32,7 +32,7 @@
     <SuiteName>Right Apps - Aquamarine</SuiteName>
     <WebPage>publish.htm</WebPage>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>55</ApplicationRevision>
+    <ApplicationRevision>56</ApplicationRevision>
     <ApplicationVersion>5.5.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -69,10 +69,10 @@
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
-    <ManifestCertificateThumbprint>C24474F89225B989728CABF28BFBA0BF08514AD7</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>87645A09C74B7E7285CDCD3E6FE2FAA358C66B57</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Accounting Application System_21_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>Accounting Application System_22_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -3172,6 +3172,7 @@
     <None Include="Accounting Application System_1_TemporaryKey.pfx" />
     <None Include="Accounting Application System_20_TemporaryKey.pfx" />
     <None Include="Accounting Application System_21_TemporaryKey.pfx" />
+    <None Include="Accounting Application System_22_TemporaryKey.pfx" />
     <None Include="Accounting Application System_2_TemporaryKey.pfx" />
     <None Include="Accounting Application System_3_TemporaryKey.pfx" />
     <None Include="Accounting Application System_4_TemporaryKey.pfx" />

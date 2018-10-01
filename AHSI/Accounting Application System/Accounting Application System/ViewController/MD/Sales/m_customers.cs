@@ -509,14 +509,17 @@ namespace Accounting_Application_System
             try
             {
                 DataTable dt = new DataTable();
+
                 if (isSOA == true)
                 {
                     dt = db.QueryBySQLCode("SELECT trv_code AS d_code, trv_name AS d_name, '' AS d_addr2, '' AS d_cntc_no, '' AS d_tel, '' AS d_fax, '' AS d_email, '' AS d_tin, '' AS d_cntc, 0 AS limit, '' AS at_code, '' AS mp_code, '' AS remarks, '' AS type, '' AS d_oldcode, 'Agency' AS soatype FROM rssys.travagnt UNION ALL SELECT d_code, d_name, d_addr2, d_cntc_no, d_tel, d_fax, d_email, d_tin, d_cntc, m06.limit, at_code, mp_code, remarks, type, d_oldcode, 'Customer' AS soatype FROM rssys.m06" + ((WHERE != "") ? " WHERE " + WHERE + "" : "") + " ORDER BY d_name ASC");
+
                     dgv_list.Columns["d_addr2"].Visible = false; dgv_list.Columns["d_cntc_no"].Visible = false; dgv_list.Columns["d_tel"].Visible = false; dgv_list.Columns["d_fax"].Visible = false; dgv_list.Columns["d_email"].Visible = false; dgv_list.Columns["d_tin"].Visible = false; dgv_list.Columns["d_cntc"].Visible = false; dgv_list.Columns["limit"].Visible = false; dgv_list.Columns["at_code"].Visible = false; dgv_list.Columns["mp_code"].Visible = false; dgv_list.Columns["remarks"].Visible = false; dgv_list.Columns["type"].Visible = false; dgv_list.Columns["d_oldcode"].Visible = false; dgv_list.Columns["soatype"].Visible = true;
                 }
                 else
                 {
                     dt = db.QueryOnTableWithParams("m06", "*, '' AS soatype", WHERE, " ORDER BY d_name ASC");
+
                     dgv_list.Columns["d_addr2"].Visible = true; dgv_list.Columns["d_cntc_no"].Visible = true; dgv_list.Columns["d_tel"].Visible = true; dgv_list.Columns["d_fax"].Visible = true; dgv_list.Columns["d_email"].Visible = true; dgv_list.Columns["d_tin"].Visible = true; dgv_list.Columns["d_cntc"].Visible = true; dgv_list.Columns["limit"].Visible = true; dgv_list.Columns["at_code"].Visible = true; dgv_list.Columns["mp_code"].Visible = true; dgv_list.Columns["remarks"].Visible = true; dgv_list.Columns["type"].Visible = true; dgv_list.Columns["d_oldcode"].Visible = true; dgv_list.Columns["soatype"].Visible = false;
                 }
 

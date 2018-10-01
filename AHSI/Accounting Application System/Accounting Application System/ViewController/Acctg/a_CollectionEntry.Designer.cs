@@ -64,6 +64,19 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.dgv_list = new System.Windows.Forms.DataGridView();
+            this.dgv_fy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_j_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_j_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_ctype_desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_t_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_t_desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_sl_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_sl_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_collector = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_collectorid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_branch = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_branchid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -93,6 +106,8 @@
             this.txt_amtdue = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbo_branch = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.cbo_codetype = new System.Windows.Forms.ComboBox();
             this.label30 = new System.Windows.Forms.Label();
@@ -107,21 +122,6 @@
             this.label23 = new System.Windows.Forms.Label();
             this.txt_code = new System.Windows.Forms.TextBox();
             this.pnl_main = new System.Windows.Forms.Panel();
-            this.cbo_branch = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dgv_fy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_j_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_j_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_ctype_desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_t_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_t_desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_sl_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_sl_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_collector = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_collectorid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_branch = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_branchid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_mainside.SuspendLayout();
             this.tbcntrl_option.SuspendLayout();
             this.tpg_opt_1.SuspendLayout();
@@ -343,9 +343,10 @@
             this.groupBox1.Controls.Add(this.btn_updcollection);
             this.groupBox1.Controls.Add(this.btn_addcollection);
             this.groupBox1.Controls.Add(this.btn_removecollection);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox1.Location = new System.Drawing.Point(0, 132);
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
@@ -410,7 +411,7 @@
             this.btn_mainsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mainsave.ForeColor = System.Drawing.SystemColors.Info;
             this.btn_mainsave.Image = global::Accounting_Application_System.Properties.Resources._1343908142_database_save;
-            this.btn_mainsave.Location = new System.Drawing.Point(13, 315);
+            this.btn_mainsave.Location = new System.Drawing.Point(13, 173);
             this.btn_mainsave.Margin = new System.Windows.Forms.Padding(2);
             this.btn_mainsave.Name = "btn_mainsave";
             this.btn_mainsave.Size = new System.Drawing.Size(146, 41);
@@ -428,7 +429,7 @@
             this.btn_mainexit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mainexit.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btn_mainexit.Image = global::Accounting_Application_System.Properties.Resources._1343907460_go_back;
-            this.btn_mainexit.Location = new System.Drawing.Point(13, 360);
+            this.btn_mainexit.Location = new System.Drawing.Point(13, 218);
             this.btn_mainexit.Margin = new System.Windows.Forms.Padding(2);
             this.btn_mainexit.Name = "btn_mainexit";
             this.btn_mainexit.Size = new System.Drawing.Size(146, 41);
@@ -559,6 +560,87 @@
             this.dgv_list.Size = new System.Drawing.Size(882, 482);
             this.dgv_list.TabIndex = 1;
             this.dgv_list.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgv_list_CellPainting);
+            // 
+            // dgv_fy
+            // 
+            this.dgv_fy.HeaderText = "Fy";
+            this.dgv_fy.Name = "dgv_fy";
+            this.dgv_fy.ReadOnly = true;
+            // 
+            // dgv_j_num
+            // 
+            this.dgv_j_num.HeaderText = "J Num";
+            this.dgv_j_num.Name = "dgv_j_num";
+            this.dgv_j_num.ReadOnly = true;
+            // 
+            // dgv_j_code
+            // 
+            this.dgv_j_code.HeaderText = "J Code";
+            this.dgv_j_code.Name = "dgv_j_code";
+            this.dgv_j_code.ReadOnly = true;
+            // 
+            // dgv_ctype_desc
+            // 
+            this.dgv_ctype_desc.HeaderText = "Collection Type";
+            this.dgv_ctype_desc.Name = "dgv_ctype_desc";
+            this.dgv_ctype_desc.ReadOnly = true;
+            // 
+            // dgv_t_date
+            // 
+            this.dgv_t_date.HeaderText = "Trans Date";
+            this.dgv_t_date.Name = "dgv_t_date";
+            this.dgv_t_date.ReadOnly = true;
+            // 
+            // dgv_t_desc
+            // 
+            this.dgv_t_desc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgv_t_desc.HeaderText = "Transac. Description";
+            this.dgv_t_desc.Name = "dgv_t_desc";
+            this.dgv_t_desc.ReadOnly = true;
+            // 
+            // dgv_user_id
+            // 
+            this.dgv_user_id.HeaderText = "User ID";
+            this.dgv_user_id.Name = "dgv_user_id";
+            this.dgv_user_id.ReadOnly = true;
+            // 
+            // dgv_sl_code
+            // 
+            this.dgv_sl_code.HeaderText = "Subledger Code";
+            this.dgv_sl_code.Name = "dgv_sl_code";
+            this.dgv_sl_code.ReadOnly = true;
+            // 
+            // dgv_sl_name
+            // 
+            this.dgv_sl_name.HeaderText = "Subledger Description";
+            this.dgv_sl_name.Name = "dgv_sl_name";
+            this.dgv_sl_name.ReadOnly = true;
+            this.dgv_sl_name.Width = 150;
+            // 
+            // dgv_collector
+            // 
+            this.dgv_collector.HeaderText = "Collector";
+            this.dgv_collector.Name = "dgv_collector";
+            this.dgv_collector.ReadOnly = true;
+            // 
+            // dgv_collectorid
+            // 
+            this.dgv_collectorid.HeaderText = "collectorid";
+            this.dgv_collectorid.Name = "dgv_collectorid";
+            this.dgv_collectorid.ReadOnly = true;
+            this.dgv_collectorid.Visible = false;
+            // 
+            // dgv_branch
+            // 
+            this.dgv_branch.HeaderText = "Branch";
+            this.dgv_branch.Name = "dgv_branch";
+            this.dgv_branch.ReadOnly = true;
+            // 
+            // dgv_branchid
+            // 
+            this.dgv_branchid.HeaderText = "Branch ID";
+            this.dgv_branchid.Name = "dgv_branchid";
+            this.dgv_branchid.ReadOnly = true;
             // 
             // panel4
             // 
@@ -932,6 +1014,31 @@
             this.panel2.Size = new System.Drawing.Size(882, 93);
             this.panel2.TabIndex = 0;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(491, 61);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 15);
+            this.label5.TabIndex = 117;
+            this.label5.Text = "Branch";
+            // 
+            // cbo_branch
+            // 
+            this.cbo_branch.AllowDrop = true;
+            this.cbo_branch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbo_branch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbo_branch.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.cbo_branch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_branch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbo_branch.FormattingEnabled = true;
+            this.cbo_branch.Location = new System.Drawing.Point(579, 57);
+            this.cbo_branch.Name = "cbo_branch";
+            this.cbo_branch.Size = new System.Drawing.Size(293, 21);
+            this.cbo_branch.TabIndex = 116;
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -1089,112 +1196,6 @@
             this.pnl_main.Name = "pnl_main";
             this.pnl_main.Size = new System.Drawing.Size(894, 562);
             this.pnl_main.TabIndex = 13;
-            // 
-            // cbo_branch
-            // 
-            this.cbo_branch.AllowDrop = true;
-            this.cbo_branch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbo_branch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbo_branch.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.cbo_branch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbo_branch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbo_branch.FormattingEnabled = true;
-            this.cbo_branch.Location = new System.Drawing.Point(579, 57);
-            this.cbo_branch.Name = "cbo_branch";
-            this.cbo_branch.Size = new System.Drawing.Size(293, 21);
-            this.cbo_branch.TabIndex = 116;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(491, 61);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 15);
-            this.label5.TabIndex = 117;
-            this.label5.Text = "Branch";
-            // 
-            // dgv_fy
-            // 
-            this.dgv_fy.HeaderText = "Fy";
-            this.dgv_fy.Name = "dgv_fy";
-            this.dgv_fy.ReadOnly = true;
-            // 
-            // dgv_j_num
-            // 
-            this.dgv_j_num.HeaderText = "J Num";
-            this.dgv_j_num.Name = "dgv_j_num";
-            this.dgv_j_num.ReadOnly = true;
-            // 
-            // dgv_j_code
-            // 
-            this.dgv_j_code.HeaderText = "J Code";
-            this.dgv_j_code.Name = "dgv_j_code";
-            this.dgv_j_code.ReadOnly = true;
-            // 
-            // dgv_ctype_desc
-            // 
-            this.dgv_ctype_desc.HeaderText = "Collection Type";
-            this.dgv_ctype_desc.Name = "dgv_ctype_desc";
-            this.dgv_ctype_desc.ReadOnly = true;
-            // 
-            // dgv_t_date
-            // 
-            this.dgv_t_date.HeaderText = "Trans Date";
-            this.dgv_t_date.Name = "dgv_t_date";
-            this.dgv_t_date.ReadOnly = true;
-            // 
-            // dgv_t_desc
-            // 
-            this.dgv_t_desc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgv_t_desc.HeaderText = "Transac. Description";
-            this.dgv_t_desc.Name = "dgv_t_desc";
-            this.dgv_t_desc.ReadOnly = true;
-            // 
-            // dgv_user_id
-            // 
-            this.dgv_user_id.HeaderText = "User ID";
-            this.dgv_user_id.Name = "dgv_user_id";
-            this.dgv_user_id.ReadOnly = true;
-            // 
-            // dgv_sl_code
-            // 
-            this.dgv_sl_code.HeaderText = "Subledger Code";
-            this.dgv_sl_code.Name = "dgv_sl_code";
-            this.dgv_sl_code.ReadOnly = true;
-            // 
-            // dgv_sl_name
-            // 
-            this.dgv_sl_name.HeaderText = "Subledger Description";
-            this.dgv_sl_name.Name = "dgv_sl_name";
-            this.dgv_sl_name.ReadOnly = true;
-            this.dgv_sl_name.Width = 150;
-            // 
-            // dgv_collector
-            // 
-            this.dgv_collector.HeaderText = "Collector";
-            this.dgv_collector.Name = "dgv_collector";
-            this.dgv_collector.ReadOnly = true;
-            // 
-            // dgv_collectorid
-            // 
-            this.dgv_collectorid.HeaderText = "collectorid";
-            this.dgv_collectorid.Name = "dgv_collectorid";
-            this.dgv_collectorid.ReadOnly = true;
-            this.dgv_collectorid.Visible = false;
-            // 
-            // dgv_branch
-            // 
-            this.dgv_branch.HeaderText = "Branch";
-            this.dgv_branch.Name = "dgv_branch";
-            this.dgv_branch.ReadOnly = true;
-            // 
-            // dgv_branchid
-            // 
-            this.dgv_branchid.HeaderText = "Branch ID";
-            this.dgv_branchid.Name = "dgv_branchid";
-            this.dgv_branchid.ReadOnly = true;
             // 
             // a_CollectionEntry
             // 

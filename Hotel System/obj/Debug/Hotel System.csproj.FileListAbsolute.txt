@@ -3715,3 +3715,94 @@ D:\RIGHTAPPS\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel System.exe.mani
 D:\RIGHTAPPS\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel System.application
 D:\RIGHTAPPS\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel System.exe
 D:\RIGHTAPPS\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel System.pdb
+D:\GitFiles\rs_aquamarine\Hotel System\bin\Debug\Hotel System.exe.manifest
+D:\GitFiles\rs_aquamarine\Hotel System\bin\Debug\Hotel System.application
+D:\GitFiles\rs_aquamarine\Hotel System\bin\Debug\Hotel System.exe
+D:\GitFiles\rs_aquamarine\Hotel System\bin\Debug\Hotel System.pdb
+D:\GitFiles\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+D:\GitFiles\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+D:\GitFiles\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+D:\GitFiles\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+D:\GitFiles\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+D:\GitFiles\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+D:\GitFiles\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+D:\GitFiles\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+D:\GitFiles\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\GitFiles\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+D:\GitFiles\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+D:\GitFiles\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+D:\GitFiles\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+D:\GitFiles\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.ReportSource.dll
+D:\GitFiles\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.Shared.dll
+D:\GitFiles\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.Web.dll
+D:\GitFiles\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.Windows.Forms.dll
+D:\GitFiles\rs_aquamarine\Hotel System\bin\Debug\Microsoft.ReportViewer.Common.dll
+D:\GitFiles\rs_aquamarine\Hotel System\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+D:\GitFiles\rs_aquamarine\Hotel System\bin\Debug\Microsoft.ReportViewer.WebForms.DLL
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel System.csproj.ResolveComReference.cache
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.AboutBox1.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.addGroup.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.addGuestinGroup.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.add_charge.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.applyDeposit.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.Arrivals.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.cancelReservation.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.enterDeposit.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.hk_Schedule.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.Hk_UtilitiesReading.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.GenerateMealCoupon.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.GenerateRoomCharge.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.GuestHistory.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.InHouseGuest.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.m_RoomType.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.newArrivalWalkin.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.newGuestBilling2.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.newGuestBilling.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.newInhouse.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.newReservation.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.or_entry.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.Post_Room_Charge.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.DiscountTypes.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.FunctionContract.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.Group.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.GroupReservation.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.Guest.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.Hk_miscellaneous.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.Home.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.Housekeeping.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.Login.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.Main.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.OtherMasterList.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.Properties.Resources.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.Report.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.Reservation.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.addGuest.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.rGuestBilling.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.RoomAvailability.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.RoomNumber.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.RoomRate.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.RoomRates.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.RoomStatus.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.RoomTransfer.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.room_rate_info.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.rpt_ccsummary.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.rpt_DSR.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.rpt_GuestHighBalance.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.m_soaperiods.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.selectsoa.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.RPT_RES_entry.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.transfer_balance.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.transfer_payment.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.UpdateRoomStatus.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.z_departure.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.z_HotelSettings.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.z_Notification.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.z_Research.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.z_SystemDataUpdate.resources
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel System.csproj.GenerateResource.Cache
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\RdlCompile.cache
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\RdlCompile.compiled
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel System.exe.manifest
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel System.application
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel System.exe
+D:\GitFiles\rs_aquamarine\Hotel System\obj\Debug\Hotel System.pdb

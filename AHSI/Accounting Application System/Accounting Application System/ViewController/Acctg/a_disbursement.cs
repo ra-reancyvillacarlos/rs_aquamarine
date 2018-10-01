@@ -47,8 +47,13 @@ namespace Accounting_Application_System
             gc.load_journal(cbo_dtype, j_type);
             gc.load_journal(cbo_codetype, j_type);
             gc.load_branch(cbo_branch);
-            
-            disp_list();
+
+            dtp_frm.Value = DateTime.Parse(dtp_frm.Value.ToString("yyyy-MM-01"));
+
+            if(cbo_codetype.SelectedIndex != -1)
+            {
+                disp_list();
+            }
         }
 
         private void a_disbursement_Load(object sender, EventArgs e)
@@ -58,7 +63,10 @@ namespace Accounting_Application_System
 
         void dtp_frm_ValueChanged(object sender, EventArgs e)
         {
-            disp_list();
+            if (cbo_codetype.SelectedIndex != -1)
+            {
+                disp_list();
+            }
         }
 
         private void frm_clear()
@@ -566,7 +574,9 @@ namespace Accounting_Application_System
                     WHERE = " t1.j_code IN (SELECT m5.j_code FROM rssys.m05 m5 WHERE m5.j_type='" + j_type + "') AND ";
                 }
 
-                dt = db.QueryBySQLCode("SELECT t1.*, tc2.*, t3.j_memo, m10.mp_desc,m04.at_desc FROM rssys.tr01 t1 LEFT JOIN (SELECT DISTINCT j_num, pay_code, at_code, credit FROM rssys.tr02 WHERE COALESCE(credit,0)<>0 AND COALESCE(pay_code,'')<>'' AND (SELECT COUNT(tr2.j_num) FROM rssys.tr02 tr2 WHERE COALESCE(credit,0)<>0 AND tr2.j_num=tr02.j_num)=1) tc2 ON tc2.j_num=t1.j_num LEFT JOIN rssys.tr03 t3 ON t3.j_num=t1.j_num LEFT JOIN rssys.m10 m10 ON m10.mp_code=tc2.pay_code LEFT JOIN rssys.m04 m04 ON m04.at_code=tc2.at_code WHERE " + WHERE + " t1.sysdate BETWEEN '" + dateFrom + "' AND '" + dateTo + "' AND tc2.j_num<>'' ORDER BY t1.j_num DESC");
+                dt = db.QueryBySQLCode("SELECT t1.*, tc2.*, t3.j_memo, m10.mp_desc,m04.at_desc FROM rssys.tr01 t1 LEFT JOIN (SELECT DISTINCT j_code, j_num, pay_code, at_code, credit FROM rssys.tr02 WHERE COALESCE(credit,0)<>0  AND (SELECT COUNT(tr2.j_num) FROM rssys.tr02 tr2 WHERE COALESCE(credit,0)<>0 AND tr2.j_num=tr02.j_num AND tr2.j_code=tr02.j_code)=1) tc2 ON tc2.j_num=t1.j_num AND tc2.j_code=t1.j_code LEFT JOIN rssys.tr03 t3 ON t3.j_num=t1.j_num AND t3.j_code=t1.j_code LEFT JOIN rssys.m10 m10 ON m10.mp_code=tc2.pay_code LEFT JOIN rssys.m04 m04 ON m04.at_code=tc2.at_code WHERE " + WHERE + " t1.t_date BETWEEN '" + dateFrom + "' AND '" + dateTo + "' AND tc2.j_num<>'' ORDER BY t1.j_num DESC");
+
+                //AND COALESCE(pay_code,'')<>''
 
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
@@ -593,7 +603,7 @@ namespace Accounting_Application_System
                     //row.Cells["dgvl_mp_code"].Value = dt.Rows[i]["db_code"].ToString();// dt.Rows[i]["mp_code"].ToString();
                     row.Cells["dgvl_check_date"].Value = gm.toDateString(dt.Rows[i]["ck_date"].ToString(), "");// dt.Rows[i]["check_date"].ToString();
                     row.Cells["dgvl_user_id"].Value = dt.Rows[i]["user_id"].ToString();//dt.Rows[i]["user_id"].ToString();
-                    row.Cells["dgvl_trans_date"].Value = gm.toDateString(dt.Rows[i]["sysdate"].ToString(), "");//dt.Rows[i]["trans_date"].ToString();
+                    row.Cells["dgvl_trans_date"].Value = gm.toDateString(dt.Rows[i]["t_date"].ToString(), "");//dt.Rows[i]["trans_date"].ToString();
 
                     row.Cells["dgvl_payee"].Value = dt.Rows[i]["payee"].ToString();
                     //row.Cells["dgvl_reference"].Value = dt.Rows[i]["db_code"].ToString();//dt.Rows[i]["explaination"].ToString();
@@ -880,7 +890,7 @@ namespace Accounting_Application_System
             String i_oldqty = "";
             String di_code = "", di_qty = "0.00";
             String col = "", val = "";
-            String creditors = "", explaination = "", check_no = "", mp_code = "", user_id = "", c_code = "", remark = "",check_date="",cashier="",acct_lnk="",trans_date="",creditors_name="";
+            String creditors = "", explaination = "", check_no = "", mp_code = "", user_id = "", c_code = "", remark = "",check_date="",cashier="",acct_lnk="",trans_date="",creditors_name="", fy = "", mo = "", fymo = "", tranx_date = "";
             String notificationText = "";
             String table = "disbursementhdr";
             String tableln = "disbursementlne";
@@ -948,13 +958,17 @@ namespace Accounting_Application_System
                 {
                     t_desc = "Payment For "+cbo_creditors.Text+" as of Transaction Date "+ trans_date;
                 }*/
+                tranx_date = dtp_dt.Value.ToString("yyyy-MM-dd");
+                fymo = db.get_fy_period(tranx_date);
+                fy = fymo.Split('-').GetValue(0).ToString();
+                mo = fymo.Split('-').GetValue(1).ToString();
 
                 String seq_num = "0", sl_code, sl_name, cc_code, debit, credit, invoice = "", seq_desc, rep_code, pay_code;
 
                 if (isnew)
                 {
                     //
-                    if (db.add_jrnl(dt_t.ToString("yyyy"), dt_t.ToString("MM"), j_code, j_num, t_desc, cbo_payee.Text, txt_ckno.Text, null, dtp_dt.Value.ToString("yyyy-MM-dd"), dtp_ckdt.Value.ToString("yyyy-MM-dd")))
+                    if (db.add_jrnl(fy, mo, j_code, j_num, t_desc, cbo_payee.Text, txt_ckno.Text, null, tranx_date, dtp_ckdt.Value.ToString("yyyy-MM-dd")))
                     {
                         db.UpdateOnTable("tr01", "branch='" + (cbo_branch.SelectedValue ?? "").ToString() + "'", "j_num='" + j_num + "' AND j_code='" + j_code + "'");
                         
@@ -1063,7 +1077,7 @@ namespace Accounting_Application_System
                 }
                 else
                 {
-                    if (db.upd_jrnl(dt_t.ToString("yyyy"), dt_t.ToString("MM"), j_code, j_num, t_desc, cbo_payee.Text, txt_ckno.Text, null, dtp_dt.Value.ToString("yyyy-MM-dd"), dtp_ckdt.Value.ToString("yyyy-MM-dd")))
+                    if (db.upd_jrnl(fy, mo, j_code, j_num, t_desc, cbo_payee.Text, txt_ckno.Text, null, dtp_dt.Value.ToString("yyyy-MM-dd"), dtp_ckdt.Value.ToString("yyyy-MM-dd")))
                     {
                         db.UpdateOnTable("tr01", "branch='" + (cbo_branch.SelectedValue ?? "").ToString() + "'", "j_num='" + j_num + "' AND j_code='" + j_code + "'");
 

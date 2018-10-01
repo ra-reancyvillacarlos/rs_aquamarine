@@ -12,8 +12,8 @@
     <AssemblyName>Hotel System</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <ManifestCertificateThumbprint>1F16C95DC85D7E8C6332629FDC174A7EED6A0BCF</ManifestCertificateThumbprint>
-    <ManifestKeyFile>Hotel System_6_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestCertificateThumbprint>9858B52A045D7D94A0915D504F20749ED85174A7</ManifestCertificateThumbprint>
+    <ManifestKeyFile>Hotel System_7_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
     <SignManifests>true</SignManifests>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -1606,6 +1606,7 @@
     <None Include="Hotel System_4_TemporaryKey.pfx" />
     <None Include="Hotel System_5_TemporaryKey.pfx" />
     <None Include="Hotel System_6_TemporaryKey.pfx" />
+    <None Include="Hotel System_7_TemporaryKey.pfx" />
     <None Include="Hotel System_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

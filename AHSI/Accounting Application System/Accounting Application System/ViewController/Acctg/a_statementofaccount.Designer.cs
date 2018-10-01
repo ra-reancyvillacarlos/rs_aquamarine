@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_mainside = new System.Windows.Forms.Panel();
             this.tbcntrl_option = new System.Windows.Forms.TabControl();
             this.tpg_opt_1 = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.btn_print = new System.Windows.Forms.Button();
@@ -72,24 +73,6 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgv_list = new System.Windows.Forms.DataGridView();
-            this.dgvl_soa_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvl_roomno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvl_debt_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvl_soa_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvl_due_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvl_collect = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvl_comments = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvl_user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvl_cancel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvl_jrnl = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvl_t_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvl_t_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvl_debt_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvl_soa_period = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvl_chg_dtfrm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvl_chg_dtto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvl_rmrttyp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.soatype = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -100,23 +83,6 @@
             this.panel11 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgv_itemlist = new System.Windows.Forms.DataGridView();
-            this.dgvl2_lnno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvl2_gfolio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.acct_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.full_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hotel_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chg_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chg_desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ttlpax = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvl2_charge_desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvl2_amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvl2_desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvl2_chg_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvl2_chg_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvl2_invoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvl2_chg_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvl2_chg_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvl2_istransferred = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.rtxt_comment = new System.Windows.Forms.RichTextBox();
@@ -153,7 +119,42 @@
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chg_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.dgvl_soa_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl_roomno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl_debt_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl_soa_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl_due_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl_collect = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl_comments = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl_user_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl_cancel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl_jrnl = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl_t_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl_t_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl_debt_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl_soa_period = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl_chg_dtfrm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl_chg_dtto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl_rmrttyp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soatype = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl2_lnno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl2_gfolio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.acct_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.full_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hotel_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chg_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chg_desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ttlpax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl2_charge_desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl2_amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl2_desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl2_chg_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl2_chg_time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl2_invoice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl2_chg_code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl2_chg_num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvl2_istransferred = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnl_mainside.SuspendLayout();
             this.tbcntrl_option.SuspendLayout();
             this.tpg_opt_1.SuspendLayout();
@@ -247,6 +248,20 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Main Option";
             // 
+            // comboBox5
+            // 
+            this.comboBox5.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Items.AddRange(new object[] {
+            "SOA",
+            "Commission"});
+            this.comboBox5.Location = new System.Drawing.Point(11, 203);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(144, 24);
+            this.comboBox5.TabIndex = 16;
+            // 
             // comboBox3
             // 
             this.comboBox3.BackColor = System.Drawing.SystemColors.InactiveCaption;
@@ -293,7 +308,7 @@
             // 
             this.btn_print.BackColor = System.Drawing.Color.Peru;
             this.btn_print.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_print.Location = new System.Drawing.Point(14, 242);
+            this.btn_print.Location = new System.Drawing.Point(11, 230);
             this.btn_print.Name = "btn_print";
             this.btn_print.Size = new System.Drawing.Size(144, 50);
             this.btn_print.TabIndex = 9;
@@ -306,9 +321,9 @@
             // 
             this.btn_printlist.BackColor = System.Drawing.Color.Peru;
             this.btn_printlist.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_printlist.Location = new System.Drawing.Point(138, 328);
+            this.btn_printlist.Location = new System.Drawing.Point(14, 316);
             this.btn_printlist.Name = "btn_printlist";
-            this.btn_printlist.Size = new System.Drawing.Size(144, 47);
+            this.btn_printlist.Size = new System.Drawing.Size(144, 38);
             this.btn_printlist.TabIndex = 12;
             this.btn_printlist.Text = "Print SOA List";
             this.btn_printlist.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -325,7 +340,7 @@
             this.cbo_print.Items.AddRange(new object[] {
             "SOA PERIOD",
             "SOA DATE"});
-            this.cbo_print.Location = new System.Drawing.Point(138, 298);
+            this.cbo_print.Location = new System.Drawing.Point(14, 286);
             this.cbo_print.Name = "cbo_print";
             this.cbo_print.Size = new System.Drawing.Size(144, 24);
             this.cbo_print.TabIndex = 11;
@@ -335,7 +350,7 @@
             // 
             this.btn_printsoa.BackColor = System.Drawing.Color.Peru;
             this.btn_printsoa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_printsoa.Location = new System.Drawing.Point(14, 243);
+            this.btn_printsoa.Location = new System.Drawing.Point(11, 231);
             this.btn_printsoa.Name = "btn_printsoa";
             this.btn_printsoa.Size = new System.Drawing.Size(141, 49);
             this.btn_printsoa.TabIndex = 10;
@@ -463,9 +478,10 @@
             this.groupBox8.Controls.Add(this.btn_itemremove);
             this.groupBox8.Controls.Add(this.btn_itemupd);
             this.groupBox8.Controls.Add(this.btn_itemadd);
+            this.groupBox8.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox8.Location = new System.Drawing.Point(2, 71);
+            this.groupBox8.Location = new System.Drawing.Point(0, 0);
             this.groupBox8.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Padding = new System.Windows.Forms.Padding(2);
@@ -532,7 +548,7 @@
             this.btn_mainexit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mainexit.ForeColor = System.Drawing.SystemColors.InfoText;
             this.btn_mainexit.Image = global::Accounting_Application_System.Properties.Resources._1343907460_go_back;
-            this.btn_mainexit.Location = new System.Drawing.Point(9, 306);
+            this.btn_mainexit.Location = new System.Drawing.Point(7, 198);
             this.btn_mainexit.Margin = new System.Windows.Forms.Padding(2);
             this.btn_mainexit.Name = "btn_mainexit";
             this.btn_mainexit.Size = new System.Drawing.Size(152, 41);
@@ -550,7 +566,7 @@
             this.btn_mainsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mainsave.ForeColor = System.Drawing.SystemColors.Info;
             this.btn_mainsave.Image = global::Accounting_Application_System.Properties.Resources._1343908142_database_save;
-            this.btn_mainsave.Location = new System.Drawing.Point(9, 261);
+            this.btn_mainsave.Location = new System.Drawing.Point(7, 153);
             this.btn_mainsave.Margin = new System.Windows.Forms.Padding(2);
             this.btn_mainsave.Name = "btn_mainsave";
             this.btn_mainsave.Size = new System.Drawing.Size(152, 41);
@@ -658,8 +674,8 @@
             // dgv_list
             // 
             this.dgv_list.AllowUserToResizeRows = false;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_list.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_list.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_list.ColumnHeadersHeight = 28;
             this.dgv_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_list.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -690,149 +706,12 @@
             this.dgv_list.RowHeadersVisible = false;
             this.dgv_list.RowHeadersWidth = 10;
             this.dgv_list.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgv_list.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgv_list.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_list.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_list.Size = new System.Drawing.Size(898, 434);
             this.dgv_list.TabIndex = 1;
             this.dgv_list.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgv_list_CellPainting);
-            // 
-            // dgvl_soa_code
-            // 
-            this.dgvl_soa_code.HeaderText = "SOA Code";
-            this.dgvl_soa_code.Name = "dgvl_soa_code";
-            this.dgvl_soa_code.ReadOnly = true;
-            this.dgvl_soa_code.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvl_soa_code.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvl_roomno
-            // 
-            this.dgvl_roomno.HeaderText = "Room No.";
-            this.dgvl_roomno.Name = "dgvl_roomno";
-            this.dgvl_roomno.ReadOnly = true;
-            this.dgvl_roomno.Width = 75;
-            // 
-            // dgvl_debt_name
-            // 
-            this.dgvl_debt_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvl_debt_name.HeaderText = "Tenant";
-            this.dgvl_debt_name.Name = "dgvl_debt_name";
-            this.dgvl_debt_name.ReadOnly = true;
-            this.dgvl_debt_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvl_soa_date
-            // 
-            this.dgvl_soa_date.HeaderText = "SOA Period";
-            this.dgvl_soa_date.Name = "dgvl_soa_date";
-            this.dgvl_soa_date.ReadOnly = true;
-            this.dgvl_soa_date.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvl_soa_date.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dgvl_soa_date.Width = 125;
-            // 
-            // dgvl_due_date
-            // 
-            this.dgvl_due_date.HeaderText = "Due Date";
-            this.dgvl_due_date.Name = "dgvl_due_date";
-            this.dgvl_due_date.ReadOnly = true;
-            this.dgvl_due_date.Width = 85;
-            // 
-            // dgvl_collect
-            // 
-            this.dgvl_collect.HeaderText = "Collected";
-            this.dgvl_collect.Name = "dgvl_collect";
-            this.dgvl_collect.ReadOnly = true;
-            this.dgvl_collect.Visible = false;
-            this.dgvl_collect.Width = 77;
-            // 
-            // dgvl_comments
-            // 
-            this.dgvl_comments.HeaderText = "Notes";
-            this.dgvl_comments.Name = "dgvl_comments";
-            this.dgvl_comments.ReadOnly = true;
-            // 
-            // dgvl_user_id
-            // 
-            this.dgvl_user_id.HeaderText = "User ID";
-            this.dgvl_user_id.Name = "dgvl_user_id";
-            this.dgvl_user_id.ReadOnly = true;
-            this.dgvl_user_id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvl_user_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvl_cancel
-            // 
-            this.dgvl_cancel.HeaderText = "Cancel";
-            this.dgvl_cancel.Name = "dgvl_cancel";
-            this.dgvl_cancel.ReadOnly = true;
-            this.dgvl_cancel.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvl_cancel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dgvl_cancel.Width = 50;
-            // 
-            // dgvl_jrnl
-            // 
-            this.dgvl_jrnl.HeaderText = "Jrnlz";
-            this.dgvl_jrnl.Name = "dgvl_jrnl";
-            this.dgvl_jrnl.ReadOnly = true;
-            this.dgvl_jrnl.Width = 50;
-            // 
-            // dgvl_t_date
-            // 
-            this.dgvl_t_date.HeaderText = "Trans Date";
-            this.dgvl_t_date.Name = "dgvl_t_date";
-            this.dgvl_t_date.ReadOnly = true;
-            this.dgvl_t_date.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvl_t_date.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dgvl_t_date.Width = 85;
-            // 
-            // dgvl_t_time
-            // 
-            this.dgvl_t_time.HeaderText = "Time";
-            this.dgvl_t_time.Name = "dgvl_t_time";
-            this.dgvl_t_time.ReadOnly = true;
-            this.dgvl_t_time.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvl_t_time.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dgvl_t_time.Width = 55;
-            // 
-            // dgvl_debt_code
-            // 
-            this.dgvl_debt_code.HeaderText = "Tenant Code";
-            this.dgvl_debt_code.Name = "dgvl_debt_code";
-            this.dgvl_debt_code.ReadOnly = true;
-            this.dgvl_debt_code.Width = 90;
-            // 
-            // dgvl_soa_period
-            // 
-            this.dgvl_soa_period.HeaderText = "SOA Period Code";
-            this.dgvl_soa_period.Name = "dgvl_soa_period";
-            this.dgvl_soa_period.ReadOnly = true;
-            this.dgvl_soa_period.Visible = false;
-            // 
-            // dgvl_chg_dtfrm
-            // 
-            this.dgvl_chg_dtfrm.HeaderText = "Date From";
-            this.dgvl_chg_dtfrm.Name = "dgvl_chg_dtfrm";
-            this.dgvl_chg_dtfrm.ReadOnly = true;
-            this.dgvl_chg_dtfrm.Visible = false;
-            // 
-            // dgvl_chg_dtto
-            // 
-            this.dgvl_chg_dtto.HeaderText = "Date To";
-            this.dgvl_chg_dtto.Name = "dgvl_chg_dtto";
-            this.dgvl_chg_dtto.ReadOnly = true;
-            this.dgvl_chg_dtto.Visible = false;
-            // 
-            // dgvl_rmrttyp
-            // 
-            this.dgvl_rmrttyp.HeaderText = "dgvl_rmrttyp";
-            this.dgvl_rmrttyp.Name = "dgvl_rmrttyp";
-            this.dgvl_rmrttyp.ReadOnly = true;
-            this.dgvl_rmrttyp.Visible = false;
-            // 
-            // soatype
-            // 
-            this.soatype.HeaderText = "TYPE";
-            this.soatype.Name = "soatype";
-            this.soatype.ReadOnly = true;
-            this.soatype.Visible = false;
             // 
             // panel2
             // 
@@ -854,7 +733,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(358, 23);
+            this.label5.Location = new System.Drawing.Point(333, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(12, 16);
             this.label5.TabIndex = 95;
@@ -867,11 +746,12 @@
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
+            "All SOA",
             "Customer",
             "Agency"});
-            this.comboBox1.Location = new System.Drawing.Point(757, 19);
+            this.comboBox1.Location = new System.Drawing.Point(721, 19);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(144, 24);
+            this.comboBox1.Size = new System.Drawing.Size(171, 24);
             this.comboBox1.TabIndex = 13;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -889,7 +769,7 @@
             // cbo_soaperiods
             // 
             this.cbo_soaperiods.FormattingEnabled = true;
-            this.cbo_soaperiods.Location = new System.Drawing.Point(487, 19);
+            this.cbo_soaperiods.Location = new System.Drawing.Point(451, 19);
             this.cbo_soaperiods.Name = "cbo_soaperiods";
             this.cbo_soaperiods.Size = new System.Drawing.Size(260, 24);
             this.cbo_soaperiods.TabIndex = 93;
@@ -899,7 +779,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(411, 23);
+            this.label7.Location = new System.Drawing.Point(375, 23);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 15);
@@ -948,14 +828,14 @@
             this.dgv_itemlist.AllowUserToResizeRows = false;
             this.dgv_itemlist.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dgv_itemlist.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_itemlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_itemlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_itemlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgv_itemlist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvl2_lnno,
@@ -974,15 +854,16 @@
             this.dgvl2_invoice,
             this.dgvl2_chg_code,
             this.dgvl2_chg_num,
-            this.dgvl2_istransferred});
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_itemlist.DefaultCellStyle = dataGridViewCellStyle13;
+            this.dgvl2_istransferred,
+            this.name});
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_itemlist.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_itemlist.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_itemlist.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dgv_itemlist.Location = new System.Drawing.Point(3, 16);
@@ -990,141 +871,20 @@
             this.dgv_itemlist.Name = "dgv_itemlist";
             this.dgv_itemlist.ReadOnly = true;
             this.dgv_itemlist.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_itemlist.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_itemlist.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_itemlist.RowHeadersWidth = 15;
             this.dgv_itemlist.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_itemlist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_itemlist.Size = new System.Drawing.Size(892, 272);
             this.dgv_itemlist.TabIndex = 4;
             this.dgv_itemlist.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgv_itemlist_CellPainting);
-            // 
-            // dgvl2_lnno
-            // 
-            this.dgvl2_lnno.HeaderText = "LINE";
-            this.dgvl2_lnno.Name = "dgvl2_lnno";
-            this.dgvl2_lnno.ReadOnly = true;
-            this.dgvl2_lnno.Width = 50;
-            // 
-            // dgvl2_gfolio
-            // 
-            this.dgvl2_gfolio.HeaderText = "GUEST FOLIO";
-            this.dgvl2_gfolio.Name = "dgvl2_gfolio";
-            this.dgvl2_gfolio.ReadOnly = true;
-            this.dgvl2_gfolio.Visible = false;
-            // 
-            // acct_no
-            // 
-            this.acct_no.HeaderText = "Guest No.";
-            this.acct_no.Name = "acct_no";
-            this.acct_no.ReadOnly = true;
-            this.acct_no.Visible = false;
-            // 
-            // full_name
-            // 
-            this.full_name.HeaderText = "Name";
-            this.full_name.Name = "full_name";
-            this.full_name.ReadOnly = true;
-            this.full_name.Visible = false;
-            // 
-            // hotel_name
-            // 
-            this.hotel_name.HeaderText = "HOTEL";
-            this.hotel_name.Name = "hotel_name";
-            this.hotel_name.ReadOnly = true;
-            this.hotel_name.Visible = false;
-            // 
-            // chg_code
-            // 
-            this.chg_code.HeaderText = "CODE";
-            this.chg_code.Name = "chg_code";
-            this.chg_code.ReadOnly = true;
-            this.chg_code.Visible = false;
-            // 
-            // chg_desc
-            // 
-            this.chg_desc.HeaderText = "DESCRIPTION";
-            this.chg_desc.Name = "chg_desc";
-            this.chg_desc.ReadOnly = true;
-            this.chg_desc.Visible = false;
-            // 
-            // ttlpax
-            // 
-            this.ttlpax.HeaderText = "PAX";
-            this.ttlpax.Name = "ttlpax";
-            this.ttlpax.ReadOnly = true;
-            this.ttlpax.Visible = false;
-            // 
-            // dgvl2_charge_desc
-            // 
-            this.dgvl2_charge_desc.HeaderText = "CHARGES";
-            this.dgvl2_charge_desc.Name = "dgvl2_charge_desc";
-            this.dgvl2_charge_desc.ReadOnly = true;
-            // 
-            // dgvl2_amount
-            // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.dgvl2_amount.DefaultCellStyle = dataGridViewCellStyle12;
-            this.dgvl2_amount.FillWeight = 77F;
-            this.dgvl2_amount.HeaderText = "AMOUNT";
-            this.dgvl2_amount.Name = "dgvl2_amount";
-            this.dgvl2_amount.ReadOnly = true;
-            this.dgvl2_amount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvl2_desc
-            // 
-            this.dgvl2_desc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgvl2_desc.FillWeight = 200F;
-            this.dgvl2_desc.HeaderText = "REFERENCE";
-            this.dgvl2_desc.MinimumWidth = 155;
-            this.dgvl2_desc.Name = "dgvl2_desc";
-            this.dgvl2_desc.ReadOnly = true;
-            this.dgvl2_desc.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dgvl2_chg_date
-            // 
-            this.dgvl2_chg_date.HeaderText = "CHARGE DATE";
-            this.dgvl2_chg_date.Name = "dgvl2_chg_date";
-            this.dgvl2_chg_date.ReadOnly = true;
-            // 
-            // dgvl2_chg_time
-            // 
-            this.dgvl2_chg_time.HeaderText = "TIME";
-            this.dgvl2_chg_time.Name = "dgvl2_chg_time";
-            this.dgvl2_chg_time.ReadOnly = true;
-            // 
-            // dgvl2_invoice
-            // 
-            this.dgvl2_invoice.HeaderText = "INVOICE";
-            this.dgvl2_invoice.Name = "dgvl2_invoice";
-            this.dgvl2_invoice.ReadOnly = true;
-            this.dgvl2_invoice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.dgvl2_invoice.Visible = false;
-            // 
-            // dgvl2_chg_code
-            // 
-            this.dgvl2_chg_code.HeaderText = "CHARGE CODE";
-            this.dgvl2_chg_code.Name = "dgvl2_chg_code";
-            this.dgvl2_chg_code.ReadOnly = true;
-            // 
-            // dgvl2_chg_num
-            // 
-            this.dgvl2_chg_num.HeaderText = "CHARGE NUM";
-            this.dgvl2_chg_num.Name = "dgvl2_chg_num";
-            this.dgvl2_chg_num.ReadOnly = true;
-            // 
-            // dgvl2_istransferred
-            // 
-            this.dgvl2_istransferred.HeaderText = "FROM UNIT BILLING";
-            this.dgvl2_istransferred.Name = "dgvl2_istransferred";
-            this.dgvl2_istransferred.ReadOnly = true;
-            this.dgvl2_istransferred.Width = 150;
             // 
             // panel1
             // 
@@ -1243,7 +1003,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.DarkRed;
-            this.label10.Location = new System.Drawing.Point(590, 16);
+            this.label10.Location = new System.Drawing.Point(575, 16);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(64, 15);
@@ -1353,7 +1113,7 @@
             this.lbl_dt_due.AutoSize = true;
             this.lbl_dt_due.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_dt_due.ForeColor = System.Drawing.Color.DarkRed;
-            this.lbl_dt_due.Location = new System.Drawing.Point(573, 40);
+            this.lbl_dt_due.Location = new System.Drawing.Point(575, 43);
             this.lbl_dt_due.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_dt_due.Name = "lbl_dt_due";
             this.lbl_dt_due.Size = new System.Drawing.Size(67, 15);
@@ -1446,8 +1206,8 @@
             // 
             // rbal
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.rbal.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.rbal.DefaultCellStyle = dataGridViewCellStyle7;
             this.rbal.HeaderText = "RUN BAL";
             this.rbal.Name = "rbal";
             this.rbal.ReadOnly = true;
@@ -1456,8 +1216,8 @@
             // 
             // amt
             // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.amt.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.amt.DefaultCellStyle = dataGridViewCellStyle8;
             this.amt.FillWeight = 77F;
             this.amt.HeaderText = "AMOUNT";
             this.amt.Name = "amt";
@@ -1509,19 +1269,269 @@
             this.chg_date.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.chg_date.Width = 70;
             // 
-            // comboBox5
+            // dgvl_soa_code
             // 
-            this.comboBox5.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            "SOA",
-            "Commission"});
-            this.comboBox5.Location = new System.Drawing.Point(14, 215);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(144, 24);
-            this.comboBox5.TabIndex = 16;
+            this.dgvl_soa_code.HeaderText = "SOA Code";
+            this.dgvl_soa_code.Name = "dgvl_soa_code";
+            this.dgvl_soa_code.ReadOnly = true;
+            this.dgvl_soa_code.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvl_soa_code.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dgvl_roomno
+            // 
+            this.dgvl_roomno.HeaderText = "Room No.";
+            this.dgvl_roomno.Name = "dgvl_roomno";
+            this.dgvl_roomno.ReadOnly = true;
+            this.dgvl_roomno.Visible = false;
+            this.dgvl_roomno.Width = 75;
+            // 
+            // dgvl_debt_name
+            // 
+            this.dgvl_debt_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvl_debt_name.HeaderText = "Guest";
+            this.dgvl_debt_name.Name = "dgvl_debt_name";
+            this.dgvl_debt_name.ReadOnly = true;
+            this.dgvl_debt_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dgvl_soa_date
+            // 
+            this.dgvl_soa_date.HeaderText = "SOA Period";
+            this.dgvl_soa_date.Name = "dgvl_soa_date";
+            this.dgvl_soa_date.ReadOnly = true;
+            this.dgvl_soa_date.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvl_soa_date.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dgvl_soa_date.Width = 175;
+            // 
+            // dgvl_due_date
+            // 
+            this.dgvl_due_date.HeaderText = "Due Date";
+            this.dgvl_due_date.Name = "dgvl_due_date";
+            this.dgvl_due_date.ReadOnly = true;
+            this.dgvl_due_date.Width = 85;
+            // 
+            // dgvl_collect
+            // 
+            this.dgvl_collect.HeaderText = "Collected";
+            this.dgvl_collect.Name = "dgvl_collect";
+            this.dgvl_collect.ReadOnly = true;
+            this.dgvl_collect.Visible = false;
+            this.dgvl_collect.Width = 77;
+            // 
+            // dgvl_comments
+            // 
+            this.dgvl_comments.HeaderText = "Notes";
+            this.dgvl_comments.Name = "dgvl_comments";
+            this.dgvl_comments.ReadOnly = true;
+            // 
+            // dgvl_user_id
+            // 
+            this.dgvl_user_id.HeaderText = "User ID";
+            this.dgvl_user_id.Name = "dgvl_user_id";
+            this.dgvl_user_id.ReadOnly = true;
+            this.dgvl_user_id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvl_user_id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dgvl_cancel
+            // 
+            this.dgvl_cancel.HeaderText = "Cancel";
+            this.dgvl_cancel.Name = "dgvl_cancel";
+            this.dgvl_cancel.ReadOnly = true;
+            this.dgvl_cancel.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvl_cancel.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dgvl_cancel.Width = 50;
+            // 
+            // dgvl_jrnl
+            // 
+            this.dgvl_jrnl.HeaderText = "Jrnlz";
+            this.dgvl_jrnl.Name = "dgvl_jrnl";
+            this.dgvl_jrnl.ReadOnly = true;
+            this.dgvl_jrnl.Width = 50;
+            // 
+            // dgvl_t_date
+            // 
+            this.dgvl_t_date.HeaderText = "Trans Date";
+            this.dgvl_t_date.Name = "dgvl_t_date";
+            this.dgvl_t_date.ReadOnly = true;
+            this.dgvl_t_date.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvl_t_date.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dgvl_t_date.Width = 85;
+            // 
+            // dgvl_t_time
+            // 
+            this.dgvl_t_time.HeaderText = "Time";
+            this.dgvl_t_time.Name = "dgvl_t_time";
+            this.dgvl_t_time.ReadOnly = true;
+            this.dgvl_t_time.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvl_t_time.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dgvl_t_time.Width = 55;
+            // 
+            // dgvl_debt_code
+            // 
+            this.dgvl_debt_code.HeaderText = "Tenant Code";
+            this.dgvl_debt_code.Name = "dgvl_debt_code";
+            this.dgvl_debt_code.ReadOnly = true;
+            // 
+            // dgvl_soa_period
+            // 
+            this.dgvl_soa_period.HeaderText = "SOA Period Code";
+            this.dgvl_soa_period.Name = "dgvl_soa_period";
+            this.dgvl_soa_period.ReadOnly = true;
+            this.dgvl_soa_period.Visible = false;
+            // 
+            // dgvl_chg_dtfrm
+            // 
+            this.dgvl_chg_dtfrm.HeaderText = "Date From";
+            this.dgvl_chg_dtfrm.Name = "dgvl_chg_dtfrm";
+            this.dgvl_chg_dtfrm.ReadOnly = true;
+            this.dgvl_chg_dtfrm.Visible = false;
+            // 
+            // dgvl_chg_dtto
+            // 
+            this.dgvl_chg_dtto.HeaderText = "Date To";
+            this.dgvl_chg_dtto.Name = "dgvl_chg_dtto";
+            this.dgvl_chg_dtto.ReadOnly = true;
+            this.dgvl_chg_dtto.Visible = false;
+            // 
+            // dgvl_rmrttyp
+            // 
+            this.dgvl_rmrttyp.HeaderText = "dgvl_rmrttyp";
+            this.dgvl_rmrttyp.Name = "dgvl_rmrttyp";
+            this.dgvl_rmrttyp.ReadOnly = true;
+            this.dgvl_rmrttyp.Visible = false;
+            // 
+            // soatype
+            // 
+            this.soatype.HeaderText = "TYPE";
+            this.soatype.Name = "soatype";
+            this.soatype.ReadOnly = true;
+            this.soatype.Visible = false;
+            // 
+            // dgvl2_lnno
+            // 
+            this.dgvl2_lnno.HeaderText = "LINE";
+            this.dgvl2_lnno.Name = "dgvl2_lnno";
+            this.dgvl2_lnno.ReadOnly = true;
+            this.dgvl2_lnno.Width = 50;
+            // 
+            // dgvl2_gfolio
+            // 
+            this.dgvl2_gfolio.HeaderText = "GUEST FOLIO";
+            this.dgvl2_gfolio.Name = "dgvl2_gfolio";
+            this.dgvl2_gfolio.ReadOnly = true;
+            this.dgvl2_gfolio.Visible = false;
+            // 
+            // acct_no
+            // 
+            this.acct_no.HeaderText = "Guest No.";
+            this.acct_no.Name = "acct_no";
+            this.acct_no.ReadOnly = true;
+            this.acct_no.Visible = false;
+            // 
+            // full_name
+            // 
+            this.full_name.HeaderText = "Name";
+            this.full_name.Name = "full_name";
+            this.full_name.ReadOnly = true;
+            this.full_name.Visible = false;
+            // 
+            // hotel_name
+            // 
+            this.hotel_name.HeaderText = "HOTEL";
+            this.hotel_name.Name = "hotel_name";
+            this.hotel_name.ReadOnly = true;
+            this.hotel_name.Visible = false;
+            // 
+            // chg_code
+            // 
+            this.chg_code.HeaderText = "CODE";
+            this.chg_code.Name = "chg_code";
+            this.chg_code.ReadOnly = true;
+            this.chg_code.Visible = false;
+            // 
+            // chg_desc
+            // 
+            this.chg_desc.HeaderText = "DESCRIPTION";
+            this.chg_desc.Name = "chg_desc";
+            this.chg_desc.ReadOnly = true;
+            this.chg_desc.Visible = false;
+            // 
+            // ttlpax
+            // 
+            this.ttlpax.HeaderText = "PAX";
+            this.ttlpax.Name = "ttlpax";
+            this.ttlpax.ReadOnly = true;
+            this.ttlpax.Visible = false;
+            // 
+            // dgvl2_charge_desc
+            // 
+            this.dgvl2_charge_desc.HeaderText = "CHARGES";
+            this.dgvl2_charge_desc.Name = "dgvl2_charge_desc";
+            this.dgvl2_charge_desc.ReadOnly = true;
+            // 
+            // dgvl2_amount
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.dgvl2_amount.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvl2_amount.FillWeight = 77F;
+            this.dgvl2_amount.HeaderText = "AMOUNT";
+            this.dgvl2_amount.Name = "dgvl2_amount";
+            this.dgvl2_amount.ReadOnly = true;
+            this.dgvl2_amount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dgvl2_desc
+            // 
+            this.dgvl2_desc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgvl2_desc.FillWeight = 200F;
+            this.dgvl2_desc.HeaderText = "REFERENCE";
+            this.dgvl2_desc.MinimumWidth = 155;
+            this.dgvl2_desc.Name = "dgvl2_desc";
+            this.dgvl2_desc.ReadOnly = true;
+            this.dgvl2_desc.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dgvl2_chg_date
+            // 
+            this.dgvl2_chg_date.HeaderText = "CHARGE DATE";
+            this.dgvl2_chg_date.Name = "dgvl2_chg_date";
+            this.dgvl2_chg_date.ReadOnly = true;
+            // 
+            // dgvl2_chg_time
+            // 
+            this.dgvl2_chg_time.HeaderText = "TIME";
+            this.dgvl2_chg_time.Name = "dgvl2_chg_time";
+            this.dgvl2_chg_time.ReadOnly = true;
+            // 
+            // dgvl2_invoice
+            // 
+            this.dgvl2_invoice.HeaderText = "INVOICE";
+            this.dgvl2_invoice.Name = "dgvl2_invoice";
+            this.dgvl2_invoice.ReadOnly = true;
+            this.dgvl2_invoice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dgvl2_invoice.Visible = false;
+            // 
+            // dgvl2_chg_code
+            // 
+            this.dgvl2_chg_code.HeaderText = "CHARGE CODE";
+            this.dgvl2_chg_code.Name = "dgvl2_chg_code";
+            this.dgvl2_chg_code.ReadOnly = true;
+            // 
+            // dgvl2_chg_num
+            // 
+            this.dgvl2_chg_num.HeaderText = "CHARGE NUM";
+            this.dgvl2_chg_num.Name = "dgvl2_chg_num";
+            this.dgvl2_chg_num.ReadOnly = true;
+            // 
+            // dgvl2_istransferred
+            // 
+            this.dgvl2_istransferred.HeaderText = "FROM UNIT BILLING";
+            this.dgvl2_istransferred.Name = "dgvl2_istransferred";
+            this.dgvl2_istransferred.ReadOnly = true;
+            this.dgvl2_istransferred.Width = 150;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "NAME";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
             // 
             // a_statementofaccount
             // 
@@ -1655,6 +1665,7 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvl_soa_code;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvl_roomno;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvl_debt_name;
@@ -1690,6 +1701,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvl2_chg_code;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvl2_chg_num;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvl2_istransferred;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
     }
 }

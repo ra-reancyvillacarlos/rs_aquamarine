@@ -91,7 +91,8 @@ namespace Hotel_System
 
 
             closed = db.get_colval(table, "closed", "soafrom='" + dtfrm + "' AND soato='" + dtto + "'");
-            if (String.IsNullOrEmpty(closed))
+
+            if (String.IsNullOrEmpty(closed) || closed == "000000")
             {
                 cnew = true;
             }

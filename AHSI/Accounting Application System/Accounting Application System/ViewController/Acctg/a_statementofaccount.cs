@@ -137,8 +137,8 @@ namespace Accounting_Application_System
             String code = "";
             isnew = false;
             
-            try
-            {
+            //try
+            //{
                 if (dgv_list.Rows.Count > 0)
                 {
                     r = dgv_list.CurrentRow.Index;
@@ -196,13 +196,16 @@ namespace Accounting_Application_System
                 {
                     MessageBox.Show("No item selected.");
                 }
-            }
-            catch { MessageBox.Show("No item selected."); }
+            //}
+            //catch { MessageBox.Show("No item selected."); }
         }
 
         private void disp_itemlist(String code)
         {
-            DataTable dt = db.QueryBySQLCode("SELECT sl.*, gf.acct_no, gf.full_name, hf.name, CONCAT_WS(', ', pck.package1, pck1.activities1) AS chg_code1, CONCAT_WS(', ', pck.package, pck1.activities) AS chg_desc1, COALESCE(SPLIT_PART(gf.occ_type, ', ', 4), '0') AS ttlpax, c.chg_desc FROM rssys.soalne sl LEFT JOIN rssys.charge c ON c.chg_code=sl.chg_code LEFT JOIN rssys.gfolio gf ON gf.reg_num = sl.gfolio LEFT JOIN rssys.hotel hf ON hf.code = gf.hotel_code LEFT JOIN (SELECT cf.reg_num, cf.res_code AS rg_code, STRING_AGG(ch.chg_desc, ', ') AS package, STRING_AGG(ch.chg_code, ', ') AS package1 FROM rssys.chgfil cf LEFT JOIN rssys.charge ch ON cf.chg_code = ch.chg_code WHERE UPPER(cf.chg_code) LIKE 'PCK%' GROUP BY cf.reg_num, cf.res_code) pck ON pck.rg_code = gf.res_code LEFT JOIN (SELECT cf.reg_num, cf.res_code AS rg_code, STRING_AGG(ch.chg_desc, ', ') AS activities, STRING_AGG(ch.chg_code, ', ') AS activities1 FROM rssys.chgfil cf LEFT JOIN rssys.charge ch ON cf.chg_code = ch.chg_code WHERE UPPER(cf.chg_code) LIKE 'ACT%' GROUP BY cf.reg_num, cf.res_code) pck1 ON pck1.rg_code = gf.res_code WHERE soa_code='" + code + "' ORDER BY ln_num");
+            DataTable dt = db.QueryBySQLCode("SELECT DISTINCT sl.*, gf.acct_no, gf.full_name, hf.name, CONCAT_WS(', ', pck.package1, pck1.activities1) AS chg_code1, CONCAT_WS(', ', pck.package, pck1.activities) AS chg_desc1, COALESCE(SPLIT_PART(gf.occ_type, ', ', 4), '0') AS ttlpax, c.chg_desc FROM rssys.soalne sl LEFT JOIN rssys.charge c ON c.chg_code=sl.chg_code LEFT JOIN rssys.gfolio gf ON gf.reg_num = sl.gfolio LEFT JOIN rssys.hotel hf ON hf.code = gf.hotel_code LEFT JOIN (SELECT cf.reg_num, cf.res_code AS rg_code, STRING_AGG(ch.chg_desc, ', ') AS package, STRING_AGG(ch.chg_code, ', ') AS package1 FROM rssys.chgfil cf LEFT JOIN rssys.charge ch ON cf.chg_code = ch.chg_code WHERE UPPER(cf.chg_code) LIKE 'PCK%' GROUP BY cf.reg_num, cf.res_code) pck ON pck.rg_code = gf.res_code LEFT JOIN (SELECT cf.reg_num, cf.res_code AS rg_code, STRING_AGG(ch.chg_desc, ', ') AS activities, STRING_AGG(ch.chg_code, ', ') AS activities1 FROM rssys.chgfil cf LEFT JOIN rssys.charge ch ON cf.chg_code = ch.chg_code WHERE UPPER(cf.chg_code) LIKE 'ACT%' GROUP BY cf.reg_num, cf.res_code) pck1 ON pck1.rg_code = gf.res_code WHERE soa_code='" + code + "' ORDER BY ln_num ASC");
+
+            //DataTable dt = db.QueryBySQLCode("SELECT DISTINCT sl.soa_code, COALESCE(CAST(SUBSTRING(sl.ln_num FROM '([0-9]{1,10})') AS INTEGER), 0)  AS ln_num, sl.invoice, sl.reference, sl.amount, sl.out_code, sl.istransferred, sl.branch, sl.ord_code, sl.out_desc, sl.chg_code, sl.chg_date, sl.chg_num, sl.chg_time, sl.gfolio, gf.acct_no, gf.full_name, hf.name, COALESCE(SPLIT_PART(gf.occ_type, ', ', 4), '0') AS ttlpax, c.chg_desc FROM rssys.soalne sl LEFT JOIN rssys.charge c ON c.chg_code=sl.chg_code LEFT JOIN rssys.gfolio gf ON gf.reg_num = sl.gfolio LEFT JOIN rssys.hotel hf ON hf.code = gf.hotel_code LEFT JOIN (SELECT cf.reg_num, cf.res_code AS rg_code, STRING_AGG(ch.chg_desc, ', ') AS package, STRING_AGG(ch.chg_code, ', ') AS package1 FROM rssys.chgfil cf LEFT JOIN rssys.charge ch ON cf.chg_code = ch.chg_code WHERE UPPER(cf.chg_code) LIKE 'PCK%' GROUP BY cf.reg_num, cf.res_code) pck ON pck.rg_code = gf.res_code LEFT JOIN (SELECT cf.reg_num, cf.res_code AS rg_code, STRING_AGG(ch.chg_desc, ', ') AS activities, STRING_AGG(ch.chg_code, ', ') AS activities1 FROM rssys.chgfil cf LEFT JOIN rssys.charge ch ON cf.chg_code = ch.chg_code WHERE UPPER(cf.chg_code) LIKE 'ACT%' GROUP BY cf.reg_num, cf.res_code) pck1 ON pck1.rg_code = gf.res_code  WHERE soa_code='" + code + "' ORDER BY COALESCE(CAST(SUBSTRING(sl.ln_num FROM '([0-9]{1,10})') AS INTEGER), 0)  ASC");
+            
             if (comboBox4.SelectedIndex == 1)
             {
                 dgv_itemlist.Columns["dgvl2_gfolio"].Visible = true; dgv_itemlist.Columns["acct_no"].Visible = true; dgv_itemlist.Columns["full_name"].Visible = true; dgv_itemlist.Columns["name"].Visible = true; dgv_itemlist.Columns["chg_code"].Visible = true; dgv_itemlist.Columns["chg_desc"].Visible = true; dgv_itemlist.Columns["ttlpax"].Visible = true; dgv_itemlist.Columns["dgvl2_charge_desc"].Visible = false; dgv_itemlist.Columns["dgvl2_chg_date"].Visible = false; dgv_itemlist.Columns["dgvl2_desc"].Visible = false; dgv_itemlist.Columns["dgvl2_chg_code"].Visible = false; dgv_itemlist.Columns["dgvl2_chg_num"].Visible = false; dgv_itemlist.Columns["dgvl2_istransferred"].Visible = false;
@@ -569,9 +572,12 @@ namespace Accounting_Application_System
             {
                 MessageBox.Show("Empty line list.");
             }
+               else if(cbo_soaperiod.SelectedIndex == -1)
+            {
+                MessageBox.Show("SOA Period is required.");
+            }
             else
             {
-
                 code = txt_code.Text;
                 customerid = cbo_customer.SelectedValue.ToString();
                 customer_name = cbo_customer.Text;
@@ -582,7 +588,6 @@ namespace Accounting_Application_System
                 comments = rtxt_comment.Text;
                 t_date = db.get_systemdate("");
                 t_time = db.get_systemtime();
-
                 
                 if (cbo_soaperiod.Visible)
                 {
@@ -592,8 +597,6 @@ namespace Accounting_Application_System
                 {
                     soa_period = dtp_soa.Value.ToString("yyyy/MM/dd");
                 }
-
-
 
                 if (isnew)
                 {
@@ -933,7 +936,7 @@ namespace Accounting_Application_System
             {
                 WHERE += " AND t_date BETWEEN '" + dtp_from.Value.ToString("yyyy-MM-dd") + "' AND '" + dtp_to.Value.ToString("yyyy-MM-dd") + "' ";
             }
-            if (comboBox1.SelectedIndex > -1)
+            if (comboBox1.SelectedIndex > 0)
             {
                 WHERE += " AND sh.soatype = '" + comboBox1.Text + "'";
             }
@@ -1223,12 +1226,36 @@ namespace Accounting_Application_System
             if (comboBox4.SelectedIndex == 1)
             {
                 isCustomer = false;
-                dgv_itemlist.Columns["dgvl2_gfolio"].Visible = true; dgv_itemlist.Columns["acct_no"].Visible = true; dgv_itemlist.Columns["full_name"].Visible = true; dgv_itemlist.Columns["name"].Visible = true; dgv_itemlist.Columns["chg_code"].Visible = true; dgv_itemlist.Columns["chg_desc"].Visible = true; dgv_itemlist.Columns["ttlpax"].Visible = true; dgv_itemlist.Columns["dgvl2_charge_desc"].Visible = false; dgv_itemlist.Columns["dgvl2_chg_date"].Visible = false; dgv_itemlist.Columns["dgvl2_desc"].Visible = false; dgv_itemlist.Columns["dgvl2_chg_code"].Visible = false; dgv_itemlist.Columns["dgvl2_chg_num"].Visible = false; dgv_itemlist.Columns["dgvl2_istransferred"].Visible = false;
+                dgv_itemlist.Columns["dgvl2_gfolio"].Visible = true; 
+                dgv_itemlist.Columns["acct_no"].Visible = true; 
+                dgv_itemlist.Columns["full_name"].Visible = true; 
+                dgv_itemlist.Columns["name"].Visible = true; 
+                dgv_itemlist.Columns["chg_code"].Visible = true; 
+                dgv_itemlist.Columns["chg_desc"].Visible = true; 
+                dgv_itemlist.Columns["ttlpax"].Visible = true; 
+                dgv_itemlist.Columns["dgvl2_charge_desc"].Visible = false; 
+                dgv_itemlist.Columns["dgvl2_chg_date"].Visible = false; 
+                dgv_itemlist.Columns["dgvl2_desc"].Visible = false; 
+                dgv_itemlist.Columns["dgvl2_chg_code"].Visible = false; 
+                dgv_itemlist.Columns["dgvl2_chg_num"].Visible = false; 
+                dgv_itemlist.Columns["dgvl2_istransferred"].Visible = false;
             }
             else
             {
                 isCustomer = true;
-                dgv_itemlist.Columns["dgvl2_gfolio"].Visible = false; dgv_itemlist.Columns["acct_no"].Visible = false; dgv_itemlist.Columns["full_name"].Visible = false; dgv_itemlist.Columns["name"].Visible = false; dgv_itemlist.Columns["chg_code"].Visible = false; dgv_itemlist.Columns["chg_desc"].Visible = false; dgv_itemlist.Columns["ttlpax"].Visible = false; dgv_itemlist.Columns["dgvl2_charge_desc"].Visible = true; dgv_itemlist.Columns["dgvl2_chg_date"].Visible = true; dgv_itemlist.Columns["dgvl2_desc"].Visible = true; dgv_itemlist.Columns["dgvl2_chg_code"].Visible = true; dgv_itemlist.Columns["dgvl2_chg_num"].Visible = true; dgv_itemlist.Columns["dgvl2_istransferred"].Visible = true;
+                dgv_itemlist.Columns["dgvl2_gfolio"].Visible = false;
+                dgv_itemlist.Columns["acct_no"].Visible = false;
+                dgv_itemlist.Columns["full_name"].Visible = false; 
+                dgv_itemlist.Columns["name"].Visible = false; 
+                dgv_itemlist.Columns["chg_code"].Visible = false; 
+                dgv_itemlist.Columns["chg_desc"].Visible = false; 
+                dgv_itemlist.Columns["ttlpax"].Visible = false; 
+                dgv_itemlist.Columns["dgvl2_charge_desc"].Visible = true; 
+                dgv_itemlist.Columns["dgvl2_chg_date"].Visible = true; 
+                dgv_itemlist.Columns["dgvl2_desc"].Visible = true; 
+                dgv_itemlist.Columns["dgvl2_chg_code"].Visible = true; 
+                dgv_itemlist.Columns["dgvl2_chg_num"].Visible = true; 
+                dgv_itemlist.Columns["dgvl2_istransferred"].Visible = true;
             }
         }
     }
