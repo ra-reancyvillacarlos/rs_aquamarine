@@ -19,8 +19,8 @@ namespace Accounting_Application_System
 
         public static String schema_static = "rssys";
 
-        //public static String servers = System.IO.File.ReadAllText(driveloc + comp_folder + "\\Publish\\localDatabase.txt");
-        public static String servers = "localhost";
+        public static String servers = System.IO.File.ReadAllText(driveloc + comp_folder + "\\Publish\\localDatabase.txt");
+        //public static String servers = "localhost";
         public String serv = servers;
         public String pwd = svr_pass;
         public String l_db = lcl_db;

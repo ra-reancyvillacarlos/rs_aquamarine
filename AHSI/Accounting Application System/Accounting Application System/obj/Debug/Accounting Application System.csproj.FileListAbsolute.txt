@@ -4601,3 +4601,164 @@ D:\GitFiles\rs_aquamarine\AHSI\Accounting Application System\Accounting Applicat
 D:\GitFiles\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.application
 D:\GitFiles\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.exe
 D:\GitFiles\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.pdb
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\Accounting Application System.exe.config
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\Accounting Application System.exe.manifest
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\Accounting Application System.application
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\Accounting Application System.exe
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\Accounting Application System.pdb
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\CrystalDecisions.CrystalReports.Design.dll
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\CrystalDecisions.Data.AdoDotNetInterop.dll
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\CrystalDecisions.ReportSource.dll
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\CrystalDecisions.Shared.dll
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\CrystalDecisions.VSDesigner.dll
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\CrystalDecisions.Web.dll
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\CrystalDecisions.Windows.Forms.dll
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\EntityFramework.dll
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\FlashControlV71.dll
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\Hotel System.exe
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\Mono.Security.dll
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\SAPBusinessObjects.WPF.Viewer.dll
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\SAPBusinessObjects.WPF.ViewerShared.dll
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\Hotel System.pdb
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\bin\Debug\EntityFramework.xml
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.csprojResolveAssemblyReference.cache
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.csproj.ResolveComReference.cache
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.activation_form.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.Form1.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.incomeClosing.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_PO_Password.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.market_segment.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_itemclassification.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.periodClosing.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.Ratetypes.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.a_disbursement.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.a_releasecheck.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.a_statementofaccount2.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.journalize.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_budget.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_charge.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_chargeClassification.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.auto_loaner.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.auto_loan_items.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.auto_status.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.call_history.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.call_history_entry.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.Remarks.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.SalesServiceLoan.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_auto_Checklist.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_Auto_Sales_Loan_Status.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_GP_Computation.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_Job_Quotation.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_Release_Deliver_Unit.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_Work_Shopload.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.RPT_RES_entry.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_ServiceHistory.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.task_item.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.to_do.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_unpaid_invoices.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.EmailBlastSchedule.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.tbCategory.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.TextBlastTemplate.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_auto_customer.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_cond_approval.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_decision.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_requirements.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_ro_status.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_technician.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_workperform.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_add_folio.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.auto_loanapplication.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.crm_task.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_Calendar.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_generic.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_Sales_Auto.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_AutoLoanStatus.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_sub_items.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_ROStatus.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_assembleditem.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_company.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_RepairOrder.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_ServicesDispatch.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_salesagent.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_color.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_type.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_membership.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_vehiclec_info.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.crm_TextBlast_Scheduling.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.Main.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_ItemSearch.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_costcenters.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.MD.PrintBarcode.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.rpt_PrintBarcode.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.a_CollectionEntry.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.a_journalentry.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.a_postingtoledger.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.a_statementofaccount.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_add_soa.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_journalentry.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_soaline_update.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_so_list.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.AboutBox1.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.Login.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.Properties.Resources.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_DirectPurchase.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_PO.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_purchaseRequest.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_Purch_Orders.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_ReceivingPurchase.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_stkcrd_frm.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_StockAdjustment.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_StockIssuance.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.i_StockTransfer.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_add_item_from_PO.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_add_item_from_PR.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_enter_item.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_enter_item_simple.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_enter_ret_pur_item.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_accountgroup.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_accountingperiods.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_accounttitles.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_collector.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_journal.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_mainaccounts.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_modeofpayment.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_subaccounts.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_subcostcenters.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_vat.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_brand.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_item.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_itemgroup.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_itemunit.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_stocklocation.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_suppliers.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_clerk.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_customers.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_discount.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.m_outlet.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.Report.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.rpt_customerledger.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.rpt_Global.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.rpt_supplierledger.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.rpt_z_jrnl.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_Sales.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.s_SalesReturn.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_enter_ret_sale_item.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_enter_sales_item.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_payment.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.ViewController.Sys.PostLedgerUndo.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_accounting_system_settings.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_clerkpassword.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_Notification.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_user_rights.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_user_settings.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_add_recip.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_add_disburse_item.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_Calendar2.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.z_enter_items_text_item.resources
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.csproj.GenerateResource.Cache
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.exe.manifest
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.application
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.exe
+D:\Reancy Data\PROJECTS\rs_newaquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.pdb

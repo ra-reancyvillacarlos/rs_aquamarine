@@ -679,5 +679,29 @@ namespace Hotel_System
         {
             up_gt();
         }
+
+        private void label27_TextChanged(object sender, EventArgs e)
+        {
+            Double _curAmount = 0.00;
+
+            try
+            {
+                _curAmount = Convert.ToDouble(label27.Text.ToString());
+            }
+            catch { }
+            label27.Text = gm.toAccountingFormat(_curAmount); up_gt();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            Double _curAmount = 0.00;
+
+            try
+            {
+                _curAmount = Convert.ToDouble(textBox1.Text.ToString());
+            }
+            catch { }
+            textBox1.Text = gm.toAccountingFormat(_curAmount);
+        }
     }
 }

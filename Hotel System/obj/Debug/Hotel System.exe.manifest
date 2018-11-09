@@ -301,14 +301,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Hotel System.exe" size="5713288">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Hotel System.exe" size="5713408">
       <assemblyIdentity name="Hotel System" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>C6Ec7+M0GrpMH2vpsCXmU5QDqkw=</dsig:DigestValue>
+        <dsig:DigestValue>h5JnzdDMbzkQP6IWza0ETvi+jAE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -349,14 +349,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.ReportViewer.WinForms.dll" size="564928">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.ReportViewer.WinForms.dll" size="564848">
       <assemblyIdentity name="Microsoft.ReportViewer.WinForms" version="11.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>UrnyIVJUOipAY6pjWpAjyZb7gMk=</dsig:DigestValue>
+        <dsig:DigestValue>oduqXcWZo5xG7NvxydMg3FHncs0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

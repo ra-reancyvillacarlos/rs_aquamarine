@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label27 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
@@ -73,15 +73,15 @@
             this.label15 = new System.Windows.Forms.Label();
             this.cbo_appaymentform = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label27 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.label27);
+            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label26);
@@ -120,15 +120,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ORDER SLIP";
             // 
-            // label27
+            // checkBox1
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(135, 329);
-            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(40, 20);
-            this.label27.TabIndex = 45;
-            this.label27.Text = "0.00";
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(13, 328);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(115, 24);
+            this.checkBox1.TabIndex = 46;
+            this.checkBox1.Text = "ENTRANCE";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // button1
             // 
@@ -146,17 +147,18 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(409, 356);
+            this.textBox1.Location = new System.Drawing.Point(388, 326);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(332, 26);
+            this.textBox1.Size = new System.Drawing.Size(353, 26);
             this.textBox1.TabIndex = 42;
             this.textBox1.Text = "0.00";
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(405, 332);
+            this.label26.Location = new System.Drawing.Point(384, 302);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(81, 20);
             this.label26.TabIndex = 41;
@@ -178,10 +180,10 @@
             this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(127, 289);
+            this.comboBox2.Location = new System.Drawing.Point(134, 289);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(230, 28);
+            this.comboBox2.Size = new System.Drawing.Size(223, 28);
             this.comboBox2.TabIndex = 39;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
@@ -575,16 +577,16 @@
             this.label16.TabIndex = 0;
             this.label16.Text = "Payment Form";
             // 
-            // checkBox1
+            // label27
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(13, 328);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(115, 24);
-            this.checkBox1.TabIndex = 46;
-            this.checkBox1.Text = "ENTRANCE";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.label27.Location = new System.Drawing.Point(134, 326);
+            this.label27.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(223, 26);
+            this.label27.TabIndex = 47;
+            this.label27.Text = "0.00";
+            this.label27.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.label27.TextChanged += new System.EventHandler(this.label27_TextChanged);
             // 
             // enterDeposit
             // 
@@ -655,7 +657,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckedListBox checkedListBox2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label27;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox label27;
     }
 }

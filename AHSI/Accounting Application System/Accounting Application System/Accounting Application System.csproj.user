@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <PublishUrlHistory>\\RIGHTAPPS\RightApps\Aquamarine\Publish\|\\RIGHTAPPS\RightApps\Eastland\Publish\|\\Rightapps\RightApps\Eastland\Publish\|+\|\\RIGHTAPPS\RightApps\BALAI\Publish\</PublishUrlHistory>
+    <PublishUrlHistory>D:\RightApps\Aquamarine\Publish\|\\RIGHTAPPS\RightApps\Aquamarine\Publish\|\\RIGHTAPPS\RightApps\Eastland\Publish\|\\Rightapps\RightApps\Eastland\Publish\|+\</PublishUrlHistory>
     <InstallUrlHistory />
     <SupportUrlHistory>https://rightapps.ph/|http://rightappsofficial.com/</SupportUrlHistory>
     <UpdateUrlHistory>\\RIGHTAPPS\RightApps\Eastland\Publish\|\\RIGHTAPPS\RightApps\BALAI\Publish\|\\RIGHTAPPS\RightApps\Headway\Publish\|\\RIGHTAPPS\RightApps\Elegant\Publish\</UpdateUrlHistory>

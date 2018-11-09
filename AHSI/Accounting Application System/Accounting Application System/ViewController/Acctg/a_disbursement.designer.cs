@@ -139,25 +139,25 @@
             this.txt_search = new System.Windows.Forms.TextBox();
             this.btn_search = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.btn_goimport = new System.Windows.Forms.Button();
             this.btn_print = new System.Windows.Forms.Button();
+            this.btn_goimport = new System.Windows.Forms.Button();
             this.btn_new = new System.Windows.Forms.Button();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_upd = new System.Windows.Forms.Button();
             this.tpg_option_2 = new System.Windows.Forms.TabPage();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.btn_exit = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_additem = new System.Windows.Forms.Button();
             this.btn_delitem = new System.Windows.Forms.Button();
             this.btn_upditem = new System.Windows.Forms.Button();
+            this.btn_saveorder = new System.Windows.Forms.Button();
             this.tpg_option_3 = new System.Windows.Forms.TabPage();
+            this.btn_back = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btn_import = new System.Windows.Forms.Button();
             this.openFile = new System.Windows.Forms.OpenFileDialog();
             this.importBgWorker = new System.ComponentModel.BackgroundWorker();
-            this.btn_exit = new System.Windows.Forms.Button();
-            this.btn_saveorder = new System.Windows.Forms.Button();
-            this.btn_back = new System.Windows.Forms.Button();
             this.pnl_main.SuspendLayout();
             this.tbcntrl_main.SuspendLayout();
             this.tpg_right_list.SuspendLayout();
@@ -548,7 +548,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(889, 532);
+            this.panel1.Size = new System.Drawing.Size(889, 530);
             this.panel1.TabIndex = 98;
             // 
             // pnl_folio
@@ -557,7 +557,7 @@
             this.pnl_folio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_folio.Location = new System.Drawing.Point(0, 87);
             this.pnl_folio.Name = "pnl_folio";
-            this.pnl_folio.Size = new System.Drawing.Size(889, 306);
+            this.pnl_folio.Size = new System.Drawing.Size(889, 304);
             this.pnl_folio.TabIndex = 91;
             // 
             // tabControl1
@@ -567,7 +567,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(889, 306);
+            this.tabControl1.Size = new System.Drawing.Size(889, 304);
             this.tabControl1.TabIndex = 91;
             // 
             // tabPage2
@@ -576,7 +576,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(881, 280);
+            this.tabPage2.Size = new System.Drawing.Size(881, 278);
             this.tabPage2.TabIndex = 0;
             this.tabPage2.Text = "Account Link";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -632,7 +632,7 @@
             this.dgv_itemlist.RowHeadersVisible = false;
             this.dgv_itemlist.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_itemlist.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_itemlist.Size = new System.Drawing.Size(875, 274);
+            this.dgv_itemlist.Size = new System.Drawing.Size(875, 272);
             this.dgv_itemlist.TabIndex = 1;
             this.dgv_itemlist.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgv_itemlist_CellPainting);
             // 
@@ -709,7 +709,7 @@
             this.pnl_collection.Controls.Add(this.groupBox2);
             this.pnl_collection.Controls.Add(this.panel8);
             this.pnl_collection.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnl_collection.Location = new System.Drawing.Point(0, 393);
+            this.pnl_collection.Location = new System.Drawing.Point(0, 391);
             this.pnl_collection.Name = "pnl_collection";
             this.pnl_collection.Size = new System.Drawing.Size(889, 139);
             this.pnl_collection.TabIndex = 92;
@@ -1356,6 +1356,19 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Main Option";
             // 
+            // btn_print
+            // 
+            this.btn_print.BackColor = System.Drawing.Color.Peru;
+            this.btn_print.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_print.Location = new System.Drawing.Point(12, 216);
+            this.btn_print.Name = "btn_print";
+            this.btn_print.Size = new System.Drawing.Size(150, 55);
+            this.btn_print.TabIndex = 9;
+            this.btn_print.Text = "Print List";
+            this.btn_print.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_print.UseVisualStyleBackColor = false;
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
+            // 
             // btn_goimport
             // 
             this.btn_goimport.BackColor = System.Drawing.Color.Peru;
@@ -1369,19 +1382,6 @@
             this.btn_goimport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_goimport.UseVisualStyleBackColor = false;
             this.btn_goimport.Click += new System.EventHandler(this.btn_goimport_Click);
-            // 
-            // btn_print
-            // 
-            this.btn_print.BackColor = System.Drawing.Color.Peru;
-            this.btn_print.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_print.Location = new System.Drawing.Point(12, 216);
-            this.btn_print.Name = "btn_print";
-            this.btn_print.Size = new System.Drawing.Size(150, 55);
-            this.btn_print.TabIndex = 9;
-            this.btn_print.Text = "Print List";
-            this.btn_print.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_print.UseVisualStyleBackColor = false;
-            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
             // 
             // btn_new
             // 
@@ -1408,6 +1408,7 @@
             this.btn_cancel.Text = "Cancel Entry";
             this.btn_cancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_cancel.UseVisualStyleBackColor = false;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click_1);
             // 
             // btn_upd
             // 
@@ -1443,8 +1444,22 @@
             this.panel9.Location = new System.Drawing.Point(0, 0);
             this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(171, 536);
+            this.panel9.Size = new System.Drawing.Size(171, 534);
             this.panel9.TabIndex = 1;
+            // 
+            // btn_exit
+            // 
+            this.btn_exit.BackColor = System.Drawing.SystemColors.Info;
+            this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_exit.Image = global::Accounting_Application_System.Properties.Resources._1343907460_go_back;
+            this.btn_exit.Location = new System.Drawing.Point(12, 226);
+            this.btn_exit.Name = "btn_exit";
+            this.btn_exit.Size = new System.Drawing.Size(148, 47);
+            this.btn_exit.TabIndex = 90;
+            this.btn_exit.Text = "Go Back";
+            this.btn_exit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_exit.UseVisualStyleBackColor = false;
+            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // groupBox1
             // 
@@ -1496,6 +1511,20 @@
             this.btn_upditem.UseVisualStyleBackColor = false;
             this.btn_upditem.Click += new System.EventHandler(this.btn_upditem_Click);
             // 
+            // btn_saveorder
+            // 
+            this.btn_saveorder.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btn_saveorder.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_saveorder.Image = global::Accounting_Application_System.Properties.Resources._1343908142_database_save;
+            this.btn_saveorder.Location = new System.Drawing.Point(11, 176);
+            this.btn_saveorder.Name = "btn_saveorder";
+            this.btn_saveorder.Size = new System.Drawing.Size(150, 44);
+            this.btn_saveorder.TabIndex = 89;
+            this.btn_saveorder.Text = "Save As Pending";
+            this.btn_saveorder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_saveorder.UseVisualStyleBackColor = false;
+            this.btn_saveorder.Click += new System.EventHandler(this.btn_saveorder_Click);
+            // 
             // tpg_option_3
             // 
             this.tpg_option_3.BackColor = System.Drawing.Color.DarkKhaki;
@@ -1506,6 +1535,20 @@
             this.tpg_option_3.Padding = new System.Windows.Forms.Padding(3);
             this.tpg_option_3.Size = new System.Drawing.Size(171, 534);
             this.tpg_option_3.TabIndex = 4;
+            // 
+            // btn_back
+            // 
+            this.btn_back.BackColor = System.Drawing.SystemColors.Info;
+            this.btn_back.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_back.Image = global::Accounting_Application_System.Properties.Resources._1343907460_go_back;
+            this.btn_back.Location = new System.Drawing.Point(10, 103);
+            this.btn_back.Name = "btn_back";
+            this.btn_back.Size = new System.Drawing.Size(148, 47);
+            this.btn_back.TabIndex = 93;
+            this.btn_back.Text = "Go Back";
+            this.btn_back.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_back.UseVisualStyleBackColor = false;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
             // groupBox3
             // 
@@ -1537,48 +1580,6 @@
             // importBgWorker
             // 
             this.importBgWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.importBgWorker_DoWork);
-            // 
-            // btn_exit
-            // 
-            this.btn_exit.BackColor = System.Drawing.SystemColors.Info;
-            this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_exit.Image = global::Accounting_Application_System.Properties.Resources._1343907460_go_back;
-            this.btn_exit.Location = new System.Drawing.Point(12, 226);
-            this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(148, 47);
-            this.btn_exit.TabIndex = 90;
-            this.btn_exit.Text = "Go Back";
-            this.btn_exit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_exit.UseVisualStyleBackColor = false;
-            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
-            // 
-            // btn_saveorder
-            // 
-            this.btn_saveorder.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btn_saveorder.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_saveorder.Image = global::Accounting_Application_System.Properties.Resources._1343908142_database_save;
-            this.btn_saveorder.Location = new System.Drawing.Point(11, 176);
-            this.btn_saveorder.Name = "btn_saveorder";
-            this.btn_saveorder.Size = new System.Drawing.Size(150, 44);
-            this.btn_saveorder.TabIndex = 89;
-            this.btn_saveorder.Text = "Save As Pending";
-            this.btn_saveorder.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_saveorder.UseVisualStyleBackColor = false;
-            this.btn_saveorder.Click += new System.EventHandler(this.btn_saveorder_Click);
-            // 
-            // btn_back
-            // 
-            this.btn_back.BackColor = System.Drawing.SystemColors.Info;
-            this.btn_back.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_back.Image = global::Accounting_Application_System.Properties.Resources._1343907460_go_back;
-            this.btn_back.Location = new System.Drawing.Point(10, 103);
-            this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(148, 47);
-            this.btn_back.TabIndex = 93;
-            this.btn_back.Text = "Go Back";
-            this.btn_back.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_back.UseVisualStyleBackColor = false;
-            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
             // a_disbursement
             // 

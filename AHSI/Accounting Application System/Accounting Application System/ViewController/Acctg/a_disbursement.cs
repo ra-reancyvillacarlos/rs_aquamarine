@@ -574,8 +574,7 @@ namespace Accounting_Application_System
                     WHERE = " t1.j_code IN (SELECT m5.j_code FROM rssys.m05 m5 WHERE m5.j_type='" + j_type + "') AND ";
                 }
 
-                dt = db.QueryBySQLCode("SELECT t1.*, tc2.*, t3.j_memo, m10.mp_desc,m04.at_desc FROM rssys.tr01 t1 LEFT JOIN (SELECT DISTINCT j_code, j_num, pay_code, at_code, credit FROM rssys.tr02 WHERE COALESCE(credit,0)<>0  AND (SELECT COUNT(tr2.j_num) FROM rssys.tr02 tr2 WHERE COALESCE(credit,0)<>0 AND tr2.j_num=tr02.j_num AND tr2.j_code=tr02.j_code)=1) tc2 ON tc2.j_num=t1.j_num AND tc2.j_code=t1.j_code LEFT JOIN rssys.tr03 t3 ON t3.j_num=t1.j_num AND t3.j_code=t1.j_code LEFT JOIN rssys.m10 m10 ON m10.mp_code=tc2.pay_code LEFT JOIN rssys.m04 m04 ON m04.at_code=tc2.at_code WHERE " + WHERE + " t1.t_date BETWEEN '" + dateFrom + "' AND '" + dateTo + "' AND tc2.j_num<>'' ORDER BY t1.j_num DESC");
-
+                dt = db.QueryBySQLCode("SELECT t1.*, tc2.*, t3.j_memo, m10.mp_desc,m04.at_desc FROM rssys.tr01 t1 LEFT JOIN (SELECT DISTINCT j_code, j_num, pay_code, at_code, credit FROM rssys.tr02 WHERE COALESCE(credit,0)<>0  AND (SELECT COUNT(tr2.j_num) FROM rssys.tr02 tr2 WHERE COALESCE(credit,0)<>0 AND tr2.j_num=tr02.j_num AND tr2.j_code=tr02.j_code)=1) tc2 ON tc2.j_num=t1.j_num AND tc2.j_code=t1.j_code LEFT JOIN rssys.tr03 t3 ON t3.j_num=t1.j_num AND t3.j_code=t1.j_code LEFT JOIN rssys.m10 m10 ON m10.mp_code=tc2.pay_code LEFT JOIN rssys.m04 m04 ON m04.at_code=tc2.at_code WHERE " + WHERE + " t1.t_date BETWEEN '" + dateFrom + "' AND '" + dateTo + "' AND tc2.j_num<>'' AND (t1.cancel IS NULL OR t1.cancel = '') ORDER BY t1.j_num DESC");
                 //AND COALESCE(pay_code,'')<>''
 
                 for (int i = 0; i < dt.Rows.Count; i++)
@@ -1891,6 +1890,36 @@ namespace Accounting_Application_System
 
             }
             catch (Exception)
+            {
+
+            }
+        }
+
+        private void btn_cancel_Click_1(object sender, EventArgs e)
+        {
+            String _curCode = "", _curNum = j_code;
+            try
+            {
+                _curCode = dgv_list["dgvl_or_code", dgv_list.CurrentRow.Index].Value.ToString();
+            }
+            catch { }
+
+            if (MessageBox.Show("Are you sure to cancel this entry?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (_curCode != "" || !String.IsNullOrEmpty(_curCode))
+                {
+                    if (db.QueryBySQLCode_bool("UPDATE rssys.tr01 SET cancel = 'Y' WHERE j_num = '" + _curCode + "' AND j_code = '" + j_code + "'"))
+                    {
+                        disp_list();
+                        MessageBox.Show("Successfully cancelled entry.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error.");
+                    }
+                }
+            }
+            else
             {
 
             }

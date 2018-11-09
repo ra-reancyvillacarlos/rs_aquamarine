@@ -498,7 +498,7 @@ namespace Accounting_Application_System
         {
             if (cbo_customer.SelectedIndex != -1)
             {
-                z_add_folio frm_addfolio = new z_add_folio(this, true, isCustomer);
+                z_add_folio frm_addfolio = new z_add_folio(this, true, isCustomer, cbo_soaperiods.SelectedValue.ToString());
 
                 frm_addfolio.ShowDialog();
             }
@@ -1101,7 +1101,7 @@ namespace Accounting_Application_System
 
         private void btn_itemupd_Click(object sender, EventArgs e)
         {
-            z_add_folio frm_addfolio = new z_add_folio(this, false, isCustomer);
+            z_add_folio frm_addfolio = new z_add_folio(this, false, isCustomer, cbo_soaperiods.SelectedValue.ToString());
             frm_addfolio.Show();
         }
 

@@ -2723,21 +2723,19 @@ namespace Hotel_System
                     WHERE1 = WHERE1 + " AND cf.user_id='" + get_cbo_value(cbo_1) + "'";
                     WHERE2 = WHERE2 + " AND cf2.user_id='" + get_cbo_value(cbo_1) + "'";
                 }
-                DataTable dt = db.QueryBySQLCode("SELECT c.chg_desc AS chg_desc, cf.chg_date AS t_date, cf.t_time, cf.rom_code, cf.reg_num, gf.full_name, cf.reference, " +
+                DataTable dt = db.QueryBySQLCode("SELECT cf.chg_desc AS chg_desc, cf.chg_date AS t_date, cf.t_time, cf.rom_code, cf.reg_num, gf.full_name, cf.reference, " +
                     "cf.amount*-1 AS amount, cf.user_id, 'CHECK OUT' AS status " +
                     "FROM " + _schema + ".gfhist gf " +
-                    "LEFT JOIN " + _schema + ".chghist cf ON gf.reg_num=cf.reg_num " +
-                    "LEFT JOIN " + _schema + ".charge c ON cf.chg_code=c.chg_code " +
-                    "WHERE cf.t_date>='" + dt_frm + "' AND cf.t_date<='" + dt_to + "' AND c.chg_type='P' AND COALESCE(c.chg_class,'')<>'' " + WHERE1 +
+                    "LEFT JOIN (SELECT cf.*, c.* FROM " + _schema + ".chghist cf INNER JOIN " + _schema + ".charge c ON cf.chg_code=c.chg_code WHERE c.chg_type='P' AND COALESCE(c.chg_class,'')<>'') cf ON gf.reg_num=cf.reg_num " +
+                    "WHERE cf.t_date>='" + dt_frm + "' AND cf.t_date<='" + dt_to + "' " + WHERE1 +
                     " UNION ALL " +
-                    "SELECT c2.chg_desc AS chg_desc, cf2.chg_date AS t_date, cf2.t_time, cf2.rom_code, cf2.reg_num, gf2.full_name, cf2.reference, " +
+                    "SELECT cf2.chg_desc AS chg_desc, cf2.chg_date AS t_date, cf2.t_time, cf2.rom_code, cf2.reg_num, gf2.full_name, cf2.reference, " +
                     "cf2.amount*-1 AS amount, cf2.user_id, 'CHECK IN' AS status " +
                     "FROM " + _schema + ".gfolio gf2 " +
-                    "LEFT JOIN " + _schema + ".chgfil cf2 ON gf2.reg_num=cf2.reg_num " +
-                    "LEFT JOIN " + _schema + ".charge c2 ON cf2.chg_code=c2.chg_code " +
-                    "WHERE cf2.t_date>='" + dt_frm + "' AND cf2.t_date<='" + dt_to + "' AND c2.chg_type='P' AND COALESCE(c2.chg_class,'')<>'' " + WHERE2 +
+                    "LEFT JOIN (SELECT cf2.*, c2.* FROM " + _schema + ".chgfil cf2 INNER JOIN " + _schema + ".charge c2 ON cf2.chg_code=c2.chg_code WHERE c2.chg_type='P' AND (soa != 'Y' OR soa IS NULL) AND COALESCE(c2.chg_class,'')<>'') cf2 ON gf2.reg_num=cf2.reg_num " +
+                    "" +
+                    "WHERE cf2.t_date>='" + dt_frm + "' AND cf2.t_date<='" + dt_to + "' " + WHERE2 +
                     " ORDER BY chg_desc, t_date, t_time");
-
                 myReportDocument.Load(fileloc_hotel + "314_dailyremittance.rpt");
                 myReportDocument.Database.Tables[0].SetDataSource(dt);
 
