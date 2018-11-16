@@ -694,14 +694,14 @@ namespace Hotel_System
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            Double _curAmount = 0.00;
+            //Double _curAmount = 0.00;
 
-            try
-            {
-                _curAmount = Convert.ToDouble(textBox1.Text.ToString());
-            }
-            catch { }
-            textBox1.Text = gm.toAccountingFormat(_curAmount);
+            //try
+            //{
+            //    _curAmount = Convert.ToDouble(textBox1.Text.ToString());
+            //}
+            //catch { }
+            //textBox1.Text = gm.toAccountingFormat(_curAmount);
         }
     }
 }

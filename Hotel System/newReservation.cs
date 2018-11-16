@@ -151,7 +151,7 @@ namespace Hotel_System
             }
             catch (Exception)
             {
-                MessageBox.Show("Error on SQL");
+                //MessageBox.Show("Error on SQL");
             }
         }
         private void clear_dgv()
@@ -275,7 +275,7 @@ namespace Hotel_System
             }
             catch (Exception er)
             {
-                MessageBox.Show(er.Message);
+                //MessageBox.Show(er.Message);
             }
         }
         private void btn_delitem_Click(object sender, EventArgs e)
@@ -414,7 +414,7 @@ namespace Hotel_System
                     }
                     int g_f = 0;
                     try { g_f = Convert.ToInt32(textBox1.Text.ToString()); }
-                    catch { MessageBox.Show("Input a valid number for lunch"); }
+                    catch { /*MessageBox.Show("Input a valid number for lunch");*/ }
                     if (g_f > 0)
                     {
                         vald_save((l_price * g_f) , "" + textBox1.Text.ToString() + " ADTL", l_code);
@@ -481,7 +481,7 @@ namespace Hotel_System
             }
             catch(Exception er)
             {
-                MessageBox.Show(er.Message);
+                //MessageBox.Show(er.Message);
             }
         }
 
@@ -768,7 +768,7 @@ namespace Hotel_System
                 cRes.set_data(lbl_resno.Text);
                 cRes.Show();
             }
-            catch (Exception er) { MessageBox.Show(er.Message); }
+            catch (Exception er) { /*MessageBox.Show(er.Message);*/ }
         }
         public void reload_guest()
         {
@@ -900,7 +900,7 @@ namespace Hotel_System
 
                 lbl_noofguest.Text = (dgv_guestlist.Rows.Count - 1).ToString();
             }
-            catch (Exception er) { MessageBox.Show("Pls select/highlight the guest to remove."); }
+            catch (Exception er) { /*MessageBox.Show("Pls select/highlight the guest to remove.");*/ }
         }
         public void disp_res()
         {
@@ -1021,7 +1021,7 @@ namespace Hotel_System
 
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
         {
-            gchk_rows();
+            //gchk_rows();
         }
 
         private void trash_bin()
@@ -1285,17 +1285,17 @@ namespace Hotel_System
         }
         private void newReservation_MouseClick(object sender, MouseEventArgs e)
         {
-            gchk_rows();
+            //gchk_rows();
         }
 
         private void newReservation_MouseMove(object sender, MouseEventArgs e)
         {
-            gchk_rows();
+            //gchk_rows();
         }
 
         private void dataGridView1_MouseUp(object sender, MouseEventArgs e)
         {
-            gchk_rows();
+            //gchk_rows();
         }
 
         private void lbl_noofguest_TextChanged(object sender, EventArgs e)
@@ -1402,7 +1402,9 @@ namespace Hotel_System
                             }
                             else { MessageBox.Show("Error on updating"); }
                         }
-                        catch (Exception er) { MessageBox.Show(er.Message); }
+                        catch (Exception er) { 
+                            //MessageBox.Show(er.Message); 
+                        }
                     }
                 }
                 else
@@ -1411,7 +1413,7 @@ namespace Hotel_System
                 }
 
             }
-            catch { MessageBox.Show("Please select 1 resservation made"); }
+            catch { /*MessageBox.Show("Please select 1 resservation made");*/ }
         }
         private void label6_TextChanged(object sender, EventArgs e)
         {
@@ -1441,7 +1443,7 @@ namespace Hotel_System
 
         private void dataGridView1_MouseMove(object sender, MouseEventArgs e)
         {
-            gchk_rows();
+            //gchk_rows();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -1509,7 +1511,7 @@ namespace Hotel_System
             catch
             {
                 newTxt = 0;
-                MessageBox.Show("Please input a numeric value.");
+                //MessageBox.Show("Please input a numeric value.");
                 txtbox.Focus();
             }
             txtbox.Text = ((newTxt == 0) ? "" : newTxt.ToString());

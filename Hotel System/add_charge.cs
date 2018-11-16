@@ -635,12 +635,12 @@ namespace Hotel_System
 
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
         {
-            gchk_rows();
+            //gchk_rows();
         }
 
         private void dataGridView1_MouseMove(object sender, MouseEventArgs e)
         {
-            gchk_rows();
+            //gchk_rows();
         }
         public void an_frm_load(String rg, String cc, String cn)
         {
@@ -715,9 +715,15 @@ namespace Hotel_System
         {
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
+                Boolean _status = false;
+                try {
+                    _status = Convert.ToBoolean(dataGridView1["bool_check", i].Value.ToString());
+                } catch {
+
+                }
                 try
                 {
-                    if (Convert.ToBoolean(dataGridView1["bool_check", i].Value.ToString()) == true)
+                    if (_status == true)
                     {
                         Double val_en = 0;
                         if ((dataGridView1["chg_desc", i].Value.ToString()).ToUpper().Contains("PACKAGE"))
