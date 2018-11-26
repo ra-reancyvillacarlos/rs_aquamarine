@@ -17,7 +17,7 @@ namespace Accounting_Application_System
         Main frm;
         thisDatabase db;
         GlobalClass gc;        
-        public string ok = "ok";
+        public string ok = "";
         string cipher = "", mac_add = "", decipher = "";
         public Login()
         {
@@ -178,7 +178,7 @@ namespace Accounting_Application_System
             {
                 if (cbo_db.SelectedIndex == -1)
                 {
-                    MessageBox.Show("Please the database.");
+                    MessageBox.Show("Please select the database.");
                     cbo_db.DroppedDown = true;
                 }
                 else if (cbo_branch.SelectedIndex == -1)

@@ -477,7 +477,7 @@
             this.budgetToolStripMenuItem,
             this.sOAPeriodsToolStripMenuItem});
             this.fmi_m100.Name = "fmi_m100";
-            this.fmi_m100.Size = new System.Drawing.Size(139, 22);
+            this.fmi_m100.Size = new System.Drawing.Size(152, 22);
             this.fmi_m100.Text = "Accounting ";
             // 
             // chartOfAccountsToolStripMenuItem1
@@ -596,7 +596,7 @@
             this.houseKeepingItemsToolStripMenuItem,
             this.maintenancePersonnelToolStripMenuItem});
             this.fmi_m200.Name = "fmi_m200";
-            this.fmi_m200.Size = new System.Drawing.Size(139, 22);
+            this.fmi_m200.Size = new System.Drawing.Size(152, 22);
             this.fmi_m200.Text = "Property";
             // 
             // guestToolStripMenuItem
@@ -690,7 +690,7 @@
             this.salesAgentToolStripMenuItem,
             this.toolStripMenuItem26});
             this.fmi_m300.Name = "fmi_m300";
-            this.fmi_m300.Size = new System.Drawing.Size(139, 22);
+            this.fmi_m300.Size = new System.Drawing.Size(152, 22);
             this.fmi_m300.Text = "Sales";
             this.fmi_m300.Click += new System.EventHandler(this.fmi_m300_Click);
             // 
@@ -805,7 +805,7 @@
             this.printBarcodeToolStripMenuItem,
             this.printBarcode2ToolStripMenuItem});
             this.fmi_m400.Name = "fmi_m400";
-            this.fmi_m400.Size = new System.Drawing.Size(139, 22);
+            this.fmi_m400.Size = new System.Drawing.Size(152, 22);
             this.fmi_m400.Text = "Inventory";
             // 
             // brandNameToolStripMenuItem
@@ -1243,7 +1243,7 @@
             this.dailyCollectionReportToolStripMenuItem1,
             this.sOASummaryToolStripMenuItem});
             this.fmi_r_a000.Name = "fmi_r_a000";
-            this.fmi_r_a000.Size = new System.Drawing.Size(152, 22);
+            this.fmi_r_a000.Size = new System.Drawing.Size(136, 22);
             this.fmi_r_a000.Text = "Accounting";
             // 
             // journalEntryToolStripMenuItem2
@@ -1550,7 +1550,7 @@
             this.occupancyReportToolStripMenuItem,
             this.housekeepingReportsToolStripMenuItem});
             this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
-            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.reportsToolStripMenuItem.Text = "Property";
             // 
             // reservationToolStripMenuItem2
@@ -1894,7 +1894,7 @@
             this.salesReportSummaryToolStripMenuItem,
             this.summaryOfItemSoldMaterialUsageToolStripMenuItem});
             this.fmi_r_s000.Name = "fmi_r_s000";
-            this.fmi_r_s000.Size = new System.Drawing.Size(152, 22);
+            this.fmi_r_s000.Size = new System.Drawing.Size(136, 22);
             this.fmi_r_s000.Text = "Sales";
             // 
             // outletToolStripMenuItem
@@ -1962,7 +1962,7 @@
             this.inventoryValuationToolStripMenuItem,
             this.reorderReportToolStripMenuItem});
             this.fmi_r_i000.Name = "fmi_r_i000";
-            this.fmi_r_i000.Size = new System.Drawing.Size(152, 22);
+            this.fmi_r_i000.Size = new System.Drawing.Size(136, 22);
             this.fmi_r_i000.Text = "Inventory";
             // 
             // purchaseRequestReportToolStripMenuItem
@@ -2499,45 +2499,42 @@
             // 
             this.btn_12.Dock = System.Windows.Forms.DockStyle.Left;
             this.btn_12.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_12.Image = global::Accounting_Application_System.Properties.Resources.search_32x32;
+            this.btn_12.Image = global::Accounting_Application_System.Properties.Resources.up;
             this.btn_12.Location = new System.Drawing.Point(1299, 0);
             this.btn_12.Name = "btn_12";
             this.btn_12.Size = new System.Drawing.Size(79, 51);
             this.btn_12.TabIndex = 30;
-            this.btn_12.Text = "Menu Search";
+            this.btn_12.Text = "Statement of Account";
             this.btn_12.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn_12.UseVisualStyleBackColor = true;
-            this.btn_12.Visible = false;
             this.btn_12.Click += new System.EventHandler(this.btn_12_Click);
             // 
             // btn_11
             // 
             this.btn_11.Dock = System.Windows.Forms.DockStyle.Left;
             this.btn_11.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_11.Image = global::Accounting_Application_System.Properties.Resources.search_32x32;
+            this.btn_11.Image = global::Accounting_Application_System.Properties.Resources.up;
             this.btn_11.Location = new System.Drawing.Point(1199, 0);
             this.btn_11.Name = "btn_11";
             this.btn_11.Size = new System.Drawing.Size(100, 51);
             this.btn_11.TabIndex = 29;
-            this.btn_11.Text = "Item Search";
+            this.btn_11.Text = "Collection Entry";
             this.btn_11.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn_11.UseVisualStyleBackColor = true;
-            this.btn_11.Visible = false;
             this.btn_11.Click += new System.EventHandler(this.btn_11_Click);
             // 
             // btn_10
             // 
             this.btn_10.Dock = System.Windows.Forms.DockStyle.Left;
             this.btn_10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_10.Image = global::Accounting_Application_System.Properties.Resources.landing_icons_auto_search___34;
+            this.btn_10.Image = global::Accounting_Application_System.Properties.Resources.up;
             this.btn_10.Location = new System.Drawing.Point(1099, 0);
             this.btn_10.Name = "btn_10";
             this.btn_10.Size = new System.Drawing.Size(100, 51);
             this.btn_10.TabIndex = 28;
-            this.btn_10.Text = "Vehicle Search";
+            this.btn_10.Text = "Disbursement Entry";
             this.btn_10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btn_10.UseVisualStyleBackColor = true;
-            this.btn_10.Visible = false;
             this.btn_10.Click += new System.EventHandler(this.btn_10_Click);
             // 
             // btn_9

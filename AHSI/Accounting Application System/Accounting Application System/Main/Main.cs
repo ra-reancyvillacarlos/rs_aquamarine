@@ -491,23 +491,64 @@ namespace Accounting_Application_System
 
         private void btn_10_Click(object sender, EventArgs e)
         {
-            z_ItemSearch frm = new z_ItemSearch(1);
+            //z_ItemSearch frm = new z_ItemSearch(1);
 
-            frm.Show();
+            //frm.Show();
+            closechild();
+
+            lbl_modname.Text = "Disbursement Entry";
+            a_disbursement gbill = new a_disbursement();
+            gbill.WindowState = FormWindowState.Maximized;
+            gbill.Show();
+            gbill.MdiParent = this;
+
+            gbill.Show();
+
+            btn_color_reset();
+
+            btn_10.BackColor = panel2.BackColor;
+
         }
 
         private void btn_11_Click(object sender, EventArgs e)
         {
-            z_ItemSearch frm = new z_ItemSearch(2);
+            //z_ItemSearch frm = new z_ItemSearch(2);
 
-            frm.Show();
+            //frm.Show();
+            closechild();
+
+            lbl_modname.Text = "Collection Entry";
+            a_CollectionEntry gbill = new a_CollectionEntry();
+            gbill.WindowState = FormWindowState.Maximized;
+            gbill.Show();
+            gbill.MdiParent = this;
+
+            gbill.Show();
+
+            btn_color_reset();
+
+            btn_11.BackColor = panel2.BackColor;
         }
 
         private void btn_12_Click(object sender, EventArgs e)
         {
-            z_ItemSearch frm = new z_ItemSearch(0);
+            //z_ItemSearch frm = new z_ItemSearch(0);
 
-            frm.Show();
+            //frm.Show();
+
+            closechild();
+
+            lbl_modname.Text = "Statement of Account";
+            a_statementofaccount gbill = new a_statementofaccount();
+            gbill.WindowState = FormWindowState.Maximized;
+            gbill.Show();
+            gbill.MdiParent = this;
+
+            gbill.Show();
+
+            btn_color_reset();
+
+            btn_12.BackColor = panel2.BackColor;
         }
 
         private void closechild()

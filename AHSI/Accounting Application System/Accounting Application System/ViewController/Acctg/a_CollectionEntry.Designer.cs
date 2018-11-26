@@ -1210,7 +1210,6 @@
             this.Name = "a_CollectionEntry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Collection Entry";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.a_CollectionEntry_Load);
             this.pnl_mainside.ResumeLayout(false);
             this.tbcntrl_option.ResumeLayout(false);
