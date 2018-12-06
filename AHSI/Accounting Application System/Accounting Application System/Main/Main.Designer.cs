@@ -312,6 +312,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.cashInBoxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.pnl_header.SuspendLayout();
@@ -477,7 +478,7 @@
             this.budgetToolStripMenuItem,
             this.sOAPeriodsToolStripMenuItem});
             this.fmi_m100.Name = "fmi_m100";
-            this.fmi_m100.Size = new System.Drawing.Size(152, 22);
+            this.fmi_m100.Size = new System.Drawing.Size(139, 22);
             this.fmi_m100.Text = "Accounting ";
             // 
             // chartOfAccountsToolStripMenuItem1
@@ -596,7 +597,7 @@
             this.houseKeepingItemsToolStripMenuItem,
             this.maintenancePersonnelToolStripMenuItem});
             this.fmi_m200.Name = "fmi_m200";
-            this.fmi_m200.Size = new System.Drawing.Size(152, 22);
+            this.fmi_m200.Size = new System.Drawing.Size(139, 22);
             this.fmi_m200.Text = "Property";
             // 
             // guestToolStripMenuItem
@@ -690,7 +691,7 @@
             this.salesAgentToolStripMenuItem,
             this.toolStripMenuItem26});
             this.fmi_m300.Name = "fmi_m300";
-            this.fmi_m300.Size = new System.Drawing.Size(152, 22);
+            this.fmi_m300.Size = new System.Drawing.Size(139, 22);
             this.fmi_m300.Text = "Sales";
             this.fmi_m300.Click += new System.EventHandler(this.fmi_m300_Click);
             // 
@@ -805,7 +806,7 @@
             this.printBarcodeToolStripMenuItem,
             this.printBarcode2ToolStripMenuItem});
             this.fmi_m400.Name = "fmi_m400";
-            this.fmi_m400.Size = new System.Drawing.Size(152, 22);
+            this.fmi_m400.Size = new System.Drawing.Size(139, 22);
             this.fmi_m400.Text = "Inventory";
             // 
             // brandNameToolStripMenuItem
@@ -920,6 +921,7 @@
             this.journalizeSOABySOAPeriodToolStripMenuItem,
             this.collectionEntryToolStripMenuItem,
             this.disbursementEntryToolStripMenuItem,
+            this.cashInBoxToolStripMenuItem,
             this.toolStripMenuItem15,
             this.journalEntryToolStripMenuItem,
             this.releaseChecksToolStripMenuItem,
@@ -2724,6 +2726,13 @@
             this.toolStripProgressBar1.Name = "toolStripProgressBar1";
             this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
             // 
+            // cashInBoxToolStripMenuItem
+            // 
+            this.cashInBoxToolStripMenuItem.Name = "cashInBoxToolStripMenuItem";
+            this.cashInBoxToolStripMenuItem.Size = new System.Drawing.Size(232, 22);
+            this.cashInBoxToolStripMenuItem.Text = "Cash in Box";
+            this.cashInBoxToolStripMenuItem.Click += new System.EventHandler(this.cashInBoxToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3041,5 +3050,6 @@
         private System.Windows.Forms.ToolStripMenuItem sOASummaryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem postedJournalToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closingIncomeFinancialYearToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cashInBoxToolStripMenuItem;
     }
 }

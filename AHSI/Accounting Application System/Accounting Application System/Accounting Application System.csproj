@@ -1258,6 +1258,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="ViewController\Acctg\a_cashinbox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewController\Acctg\a_cashinbox.Designer.cs">
+      <DependentUpon>a_cashinbox.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewController\Acctg\a_disbursement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2787,6 +2793,9 @@
     <EmbeddedResource Include="Reports\Vehicle\ServiceDailyControlSheet.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ServiceDailyControlSheet.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewController\Acctg\a_cashinbox.resx">
+      <DependentUpon>a_cashinbox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewController\Acctg\a_disbursement.resx">
       <DependentUpon>a_disbursement.cs</DependentUpon>

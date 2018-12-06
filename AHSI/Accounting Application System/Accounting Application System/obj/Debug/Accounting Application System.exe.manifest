@@ -44,14 +44,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Accounting Application System.exe" size="16767488">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Accounting Application System.exe" size="16872448">
       <assemblyIdentity name="Accounting Application System" version="2.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>EzV3WRtZAWdszEy5uhuEQJedf60=</dsig:DigestValue>
+        <dsig:DigestValue>pc3L8SmioliO+7A96MY6w9XuxXE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

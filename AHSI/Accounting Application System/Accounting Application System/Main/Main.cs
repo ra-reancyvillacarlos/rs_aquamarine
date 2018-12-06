@@ -3079,5 +3079,11 @@ namespace Accounting_Application_System
             incomeClosing ic = new incomeClosing();
             ic.ShowDialog();
         }
+
+        private void cashInBoxToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ViewController.Acctg.a_cashinbox frm = new ViewController.Acctg.a_cashinbox();
+            frm.ShowDialog();
+        }
     }
 }

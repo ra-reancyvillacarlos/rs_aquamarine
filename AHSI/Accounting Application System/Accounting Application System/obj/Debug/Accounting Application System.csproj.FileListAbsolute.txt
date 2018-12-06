@@ -4923,3 +4923,4 @@ C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\AHSI\Accounting Application Sy
 C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.application
 C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.exe
 C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting Application System.pdb
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\AHSI\Accounting Application System\Accounting Application System\obj\Debug\Accounting_Application_System.ViewController.Acctg.a_cashinbox.resources
