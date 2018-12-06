@@ -221,13 +221,13 @@ namespace Hotel_System
             //frm.lbl_depdt3.Text = "";
             //frm.lbl_blockedby.Text = "";
 
-            frm.chk_blockres.Checked = false;
+            //frm.chk_blockres.Checked = false;
 
             // frm.cbo_srchcomp.SelectedIndex = -1; 
             frm.cbo_disc.SelectedIndex = -1;
             frm.cbo_mktsegment.SelectedIndex = -1;
-            frm.cbo_rtcode.SelectedIndex = -1;
-            frm.cbo_occtyp.SelectedIndex = -1;
+            //frm.cbo_rtcode.SelectedIndex = -1;
+            //frm.cbo_occtyp.SelectedIndex = -1;
             //cbo_type.SelectedIndex = -1;
 
             frm.txt_contact.Text = "";
@@ -300,7 +300,7 @@ namespace Hotel_System
                             frm.lbl_noofnight.Text = txt_noofnights.Text;
                             frm.lbl_noofnight_billing.Text = txt_noofnights.Text;
 
-                            frm.cbo_rtcode.SelectedIndex = -1;
+                            //frm.cbo_rtcode.SelectedIndex = -1;
                             frm.cbo_disc.SelectedIndex = -1;
                             frm.txt_discamt.Text = "0";
                             frm.txt_netrt.Text = "0.00";

@@ -11,8 +11,8 @@ namespace Hotel_System
 {
     public partial class enterDeposit : Form
     {
-        thisDatabase db;
-        GlobalMethod gm;
+        thisDatabase db = new thisDatabase();
+        GlobalMethod gm = new GlobalMethod();
         Arrivals frmArrivals;
         String action = "";
         String gfolio = "";
@@ -26,9 +26,6 @@ namespace Hotel_System
         public enterDeposit(Arrivals _frmArr)
         {
             InitializeComponent();
-
-            db = new thisDatabase();
-            gm = new GlobalMethod();
             frmArrivals = _frmArr;
 
             //gm.load_charge_paymentsonly(cbo_appaymentform);
@@ -41,9 +38,6 @@ namespace Hotel_System
         public enterDeposit(newArrivalWalkin _frmArr, String gfolio, String action)
         {
             InitializeComponent();
-
-            db = new thisDatabase();
-            gm = new GlobalMethod();
             ld_ent();
 
             gm.load_hotel(cbo_dpaymentform);
@@ -51,22 +45,24 @@ namespace Hotel_System
             gm.load_charge_paymentsonly(comboBox2);
 
         }
-        public enterDeposit(newReservation _frmArr)
+        public enterDeposit(newReservation _frmArr, String strCode)
         {
+            cur_res_code = strCode;
             InitializeComponent();
-
-            db = new thisDatabase();
-            gm = new GlobalMethod();
+            newReserv = _frmArr;
             ld_ent();
 
             gm.load_hotel(cbo_dpaymentform);
             gm.load_trns(comboBox1);
             gm.load_charge_paymentsonly(comboBox2);
-
         }
         private void enterDeposit_Load(object sender, EventArgs e)
         {
-            if (cur_res_code == "") { } else { load_items(cur_res_code); }
+            try
+            {
+                if (cur_res_code == "") { } else { load_items(cur_res_code); }
+            }
+            catch { }
         }
 
         private void ld_ent()
@@ -74,14 +70,18 @@ namespace Hotel_System
             Double cur_ent = 0.00;
 
             DataTable dt_ent = db.QueryBySQLCode("SELECT chg_code, chg_desc, price FROM rssys.charge WHERE UPPER(chg_code) LIKE 'ADTL%' AND UPPER(chg_desc) LIKE 'ENTRANCE%'");
-            cur_ent_c = dt_ent.Rows[0]["chg_code"].ToString();
-            try
+            if (dt_ent.Rows.Count > 0)
             {
-                cur_ent = Convert.ToDouble(dt_ent.Rows[0]["price"].ToString());
+                try
+                {
+                    //MessageBox.Show(dt_ent.Rows[0]["chg_code"].ToString());
+                    cur_ent_c = dt_ent.Rows[0]["chg_code"].ToString();
+                    cur_ent = Convert.ToDouble(dt_ent.Rows[0]["price"].ToString());
+                }
+                catch { }
             }
-            catch {  }
 
-            label27.Text = gm.toAccountingFormat(cur_ent);
+            label27.Text = cur_ent.ToString();
         }
 
         void disp_payment(String gfolio)
@@ -90,75 +90,96 @@ namespace Hotel_System
         }
         private void btn_checkin_Click(object sender, EventArgs e)
         {
-            DataTable dt_upch = db.QueryBySQLCode("SELECT chg.chg_code, chg_num FROM rssys.res_gfil rf LEFT JOIN rssys.charge chg ON chg.chg_code = rf.chg_code LEFT JOIN rssys.gfolio gf ON  gf.res_code = rf.rg_code WHERE rg_code = '" + cur_res_code + "'");
-
-            DataTable dt_upfg = db.QueryBySQLCode("SELECT ch.chg_code, chg_num FROM rssys.gfolio gf LEFT JOIN rssys.charge ch ON ch.chg_code = gf.chg_code WHERE res_code = '" + cur_res_code + "'");
-
-            if (textBox1.Text.Length > 0)
+            try
             {
-                Double price = 0.00;
-                Double amnt = 0.00;
-                Double total = 0.00;
-                try { price = Convert.ToDouble(label9.Text.ToString()); }
-                catch { }
-                try { amnt = Convert.ToDouble(textBox1.Text.ToString()); }
-                catch { MessageBox.Show("Input a valid number."); }
-                total = amnt - price;
-                if (total < 0)
+                DataTable dt_upch = db.QueryBySQLCode("SELECT chg.chg_code, chg_num FROM rssys.res_gfil rf LEFT JOIN rssys.charge chg ON chg.chg_code = rf.chg_code LEFT JOIN rssys.gfolio gf ON  gf.res_code = rf.rg_code WHERE rg_code = '" + cur_res_code + "'");
+
+                DataTable dt_upfg = db.QueryBySQLCode("SELECT ch.chg_code, chg_num FROM rssys.gfolio gf LEFT JOIN rssys.charge ch ON ch.chg_code = gf.chg_code WHERE res_code = '" + cur_res_code + "'");
+
+                if (textBox1.Text.Length > 0)
                 {
-                    MessageBox.Show("Amount must be equal or larger to price.");
-                }
-                else
-                {
-                    if (db.UpdateOnTable("gfolio", "amnt = '" + amnt + "'", "res_code = '" + cur_res_code + "'"))
+                    Double price = 0.00;
+                    Double amnt = 0.00;
+                    Double total = 0.00;
+                    try { price = Convert.ToDouble(label9.Text.ToString()); }
+                    catch { }
+                    try { amnt = Convert.ToDouble(textBox1.Text.ToString()); }
+                    catch
                     {
-                        if (db.QueryBySQLCode_bool("INSERT INTO rssys.chgfil (reg_num, chg_code, chg_num, rom_code, reference, amount, user_id, t_date, t_time, chg_date, res_code, food, misc, vat_amnt, sc_amnt, tax, bill_amnt) SELECT gf.reg_num, chg.chg_code, chg_num, gf.rom_code, MIN(CONCAT(SPLIT_PART(rf.occ_type, ' ', 1), ' ', chg.chg_desc, ' (', gf.full_name, ')')) AS reference, SUM(rf.price) AS amount, gf.user_id, current_date AS t_date, '" + DateTime.Now.ToString("HH:mm") + "' AS t_time, current_date AS chg_date, rf.rg_code, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00 FROM rssys.res_gfil rf LEFT JOIN rssys.charge chg ON chg.chg_code = rf.chg_code LEFT JOIN rssys.gfolio gf ON  gf.res_code = rf.rg_code WHERE rg_code = '" + cur_res_code + "' GROUP BY gf.reg_num, chg.chg_code, chg_num, gf.rom_code, gf.user_id, rf.rg_code"))
+                        //MessageBox.Show("Input a valid number."); 
+                    }
+                    total = amnt - price;
+                    if (total < 0)
+                    {
+                        MessageBox.Show("Amount must be equal or larger to price.");
+                    }
+                    else
+                    {
+                        Boolean statret = newReserv.afterPayment();
+                        if (statret)
                         {
-                            if(dt_upch.Rows.Count > 0)
+                            if (db.UpdateOnTable("gfolio", "amnt = '" + amnt + "'", "res_code = '" + cur_res_code + "'"))
                             {
-                                for(int i = 0; i < dt_upch.Rows.Count; i++)
+                                if (db.QueryBySQLCode_bool("INSERT INTO rssys.chgfil (reg_num, chg_code, chg_num, rom_code, reference, amount, user_id, t_date, t_time, chg_date, res_code, food, misc, vat_amnt, sc_amnt, tax, bill_amnt) SELECT gf.reg_num, chg.chg_code, chg_num, gf.rom_code, MIN(CONCAT(SPLIT_PART(rf.occ_type, ' ', 1), ' ', chg.chg_desc, ' (', gf.full_name, ')')) AS reference, SUM(rf.price) AS amount, gf.user_id, current_date AS t_date, '" + DateTime.Now.ToString("HH:mm") + "' AS t_time, current_date AS chg_date, rf.rg_code, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00 FROM rssys.res_gfil rf LEFT JOIN rssys.charge chg ON chg.chg_code = rf.chg_code LEFT JOIN rssys.gfolio gf ON  gf.res_code = rf.rg_code WHERE rg_code = '" + cur_res_code + "' AND (chg.chg_code, chg.chg_num) NOT IN ((NULL, ''), (NULL, '')) GROUP BY gf.reg_num, chg.chg_code, chg_num, gf.rom_code, gf.user_id, rf.rg_code"))
                                 {
-                                    try
+                                    if (dt_upch.Rows.Count > 0)
                                     {
-                                        db.set_all_pk("charge", "chg_num", dt_upch.Rows[i]["chg_num"].ToString(), "chg_code='" + dt_upch.Rows[i]["chg_code"].ToString() + "'", dt_upch.Rows[i]["chg_num"].ToString().Length);
-                                    }
-                                    catch { }
-                                }
-                            }
-                            if (db.QueryBySQLCode_bool("INSERT INTO rssys.chgfil (reg_num, chg_code, chg_num, rom_code, reference, amount, user_id, t_date, t_time, chg_date, res_code, food, misc, vat_amnt, sc_amnt, tax, bill_amnt) SELECT reg_num, ch.chg_code, chg_num, rom_code, CONCAT('PAYMENT (', gf.full_name, ')') AS reference, (amnt * -1) AS amount, user_id, current_date AS t_date, '" + DateTime.Now.ToString("HH:mm") + "' AS t_time, current_date AS chg_date, res_code, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00 FROM rssys.gfolio gf LEFT JOIN rssys.charge ch ON ch.chg_code = gf.p_typ WHERE res_code = '" + cur_res_code + "'"))
-                            {
-                                if (dt_upfg.Rows.Count > 0)
-                                {
-                                    for (int i = 0; i < dt_upfg.Rows.Count; i++)
-                                    {
-                                        try
+                                        for (int i = 0; i < dt_upch.Rows.Count; i++)
                                         {
-                                            db.set_all_pk("charge", "chg_num", dt_upfg.Rows[i]["chg_num"].ToString(), "chg_code='" + dt_upfg.Rows[i]["chg_code"].ToString() + "'", dt_upfg.Rows[i]["chg_num"].ToString().Length);
+                                            try
+                                            {
+                                                db.set_all_pk("charge", "chg_num", dt_upch.Rows[i]["chg_num"].ToString(), "chg_code='" + dt_upch.Rows[i]["chg_code"].ToString() + "'", dt_upch.Rows[i]["chg_num"].ToString().Length);
+                                            }
+                                            catch { }
                                         }
-                                        catch { }
+                                    }
+                                    if (db.QueryBySQLCode_bool("INSERT INTO rssys.chgfil (reg_num, chg_code, chg_num, rom_code, reference, amount, user_id, t_date, t_time, chg_date, res_code, food, misc, vat_amnt, sc_amnt, tax, bill_amnt) SELECT reg_num, ch.chg_code, chg_num, rom_code, CONCAT('PAYMENT (', gf.full_name, ')') AS reference, (amnt * -1) AS amount, user_id, current_date AS t_date, '" + DateTime.Now.ToString("HH:mm") + "' AS t_time, current_date AS chg_date, res_code, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00 FROM rssys.gfolio gf LEFT JOIN rssys.charge ch ON ch.chg_code = gf.p_typ WHERE res_code = '" + cur_res_code + "' AND (ch.chg_code, ch.chg_num) NOT IN ((NULL, ''), (NULL, ''))"))
+                                    {
+                                        if (dt_upfg.Rows.Count > 0)
+                                        {
+                                            for (int i = 0; i < dt_upfg.Rows.Count; i++)
+                                            {
+                                                try
+                                                {
+                                                    db.set_all_pk("charge", "chg_num", dt_upfg.Rows[i]["chg_num"].ToString(), "chg_code='" + dt_upfg.Rows[i]["chg_code"].ToString() + "'", dt_upfg.Rows[i]["chg_num"].ToString().Length);
+                                                }
+                                                catch { }
+                                            }
+                                        }
+                                        //db.UpdateOnTable("resfil", "remarks = 'PAID'", "res_code = '" + cur_res_code + "'");
+                                        MessageBox.Show("Successfully updated amount.");
+                                        this.Close();
+                                    }
+                                    else
+                                    {
+                                        db.UpdateOnTable("resfil", "arrived =''", "res_code = '" + cur_res_code + "'");
+                                        db.DeleteOnTable("gfolio", "res_code = '" + cur_res_code + "'");
+                                        MessageBox.Show("Error on adding payment to chgfil");
                                     }
                                 }
-                                //db.UpdateOnTable("resfil", "remarks = 'PAID'", "res_code = '" + cur_res_code + "'");
-                                MessageBox.Show("Successfully updated amount.");
-                                this.Close();
+                                else
+                                {
+                                    db.UpdateOnTable("resfil", "arrived =''", "res_code = '" + cur_res_code + "'");
+                                    db.DeleteOnTable("gfolio", "res_code = '" + cur_res_code + "'");
+                                    MessageBox.Show("Error on updating amount to chgfil");
+                                }
                             }
                             else
                             {
-                                MessageBox.Show("Error on adding payment to chgfil");
+                                db.UpdateOnTable("resfil", "arrived =''", "res_code = '" + cur_res_code + "'");
+                                db.DeleteOnTable("gfolio", "res_code = '" + cur_res_code + "'");
+                                MessageBox.Show("Error on updating amount");
                             }
                         }
                         else
                         {
-                            db.UpdateOnTable("gfolio", "amnt = '0.00'", "res_code = '" + cur_res_code + "'");
-                            MessageBox.Show("Error on updating amount to chgfil");
+                            db.UpdateOnTable("resfil", "arrived =''", "res_code = '" + cur_res_code + "'");
+                            db.DeleteOnTable("gfolio", "res_code = '" + cur_res_code + "'");
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error on updating amount");
                     }
                 }
             }
+            catch { }
         }
 
         private void btn_back_Click(object sender, EventArgs e)
@@ -276,64 +297,93 @@ namespace Hotel_System
 
         public void load_items(String res_code)
         {
-            DataTable dt_pck = new DataTable();
-            DataTable dt_act = new DataTable();
-            DataTable dt_cur = new DataTable();
-
             cur_res_code = ((res_code == "") ? cur_res_code : res_code);
-            dt_pck = db.QueryBySQLCode("SELECT (CASE WHEN bool_check = true THEN bool_check ELSE false END) AS bool_check, chg_desc FROM rssys.charge ch LEFT JOIN (SELECT DISTINCT true AS bool_check, chg_code FROM rssys.res_gfil WHERE rg_code = '" + cur_res_code + "') rg ON ch.chg_code = rg.chg_code WHERE ch.chg_code LIKE 'PCK%'");
-            dt_act = db.QueryBySQLCode("SELECT (CASE WHEN bool_check = true THEN bool_check ELSE false END) AS bool_check, chg_desc FROM rssys.charge ch LEFT JOIN (SELECT DISTINCT true AS bool_check, chg_code FROM rssys.res_gfil WHERE rg_code = '"+cur_res_code+"') rg ON ch.chg_code = rg.chg_code WHERE (ch.chg_code LIKE 'ACT%')");
-            dt_cur = db.QueryBySQLCode("SELECT rf.full_name, tr.trns, hl.code, pck.adult, pck.kid, pck.inf, pck1.ttlpax, rf.p_typ, ttl AS price FROM rssys.gfolio rf LEFT JOIN (SELECT name, code FROM rssys.hotel) hl ON hl.code = rf.hotel_code LEFT JOIN (SELECT string_agg(chg_desc, ', ') AS package, COALESCE(adult.occ_type, '0 ADULT') AS adult, COALESCE(kid.occ_type, '0 KID') AS kid, COALESCE(inf.occ_type, '0 INFANT') AS inf, res_gfil.rg_code FROM rssys.res_gfil LEFT JOIN (SELECT occ_type, rg_code FROM rssys.res_gfil WHERE occ_type LIKE '%ADULT') adult ON adult.rg_code = res_gfil.rg_code LEFT JOIN (SELECT occ_type, rg_code FROM rssys.res_gfil WHERE occ_type LIKE '%KID') kid ON kid.rg_code = res_gfil.rg_code LEFT JOIN (SELECT occ_type, rg_code FROM rssys.res_gfil WHERE occ_type LIKE '%INFANT') inf ON inf.rg_code = res_gfil.rg_code LEFT JOIN (SELECT chg_code, chg_desc FROM rssys.charge) cgh ON res_gfil.chg_code = cgh.chg_code GROUP BY res_gfil.rg_code, adult.occ_type, kid.occ_type, inf.occ_type) pck ON pck.rg_code = rf.res_code LEFT JOIN (SELECT string_agg(chg_desc, ', ') AS activities, (CASE WHEN occ_type LIKE '%All' THEN occ_type END) AS ttlpax, rg_code FROM rssys.res_gfil LEFT JOIN (SELECT chg_code, chg_desc FROM rssys.charge) cgh ON res_gfil.chg_code = cgh.chg_code WHERE UPPER(occ_type) LIKE '%ALL' GROUP BY rg_code, occ_type) pck1 ON pck1.rg_code = rf.res_code LEFT JOIN (SELECT chg_desc AS p_name, chg_code FROM rssys.charge WHERE chg_type = 'P') pp ON pp.chg_code = p_typ LEFT JOIN (SELECT chg_code AS trns, rg_code FROM rssys.res_gfil WHERE UPPER(chg_code) LIKE 'TRNS%') tr ON tr.rg_code = rf.res_code LEFT JOIN (SELECT SUM(price) AS ttl, rg_code FROM rssys.res_gfil GROUP BY rg_code) trs ON rf.res_code = trs.rg_code WHERE res_code = '" + cur_res_code + "' LIMIT 1");
-            if (dt_pck.Rows.Count > 0)
+            DataTable dt_pck = db.QueryBySQLCode("SELECT (CASE WHEN bool_check = true THEN bool_check ELSE false END) AS bool_check, chg_desc FROM rssys.charge ch LEFT JOIN (SELECT DISTINCT true AS bool_check, chg_code FROM rssys.res_gfil WHERE rg_code = '" + cur_res_code + "') rg ON ch.chg_code = rg.chg_code WHERE ch.chg_code LIKE 'PCK%'");
+            DataTable dt_act = db.QueryBySQLCode("SELECT (CASE WHEN bool_check = true THEN bool_check ELSE false END) AS bool_check, chg_desc FROM rssys.charge ch LEFT JOIN (SELECT DISTINCT true AS bool_check, chg_code FROM rssys.res_gfil WHERE rg_code = '" + cur_res_code + "') rg ON ch.chg_code = rg.chg_code WHERE (ch.chg_code LIKE 'ACT%')");
+            DataTable dt_cur = db.QueryBySQLCode("SELECT rf.full_name, tr.trns, hl.code, SPLIT_PART(rf.occ_type, ' , ', 1) AS adult, SPLIT_PART(rf.occ_type, ', ', 2) AS kid, SPLIT_PART(rf.occ_type, ', ', 3) AS inf, SPLIT_PART(rf.occ_type, ', ', 4) AS ttlpax, rf.p_typ, ttl AS price FROM rssys.resfil rf LEFT JOIN (SELECT name, code FROM rssys.hotel) hl ON hl.code = rf.hotel_code LEFT JOIN (SELECT chg_desc AS p_name, chg_code FROM rssys.charge WHERE chg_type = 'P') pp ON pp.chg_code = p_typ LEFT JOIN (SELECT chg_code AS trns, rg_code FROM rssys.res_gfil WHERE UPPER(chg_code) LIKE 'TRNS%') tr ON tr.rg_code = rf.res_code LEFT JOIN (SELECT SUM(price) AS ttl, rg_code FROM rssys.res_gfil GROUP BY rg_code) trs ON rf.res_code = trs.rg_code WHERE res_code = '" + cur_res_code + "' LIMIT 1");
+            DataTable dt_com = db.QueryBySQLCode("SELECT SUM(com_price)::numeric(20,2) AS total_com, (SUM(com_price)/2)::numeric(20,2) AS guide_agency FROM (SELECT rg.chg_code, rg.price, ch.com, ((ch.com * 0.01)::numeric(15,2) * rg.price)::numeric(20,2) AS com_price FROM rssys.res_gfil rg LEFT JOIN rssys.charge ch ON rg.chg_code = ch.chg_code WHERE rg.rg_code = '" + cur_res_code + "') _table");
+            //SELECT rf.full_name, tr.trns, hl.code, pck.adult, pck.kid, pck.inf, pck1.ttlpax, rf.p_typ, ttl AS price FROM rssys.resfil rf LEFT JOIN (SELECT name, code FROM rssys.hotel) hl ON hl.code = rf.hotel_code LEFT JOIN (SELECT string_agg(chg_desc, ', ') AS package, COALESCE(adult.occ_type, '0 ADULT') AS adult, COALESCE(kid.occ_type, '0 KID') AS kid, COALESCE(inf.occ_type, '0 INFANT') AS inf, res_gfil.rg_code FROM rssys.res_gfil LEFT JOIN (SELECT occ_type, rg_code FROM rssys.res_gfil WHERE occ_type LIKE '%ADULT') adult ON adult.rg_code = res_gfil.rg_code LEFT JOIN (SELECT occ_type, rg_code FROM rssys.res_gfil WHERE occ_type LIKE '%KID') kid ON kid.rg_code = res_gfil.rg_code LEFT JOIN (SELECT occ_type, rg_code FROM rssys.res_gfil WHERE occ_type LIKE '%INFANT') inf ON inf.rg_code = res_gfil.rg_code LEFT JOIN (SELECT chg_code, chg_desc FROM rssys.charge) cgh ON res_gfil.chg_code = cgh.chg_code GROUP BY res_gfil.rg_code, adult.occ_type, kid.occ_type, inf.occ_type) pck ON pck.rg_code = rf.res_code LEFT JOIN (SELECT string_agg(chg_desc, ', ') AS activities, (CASE WHEN occ_type LIKE '%All' THEN occ_type END) AS ttlpax, rg_code FROM rssys.res_gfil LEFT JOIN (SELECT chg_code, chg_desc FROM rssys.charge) cgh ON res_gfil.chg_code = cgh.chg_code WHERE UPPER(occ_type) LIKE '%ALL' GROUP BY rg_code, occ_type) pck1 ON pck1.rg_code = rf.res_code LEFT JOIN (SELECT chg_desc AS p_name, chg_code FROM rssys.charge WHERE chg_type = 'P') pp ON pp.chg_code = p_typ LEFT JOIN (SELECT chg_code AS trns, rg_code FROM rssys.res_gfil WHERE UPPER(chg_code) LIKE 'TRNS%') tr ON tr.rg_code = rf.res_code LEFT JOIN (SELECT SUM(price) AS ttl, rg_code FROM rssys.res_gfil GROUP BY rg_code) trs ON rf.res_code = trs.rg_code WHERE res_code = '" + cur_res_code + "' LIMIT 1
+            try
             {
-                checkedListBox2.Items.Clear();
-                for (int i = 0; i < dt_pck.Rows.Count; i++)
+                if (dt_pck.Rows.Count > 0)
                 {
-                    Boolean ischecked = false;
-                    try 
+                    checkedListBox2.Items.Clear();
+                    for (int i = 0; i < dt_pck.Rows.Count; i++)
                     {
-                        ischecked = Convert.ToBoolean(dt_pck.Rows[i]["bool_check"].ToString());
-                    } catch { }
-                    checkedListBox2.Items.Add(dt_pck.Rows[i]["chg_desc"].ToString(), ischecked);
+                        Boolean ischecked = false;
+                        try
+                        {
+                            ischecked = Convert.ToBoolean(dt_pck.Rows[i]["bool_check"].ToString());
+                        }
+                        catch { }
+                        checkedListBox2.Items.Add(dt_pck.Rows[i]["chg_desc"].ToString(), ischecked);
+                    }
                 }
             }
-            if (dt_act.Rows.Count > 0)
+            catch { }
+            try
             {
-                checkedListBox1.Items.Clear();
-                for (int i = 0; i < dt_act.Rows.Count; i++)
+                if (dt_act.Rows.Count > 0)
                 {
-                    Boolean ischecked = false;
+                    checkedListBox1.Items.Clear();
+                    for (int i = 0; i < dt_act.Rows.Count; i++)
+                    {
+                        Boolean ischecked = false;
+                        try
+                        {
+                            ischecked = Convert.ToBoolean(dt_act.Rows[i]["bool_check"].ToString());
+                        }
+                        catch { }
+                        checkedListBox1.Items.Add(dt_act.Rows[i]["chg_desc"].ToString(), ischecked);
+                    }
+                }
+            }
+            catch { }
+            try
+            {
+                if (dt_cur.Rows.Count > 0)
+                {
                     try
                     {
-                        ischecked = Convert.ToBoolean(dt_act.Rows[i]["bool_check"].ToString());
+                        txt_dreference.Text = (!String.IsNullOrEmpty(dt_cur.Rows[0]["full_name"].ToString())) ? dt_cur.Rows[0]["full_name"].ToString() : "";
+
+                        if (!String.IsNullOrEmpty(dt_cur.Rows[0]["code"].ToString())) { cbo_dpaymentform.SelectedValue = dt_cur.Rows[0]["code"].ToString(); }
+                        if(!String.IsNullOrEmpty(dt_cur.Rows[0]["trns"].ToString())) { comboBox1.SelectedValue = dt_cur.Rows[0]["trns"].ToString(); }
+                        if(!String.IsNullOrEmpty(dt_cur.Rows[0]["p_typ"].ToString())) { comboBox2.SelectedValue = dt_cur.Rows[0]["p_typ"].ToString(); }
+
+                        if (!String.IsNullOrEmpty(dt_cur.Rows[0]["trns"].ToString())) { cur_c_c = dt_cur.Rows[0]["trns"].ToString(); }
+                        if (!String.IsNullOrEmpty(dt_cur.Rows[0]["p_typ"].ToString())) { cur_p_c = dt_cur.Rows[0]["p_typ"].ToString(); }
+
+                        label9.Text = (!String.IsNullOrEmpty(dt_cur.Rows[0]["price"].ToString())) ? gm.toAccountingFormat(Convert.ToDouble((dt_cur.Rows[0]["price"] ?? "0.00").ToString())) : "0.00";
+
+                        label20.Text = (!String.IsNullOrEmpty(dt_cur.Rows[0]["adult"].ToString())) ? ((dt_cur.Rows[0]["adult"].ToString() == "") ? "0" : dt_cur.Rows[0]["adult"].ToString()) : "0";
+                        label21.Text = (!String.IsNullOrEmpty(dt_cur.Rows[0]["kid"].ToString())) ? ((dt_cur.Rows[0]["kid"].ToString() == "") ? "0" : dt_cur.Rows[0]["kid"].ToString()) : "0";
+                        label23.Text = (!String.IsNullOrEmpty(dt_cur.Rows[0]["inf"].ToString())) ? ((dt_cur.Rows[0]["inf"].ToString() == "") ? "0" : dt_cur.Rows[0]["inf"].ToString()) : "0";
+                        label5.Text = (!String.IsNullOrEmpty(dt_cur.Rows[0]["ttlpax"].ToString())) ? ((dt_cur.Rows[0]["ttlpax"].ToString() == "") ? "0" : dt_cur.Rows[0]["ttlpax"].ToString()) : "0";
                     }
                     catch { }
-                    checkedListBox1.Items.Add(dt_act.Rows[i]["chg_desc"].ToString(), ischecked);
                 }
             }
-            if (dt_cur.Rows.Count > 0)
+            catch { }
+            try
             {
-                try
+                if (dt_com.Rows.Count > 0)
                 {
-                    txt_dreference.Text = dt_cur.Rows[0]["full_name"].ToString();
-
-                    cbo_dpaymentform.SelectedValue = dt_cur.Rows[0]["code"].ToString();
-                    comboBox1.SelectedValue = dt_cur.Rows[0]["trns"].ToString();
-                    comboBox2.SelectedValue = dt_cur.Rows[0]["p_typ"].ToString();
-
-                    cur_c_c = dt_cur.Rows[0]["trns"].ToString();
-                    cur_p_c = dt_cur.Rows[0]["p_typ"].ToString();
-
-                    label9.Text = gm.toAccountingFormat(Convert.ToDouble((dt_cur.Rows[0]["price"] ?? "0.00").ToString()));
-
-                    label20.Text = ((dt_cur.Rows[0]["adult"].ToString() == "") ? "0" : dt_cur.Rows[0]["adult"].ToString().ToUpper().Replace(" ADULT", ""));
-                    label21.Text = ((dt_cur.Rows[0]["kid"].ToString() == "") ? "0" : dt_cur.Rows[0]["kid"].ToString().ToUpper().Replace(" KID", ""));
-                    label23.Text = ((dt_cur.Rows[0]["inf"].ToString() == "") ? "0" : dt_cur.Rows[0]["inf"].ToString().ToUpper().Replace(" INFANT", ""));
-                    label5.Text = ((dt_cur.Rows[0]["ttlpax"].ToString() == "") ? "0" : dt_cur.Rows[0]["ttlpax"].ToString().ToUpper().Replace(" ALL", ""));
+                    Double guide_agency = 0.00;
+                    try
+                    {
+                        guide_agency = Convert.ToDouble(dt_com.Rows[0]["guide_agency"].ToString());
+                    }
+                    catch { }
+                    try
+                    {
+                        label29.Text = gm.toAccountingFormat(guide_agency);
+                        label30.Text = gm.toAccountingFormat(guide_agency);
+                    }
+                    catch { }
                 }
-                catch { }
             }
-
+            catch { }
             //if (cur_i == 0)
             //{
             //    cur_i = 1;
@@ -347,37 +397,42 @@ namespace Hotel_System
         {
             try
             {
-                if (db.DeleteOnTable("res_gfil", "chg_code = '" + cur_ent_c + "'"))
+                if (!String.IsNullOrEmpty(cur_ent_c) && !String.IsNullOrEmpty(cur_res_code))
                 {
-                    if (checkBox1.Checked == true)
+                    if (db.DeleteOnTable("res_gfil", "chg_code = '" + cur_ent_c + "'"))
                     {
-                        Double dd_c = 0.00;
-                        dd_c = ((checkBox1.Checked == true) ? Convert.ToDouble(label27.Text.ToString()) * ((label5.Text.ToString() == "0") ? (Convert.ToDouble(label20.Text.ToString()) + Convert.ToDouble(label21.Text.ToString()) + Convert.ToDouble(label23.Text.ToString())) : Convert.ToDouble(label5.Text.ToString())) : 0.00);
-                        if (db.InsertOnTable("res_gfil", "rg_code, acct_no, occ_type, chg_code, price", "'" + cur_res_code + "', '" + db.QueryBySQLCodeRetStr("SELECT acct_no FROM rssys.resfil WHERE res_code = '" + cur_res_code + "'") + "', '" + ((label5.Text.ToString() == "0") ? (Convert.ToDouble(label20.Text.ToString()) + Convert.ToDouble(label21.Text.ToString()) + Convert.ToDouble(label23.Text.ToString())).ToString() : label5.Text.ToString()) + "', '" + cur_ent_c + "', '" + dd_c + "'"))
+                        if (checkBox1.Checked == true)
                         {
-                            Double tl_g = (Convert.ToDouble(db.QueryBySQLCodeRetStr("SELECT SUM(ttl) FROM (SELECT REPLACE(occ_type, occ_type, (CASE WHEN occ_type LIKE '%ADULT' THEN 'ADULT' WHEN occ_type LIKE '%KID' THEN 'KID' WHEN occ_type LIKE '%INFANT' THEN 'INFANT' WHEN UPPER(occ_type) LIKE '%ALL' THEN 'All' ELSE 'ADTL' END)) AS pck_typ, SPLIT_PART(occ_type, ' ', 1) AS count, rf.price, chg.price AS chg_price, ((SPLIT_PART(occ_type, ' ', 1))::numeric(20,2) * chg.price::numeric(20,2))::numeric(20,2) AS ttl FROM rssys.res_gfil rf LEFT JOIN rssys.charge chg ON chg.chg_code = rf.chg_code WHERE rf.chg_code NOT LIKE 'TRNS%' AND rg_code = '" + cur_res_code + "') _all") ?? "0.00"));
-
-                            if (db.UpdateOnTable("gfolio", "price = '" + tl_g + "'", "res_code = '" + cur_res_code + "'"))
+                            Double dd_c = 0.00;
+                            dd_c = ((checkBox1.Checked == true) ? Convert.ToDouble(label27.Text.ToString()) * ((!String.IsNullOrEmpty(label5.Text.ToString())) ? (Convert.ToDouble(label20.Text.ToString()) + Convert.ToDouble(label21.Text.ToString()) + Convert.ToDouble(label23.Text.ToString())) : Convert.ToDouble(label5.Text.ToString())) : 0.00);
+                            if (db.InsertOnTable("res_gfil", "rg_code, acct_no, occ_type, chg_code, price", "'" + cur_res_code + "', '" + db.QueryBySQLCodeRetStr("SELECT acct_no FROM rssys.resfil WHERE res_code = '" + cur_res_code + "'") + "', '" + ((label5.Text.ToString() == "0") ? (Convert.ToDouble(label20.Text.ToString()) + Convert.ToDouble(label21.Text.ToString()) + Convert.ToDouble(label23.Text.ToString())).ToString() : label5.Text.ToString()) + "', '" + cur_ent_c + "', '" + dd_c + "'"))
                             {
-                                load_items(cur_res_code);
+                                Double tl_g = (Convert.ToDouble(db.QueryBySQLCodeRetStr("SELECT SUM(ttl) FROM (SELECT REPLACE(occ_type, occ_type, (CASE WHEN occ_type LIKE '%ADULT' THEN 'ADULT' WHEN occ_type LIKE '%KID' THEN 'KID' WHEN occ_type LIKE '%INFANT' THEN 'INFANT' WHEN UPPER(occ_type) LIKE '%ALL' THEN 'All' ELSE 'ADTL' END)) AS pck_typ, SPLIT_PART(occ_type, ' ', 1) AS count, rf.price, chg.price AS chg_price, ((SPLIT_PART(occ_type, ' ', 1))::numeric(20,2) * chg.price::numeric(20,2))::numeric(20,2) AS ttl FROM rssys.res_gfil rf LEFT JOIN rssys.charge chg ON chg.chg_code = rf.chg_code WHERE rf.chg_code NOT LIKE 'TRNS%' AND rg_code = '" + cur_res_code + "') _all") ?? "0.00"));
+
+                                if (db.UpdateOnTable("gfolio", "price = '" + tl_g + "'", "res_code = '" + cur_res_code + "'"))
+                                {
+                                    load_items(cur_res_code);
+                                }
+                            }
+                            else
+                            {
+
                             }
                         }
                         else
                         {
-
+                            load_items(cur_res_code);
                         }
                     }
                     else
                     {
-                        load_items(cur_res_code);
+
                     }
                 }
-                else
-                {
-
-                }
             }
-            catch { MessageBox.Show("Error on updating price"); }
+            catch { 
+                //MessageBox.Show("Error on updating price"); 
+            }
         }
 
         private void trashbin()
@@ -629,38 +684,48 @@ namespace Hotel_System
             {
                 if (comboBox2.SelectedIndex > -1)
                 {
-                    if (db.UpdateOnTable("gfolio", "p_typ = '" + (comboBox2.SelectedValue ?? "").ToString() + "'", "res_code = '" + cur_res_code + "'"))
+                    String combo2Str = (comboBox2.SelectedValue ?? "").ToString();
+                    if (!String.IsNullOrEmpty(combo2Str) && combo2Str != "System.Data.DataRowView")
                     {
-                        //MessageBox.Show("Successfully updated payment type.");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error on updating payment type");
+                        if (db.UpdateOnTable("resfil", "p_typ = '" + combo2Str + "'", "res_code = '" + cur_res_code + "'"))
+                        {
+                            //MessageBox.Show("Successfully updated payment type.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error on updating payment type");
+                        }
                     }
                 }
 
                 if (comboBox1.SelectedIndex > -1)
                 {
-                    db.DeleteOnTable("res_gfil", "rg_code = '" + cur_res_code + "' AND  chg_code LIKE 'TRNS%'");
-                    if (db.InsertOnTable("res_gfil", "rg_code, acct_no, occ_type, price, chg_code", "'" + cur_res_code + "', '" + db.QueryBySQLCodeRetStr("SELECT acct_no FROM rssys.resfil WHERE res_code = '" + cur_res_code + "' LIMIT 1") + "', '1', '" + db.QueryBySQLCodeRetStr("SELECT price FROM rssys.charge WHERE chg_code = '" + (comboBox1.SelectedValue ?? "").ToString() + "'") + "', '" + (comboBox1.SelectedValue ?? "").ToString() + "'"))
+                    String combo1Str = (comboBox1.SelectedValue ?? "").ToString();
+                    if (!String.IsNullOrEmpty(cur_res_code) && (!String.IsNullOrEmpty(combo1Str) && combo1Str != "System.Data.DataRowView"))
                     {
-                        if (db.UpdateOnTable("gfolio", "price = '" + (Convert.ToDouble(db.QueryBySQLCodeRetStr("SELECT SUM(ttl) FROM (SELECT REPLACE(occ_type, occ_type, (CASE WHEN occ_type LIKE '%ADULT' THEN 'ADULT' WHEN occ_type LIKE '%KID' THEN 'KID' WHEN occ_type LIKE '%INFANT' THEN 'INFANT' WHEN UPPER(occ_type) LIKE '%ALL' THEN 'All' ELSE 'ADTL' END)) AS pck_typ, SPLIT_PART(occ_type, ' ', 1) AS count, rf.price, chg.price AS chg_price, ((SPLIT_PART(occ_type, ' ', 1))::numeric(20,2) * chg.price::numeric(20,2))::numeric(20,2) AS ttl FROM rssys.res_gfil rf LEFT JOIN rssys.charge chg ON chg.chg_code = rf.chg_code WHERE rf.chg_code NOT LIKE 'TRNS%' AND rg_code = '" + cur_res_code + "') _all") ?? "0.00") + Convert.ToDouble(db.QueryBySQLCodeRetStr("SELECT price FROM rssys.charge WHERE chg_code = '" + (comboBox1.SelectedValue ?? "").ToString() + "'") ?? "0.00")) + "'", "res_code = '" + cur_res_code + "'"))
+                        if (db.DeleteOnTable("res_gfil", "rg_code = '" + cur_res_code + "' AND  chg_code LIKE 'TRNS%'"))
                         {
-                            DataTable dt_ggc = db.QueryBySQLCode("SELECT REPLACE(occ_type, occ_type, (CASE WHEN occ_type LIKE '%ADULT' THEN 'ADULT' WHEN occ_type LIKE '%KID' THEN 'KID' WHEN occ_type LIKE '%INFANT' THEN 'INFANT' WHEN UPPER(occ_type) LIKE '%ALL' THEN 'All' ELSE 'ADTL' END)) AS pck_typ, SPLIT_PART(occ_type, ' ', 1) AS count, rf.price, chg.price AS chg_price, ((SPLIT_PART(occ_type, ' ', 1))::numeric(20,2) * chg.price::numeric(20,2))::numeric(20,2) AS ttl FROM rssys.res_gfil rf LEFT JOIN rssys.charge chg ON chg.chg_code = rf.chg_code WHERE rf.chg_code NOT LIKE 'TRNS%' AND rg_code = '" + cur_res_code + "'");
+                            if (db.InsertOnTable("res_gfil", "rg_code, acct_no, occ_type, price, chg_code", "'" + cur_res_code + "', '" + db.QueryBySQLCodeRetStr("SELECT acct_no FROM rssys.resfil WHERE res_code = '" + cur_res_code + "' LIMIT 1") + "', '1', '" + db.QueryBySQLCodeRetStr("SELECT price FROM rssys.charge WHERE chg_code = '" + combo1Str + "'") + "', '" + combo1Str + "'"))
+                            {
+                                if (db.UpdateOnTable("gfolio", "price = '" + (Convert.ToDouble(db.QueryBySQLCodeRetStr("SELECT SUM(ttl) FROM (SELECT REPLACE(occ_type, occ_type, (CASE WHEN occ_type LIKE '%ADULT' THEN 'ADULT' WHEN occ_type LIKE '%KID' THEN 'KID' WHEN occ_type LIKE '%INFANT' THEN 'INFANT' WHEN UPPER(occ_type) LIKE '%ALL' THEN 'All' ELSE 'ADTL' END)) AS pck_typ, SPLIT_PART(occ_type, ' ', 1) AS count, rf.price, chg.price AS chg_price, ((SPLIT_PART(occ_type, ' ', 1))::numeric(20,2) * chg.price::numeric(20,2))::numeric(20,2) AS ttl FROM rssys.res_gfil rf LEFT JOIN rssys.charge chg ON chg.chg_code = rf.chg_code WHERE rf.chg_code NOT LIKE 'TRNS%' AND rg_code = '" + cur_res_code + "') _all") ?? "0.00") + Convert.ToDouble(db.QueryBySQLCodeRetStr("SELECT price FROM rssys.charge WHERE chg_code = '" + combo1Str + "'") ?? "0.00")) + "'", "res_code = '" + cur_res_code + "'"))
+                                {
+                                    DataTable dt_ggc = db.QueryBySQLCode("SELECT REPLACE(occ_type, occ_type, (CASE WHEN occ_type LIKE '%ADULT' THEN 'ADULT' WHEN occ_type LIKE '%KID' THEN 'KID' WHEN occ_type LIKE '%INFANT' THEN 'INFANT' WHEN UPPER(occ_type) LIKE '%ALL' THEN 'All' ELSE 'ADTL' END)) AS pck_typ, SPLIT_PART(occ_type, ' ', 1) AS count, rf.price, chg.price AS chg_price, ((SPLIT_PART(occ_type, ' ', 1))::numeric(20,2) * chg.price::numeric(20,2))::numeric(20,2) AS ttl FROM rssys.res_gfil rf LEFT JOIN rssys.charge chg ON chg.chg_code = rf.chg_code WHERE rf.chg_code NOT LIKE 'TRNS%' AND rg_code = '" + cur_res_code + "'");
 
-                            //db.insert_charges()
-                            //MessageBox.Show("Successfully updated price and transportation");
-                            load_items(cur_res_code);
+                                    //db.insert_charges()
+                                    //MessageBox.Show("Successfully updated price and transportation");
+                                    load_items(cur_res_code);
+                                }
+                                else
+                                {
+                                    //MessageBox.Show("Error on updating price but successfully updated transportation");
+                                    load_items(cur_res_code);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error on updating price and transportation");
+                            }
                         }
-                        else
-                        {
-                            MessageBox.Show("Error on updating price but successfully updated transportation");
-                            load_items(cur_res_code);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error on updating price and transportation");
                     }
                 }
 

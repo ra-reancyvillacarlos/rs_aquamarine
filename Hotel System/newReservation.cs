@@ -15,11 +15,12 @@ namespace Hotel_System
 
         Boolean seltbp = false;
         Boolean isnew = false;
-        public String active_res_where;
+        public String active_res_where = "";
         public Boolean cur_load = true;
         Boolean saveClickProc = false;
         Boolean forGfolio = false;
         String forWalkIn = "";
+        public String cur_walkIn = "";
 
         Double l_price = 0.00;
         Double c_price = 0.00;
@@ -102,8 +103,6 @@ namespace Hotel_System
 
             cbo_agency.SelectedIndex = -1;
             comboBox3.SelectedIndex = -1;
-            comboBox2.SelectedIndex = -1;
-            comboBox1.SelectedIndex = -1;
             cbo_mktsegment.SelectedIndex = -1;
             comboBox4.SelectedIndex = -1;
             cbo_disc.SelectedIndex = -1;
@@ -151,7 +150,7 @@ namespace Hotel_System
             }
             catch (Exception)
             {
-                //MessageBox.Show("Error on SQL");
+                MessageBox.Show("Error on SQL");
             }
         }
         private void clear_dgv()
@@ -199,7 +198,9 @@ namespace Hotel_System
 
                     //get reservation info and pass res_code;
                     dt = db.get_res_info(dgv_reslist["res_code", row].Value.ToString());
-                    DataTable dt_lc = db.QueryBySQLCode("SELECT l_count, c_bool FROM (SELECT COUNT(rg.chg_code) AS l_count FROM rssys.res_gfil rg WHERE rg.chg_code IN (SELECT chg_code FROM rssys.charge WHERE UPPER(chg_code) LIKE 'ADTL%' AND UPPER(chg_desc) LIKE 'LUNCH%') LIMIT 1) l_b INNER JOIN (SELECT COUNT(rg.chg_code) AS c_bool FROM rssys.res_gfil rg WHERE rg.chg_code IN (SELECT chg_code FROM rssys.charge WHERE UPPER(chg_code) LIKE 'ADTL%' AND UPPER(chg_desc) LIKE 'CAMERA%') LIMIT 1) c_b ON 1=1");
+                   // DataTable dt_lc = db.QueryBySQLCode("SELECT l_count, c_bool FROM (SELECT COUNT(rg.chg_code) AS l_count FROM rssys.res_gfil rg WHERE rg.chg_code IN (SELECT chg_code FROM rssys.charge WHERE UPPER(chg_code) LIKE 'ADTL%' AND UPPER(chg_desc) LIKE 'LUNCH%') AND rg_code = '" + dgv_reslist["res_code", row].Value.ToString() + "' LIMIT 1) l_b INNER JOIN (SELECT COUNT(rg.chg_code) AS c_bool FROM rssys.res_gfil rg WHERE rg.chg_code IN (SELECT chg_code FROM rssys.charge WHERE UPPER(chg_code) LIKE 'ADTL%' AND UPPER(chg_desc) LIKE 'CAMERA%') AND rg_code = '" + dgv_reslist["res_code", row].Value.ToString() + "' LIMIT 1) c_b ON 1=1");
+
+                    DataTable dt_lc = db.QueryBySQLCode("SELECT l_count, c_bool FROM (SELECT COUNT(rg.chg_code) AS l_count FROM rssys.res_gfil rg WHERE rg.chg_code IN (SELECT chg_code FROM rssys.charge WHERE UPPER(chg_code) LIKE 'ADTL%' AND UPPER(chg_desc) LIKE 'LUNCH%') AND rg_code = '" + dgv_reslist["res_code", row].Value.ToString() + "' LIMIT 1) l_b INNER JOIN (SELECT COUNT(rg.chg_code) AS c_bool FROM rssys.res_gfil rg WHERE rg.chg_code IN (SELECT chg_code FROM rssys.charge WHERE UPPER(chg_code) LIKE 'ADTL%' AND UPPER(chg_desc) LIKE 'CAMERA%') AND rg_code = '" + dgv_reslist["res_code", row].Value.ToString() + "' LIMIT 1) c_b ON 1=1");
 
                     an_frm_load(dgv_reslist["res_code", row].Value.ToString());
                     foreach (DataRow r in dt.Rows)
@@ -236,10 +237,11 @@ namespace Hotel_System
 
                         textBox1.Text = dt_lc.Rows[0]["l_count"].ToString();
                         int g_g = 0;
-                        try{ g_g = Convert.ToInt32(dt_lc.Rows[0]["c_bool"].ToString()); } catch{}
+                        try { g_g = Convert.ToInt32(dt_lc.Rows[0]["c_bool"].ToString()); }
+                        catch { }
+                        comboBox5.SelectedValue = r["seller"].ToString();
                         checkBox1.Checked = ((g_g > 0) ? true : false);
 
-                        comboBox5.SelectedValue = r["seller"].ToString();
                     }
                     //dt_guest = db.get_guest_info(guestno);
 
@@ -325,7 +327,7 @@ namespace Hotel_System
             }
             catch { }
 
-            set_reslist("");
+            set_reslist(active_res_where);
         }
 
         private void dgv_list_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -397,7 +399,7 @@ namespace Hotel_System
                 }
                 else if (dgv_guestlist.Rows.Count < 1)
                 {
-                    MessageBox.Show("Please select 1 or more  of the tennant(s).");
+                    MessageBox.Show("Please select 1 or more  of the guest(s).");
                 }
                 else
                 {
@@ -414,7 +416,7 @@ namespace Hotel_System
                     }
                     int g_f = 0;
                     try { g_f = Convert.ToInt32(textBox1.Text.ToString()); }
-                    catch { /*MessageBox.Show("Input a valid number for lunch");*/ }
+                    catch { MessageBox.Show("Input a valid number for lunch"); }
                     if (g_f > 0)
                     {
                         vald_save((l_price * g_f) , "" + textBox1.Text.ToString() + " ADTL", l_code);
@@ -556,13 +558,8 @@ namespace Hotel_System
             lbl_depdt.Text = "";
             lbl_blockedby.Text = "";
 
-            chk_blockres.Checked = false;
-
-            cbo_srchcomp.SelectedIndex = -1;
             cbo_disc.SelectedIndex = -1;
             cbo_mktsegment.SelectedIndex = -1;
-            cbo_rtcode.SelectedIndex = -1;
-            cbo_occtyp.SelectedIndex = -1;
             //cbo_type.SelectedIndex = -1;
 
             txt_contact.Text = "";
@@ -634,14 +631,10 @@ namespace Hotel_System
             //set_mscbo();
             //set_disccbo();
             //set_rmtypecbo();
-
-            gm.load_company(cbo_srchcomp);
-            gm.load_ratetype(cbo_rtcode);
             gm.load_market(cbo_mktsegment);
             gm.load_hotel(comboBox3);
             //set_rmtypecbo();
             gm.load_disctbl(cbo_disc);
-            gm.load_romratetype(cbo_rmrttyp);
             gm.load_agency(cbo_agency);
             gm.load_charge_paymentsonly(comboBox4);
             //set_roomstatuslist();
@@ -650,91 +643,6 @@ namespace Hotel_System
             clr_field();
             lbl_clerk.Text = GlobalClass.username;
             //disp_res();
-        }
-
-        private void cbo_rtcode_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            thisDatabase db = new thisDatabase();
-            String rmrttyp;
-            Double night = 0, mo = 0, wk = 0, val = 0;
-            String room_rate_code = "";
-            try
-            {
-                if (cbo_rtcode.SelectedIndex > -1)
-                {
-                    DataTable dt = db.QueryBySQLCode("SELECT rmrttyp from rssys.ratetype WHERE rate_code='" + cbo_rtcode.SelectedValue.ToString() + "'");
-                    if (dt.Rows.Count > 0)
-                    {
-
-                        room_rate_code = dt.Rows[0]["rmrttyp"].ToString();
-                    }
-                    cbo_rmrttyp.SelectedValue = db.get_romratetype_code(room_rate_code);
-                    rmrttyp = cbo_rmrttyp.SelectedValue.ToString();
-                    if (night % 30 > 0) { mo = mo + 1.00; }
-                    if (rmrttyp == "M")
-                    {
-
-                        lbl_noofnight_title_top.Text = "No. of Month(s)";
-                        lbl_noofnight_title.Text = lbl_noofnight_title_top.Text;
-
-                        night = Convert.ToDouble(lbl_noofnight.Text);
-
-                        if (night > 30)
-                        {
-                            mo = night / 30;
-
-
-                        }
-
-                        else
-                        {
-                            mo = 1.00;
-                        }
-
-                        lbl_noofnight.Text = mo.ToString("0");
-                        lbl_noofnight_billing.Text = lbl_noofnight.Text;
-                    }
-                    else if (rmrttyp == "W")
-                    {
-                        lbl_noofnight_title_top.Text = "No. of Week(s)";
-                        lbl_noofnight_title.Text = lbl_noofnight_title_top.Text;
-
-                        night = Convert.ToDouble(lbl_noofnight.Text);
-                        if (night % 7 > 0) { wk = wk + 1.00; }
-                        if (night > 7)
-                        {
-                            wk = night / 7;
-
-
-                        }
-
-                        else
-                        {
-                            wk = 1.00;
-                        }
-
-                        lbl_noofnight.Text = wk.ToString("0");
-                        lbl_noofnight_billing.Text = lbl_noofnight.Text;
-                    }
-                    else
-                    {
-                        val = (Convert.ToDateTime(lbl_depdt.Text) - Convert.ToDateTime(lbl_arrdt.Text)).TotalDays;
-
-                        lbl_noofnight_title_top.Text = "No. of Nights";
-                        lbl_noofnight_title.Text = lbl_noofnight_title_top.Text;
-
-                        lbl_noofnight.Text = val.ToString("0");
-                        lbl_noofnight_billing.Text = lbl_noofnight.Text;
-                    }
-                }
-                else
-                {
-                    cbo_rmrttyp.SelectedIndex = -1;
-                }
-            }
-            catch (Exception) { }
-
-            disp_computed_bill();
         }
 
         private void btn_additem_Click_1(object sender, EventArgs e)
@@ -768,7 +676,7 @@ namespace Hotel_System
                 cRes.set_data(lbl_resno.Text);
                 cRes.Show();
             }
-            catch (Exception er) { /*MessageBox.Show(er.Message);*/ }
+            catch (Exception er) { MessageBox.Show(er.Message); }
         }
         public void reload_guest()
         {
@@ -821,9 +729,9 @@ namespace Hotel_System
 
                 //mainform.set_modname(modname + " > " + "Select Guest");
 
-                AG.MdiParent = this.MdiParent;
+                //AG.MdiParent = this.MdiParent;
                 AG.reload_guest();
-                AG.Show();
+                AG.ShowDialog();
 
             }
             catch (Exception) { }
@@ -845,11 +753,6 @@ namespace Hotel_System
         }
 
         private void dgv_reslist_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-
-        }
-
-        private void dgv_reslist_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
 
         }
@@ -900,7 +803,7 @@ namespace Hotel_System
 
                 lbl_noofguest.Text = (dgv_guestlist.Rows.Count - 1).ToString();
             }
-            catch (Exception er) { /*MessageBox.Show("Pls select/highlight the guest to remove.");*/ }
+            catch (Exception er) { MessageBox.Show("Pls select/highlight the guest to remove."); }
         }
         public void disp_res()
         {
@@ -917,10 +820,6 @@ namespace Hotel_System
             if (String.IsNullOrEmpty(fname) == false)
             {
                 WHERE = WHERE + " AND r.full_name LIKE '%" + fname + "%'";
-            }
-            if (cbo_srchcomp.SelectedIndex != -1)
-            {
-                WHERE = WHERE + " AND g.comp_code='" + cbo_srchcomp.SelectedValue.ToString() + "'";
             }
             if (chk_active.Checked)
             {
@@ -1021,7 +920,7 @@ namespace Hotel_System
 
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
         {
-            //gchk_rows();
+            gchk_rows();
         }
 
         private void trash_bin()
@@ -1285,17 +1184,17 @@ namespace Hotel_System
         }
         private void newReservation_MouseClick(object sender, MouseEventArgs e)
         {
-            //gchk_rows();
+            gchk_rows();
         }
 
         private void newReservation_MouseMove(object sender, MouseEventArgs e)
         {
-            //gchk_rows();
+            gchk_rows();
         }
 
         private void dataGridView1_MouseUp(object sender, MouseEventArgs e)
         {
-            //gchk_rows();
+            gchk_rows();
         }
 
         private void lbl_noofguest_TextChanged(object sender, EventArgs e)
@@ -1307,11 +1206,17 @@ namespace Hotel_System
         {
             if (chk_active.Checked == true)
             {
-                active_res_where = " WHERE arr_date = current_date";
+                button2.Enabled = false;
+                button1.Enabled = false;
+                btn_cancel.Enabled = false;
+                active_res_where = (!String.IsNullOrEmpty(active_res_where)) ? ((active_res_where.Contains("(rf.arrived IS NULL OR rf.arrived !='Y')")) ? (active_res_where.Replace("(rf.arrived IS NULL OR rf.arrived !='Y')", "(rf.arrived IS NOT NULL OR rf.arrived ='Y')")) : active_res_where + " AND (rf.arrived IS NOT NULL OR rf.arrived ='Y')") : " WHERE (rf.arrived IS NOT NULL OR rf.arrived ='Y')";
             }
             else
             {
-                active_res_where = "";
+                button2.Enabled = true;
+                button1.Enabled = true;
+                btn_cancel.Enabled = true;
+                active_res_where = (!String.IsNullOrEmpty(active_res_where)) ? (active_res_where.Replace("(rf.arrived IS NOT NULL OR rf.arrived ='Y')", "(rf.arrived IS NULL OR rf.arrived !='Y')")) : " WHERE (rf.arrived IS NULL OR rf.arrived !='Y')";
             }
             set_reslist(active_res_where);
         }
@@ -1369,42 +1274,18 @@ namespace Hotel_System
 
                 String reg_num = db.get_pk("reg_num");
             
-                String res_code = ((forWalkIn == "") ? ((lbl_resno.Text.ToString() == "") ? dgv_reslist["res_code", dgv_reslist.CurrentRow.Index].Value.ToString() : lbl_resno.Text.ToString()) : forWalkIn);
-
-                String full_name = ((forWalkIn == "") ? ((lbl_resno.Text.ToString() == "") ? dgv_reslist["name", dgv_reslist.CurrentRow.Index].Value.ToString() : db.QueryBySQLCodeRetStr("SELECT full_name FROM rssys.resfil WHERE res_code = '" + lbl_resno.Text.ToString() + "'")) : db.QueryBySQLCodeRetStr("SELECT full_name FROM rssys.resfil WHERE res_code = '" + forWalkIn + "'"));
+                String res_code1 = ((forWalkIn == "") ? ((lbl_resno.Text.ToString() == "") ? dgv_reslist["res_code", dgv_reslist.CurrentRow.Index].Value.ToString() : lbl_resno.Text.ToString()) : forWalkIn);
+                String full_name1 = ((forWalkIn == "") ? ((lbl_resno.Text.ToString() == "") ? dgv_reslist["name", dgv_reslist.CurrentRow.Index].Value.ToString() : db.QueryBySQLCodeRetStr("SELECT full_name FROM rssys.resfil WHERE res_code = '" + lbl_resno.Text.ToString() + "'")) : db.QueryBySQLCodeRetStr("SELECT full_name FROM rssys.resfil WHERE res_code = '" + res_code1 + "'"));
             
                 //MessageBox.Show(res_code);
                 //(dgv_reslist.SelectedRows.Count > 0 || dgv_reslist.SelectedRows.Count < 1) && cur_load == false
-                if (res_code != "")
+                if (res_code1 != "")
                 {
-                    if (MessageBox.Show("Continue on setting guest " + full_name + " as arrived?", "Confirmation dialog", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Continue on setting guest " + full_name1 + " as arrived?", "Confirmation dialog", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        String col1 = "reg_num, res_code, acct_no, full_name, arr_date, arr_time, dep_date, hotel_code, rom_code, mkt_code, remarks, user_id, t_date, t_time, occ_type, chg_code, price, disc_code, discount, p_typ, trv_code, reg_date, seller";
-                        String col2 = "'" + reg_num + "' AS reg_num, res_code, acct_no, full_name, arr_date, arr_time, dep_date, hotel_code, rom_code, mkt_code, remarks, user_id, t_date, t_time, occ_type, chg_code, price, disc_code, discount, p_typ, trv_code, '" + curdate + "', seller";
-                        String cond = "res_code = '" + res_code + "'";
-                        try
-                        {
-                            if (db.InsertSelect("gfolio", col1, "resfil", col2, cond))
-                            {
-                                if (db.UpdateOnTable("resfil", "arrived ='Y'", "res_code = '" + res_code + "'"))
-                                {
-                                    db.set_pkm99("reg_num", db.get_nextincrementlimitchar(reg_num, 8));
-                                    MessageBox.Show("Successfully updated guest " + full_name + " to arrived.");
-                                    set_reslist(""); btn_back.PerformClick();
-                                    enterDeposit ed = new enterDeposit(this);
-                                    ed.load_items(res_code);
-                                    ed.ShowDialog();
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Error on updating status");
-                                }
-                            }
-                            else { MessageBox.Show("Error on updating"); }
-                        }
-                        catch (Exception er) { 
-                            //MessageBox.Show(er.Message); 
-                        }
+                        cur_walkIn = res_code1;
+                        enterDeposit ed = new enterDeposit(this, res_code1);
+                        ed.ShowDialog();
                     }
                 }
                 else
@@ -1413,7 +1294,60 @@ namespace Hotel_System
                 }
 
             }
-            catch { /*MessageBox.Show("Please select 1 resservation made");*/ }
+            catch (Exception er) { MessageBox.Show(er.Message); }
+        }
+
+        public Boolean afterPayment()
+        {
+            try
+            {
+                thisDatabase db = new thisDatabase();
+                GlobalMethod gm = new GlobalMethod();
+                String curdate = DateTime.Today.ToString("yyyy-MM-dd");
+                String curtime = DateTime.Now.ToString("HH:mm");
+                String reg_num = db.get_pk("reg_num");
+
+                String res_code1 = cur_walkIn;
+                String full_name1 = ((forWalkIn == "") ? ((lbl_resno.Text.ToString() == "") ? dgv_reslist["name", dgv_reslist.CurrentRow.Index].Value.ToString() : db.QueryBySQLCodeRetStr("SELECT full_name FROM rssys.resfil WHERE res_code = '" + lbl_resno.Text.ToString() + "'")) : db.QueryBySQLCodeRetStr("SELECT full_name FROM rssys.resfil WHERE res_code = '" + res_code1 + "'"));
+
+                String col1 = "reg_num, res_code, acct_no, full_name, arr_date, arr_time, dep_date, hotel_code, rom_code, mkt_code, remarks, user_id, t_date, t_time, occ_type, chg_code, price, disc_code, discount, p_typ, trv_code, reg_date, seller";
+                String col2 = "'" + reg_num + "' AS reg_num, res_code, acct_no, full_name, arr_date, arr_time, dep_date, hotel_code, rom_code, mkt_code, remarks, user_id, t_date, t_time, occ_type, chg_code, price, disc_code, discount, p_typ, trv_code, '" + curdate + "', seller";
+                String cond = "res_code = '" + res_code1 + "'";
+                try
+                {
+                    if (db.InsertSelect("gfolio", col1, "resfil", col2, cond))
+                    {
+                        if (db.UpdateOnTable("resfil", "arrived ='Y'", "res_code = '" + res_code1 + "'"))
+                        {
+                            db.set_pkm99("reg_num", db.get_nextincrementlimitchar(reg_num, 8));
+                            set_reslist(active_res_where); btn_back.PerformClick();
+                            MessageBox.Show("Successfully updated guest " + full_name1 + " to arrived.");
+                            return true;
+                            //ed.load_items(res_code);
+                            //db.DeleteOnTable("resfil", cond);
+                        }
+                        else
+                        {
+                            //MessageBox.Show("Error on updating status");
+                            return false;
+                        }
+                    }
+                    else 
+                    { 
+                        //MessageBox.Show("Error on updating"); 
+                        return false;
+                    }
+                }
+                catch (Exception er)
+                {
+                    return false;
+                    //MessageBox.Show(er.Message); 
+                }
+            }
+            catch 
+            {
+                return false;
+            }
         }
         private void label6_TextChanged(object sender, EventArgs e)
         {
@@ -1440,12 +1374,7 @@ namespace Hotel_System
         {
             gchk_rows();
         }
-
-        private void dataGridView1_MouseMove(object sender, MouseEventArgs e)
-        {
-            //gchk_rows();
-        }
-
+        
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             gchk_rows();
@@ -1533,16 +1462,6 @@ namespace Hotel_System
             return newestString;
         }
 
-        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            gchk_rows();
-        }
-
-        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            gchk_rows();
-        }
-
         private void gchk_rows()
         {
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
@@ -1552,6 +1471,7 @@ namespace Hotel_System
                     if (Convert.ToBoolean(dataGridView1["dgvl_chk", i].Value.ToString()) == true)
                     {
                         Double val_en = 0;
+
                         if ((dataGridView1["dgvl_sdesc", i].Value.ToString()).ToUpper().Contains("PACKAGE"))
                         {
                             if ((dataGridView1["dgvl_sdesc", i].Value.ToString()).ToUpper().Contains("ADULT"))
@@ -1596,7 +1516,7 @@ namespace Hotel_System
                         dataGridView1["pax", i].Value = ent_kc_st("0");
                     }
                 }
-                catch { }
+                catch {  }
             }
             get_tl();
         }
@@ -1612,6 +1532,20 @@ namespace Hotel_System
             {
 
             }
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked == true)
+            {
+                active_res_where = (!String.IsNullOrEmpty(active_res_where)) ? ((active_res_where.Contains("1=1")) ? (active_res_where.Replace("1=1", "arr_date = current_date")) : (active_res_where + " AND arr_date = current_date")) : " WHERE arr_date = current_date";
+            }
+            else
+            {
+                active_res_where = (!String.IsNullOrEmpty(active_res_where)) ? (active_res_where.Replace("arr_date = current_date", "1=1")) : " WHERE 1=1";
+            }
+            //MessageBox.Show(active_res_where);
+            set_reslist(active_res_where);
         }
     }
 }

@@ -472,22 +472,13 @@ namespace Accounting_Application_System
             Boolean flag = false;
             try
             {
-                conn.Close();
-                try
-                {
-                    conn.Open();
-                }
-                catch { }
+                this.OpenConn();
 
                 NpgsqlCommand command = new NpgsqlCommand(SQL, conn);
 
                 Int32 rowsaffected = command.ExecuteNonQuery();
 
-                try
-                {
-                    conn.Close();
-                }
-                catch { }
+                this.CloseConn();
 
                 flag = true;
             }

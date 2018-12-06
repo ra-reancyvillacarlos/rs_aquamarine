@@ -550,5 +550,57 @@ namespace Hotel_System
                 rpt.ShowDialog();
             }
         }
+
+        private void btn_delitem_Click(object sender, EventArgs e)
+        {
+            String rescode = "";
+            try
+            {
+                rescode = rescode = dgv_guestlist["res_code", dgv_guestlist.CurrentRow.Index].Value.ToString();
+            }
+            catch { }
+
+            if (!String.IsNullOrEmpty(rescode))
+            {
+                if (MessageBox.Show("Are you sure you want to delete this record (" + rescode + ")?", "Confirmation Dialog", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    String notif = "";
+                    try
+                    {
+                        if (db.QueryBySQLCode_bool("DELETE FROM rssys.resguest WHERE res_code = '" + rescode + "'"))
+                        {
+                            notif += "Deleted guest\n";
+                        }
+                        else
+                        {
+                            notif += "Error on deleting guest\n";
+                        }
+
+                        if (db.QueryBySQLCode_bool("DELETE FROM rssys.gfolio WHERE res_code = '" + rescode + "'"))
+                        {
+                            notif += "Deleted record\n";
+                        }
+                        else
+                        {
+                            notif += "Error on deleting record\n";
+                        }
+                    }
+                    catch 
+                    {
+                        notif += "Error on query.";
+                    }
+                    MessageBox.Show(notif);
+                    dis_dgvguest("");
+                }
+                else
+                {
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Select 1 record");
+            }
+        }
     }
 }

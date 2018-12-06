@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label27 = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -73,13 +74,19 @@
             this.label15 = new System.Windows.Forms.Label();
             this.cbo_appaymentform = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.label27);
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.button1);
@@ -115,15 +122,26 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(753, 460);
+            this.groupBox1.Size = new System.Drawing.Size(753, 462);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ORDER SLIP";
             // 
+            // label27
+            // 
+            this.label27.Location = new System.Drawing.Point(135, 333);
+            this.label27.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(223, 26);
+            this.label27.TabIndex = 47;
+            this.label27.Text = "0.00";
+            this.label27.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.label27.TextChanged += new System.EventHandler(this.label27_TextChanged);
+            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(13, 328);
+            this.checkBox1.Location = new System.Drawing.Point(14, 335);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(115, 24);
             this.checkBox1.TabIndex = 46;
@@ -135,7 +153,7 @@
             // 
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Image = global::Hotel_System.Properties.Resources._1343908142_database_save;
-            this.button1.Location = new System.Drawing.Point(13, 400);
+            this.button1.Location = new System.Drawing.Point(362, 398);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(117, 49);
             this.button1.TabIndex = 43;
@@ -147,10 +165,10 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(388, 326);
+            this.textBox1.Location = new System.Drawing.Point(471, 333);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(353, 26);
+            this.textBox1.Size = new System.Drawing.Size(270, 26);
             this.textBox1.TabIndex = 42;
             this.textBox1.Text = "0.00";
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -158,7 +176,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(384, 302);
+            this.label26.Location = new System.Drawing.Point(384, 333);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(81, 20);
             this.label26.TabIndex = 41;
@@ -167,7 +185,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(8, 292);
+            this.label18.Location = new System.Drawing.Point(9, 299);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(113, 20);
             this.label18.TabIndex = 40;
@@ -180,7 +198,7 @@
             this.comboBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(134, 289);
+            this.comboBox2.Location = new System.Drawing.Point(135, 296);
             this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(223, 28);
@@ -190,7 +208,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(113, 362);
+            this.label9.Location = new System.Drawing.Point(476, 296);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(40, 20);
@@ -200,7 +218,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(9, 362);
+            this.label17.Location = new System.Drawing.Point(384, 296);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(62, 20);
@@ -357,7 +375,7 @@
             // 
             this.btn_back.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_back.Image = global::Hotel_System.Properties.Resources.back1;
-            this.btn_back.Location = new System.Drawing.Point(492, 400);
+            this.btn_back.Location = new System.Drawing.Point(492, 398);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(113, 49);
             this.btn_back.TabIndex = 21;
@@ -370,7 +388,7 @@
             // 
             this.btn_checkin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_checkin.Image = global::Hotel_System.Properties.Resources.Tasks;
-            this.btn_checkin.Location = new System.Drawing.Point(624, 400);
+            this.btn_checkin.Location = new System.Drawing.Point(624, 398);
             this.btn_checkin.Name = "btn_checkin";
             this.btn_checkin.Size = new System.Drawing.Size(117, 49);
             this.btn_checkin.TabIndex = 20;
@@ -442,7 +460,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox2.Size = new System.Drawing.Size(10, 460);
+            this.groupBox2.Size = new System.Drawing.Size(10, 462);
             this.groupBox2.TabIndex = 14;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Advance Payment Entry";
@@ -577,23 +595,63 @@
             this.label16.TabIndex = 0;
             this.label16.Text = "Payment Form";
             // 
-            // label27
+            // label28
             // 
-            this.label27.Location = new System.Drawing.Point(134, 326);
-            this.label27.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(223, 26);
-            this.label27.TabIndex = 47;
-            this.label27.Text = "0.00";
-            this.label27.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.label27.TextChanged += new System.EventHandler(this.label27_TextChanged);
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(60, 33);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(52, 20);
+            this.label28.TabIndex = 48;
+            this.label28.Text = "Guide";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(131, 33);
+            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(40, 20);
+            this.label29.TabIndex = 49;
+            this.label29.Text = "0.00";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(131, 64);
+            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(40, 20);
+            this.label30.TabIndex = 51;
+            this.label30.Text = "0.00";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(60, 64);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(62, 20);
+            this.label31.TabIndex = 50;
+            this.label31.Text = "Agency";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label28);
+            this.groupBox3.Controls.Add(this.label30);
+            this.groupBox3.Controls.Add(this.label29);
+            this.groupBox3.Controls.Add(this.label31);
+            this.groupBox3.Location = new System.Drawing.Point(17, 365);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(339, 91);
+            this.groupBox3.TabIndex = 52;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Commission";
             // 
             // enterDeposit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(753, 460);
+            this.ClientSize = new System.Drawing.Size(753, 462);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -607,6 +665,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -659,5 +719,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox label27;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }

@@ -3898,3 +3898,95 @@ D:\Reancy Data\PROJECTS\rs_newaquamarine\Hotel System\obj\Debug\Hotel System.exe
 D:\Reancy Data\PROJECTS\rs_newaquamarine\Hotel System\obj\Debug\Hotel System.application
 D:\Reancy Data\PROJECTS\rs_newaquamarine\Hotel System\obj\Debug\Hotel System.exe
 D:\Reancy Data\PROJECTS\rs_newaquamarine\Hotel System\obj\Debug\Hotel System.pdb
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\Hotel System.exe.manifest
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\Hotel System.application
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\Hotel System.exe
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\Hotel System.pdb
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.Web.dll
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\Microsoft.ReportViewer.WebForms.DLL
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel System.csproj.ResolveComReference.cache
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.AboutBox1.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.addGroup.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.addGuestinGroup.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.add_charge.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.applyDeposit.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.Arrivals.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.cancelReservation.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.enterDeposit.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.hk_Schedule.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.Hk_UtilitiesReading.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.GenerateMealCoupon.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.GenerateRoomCharge.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.GuestHistory.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.InHouseGuest.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.m_RoomType.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.newArrivalWalkin.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.newGuestBilling2.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.newGuestBilling.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.newInhouse.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.newReservation.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.or_entry.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.Post_Room_Charge.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.DiscountTypes.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.FunctionContract.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.Group.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.GroupReservation.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.Guest.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.Hk_miscellaneous.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.Home.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.Housekeeping.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.Login.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.Main.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.OtherMasterList.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.Properties.Resources.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.Report.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.Reservation.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.addGuest.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.rGuestBilling.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.RoomAvailability.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.RoomNumber.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.RoomRate.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.RoomRates.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.RoomStatus.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.RoomTransfer.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.room_rate_info.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.rpt_ccsummary.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.rpt_DSR.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.rpt_GuestHighBalance.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.m_soaperiods.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.selectsoa.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.RPT_RES_entry.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.transfer_balance.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.transfer_payment.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.UpdateRoomStatus.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.z_departure.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.z_HotelSettings.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.z_Notification.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.z_Research.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.z_SystemDataUpdate.resources
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel System.csproj.GenerateResource.Cache
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\RdlCompile.cache
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\RdlCompile.compiled
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel System.exe.manifest
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel System.application
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel System.exe
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel System.pdb
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel System.csprojResolveAssemblyReference.cache

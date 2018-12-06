@@ -347,15 +347,15 @@ namespace Hotel_System
                 cond = cond + "" + join + "full_name LIKE '%" + txt_searchfname.Text + "%'";
                 join = " AND ";
             }
-            if (cbo_searchcompany.SelectedIndex != -1)
-            {
-                cond = cond + "" + join + "comp_code='" + cbo_searchcompany.SelectedValue.ToString() + "'";
-                join = " AND ";
-            }
-            if (cbo_searchcountry.SelectedIndex != -1)
-            {
-                cond = cond + "" + join + "cntry_code='" + cbo_searchcountry.SelectedValue.ToString() + "'";
-            }
+            //if (cbo_searchcompany.SelectedIndex != -1)
+            //{
+            //    cond = cond + "" + join + "comp_code='" + cbo_searchcompany.SelectedValue.ToString() + "'";
+            //    join = " AND ";
+            //}
+            //if (cbo_searchcountry.SelectedIndex != -1)
+            //{
+            //    cond = cond + "" + join + "cntry_code='" + cbo_searchcountry.SelectedValue.ToString() + "'";
+            //}
 
             pg = 1;
             int doffset = (qlistlimit * (pg - 1));
