@@ -446,6 +446,13 @@ namespace Accounting_Application_System
             //trans_no = _soa_code;
             bgWorker.RunWorkerAsync();
         }
+        public void print_dailysalesexpenses(String _dateCur)
+        {
+            action = 40525;
+
+            t_date = _dateCur;
+            bgWorker.RunWorkerAsync();
+        }
         public void print_monthlyreserv(String __month)
         {
             action = 40524;
@@ -2499,7 +2506,7 @@ namespace Accounting_Application_System
                 else if (action == 40522) //  statement of account
                 {
                     //SELECT arr_date AS chg_date, acct_no AS gfolio, full_name AS tenant, hl.name AS roomno, CONCAT_WS(', ', pck.package1, pck1.activities1) AS chg_code, CONCAT_WS(', ', pck.package, pck1.activities) AS chg_desc, COALESCE(SPLIT_PART(rf.occ_type, ', ', 4), '0') AS ttlpax, prc.ttl AS amount FROM rssys.gfolio rf LEFT JOIN (SELECT name, code FROM rssys.hotel) hl ON hl.code = rf.hotel_code LEFT JOIN (SELECT cf.reg_num, cf.res_code AS rg_code, STRING_AGG(ch.chg_desc, ', ') AS package, STRING_AGG(ch.chg_code, ', ') AS package1 FROM rssys.chgfil cf LEFT JOIN rssys.charge ch ON cf.chg_code = ch.chg_code WHERE UPPER(cf.chg_code) LIKE 'PCK%' GROUP BY cf.reg_num, cf.res_code) pck ON pck.rg_code = rf.res_code LEFT JOIN (SELECT cf.reg_num, cf.res_code AS rg_code, STRING_AGG(ch.chg_desc, ', ') AS activities, STRING_AGG(ch.chg_code, ', ') AS activities1 FROM rssys.chgfil cf LEFT JOIN rssys.charge ch ON cf.chg_code = ch.chg_code WHERE UPPER(cf.chg_code) LIKE 'ACT%' GROUP BY cf.reg_num, cf.res_code) pck1 ON pck1.rg_code = rf.res_code  LEFT JOIN (SELECT SUM(COALESCE(amount, 0.00)) AS ttl, res_code AS rg_code FROM rssys.chgfil WHERE amount >= 0 AND (UPPER(chg_code) LIKE 'ACT%' OR UPPER(chg_code) LIKE 'PCK%') GROUP BY res_code) prc ON prc.rg_code = rf.res_code WHERE rf.trv_code = '" + dt_trv.Rows[0]["trv_code"].ToString() + "' AND (rf.t_date BETWEEN '" + dt_trv.Rows[0]["start"].ToString() + "' AND '" + dt_trv.Rows[0]["end"].ToString() + "')
-                    DataTable dt = db.QueryBySQLCode("SELECT sl.chg_date, sl.gfolio, gf.full_name AS tenant, gf.h_name AS roomno, sl.chg_code, (SELECT STRING_AGG(ch.chg_desc, ', ') FROM rssys.charge ch, UNNEST(REGEXP_SPLIT_TO_ARRAY(sl.chg_code, ', ')) AS gh WHERE ch.chg_code IN (gh)) AS chg_desc, COALESCE(SPLIT_PART(gf.occ_type, ', ', 4), '0') AS others, sl.amount FROM rssys.soalne sl LEFT JOIN (SELECT g.full_name, h.name AS h_name, g.occ_type, g.reg_num FROM rssys.gfolio g LEFT JOIN rssys.hotel h ON g.hotel_code = h.code WHERE g.p_typ IN ('SOA')) gf ON sl.gfolio = gf.reg_num WHERE sl.soa_code = '" + soa_code + "' ORDER BY sl.chg_date, sl.soa_code ASC"), dt2 = new DataTable();
+                    DataTable dt = db.QueryBySQLCode("SELECT sl.chg_date, sl.gfolio, gf.full_name AS tenant, gf.h_name AS roomno, sl.chg_code, (SELECT STRING_AGG(ch.chg_desc, ', ') FROM rssys.charge ch, UNNEST(REGEXP_SPLIT_TO_ARRAY(sl.chg_code, ', ')) AS gh WHERE ch.chg_code IN (gh)) AS chg_desc, COALESCE(SPLIT_PART(gf.occ_type, ', ', 4), '0') AS others, sl.amount FROM rssys.soalne sl LEFT JOIN (SELECT g.full_name, h.name AS h_name, g.occ_type, g.reg_num FROM rssys.gfolio g LEFT JOIN rssys.hotel h ON g.hotel_code = h.code) gf ON sl.gfolio = gf.reg_num WHERE sl.soa_code = '" + soa_code + "' ORDER BY sl.soa_code ASC"), dt2 = new DataTable();
                     inc_pbar(10);
                     myReportDocument.Load(fileloc_acctg + "a_statementofaccount_angency.rpt");
                     myReportDocument.Database.Tables[0].SetDataSource(dt);
@@ -2521,7 +2528,7 @@ namespace Accounting_Application_System
                         }
                     }
                     prevbal = _prevbal.ToString("0.00");
-                    balance = (Math.Round(total_amount - _prevbal)).ToString("0.00");
+                    balance = (total_amount - _prevbal).ToString("0.00");
                     amount_word = nte.changeNumericToWords(total_amount).ToUpper() + " ONLY (Php " + gm.toAccountingFormat(total_amount) + ")";
 
                     add_fieldparam("soa_no", soa_code);
@@ -2540,7 +2547,7 @@ namespace Accounting_Application_System
                 }
                 else if (action == 40523) //  statement of account
                 {
-                    DataTable dt = db.QueryBySQLCode("SELECT sl.chg_date, gf.full_name AS tenant, gf.h_name AS roomno, COALESCE(SPLIT_PART(gf.occ_type, ', ', 4), '0') AS others, (SELECT STRING_AGG(ch.chg_desc, ', ') FROM rssys.charge ch, UNNEST(REGEXP_SPLIT_TO_ARRAY(sl.chg_code, ', ')) AS gh WHERE ch.chg_code IN (gh)) AS chg_desc, (SELECT SUM(((COALESCE(ch.com, 0.00) * 0.01) * COALESCE(ch.price, 0.00))::numeric(20,2)) FROM rssys.charge ch, UNNEST(REGEXP_SPLIT_TO_ARRAY(sl.chg_code, ', ')) AS gh WHERE ch.chg_code IN (gh)) AS chg_num, (SELECT (SUM(((COALESCE(ch.com, 0.00) * 0.01) * COALESCE(ch.price, 0.00))::numeric(20,2)) * COALESCE(SPLIT_PART(gf.occ_type, ', ', 4), '0')::numeric(20,2)) FROM rssys.charge ch, UNNEST(REGEXP_SPLIT_TO_ARRAY(sl.chg_code, ', ')) AS gh WHERE ch.chg_code IN (gh)) AS amount FROM rssys.soalne sl LEFT JOIN (SELECT g.full_name, h.name AS h_name, g.occ_type, g.reg_num FROM rssys.gfolio g LEFT JOIN rssys.hotel h ON g.hotel_code = h.code) gf ON sl.gfolio = gf.reg_num WHERE sl.soa_code = '" + soa_code + "' ORDER BY sl.chg_date, sl.soa_code ASC"), dt2 = new DataTable();
+                    DataTable dt = db.QueryBySQLCode("SELECT sl.chg_date, gf.full_name AS tenant, gf.h_name AS roomno, COALESCE(SPLIT_PART(gf.occ_type, ', ', 4), '0') AS others, (SELECT STRING_AGG(ch.chg_desc, ', ') FROM rssys.charge ch, UNNEST(REGEXP_SPLIT_TO_ARRAY(sl.chg_code, ', ')) AS gh WHERE ch.chg_code IN (gh)) AS chg_desc, (SELECT SUM(((COALESCE(ch.com, 0.00) * 0.01) * COALESCE(ch.price, 0.00))::numeric(20,2)) FROM rssys.charge ch, UNNEST(REGEXP_SPLIT_TO_ARRAY(sl.chg_code, ', ')) AS gh WHERE ch.chg_code IN (gh)) AS chg_num, (SELECT (SUM(((COALESCE(ch.com, 0.00) * 0.01) * COALESCE(ch.price, 0.00))::numeric(20,2)) * COALESCE(SPLIT_PART(gf.occ_type, ', ', 4), '0')::numeric(20,2)) FROM rssys.charge ch, UNNEST(REGEXP_SPLIT_TO_ARRAY(sl.chg_code, ', ')) AS gh WHERE ch.chg_code IN (gh)) AS amount FROM rssys.soalne sl LEFT JOIN (SELECT g.full_name, h.name AS h_name, g.occ_type, g.reg_num FROM rssys.gfolio g LEFT JOIN rssys.hotel h ON g.hotel_code = h.code) gf ON sl.gfolio = gf.reg_num WHERE sl.soa_code = '" + soa_code + "' ORDER BY sl.soa_code ASC"), dt2 = new DataTable();
 
                     inc_pbar(10);
                     myReportDocument.Load(fileloc_acctg + "a_commissionforagency.rpt");
@@ -2565,6 +2572,19 @@ namespace Accounting_Application_System
                     inc_pbar(10);
                     clr_param();
 
+                }
+                else if (action == 40525)
+                {
+                    DataTable dt = db.QueryBySQLCode("SELECT * FROM (SELECT m04.code AS j_num, m04.name AS t_desc, m04.cmp_code AS item_code, initcap(m04.cmp_desc) AS item_desc, m04.at_code, CONCAT(m04.at_desc, ' (', tr02.seq_desc, ')') AS at_desc, m04.pos, m04.cr_dr, (ABS(tr02.credit - tr02.debit)*-1) AS amount FROM (SELECT tr02.j_code, tr02.j_num, at_code, seq_desc, SUM(debit) AS debit, SUM(credit) AS credit, MAX(t_date) AS t_date FROM rssys.tr02 LEFT JOIN rssys.tr01 ON (tr02.j_code = tr01.j_code AND tr02.j_num = tr01.j_num) GROUP BY tr02.j_code, tr02.j_num, at_code, seq_desc) tr02 INNER JOIN (SELECT m04.at_code, m04.at_desc, m04.bs_pl, m04.dr_cr AS cr_dr, sl, cib_acct, payment, m03.* FROM rssys.m04 LEFT JOIN (SELECT m03.acc_code, m03.acc_desc, m03.dr_cr, m02.* FROM rssys.m03 LEFT JOIN (SELECT m02.cmp_code, cmp_desc, m01.* FROM rssys.m02 LEFT JOIN (SELECT m01.mag_code, m01.mag_desc, m00.code, m00.name, m00.pos FROM rssys.m01 LEFT JOIN (SELECT *, (CASE WHEN name LIKE '%INCOME%' THEN 0 ELSE 1 END) AS pos FROM rssys.m00) m00 ON m01.accttype_code = m00.code) m01 ON m02.mag_code = m01.mag_code) m02 ON m03.cmp_code = m02.cmp_code) m03 ON m04.acc_code = m03.acc_code) m04 ON tr02.at_code = m04.at_code WHERE tr02.t_date = '" + t_date + "' AND (m04.payment IS NULL OR m04.payment != 'Y') ORDER BY j_num, item_code, at_code) expenses UNION ALL SELECT * FROM (SELECT '99' AS j_num, 'SALES INCOME' AS t_desc, '999' AS item_code, 'Sales Invoice' AS item_desc, '9999' AS at_code, CONCAT(reference, ' (', chg_desc, '). Pax: ', ttlpax, ' (', p_typ, ')') AS at_desc, '99' AS pos, 'D' AS cr_dr, amount FROM (SELECT cf.reg_num, STRING_AGG(cf.chg_code, ', ') AS chg_code, STRING_AGG(cf.chg_num, ', ') AS chg_num, CONCAT(gf.full_name) AS reference, SUM(cf.amount) AS amount, STRING_AGG(cf.user_id, ', ') AS user_id, STRING_AGG(c.chg_desc, ', ') AS chg_desc, MAX(cf.t_date) AS t_date, MAX(cf.t_time) AS t_time, MAX(cf.chg_date) AS chg_date, cf.res_code, STRING_AGG(cf.soa_code, ', ') AS soa_code, COALESCE(SPLIT_PART(gf.occ_type, ', ', 4), '0') AS ttlpax, (SELECT chg_desc FROM rssys.charge WHERE chg_code = gf.p_typ) AS p_typ FROM rssys.chgfil cf INNER JOIN rssys.charge c ON c.chg_code = cf.chg_code LEFT JOIN rssys.gfolio gf ON cf.reg_num = gf.reg_num LEFT JOIN rssys.tr02 t2 ON (t2.chg_code = cf.chg_code AND t2.chg_num = cf.chg_num) LEFT JOIN rssys.hotel hl ON hl.code = gf.hotel_code WHERE c.chg_type = 'C' AND cf.chg_date = '" + t_date + "' GROUP BY cf.reg_num, gf.full_name, cf.res_code, gf.full_name, hl.name, gf.acct_no, gf.occ_type, gf.p_typ) sales) sales UNION ALL SELECT * FROM (SELECT '98' AS j_num, 'CASH REPLENISHMENT INCOME' AS t_desc, '998' AS item_code, 'Cash Replenishment' AS item_desc, '9998' AS at_code, description AS at_desc, '98' AS pos, 'D' AS cr_dr, amount FROM rssys.cashinbox WHERE dbrsmntid IS TRUE AND t_date = '" + t_date + "') replenishment"), dt2 = new DataTable();
+                    inc_pbar(10);
+                    myReportDocument.Load(fileloc_acctg + "dailysalesreport.rpt");
+                    myReportDocument.Database.Tables[0].SetDataSource(dt);
+                    add_fieldparam("userid", GlobalClass.username);
+                    add_fieldparam("fy", t_date);
+                    add_fieldparam("t_date", t_date);
+                    add_fieldparam("branch", db.QueryBySQLCodeRetStr("SELECT name FROM rssys.branch WHERE code = '" + GlobalClass.branch + "'"));
+                    inc_pbar(10);
+                    clr_param();
                 }
                 /*else if (action == 4051) //  statement of account
                 {

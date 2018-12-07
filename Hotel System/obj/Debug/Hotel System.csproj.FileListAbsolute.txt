@@ -3922,6 +3922,7 @@ C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\Crystal
 C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\Microsoft.ReportViewer.Common.dll
 C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
 C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\bin\Debug\Microsoft.ReportViewer.WebForms.DLL
+C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel System.csprojResolveAssemblyReference.cache
 C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel System.csproj.ResolveComReference.cache
 C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.AboutBox1.resources
 C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel_System.addGroup.resources
@@ -3989,4 +3990,3 @@ C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel S
 C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel System.application
 C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel System.exe
 C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel System.pdb
-C:\Users\pc\Desktop\REANCY\PROJECTS\rs_aquamarine\Hotel System\obj\Debug\Hotel System.csprojResolveAssemblyReference.cache
